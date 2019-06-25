@@ -9,18 +9,34 @@ function openFile(){
             {name: 'csv', extensions: ['csv']}
         ]
     }, (fileName) => {
-        if(fileName === undefined) return; //file not picked
+        if(fileName === undefined){
+            return;
+        } 
 
         var file = fileName[0]
         fs.readFile(file, 'utf-8', (err, data) => {
+            if(err){
+                dialog.showMessageBox("Whoops, can't open file!", err.message)
+            } else {
+            //file read successfully
             //console.log(data)
             parseCSVData(data)
-            //data is inside here now
-            //TO-DO: Parse data
+            //display form for search now yay hoozah
+            document.getElementById('insertMockData').style.display = 'none'
+            document.getElementById('search-form').style.display = 'block'
+            }
         })
     })
 }
 
 function parseCSVData(data) {
     //for prabhas
+}
+
+function searchSubmit(){
+    //error checking
+    if(document.getElementById('player').textContent == ""){
+        //not valid
+        return;
+    }
 }

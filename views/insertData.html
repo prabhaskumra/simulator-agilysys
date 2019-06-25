@@ -9,7 +9,13 @@
     <script src="../js/dataread.js"></script>
 </head>
 <body>
-    <button type="button" onclick="openFile()">Insert Mock Data</button>
-    <p id="data"></p>
+    <button type="button" onclick="openFile()" id="insertMockData">Insert Mock Data</button>
+    
+    <div id = "search-form" style="display: none">
+        Player Number: <input type="text" id="player"><br>
+        <button id="search-submit-button" onclick="searchSubmit()">submit</button>
+    </div>
+
+    
 </body>
 </html>
