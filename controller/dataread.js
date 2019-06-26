@@ -1,5 +1,6 @@
 const { remote } = require('electron')
 const fs = require('fs')
+const csv = require('csv-parser')
 
 var players = []
 
@@ -14,41 +15,20 @@ function openFile(){
         if(fileName === undefined){
             return;
         } 
-
-        var file = fileName[0]
-        fs.readFile(file, 'utf-8', (err, data) => {
-            if(err){
-                dialog.showMessageBox("Whoops, can't open file!", err.message)
-            } else {
-            //file read successfully
-            //console.log(data)
-            parseCSVData(data)
-
-            //DELETE THIS AFTER CSV DATA DONE THIS IS TEMP
-            players = [
-                {
-                    AccountNumber: 7777,
-                    FirstName: "Bally",
-                    LastName: "Mock Service 1"
-                },
-                {
-                    AccountNumber: 6666,
-                    FirstName: "Daee",
-                    LastName: "Kang"
-                },
-                {
-                    AccountNumber: 5555,
-                    FirstName: "Prabhas",
-                    LastName: "Kumra"
-                },
-            ] 
-            }
-        })
+        parseCSVData(fileName[0])
     })
 }
 
-function parseCSVData(data) {
-    //for prabhas
+function parseCSVData(file) {
+    csv(['firstName', 'lastName', 'accountNumber', 'tierLevel', 'pointBalance']);
+    csv({ separator: ',' });
+
+     fs.createReadStream(file)
+        .pipe(csv())
+        .on('data', (data) => players.push(data))
+        .on('end' , () => {
+            console.log(players);
+        });
 }
 
-module.exports.players = players
+

@@ -7,11 +7,8 @@ function submitSearch(){
 }
 
 function searchPlayers(id){
-    id = parseInt(id)
     for (var i=0; i < players.length; i++) {
-        console.log(players[i].AccountNumber)
-        console.log(id)
-        if (players[i].AccountNumber === id) {
+        if (players[i].accountNumber === id) {
             return players[i];
         }
     }
