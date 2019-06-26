@@ -21,9 +21,29 @@ function openFile(){
             //file read successfully
             //console.log(data)
             parseCSVData(data)
+
+            //DELETE THIS AFTER CSV DATA DONE THIS IS TEMP
+            var players = [
+                {
+                    AccountNumber: 7777,
+                    FirstName: "Bally",
+                    LastName: "Mock Service 1"
+                },
+                {
+                    AccountNumber: 6666,
+                    FirstName: "Daee",
+                    LastName: "Kang"
+                },
+                {
+                    AccountNumber: 5555,
+                    FirstName: "Prabhas",
+                    LastName: "Kumra"
+                },
+            ] 
+
             //display form for search now yay hoozah
-            document.getElementById('insertMockData').style.display = 'none'
-            document.getElementById('search-form').style.display = 'block'
+            //TO-DO: display success message
+            window.location.href = "requestPlayer.html"
             }
         })
     })
@@ -33,10 +53,4 @@ function parseCSVData(data) {
     //for prabhas
 }
 
-function searchSubmit(){
-    //error checking
-    if(document.getElementById('player').textContent == ""){
-        //not valid
-        return;
-    }
-}
+module.exports.players = players
