@@ -22,7 +22,15 @@ function submitJSON(){
             } else {
                 let inRequest = JSON.parse(data)
                 console.log(inRequest["acct"])
-                console.log(searchPlayers(inRequest["acct"]))
+                let account = searchPlayers(inRequest["acct"])
+                let out = (
+                    "First Name: " + account["firstName"] + "\r\n" +
+                    "Last Name: " + account["lastName"] + "\r\n" +
+                    "Account #: " + account["accountNumber"] + "\r\n" + 
+                    "Tier Level: " + account["tierLevel"] + '\n' +
+                    "Point Balance: " + account["pointBalance"] + '\n'
+                )
+                document.getElementById('output').textContent = out
             }
         })
     })

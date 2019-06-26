@@ -16,6 +16,7 @@ function openFile(){
             return;
         } 
         parseCSVData(fileName[0])
+        document.getElementById('imported').style.display = 'block'
     })
 }
 
