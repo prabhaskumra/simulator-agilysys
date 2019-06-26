@@ -1,19 +1,16 @@
-const Path = require('path')
-const { players }'../controller/dataread'
 
 function submitSearch(){
-    let searchValue = document.getElementById('player-request-text-box').textContent
-    //let account = searchPlayers(searchValue)
-    //console.log(account)
-    console.log(process.cwd())
-    console.log(players[1].AccountNumber)
-
+    let searchValue = document.getElementById('player-request-text-box').value
+    let account = searchPlayers(searchValue)
+    console.log(players)
+    console.log(account)
 }
 
-
-
 function searchPlayers(id){
+    id = parseInt(id)
     for (var i=0; i < players.length; i++) {
+        console.log(players[i].AccountNumber)
+        console.log(id)
         if (players[i].AccountNumber === id) {
             return players[i];
         }

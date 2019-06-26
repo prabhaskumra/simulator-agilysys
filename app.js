@@ -9,7 +9,7 @@ function createWindow(){
         }
     })
 
-    win.loadFile('views/insertData.html')
+    win.loadFile('views/simulator.html')
 }
 
 app.on('ready', createWindow)
