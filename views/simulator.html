@@ -13,12 +13,20 @@
 
     
     <div id="insert-mock-data">
-        <button type="button" onclick="openFile()" id="insertMockData">Insert Mock Data</button>
+        <button onclick="openFile()" id="insertMockData">Insert Mock Data</button>
+        <br>
+        <br>
     </div>
 
     <div id="player-look-up">
-        Enter player acct number: <input type="text" id="player-request-text-box">
-        <button id='player-submit-button' onclick="submitSearch()">submit</button>
+        <div>
+            manual entry, enter player acct number: <input type="text" id="player-request-text-box">
+            <button id='player-submit-button' onclick="submitSearch()">submit</button>
+        </div>
+        <div>
+            <button onclick="submitJSON()"">submit json</button>
+        </div>
+
     </div>
 
 
