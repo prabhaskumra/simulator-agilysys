@@ -10,7 +10,7 @@
     app.use(bodyParser.json()); // support json encoded bodies
     app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
-    app.get('/', (req, res) => res.sendFile(path.join(__dirname+'/index.html')))
+    app.get('/', (req, res) => res.sendFile(path.join(__dirname+'/views/index.html')))
 
     app.post('/users', function(req, res) {
         res.sendFile(path.join(__dirname + '/data.json'))

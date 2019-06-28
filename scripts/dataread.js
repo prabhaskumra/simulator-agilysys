@@ -29,15 +29,14 @@ function parseCSVData(file) {
         .pipe(csv())
         .on('data', (data) => players.push(data))
         .on('end' , () => {
-            console.log(players);
-        });
+            fs.writeFile(path.join('./data.json'), JSON.stringify(players), 'utf8', function(err){
+                if(err){ 
+                        console.log(err); 
+                } else {
+                }});;
+        })
 
-        const playerjson = JSON.stringify(players)
 
-    fs.writeFile(path.join('./data.json'), playerjson, 'utf8', function(err){
-        if(err){ 
-                console.log(err); 
-        } else {
-        }});
+
 
 }
