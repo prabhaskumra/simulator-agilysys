@@ -1,3 +1,6 @@
 node_modules
 data.json
 package-lock.json
+foundAccount.json
+package-lock.json
+package.json
