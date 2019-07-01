@@ -4,3 +4,4 @@ package-lock.json
 foundAccount.json
 package-lock.json
 package.json
+*.json
