@@ -23,8 +23,8 @@ function openFile(){
 }
 
 //read in mock data and seperate into objects and then into an array and then write it to data.json
-function parseCSVData(file) {
-    csv(['firstName', 'lastName', 'accountNumber', 'tierLevel', 'pointBalance']);
+function parseCSVData(file, dollarToPoints) {
+    csv(['firstName', 'lastName', 'accountNumber', 'tierLevel', 'pointBalance', 'compBalance', 'promo2Balance', 'isBanned', 'isInActive', 'isPinLocked']);
     csv({ separator: ',' });
 
      fs.createReadStream(file)
@@ -45,6 +45,7 @@ fs.watchFile(path.join('./foundAccount.json'), (curr, prev) => {
     file = fs.readFileSync('./data.json')
 
     let foundAccount = JSON.parse(fs.readFileSync(path.join('./foundAccount.json')), 'utf8')
+    console.log(foundAccount)
     //display results onto electron window
     document.getElementById('player-data').innerHTML = (
         "<b> First Name: </b>" + foundAccount.firstName + "</br>" +
@@ -52,5 +53,7 @@ fs.watchFile(path.join('./foundAccount.json'), (curr, prev) => {
         "<b> Point Balance: </b>" + foundAccount.pointBalance + "</br>" +
         "<b> Tier Level: </b>" + foundAccount.tierLevel + "</br>"
     )
-    console.log(foundAccount)
+    fs.truncate(path.join('./foundAccount.json'), 0, (err) => {
+        if(err) throw err;
+      })
 })

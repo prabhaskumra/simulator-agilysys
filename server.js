@@ -4,7 +4,7 @@
     const port = 1234
     const path = require('path')
     const bodyParser = require('body-parser');
-    const validateUser = require('./model/validateUser').validateUser
+    const getPlayerInfo = require('./model/GetPlayerInfo').getPlayerInfo
     const fs = require('fs')
 
     app.use(express.static(__dirname));
@@ -18,11 +18,11 @@
 
     //validate user api Post
     //IG will send post request and get account back - also will display account information
-    app.post('/validateUser', function(req, res) {
+    app.post('/GetPlayerInfo', function(req, res) {
         //get account number and search by acct number
         accountNumber = req.body.acct
         console.log(req.body.acct)
-        let account = validateUser(accountNumber)
+        let account = getPlayerInfo(accountNumber)
 
         //write found account to json file and electron window will load it
         let accountJSON = JSON.stringify(account)
@@ -30,9 +30,9 @@
             if(err) throw err
             console.log('retrieved and saved account')
         })
-        
+
         //send back account info
-        res.send(account)
+        res.send(account ? account : {"error:": "no results"})
     })
 
 
