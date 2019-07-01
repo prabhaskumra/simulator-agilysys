@@ -21,12 +21,20 @@
 </head>
 <body>
     <div id="insert-mock-data">
-        Dollar to Points Ratio: <input type="number" id="dollar-to-points" value="1"> <!-- do something with this lol-->
-        <button onclick="openFile()" id="insertMockData">Insert Mock Data</button>
-        <p style="display: none; color: green" id='imported'>imported</p>
+
+        <button onclick="openFile('player-data')" id="insertMockData">Insert Player Data</button>
+        <button onclick="openFile('offer-data')" id="insertOfferData">Insert Offer Data</button>
+
+        <div>
+            <p id="player-data-status">Player Data ❌</p>
+            <p id="offer-data-status">Offer Data ❌</p>
+        </div>
+
         <br>
         <br>
     </div>
+
+
     <div id ="player-data">
         
     </div>
