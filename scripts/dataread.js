@@ -48,8 +48,9 @@ fs.watchFile(path.join('./foundAccount.json'), (curr, prev) => {
     console.log(foundAccount)
     //display results onto electron window
     document.getElementById('player-data').innerHTML = (
-        "<b> First Name: </b>" + foundAccount.firstName + "</br>" +
-        "<b> Last Name: </b>" + foundAccount.lastName + "</br>" +
+        //<p> Hello </p> +
+        "<b> Account Number: </b>" + foundAccount.accountNumber + "</br>" +
+        "<b> Name: </b>" + foundAccount.firstName + " " + foundAccount.lastName + "</br>" +
         "<b> Point Balance: </b>" + foundAccount.pointBalance + "</br>" +
         "<b> Tier Level: </b>" + foundAccount.tierLevel + "</br>"
     )
