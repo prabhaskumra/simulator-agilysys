@@ -24,9 +24,9 @@ app.on('ready', () => {
   createWindow()
   win.on('close', () =>{
     console.log('closing app')
-    fs.truncate(path.join(__dirname+'/foundAccount.json'), 0, (err) => {
+    fs.truncate(path.join(__dirname+'/transaction.json'), 0, (err) => {
       if(err) throw err;
-      console.log("deleted foundAccount.json")
+      console.log("deleted transaction.json")
     })
   })
 })
