@@ -6,13 +6,10 @@ const path = require('path')
 var players = []
 var offers = []
 
-var playerFileName = ""
-var offerFileName = ""
-
 //there needs to be more logical shit here but we don't know the conditions so just leave this for now.
 
 //opens window to select file to download mock data
-function openFile(type){
+function openPlayers(){
     let dialog = remote.dialog
     dialog.showOpenDialog({
         title: 'Open Mock Data',
@@ -23,47 +20,46 @@ function openFile(type){
         if(fileName === undefined){
             return;
         } 
-
-        if(type === "player-data"){
-            playerFileName = fileName[0]
-            document.getElementById("player-data-status").innerText = "Player Data ✔️"
-        } else if (type === "offer-data"){
-            offerFileName = fileName[0]
-            document.getElementById("offer-data-status").innerText = "Offer Data ✔️"
-        }
-
-        if(playerFileName != "" && offerFileName != ""){
-            //read in player file
-            csv(['firstName', 'lastName', 'accountNumber', 'tierLevel', 'pointBalance', 'compBalance', 'promo2Balance', 'isBanned', 'isInActive', 'isPinLocked'])
-
-            fs.createReadStream(playerFileName)
-            .pipe(csv())
-            .on('data', (data) => {
-                players.push(data)
+        console.log(fileName)
+ 
+        csv(['firstName', 'lastName', 'accountNumber', 'tierLevel', 'dateOfBirth', 'pointBalance', 'compBalance', 'promo2Balance', 'isBanned', 'isInActive', 'isPinLocked'])
+        fs.createReadStream(fileName[0])
+        .pipe(csv())
+        .on('data', (data) => {
+            players.push(data)
+        })
+        .on('end' , () => {
+            fs.writeFile(path.join('./data.json'), JSON.stringify(players), 'utf8', function(err){
+                if(err) console.log(err); 
             })
-            .on('end' , () => {
-                fs.writeFile(path.join('./data.json'), JSON.stringify(players), 'utf8', function(err){
-                    if(err) console.log(err); 
-                })
+        })
+        document.getElementById("player-data-status").innerText = "Player Data ✔️"
+    })
+}
+
+function openOffers(){
+    csv(['AccountNumber', 'OfferCode', 'OfferName', 'OfferValue', 'OfferStartDate', 'OfferEndDate'])
+    let dialog = remote.dialog
+    dialog.showOpenDialog({
+        title: 'Open Mock Data',
+        filters: [
+            {name: 'csv', extensions: ['csv']}
+        ]
+    }, (fileName) => {
+        if(fileName === undefined){
+            return;
+        } 
+        fs.createReadStream(fileName[0])
+        .pipe(csv())
+        .on('data', (data) => {
+            offers.push(data)
+        })
+        .on('end' , () => {
+            fs.writeFile(path.join('./offers.json'), JSON.stringify(offers), 'utf8', function(err){
+                if(err) console.log(err); 
             })
-
-            //read in offer file
-            csv(['AccountNumber', 'OfferCode', 'OfferName', 'OfferValue', 'OfferStartDate', 'OfferEndDate'])
-
-            fs.createReadStream(offerFileName)
-            .pipe(csv())
-            .on('data', (data) => {
-                offers.push(data)
-            })
-            .on('end' , () => {
-                fs.writeFile(path.join('./offers.json'), JSON.stringify(offers), 'utf8', function(err){
-                    if(err) console.log(err); 
-                })
-            })
-
-            
-        }
-
+        })
+        document.getElementById("offer-data-status").innerText = "Offer Data ✔️"
     })
 }
 
@@ -107,10 +103,6 @@ function parseCSVData(file, type) {
                     break
             }
         })
-        console.log(type)
-        console.log(offers)
-        console.log(players)
-        console.log(dataArray)
 }
 
 //checks to see if foundAccount.json has updated, meaning that there was a query and result was found
@@ -128,6 +120,25 @@ fs.watchFile(path.join('./foundAccount.json'), (curr, prev) => {
         "<b> Point Balance: </b>" + foundAccount.pointBalance + "</br>" +
         "<b> Tier Level: </b>" + foundAccount.tierLevel + "</br>"
     )
+    
+
+    let offerHTML = "<h1>Offers:</h1>"
+    offers.forEach(offer => {
+        if(offer.AccountNumber == foundAccount.accountNumber){
+            offerHTML += (
+                "<div>" +
+                    "<p>" + offer.OfferCode + "</p>" +
+                    "<p>" + offer.OfferName + "</p>" +
+                    "<p>" + offer.OfferValue + "</p>" +
+                    "<p>" + offer.OfferStartDate + "</p>" +
+                    "<p>" + offer.OfferEndDate + "</p>" +
+                "</div></br></br>"
+            )
+        }
+    });
+    console.log(offerHTML)
+    document.getElementById('offer-data').innerHTML = offerHTML
+    
     fs.truncate(path.join('./foundAccount.json'), 0, (err) => {
         if(err) throw err;
       })
@@ -141,6 +152,8 @@ function checkUploaded() {
             document.getElementById('player-data-status').textContent = "Player Data ❌"
         } else {
             document.getElementById('player-data-status').textContent = "Player Data ✔️"
+
+            players = JSON.parse(fs.readFileSync(path.join('./data.json'),'utf8'))
         }
     })
 
@@ -149,6 +162,8 @@ function checkUploaded() {
             document.getElementById('offer-data-status').textContent = "Offer Data ❌"
         } else {
             document.getElementById('offer-data-status').textContent = "Offer Data ✔️"
+
+            offers = JSON.parse(fs.readFileSync(path.join('./offers.json'),'utf8'))
         }
     })
 }
