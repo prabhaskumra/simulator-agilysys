@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src='../scripts/dataread.js'></script>
 
@@ -24,10 +25,20 @@
     </style>
 </head>
 <body>
+    <body bgcolor="#E6E6FA">
     <div id="insert-mock-data">
-        Dollar to Points Ratio: <input type="number" id="dollar-to-points" value="1"> <!-- do something with this lol-->
-        <button onclick="openFile()" id="insertMockData">Insert Mock Data</button>
-        <p style="display: none; color: green" id='imported'>imported</p>
+       <!-- Dollar to Points Ratio: <input type="number" id="dollar-to-points" value="1">  do something with this lol-->
+       <!-- <button onclick="openFile()" id="insertMockData">Insert Mock Data</button> -->
+       <!-- <p style="display: none; color: green" id='imported'>imported</p> -->
+
+        <button class="w3-button w3-black w3-round-xlarge" onclick="openFile('player-data')" id="insertMockData">Insert Player Data</button>
+        <button class="w3-button w3-black w3-round-xlarge" onclick="openFile('offer-data')" id="insertOfferData">Insert Offer Data</button>
+
+        <div>
+            <p id="player-data-status">Player Data ❌</p>
+            <p id="offer-data-status">Offer Data ❌</p>
+        </div>
+
         <br>
         <br>
     </div>
