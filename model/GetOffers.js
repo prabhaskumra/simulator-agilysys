@@ -16,7 +16,6 @@ module.exports = {
             delete offers[i].AccountNumber;
             offers[i].OfferValue = parseInt(offers[i].OfferValue)
         }
-        
 
         let out = {
             "AccountNumber": accountNumber,

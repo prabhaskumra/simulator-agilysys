@@ -45,7 +45,7 @@
         res.send(account ? account : {"error:": "no results"})
     })
 
-
+    //returns all offers from offers.json that match the account number
     app.post('/GetOffers', (req, res) => {
         accountNumber = req.body.acct
         console.log(req.body.acct)
