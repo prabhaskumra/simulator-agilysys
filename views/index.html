@@ -23,15 +23,15 @@
     }
     </style>
 </head>
-<body>
+<body onload="checkUploaded()">
     <div id="insert-mock-data">
 
         <button onclick="openFile('player-data')" id="insertMockData">Insert Player Data</button>
         <button onclick="openFile('offer-data')" id="insertOfferData">Insert Offer Data</button>
 
         <div>
-            <p id="player-data-status">Player Data ❌</p>
-            <p id="offer-data-status">Offer Data ❌</p>
+            <p id="player-data-status"></p>
+            <p id="offer-data-status"></p>
         </div>
 
         <br>

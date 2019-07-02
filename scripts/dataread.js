@@ -132,3 +132,23 @@ fs.watchFile(path.join('./foundAccount.json'), (curr, prev) => {
         if(err) throw err;
       })
 })
+
+//checks to see if files were already uploaded and stored locally
+function checkUploaded() {
+    console.log('here')
+    fs.access(path.join('./data.json'), fs.constants.F_OK, (err) => {
+        if (err) {
+            document.getElementById('player-data-status').textContent = "Player Data ❌"
+        } else {
+            document.getElementById('player-data-status').textContent = "Player Data ✔️"
+        }
+    })
+
+    fs.access(path.join('./offers.json'), fs.constants.F_OK, (err) => {
+        if (err) {
+            document.getElementById('offer-data-status').textContent = "Offer Data ❌"
+        } else {
+            document.getElementById('offer-data-status').textContent = "Offer Data ✔️"
+        }
+    })
+}
