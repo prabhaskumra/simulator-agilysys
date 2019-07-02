@@ -2,7 +2,6 @@ const { remote } = require('electron')
 const fs = require('fs')
 const csv = require('csv-parser')
 const path = require('path')
-var align = require('align-text');
 
 var players = []
 var offers = []
@@ -122,7 +121,6 @@ fs.watchFile(path.join('./foundAccount.json'), (curr, prev) => {
     let foundAccount = JSON.parse(fs.readFileSync(path.join('./foundAccount.json')), 'utf8')
     console.log(foundAccount)
     //display results onto electron window
-    //align("Account Number", centerAlign);
 
     document.getElementById('player-data').innerHTML = (
         "<b> Account Number: </b>" + foundAccount.accountNumber + "</br>" +
