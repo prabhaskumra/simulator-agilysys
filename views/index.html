@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src='../scripts/dataread.js'></script>
 
@@ -22,16 +23,15 @@
         text-align: left
     }
     </style>
+
 </head>
 <body onload="checkUploaded()">
     <div id="insert-mock-data">
-
-        <button onclick="openFile('player-data')" id="insertMockData">Insert Player Data</button>
-        <button onclick="openFile('offer-data')" id="insertOfferData">Insert Offer Data</button>
+        <body bgcolor="#E6E6FA">    
 
         <div>
-            <p id="player-data-status"></p>
-            <p id="offer-data-status"></p>
+            <button class="w3-button w3-black w3-round-xlarge" onclick="openFile('player-data')" id="player-data-status"></button>
+            <button class="w3-button w3-black w3-round-xlarge" onclick="openFile('offer-data')" id="offer-data-status"></button>
         </div>
 
         <br>

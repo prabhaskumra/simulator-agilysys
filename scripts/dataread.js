@@ -121,8 +121,8 @@ fs.watchFile(path.join('./foundAccount.json'), (curr, prev) => {
     let foundAccount = JSON.parse(fs.readFileSync(path.join('./foundAccount.json')), 'utf8')
     console.log(foundAccount)
     //display results onto electron window
+
     document.getElementById('player-data').innerHTML = (
-        //<p> Hello </p> +
         "<b> Account Number: </b>" + foundAccount.accountNumber + "</br>" +
         "<b> Name: </b>" + foundAccount.firstName + " " + foundAccount.lastName + "</br>" +
         "<b> Point Balance: </b>" + foundAccount.pointBalance + "</br>" +
