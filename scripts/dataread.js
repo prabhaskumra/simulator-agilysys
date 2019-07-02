@@ -136,6 +136,7 @@ fs.watchFile(path.join('./foundAccount.json'), (curr, prev) => {
             )
         }
     });
+
     console.log(offerHTML)
     document.getElementById('offer-data').innerHTML = offerHTML
     
