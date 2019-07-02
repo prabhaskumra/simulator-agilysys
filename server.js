@@ -1,16 +1,26 @@
+    //other shit
     const express = require('express')
-    const http = require('http')
     const app = express()
     const port = 1234
     const path = require('path')
-    const bodyParser = require('body-parser');
-    const getPlayerInfo = require('./model/GetPlayerInfo').getPlayerInfo
+    const bodyParser = require('body-parser'); 
     const fs = require('fs')
 
+
+    //-------------------------------------model require-------------------------------------//
+    const getPlayerInfo = require('./model/GetPlayerInfo').getPlayerInfo
+    const GetOffers = require('./model/GetOffers').GetOffers
+    //---------------------------------------------------------------------------------------//
+
+    //------------------------------------express setup--------------------------------------//
     app.use(express.static(__dirname));
 
     app.use(bodyParser.urlencoded({ extended: false })); // support encoded bodies
     app.use(bodyParser.json()); // support json encoded bodies
+    //---------------------------------------------------------------------------------------//
+
+
+
 
 
     //default load page
@@ -18,7 +28,7 @@
 
     //validate user api Post
     //IG will send post request and get account back - also will display account information
-    app.post('/GetPlayerInfo', function(req, res) {
+    app.post('/GetPlayerInfo', (req, res) => {
         //get account number and search by acct number
         accountNumber = req.body.acct
         console.log(req.body.acct)
@@ -33,6 +43,14 @@
 
         //send back account info
         res.send(account ? account : {"error:": "no results"})
+    })
+
+
+    app.post('/GetOffers', (req, res) => {
+        accountNumber = req.body.acct
+        console.log(req.body.acct)
+        let offers = GetOffers(accountNumber)
+        res.send(offers)
     })
 
 
