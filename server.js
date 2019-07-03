@@ -1,3 +1,4 @@
+   
     //other shit
     const express = require('express')
     const app = express()
@@ -5,6 +6,7 @@
     const path = require('path')
     const bodyParser = require('body-parser'); 
     const fs = require('fs')
+    const { ipcMain } = require('electron')
 
 
     //-------------------------------------model require-------------------------------------//
@@ -13,6 +15,7 @@
     const RedeemComp = require('./model/RedeemComp').RedeemComp
     //---------------------------------------------------------------------------------------//
 
+
     //------------------------------------express setup--------------------------------------//
     app.use(express.static(__dirname));
 
@@ -20,8 +23,12 @@
     app.use(bodyParser.json()); // support json encoded bodies
     //---------------------------------------------------------------------------------------//
 
-
-
+    //this below code recieves the appReady state as in, is data loaded and ready? 
+    //api calls will return errors if data is not loaded. dab
+    var appReady = false
+    ipcMain.on("isAppReady", (event, isAppReady) => {
+        appReady = isAppReady
+    })
 
 
     //default load page
@@ -31,6 +38,11 @@
     //IG will send post request and get account back - also will display account information
     app.post('/GetPlayerInfo', (req, res) => {
         //get account number and search by acct number
+        if(!appReady){
+            res.send({error: "data not loaded"})
+            return
+        }
+
         accountNumber = req.body.acct
         console.log(req.body.acct)
         let account = getPlayerInfo(accountNumber)
@@ -50,6 +62,11 @@
 
     //returns all offers from offers.json that match the account number
     app.post('/GetOffers', (req, res) => {
+        if(!appReady){
+            res.send({error: "data not loaded"})
+            return
+        }
+
         let accountNumber = req.body.AccountNumber
         console.log(req.body.acct)
         let offers = GetOffers(accountNumber)
@@ -58,6 +75,11 @@
 
     //redeem each comp in list, i am assuming that there could be more than one
     app.post('/RedeemComp', (req, res) => {
+        if(!appReady){
+            res.send({error: "data not loaded"})
+            return
+        }
+
         let accountNumber = req.body.AccountNumber
         let compList = req.body.RedeemCompList
         res.send(RedeemComp(accountNumber, compList))
@@ -65,3 +87,5 @@
 
 
     app.listen(port, () => console.log(`server running on port ${port}`))
+
+

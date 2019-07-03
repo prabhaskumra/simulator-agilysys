@@ -12,7 +12,7 @@
     <script src='../scripts/watchFile.js'></script>
 
 </head>
-<body onload="checkUploaded()">
+<body onload="checkUploaded(); isAppReady()">
 
 
     <div id="mySidebar" class="sidebar">
@@ -30,12 +30,14 @@
     </div>
 
     <div id="main">
-            <button class="button button2" onclick="openNav()">⚙️ Settings</button>
-            
+        <button class="button button2" onclick="openNav()">⚙️ Settings</button>
+          
 
+        <h1 id="app-not-ready">App is not ready. Please upload Player Data and Offer Data in settings.</h1>
         <div id ="player-data">
 
         </div>
+
         <div id="offer-data">
     
         </div>

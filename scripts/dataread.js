@@ -1,10 +1,40 @@
-const { remote } = require('electron')
+const { ipcRenderer, remote } = require('electron')
 const fs = require('fs')
 const csv = require('csv-parser')
 const path = require('path')
 
 var players = []
 var offers = []
+
+var appReady = false
+
+
+//checks to see if data is loaded, if not, show message
+function isAppReady(){
+    let playerExists = false
+    let offersExists = false
+
+    if(fs.existsSync(path.join('./data.json'))) {
+        playerExists = true
+
+    } else {
+        console.log('player info missing')
+    }
+
+    if(fs.existsSync(path.join('./offers.json'))) {
+        offersExists = true 
+    } else {
+        console.log('player info missing')
+    }
+
+    if(offersExists === true && playerExists === true){
+        appReady = true
+        ipcRenderer.send("isAppReady", true );//send this serverside
+        document.getElementById('app-not-ready').style.display = "none"
+    } else {
+        document.getElementById('app-not-ready').style.display = "block"
+    }
+}
 
 //there needs to be more logical shit here but we don't know the conditions so just leave this for now.
 
@@ -31,6 +61,7 @@ function openPlayers(){
         .on('end' , () => {
             fs.writeFile(path.join('./data.json'), JSON.stringify(players), 'utf8', function(err){
                 if(err) console.log(err); 
+                isAppReady()
             })
         })
         document.getElementById("player-data-status").innerText = "Player Data ✔️"
@@ -57,10 +88,12 @@ function openOffers(){
         .on('end' , () => {
             fs.writeFile(path.join('./offers.json'), JSON.stringify(offers), 'utf8', function(err){
                 if(err) console.log(err); 
+                isAppReady()
             })
         })
         document.getElementById("offer-data-status").innerText = "Offer Data ✔️"
     })
+
 }
 
 
@@ -127,4 +160,6 @@ function checkUploaded() {
             offers = JSON.parse(fs.readFileSync(path.join('./offers.json'),'utf8'))
         }
     })
+
+    isAppReady()
 }
