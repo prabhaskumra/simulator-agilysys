@@ -138,51 +138,7 @@ function parseCSVData(file, type) {
         })
 }
 
-//checks to see if foundAccount.json has updated, meaning that there was a query and result was found
-fs.watchFile(path.join('./foundAccount.json'), (curr, prev) => {
-    console.log('file changed')
-    file = fs.readFileSync('./data.json')
 
-    let foundAccount = JSON.parse(fs.readFileSync(path.join('./foundAccount.json')), 'utf8')
-    console.log(foundAccount)
-    //display results onto electron window
-
-    document.getElementById('player-data').innerHTML = (
-        
-        "<b> Account Number: </b>" + foundAccount.accountNumber + "</br>" +
-        "<b> Name: </b>" + foundAccount.firstName + " " + foundAccount.lastName + "</br>" +
-        "<b> Point Balance: </b>" + foundAccount.pointBalance + "</br>" +
-        "<b> Tier Level: </b>" + foundAccount.tierLevel + "</br>"
-    )
-    
-
-    let offerHTML = "<h1>Offers:</h1>"
-
-    offerHTML += (
-        "<table border='1' width='700'>" + 
-        "<tr><th>Offer Code #</th><th>Offer Name</th><th>Offer Value</th><th>Offer Start Date</th><th>Offer End Date</th></tr>"
-        )
-
-    offers.forEach(offer => {
-        if(offer.AccountNumber == foundAccount.accountNumber){
-            offerHTML += (
-            "<tr><td>" + offer.OfferCode + "</td>" +
-            "<td>" + offer.OfferName + "</td>" +
-            "<td>" + offer.OfferValue +"</td>" +
-            "<td>" +  offer.OfferStartDate +"</td> "+
-            "<td>" + offer.OfferEndDate +"</td></tr>")
-        }
-    });
-    offerHTML += "</table>"
-    
-
-    console.log(offerHTML)
-    document.getElementById('offer-data').innerHTML += offerHTML
-    
-    fs.truncate(path.join('./foundAccount.json'), 0, (err) => {
-        if(err) throw err;
-      })
-})
 
 //checks to see if files were already uploaded and stored locally
 function checkUploaded() {
