@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="/views/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src='../scripts/dataread.js'></script>
+    <script src='../scripts/watchFile.js'></script>
 
 </head>
-<body onload="checkUploaded()">
+<body onload="checkUploaded(); isAppReady()">
 
 
     <div id="mySidebar" class="sidebar">
@@ -32,13 +33,16 @@
         <button class="button button2" onclick="openNav()">⚙️ Settings</button>
         
         <div id="data" style="text-align: center">
-                <div id ="player-data">
 
-                    </div>
+            <h1 id="app-not-ready">App is not ready. Please upload Player Data and Offer Data in settings.</h1>
             
-                    <div id="offer-data">
-                
-                    </div>
+            <div id ="player-data">
+
+            </div>
+
+            <div id="offer-data">
+
+            </div>
         </div>
     </div>
 

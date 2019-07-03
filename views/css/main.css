@@ -18,6 +18,13 @@ table {
     text-align: left
 }
 
+#app-not-ready{
+    color: red;
+    font-size: 80px;
+    display: none;
+}
+
+
 .button {
     background-color: rgb(253, 253, 253); /* Green */
     border: none;
