@@ -9,10 +9,14 @@ button{
 font-family: 'Roboto', sans-serif;
 }
 
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #player-data{
     text-align: left
 }
-
 
 .button {
     background-color: rgb(253, 253, 253); /* Green */
