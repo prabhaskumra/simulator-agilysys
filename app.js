@@ -11,6 +11,10 @@ function createWindow () {
   win = new BrowserWindow({
     width: 800,
     height: 600,
+    frame: false,
+    minWidth: 800,
+    minHeight:600,
+    icon: './image_assets/spades.png',
     webPreferences: {
       nodeIntegration: true,
     }

@@ -48,13 +48,9 @@
         let account = getPlayerInfo(accountNumber)
 
         //write found account to json file and electron window will load it
-        let transactionData = {
-            "transaction": "GetPlayerInfo",
-            "account": account
-        }
-        fs.writeFile('transaction.json', JSON.stringify(transactionData), 'utf8', (err) => {
-            if(err) throw err
-        })
+        writeTransaction({
+            "model": GetOffers
+        }, account)
 
         //send back account info
         res.send(account ? account : {"error:": "no results"})
@@ -66,6 +62,10 @@
             res.send({error: "data not loaded"})
             return
         }
+        writeTransaction({
+            "model": GetOffers
+        }, account)//should display player info anyways
+        
 
         let accountNumber = req.body.AccountNumber
         console.log(req.body.acct)
@@ -82,10 +82,28 @@
 
         let accountNumber = req.body.AccountNumber
         let compList = req.body.RedeemCompList
-        res.send(RedeemComp(accountNumber, compList))
+        let out = RedeemComp(accountNumber, compList)
+        res.send(out)
+        let newCompValue = out.CompBalance
+        console.log(accountNumber)
+        // let account = getPlayerInfo(accountNumber)
+        writeTransaction({
+            "model": "RedeemComp",
+            "compBalance" : newCompValue
+        })
     })
 
 
     app.listen(port, () => console.log(`server running on port ${port}`))
+
+    function writeTransaction(transaction, account){
+        let transactionData = {
+            "transaction": transaction,
+            "account": account
+        }
+        fs.writeFile('transaction.json', JSON.stringify(transactionData), 'utf8', (err) => {
+            if(err) throw err
+        })
+    }
 
 

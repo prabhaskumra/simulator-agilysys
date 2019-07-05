@@ -10,10 +10,17 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src='../scripts/dataread.js'></script>
     <script src='../scripts/watchFile.js'></script>
+    <script src='../scripts/titlebar.js'></script>
 
 </head>
 <body onload="checkUploaded(); isAppReady()">
-
+    <div id="title-bar">
+            <div id="title-bar-btns">
+                    <button id="min-btn">-</button>
+                    <button id="max-btn">□</button>
+                    <button id="close-btn">𝗑</button>
+            </div>
+        </div>
 
     <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
