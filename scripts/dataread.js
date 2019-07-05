@@ -138,6 +138,8 @@ function parseCSVData(file, type) {
         })
 }
 
+
+
 //checks to see if files were already uploaded and stored locally
 function checkUploaded() {
     console.log('here')

@@ -31,27 +31,39 @@
 
     <div id="main">
         <button class="button button2" onclick="openNav()">⚙️ Settings</button>
-          
+        
+        <div id="data" style="text-align: center">
 
-        <h1 id="app-not-ready">App is not ready. Please upload Player Data and Offer Data in settings.</h1>
-        <div id ="player-data">
+            <h1 id="app-not-ready">App is not ready. Please upload Player Data and Offer Data in settings.</h1>
 
-        </div>
+            <div id ="player-data">
 
-        <div id="offer-data">
-    
+            </div>
+
+            <div id="offer-data">
+
+            </div>
         </div>
     </div>
 
     <script>
         function openNav() {
-        document.getElementById("mySidebar").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
+            var e = document.getElementById("mySidebar"); 
+            document.getElementById("main").style.marginLeft = '250px';
+            
+
+            if(e.style.width == '250px' ){
+                closeNav();
+            }
+            else{
+                e.style.width = '250px';
+            }
+
         }
 
         function closeNav() {
-        document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
         }
     </script>
 
