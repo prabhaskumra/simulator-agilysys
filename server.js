@@ -43,15 +43,13 @@
             return
         }
 
-        accountNumber = req.body.acct
-        console.log(req.body.acct)
-        let account = getPlayerInfo(accountNumber)
 
+        accountNumber = req.body.acct
+        let account = getPlayerInfo(accountNumber)
         //write found account to json file and electron window will load it
         writeTransaction({
             "model": GetOffers
         }, account)
-
         //send back account info
         res.send(account ? account : {"error:": "no results"})
     })
@@ -62,14 +60,13 @@
             res.send({error: "data not loaded"})
             return
         }
+        let accountNumber = req.body.AccountNumber
+        let offers = GetOffers(accountNumber)
+        let account = getPlayerInfo(accountNumber)
         writeTransaction({
             "model": GetOffers
         }, account)//should display player info anyways
-        
 
-        let accountNumber = req.body.AccountNumber
-        console.log(req.body.acct)
-        let offers = GetOffers(accountNumber)
         res.send(offers)
     })
 
@@ -85,11 +82,10 @@
         let out = RedeemComp(accountNumber, compList)
         res.send(out)
         let newCompValue = out.CompBalance
-        console.log(accountNumber)
-        // let account = getPlayerInfo(accountNumber)
         writeTransaction({
             "model": "RedeemComp",
-            "compBalance" : newCompValue
+            "compBalance" : newCompValue,
+            "accountNumber" : accountNumber
         })
     })
 

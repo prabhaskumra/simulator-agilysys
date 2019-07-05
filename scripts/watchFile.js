@@ -8,11 +8,20 @@ fs.watchFile(path.join('./transaction.json'), (curr, prev) => {
     foundAccount = transaction.account
     transaction = transaction.transaction
 
-    let accountInfo
-    if(transaction.model === "RedeemComp"){
-        accountInfo = foundAccount.firstName + " " + foundAccount.lastName + " new balance is " + transaction.compBalance
-    }
 
+    //------------------------------REDEEMCOMP -> THIS WILL ADD A STATEMENT OF NEW COMP BALANCE TO OUTPUTTED PLAYER DATA -----------------------------------------------//
+    let accountInfo = ""
+    if(transaction.model === "RedeemComp"){
+        //find account - idk why i have to do this but it works no touch >;(
+        var playerData = JSON.parse(fs.readFileSync(path.join('./data.json')),'utf8')
+        for(let i = 0; i < playerData.length; i++)
+            if(playerData[i].accountNumber === String(transaction.accountNumber))
+              foundAccount = playerData[i]
+        accountInfo = "<h1>" + foundAccount.firstName + " " + foundAccount.lastName + " has a new comp balance of: " + transaction.compBalance + "</h1></br></br> "
+    }
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+    //everything below this will generage the basic output for player data.
     accountInfo += (
         "<b> Account Number: </b>" + foundAccount.accountNumber + "</br>" +
         "<b> Name: </b>" + foundAccount.firstName + " " + foundAccount.lastName + "</br>" +
