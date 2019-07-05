@@ -11,6 +11,7 @@
     <script src='../scripts/dataread.js'></script>
     <script src='../scripts/watchFile.js'></script>
     <script src='../scripts/titlebar.js'></script>
+    <script src='../scripts/convertPointsToDollars.js'></script>
 
 </head>
 <body onload="checkUploaded(); isAppReady()">
@@ -30,6 +31,14 @@
                 <p> <button class="button button1" onclick="openPlayers()" id="player-data-status"></button> </p>
                 <p> <button class="button button1" onclick="openOffers()" id="offer-data-status"></button> </p>
             </div>
+            </br>
+            </br>
+            <div id="pointsToDollarsContainer" style="white-space: nowrap">
+                    <h4 style='color: #f5f5f5'>Points To Dollars</h4>
+                    <h2 id='pointsToDollars'>1 : 1</h2>
+                    </br>
+                    <button class="button button1" onclick='convertPointsToDollars()'>edit</button>  
+                </div>
             <br>
             <br>
         </div>
