@@ -6,13 +6,21 @@ fs.watchFile(path.join('./transaction.json'), (curr, prev) => {
     let transaction = JSON.parse(fs.readFileSync(path.join('./transaction.json')), 'utf8')
     //display results onto electron window
     foundAccount = transaction.account
+    transaction = transaction.transaction
 
-    document.getElementById('player-data').innerHTML = (
+    let accountInfo
+    if(transaction.model === "RedeemComp"){
+        accountInfo = foundAccount.firstName + " " + foundAccount.lastName + " new balance is " + transaction.compBalance
+    }
+
+    accountInfo += (
         "<b> Account Number: </b>" + foundAccount.accountNumber + "</br>" +
         "<b> Name: </b>" + foundAccount.firstName + " " + foundAccount.lastName + "</br>" +
         "<b> Point Balance: </b>" + foundAccount.pointBalance + "</br>" +
         "<b> Tier Level: </b>" + foundAccount.tierLevel + "</br>"
     )
+
+    document.getElementById('player-data').innerHTML = accountInfo
     
 
     let offerHTML = "<h1>Offers:</h1>"
