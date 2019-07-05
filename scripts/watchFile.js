@@ -1,4 +1,4 @@
-//checks to see if transaction.json has updated, meaning that there was a query and result was found
+//checks to see if foundAccount.json has updated, meaning that there was a query and result was found
 fs.watchFile(path.join('./transaction.json'), (curr, prev) => {
     console.log('file changed')
     file = fs.readFileSync('./data.json')
@@ -24,19 +24,25 @@ fs.watchFile(path.join('./transaction.json'), (curr, prev) => {
     
 
     let offerHTML = "<h1>Offers:</h1>"
+
+    offerHTML += (
+        "<table border='1' width='700'>" + 
+        "<tr><th>Offer Code #</th><th>Offer Name</th><th>Offer Value</th><th>Offer Start Date</th><th>Offer End Date</th></tr>"
+        )
+
     offers.forEach(offer => {
         if(offer.AccountNumber == foundAccount.accountNumber){
             offerHTML += (
-                "<div>" +
-                    "<p>" + offer.OfferCode + "</p>" +
-                    "<p>" + offer.OfferName + "</p>" +
-                    "<p>" + offer.OfferValue + "</p>" +
-                    "<p>" + offer.OfferStartDate + "</p>" +
-                    "<p>" + offer.OfferEndDate + "</p>" +
-                "</div></br></br>"
-            )
+            "<tr><td>" + offer.OfferCode + "</td>" +
+            "<td>" + offer.OfferName + "</td>" +
+            "<td>" + offer.OfferValue +"</td>" +
+            "<td>" +  offer.OfferStartDate +"</td> "+
+            "<td>" + offer.OfferEndDate +"</td></tr>")
         }
     });
+    offerHTML += "</table>"
+    
+
     console.log(offerHTML)
     document.getElementById('offer-data').innerHTML = offerHTML
     
