@@ -13,9 +13,13 @@ module.exports = {
         
         let currentCompPoints = parseInt(foundAccount.compBalance)
         let outCompList = []
+        let redeemedTotal = 0
+
+
 
         compList.forEach(comp => {
             currentCompPoints += parseInt(comp.RedeemDollars)
+            redeemedTotal += comp.RedeemDollars
             outCompList.push({
                 "SequenceID": comp.SequenceID,
                 "ReferenceID": comp.ReferenceID,
@@ -49,6 +53,8 @@ module.exports = {
               "CustomFields": {}
         }
 
-        return out
+
+
+        return { out, redeemedTotal }
     }
 }

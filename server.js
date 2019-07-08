@@ -79,13 +79,15 @@
 
         let accountNumber = req.body.AccountNumber
         let compList = req.body.RedeemCompList
-        let out = RedeemComp(accountNumber, compList)
+        let redeemValues = RedeemComp(accountNumber, compList)
+        let out = redeemValues.out
         res.send(out)
         let newCompValue = out.CompBalance
         writeTransaction({
             "model": "RedeemComp",
             "compBalance" : newCompValue,
-            "accountNumber" : accountNumber
+            "accountNumber" : accountNumber,
+            "redeemedAmount": redeemValues.redeemedTotal
         })
     })
 
