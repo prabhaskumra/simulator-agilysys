@@ -96,6 +96,23 @@ function openOffers(){
 
 }
 
+// click add button will add the offers 
+function addOffers(addB){
+    
+    var e = document.getElementById(addB)
+   
+
+    if (e.textContent=="Add"){
+        e.textContent = "Remove";
+        e.style.backgroundColor = "gray"; 
+    }
+    else{
+        e.textContent = "Add";
+        e.style.backgroundColor = "black";
+    }
+        
+}
+
 
 //read in mock data and seperate into objects and then into an array and then write it to data.json
 function parseCSVData(file, type) {

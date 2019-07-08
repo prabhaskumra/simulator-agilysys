@@ -28,16 +28,21 @@ fs.watchFile(path.join('./transaction.json'), (curr, prev) => {
     offerHTML += (
         "<table border='1' width='700'>" + 
         "<tr><th>Offer Code #</th><th>Offer Name</th><th>Offer Value</th><th>Offer Start Date</th><th>Offer End Date</th></tr>"
+        "<tr><th>Add </th><th> Offer Code #</th><th>Offer Name</th><th>Offer Value</th><th>Offer Start Date</th><th>Offer End Date</th></tr>"
         )
 
+    var buttonID=0
     offers.forEach(offer => {
         if(offer.AccountNumber == foundAccount.accountNumber){
             offerHTML += (
             "<tr><td>" + offer.OfferCode + "</td>" +
+            "<tr><td><button id=addOffer" + buttonID + "' class='button button3' onclick='addOffers(this.id)'>Add</button> </td>" +
+            "<td>" + offer.OfferCode + "</td>" +
             "<td>" + offer.OfferName + "</td>" +
             "<td>" + offer.OfferValue +"</td>" +
             "<td>" +  offer.OfferStartDate +"</td> "+
             "<td>" + offer.OfferEndDate +"</td></tr>")
+            buttonID++;
         }
     });
     offerHTML += "</table>"
