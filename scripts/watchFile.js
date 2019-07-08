@@ -19,8 +19,23 @@ fs.watchFile(path.join('./transaction.json'), (curr, prev) => {
             if(playerData[i].accountNumber === String(transaction.accountNumber))
               foundAccount = playerData[i]
         accountInfo += "<h3>" + foundAccount.firstName + " " + foundAccount.lastName + " has a new comp balance of: " + transaction.compBalance + "</h3></br></br> "
+    //-------------------------------REDEEMPOINTS -> BLAH BLAH SAME AS ABOVE-------------------------------------------------------------------------------------------//
+    } else if(transaction.model === "RedeemPoints"){
+        //find account - idk why i have to do this but it works no touch >;(
+        var playerData = JSON.parse(fs.readFileSync(path.join('./data.json')),'utf8')
+        accountInfo += "<h1>Redeemed " + transaction.redeemedAmount + " dollars<h1>"
+        for(let i = 0; i < playerData.length; i++)
+            if(playerData[i].accountNumber === String(transaction.accountNumber))
+                foundAccount = playerData[i]
+        accountInfo += "<h3>" + foundAccount.firstName + " " + foundAccount.lastName + " has a new points balance of: " + transaction.pointBalance + "</h3></br></br> "
+
     }
-    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+
+
+
+
+
 
     //everything below this will generage the basic output for player data.
     accountInfo += (

@@ -13,6 +13,7 @@
     const getPlayerInfo = require('./model/GetPlayerInfo').getPlayerInfo
     const GetOffers = require('./model/GetOffers').GetOffers
     const RedeemComp = require('./model/RedeemComp').RedeemComp
+    const RedeemPoints = require('./model/RedeemPoints').RedeemPoints
     //---------------------------------------------------------------------------------------//
 
 
@@ -80,12 +81,31 @@
         let accountNumber = req.body.AccountNumber
         let compList = req.body.RedeemCompList
         let redeemValues = RedeemComp(accountNumber, compList)
-        let out = redeemValues.out
-        res.send(out)
-        let newCompValue = out.CompBalance
+        res.send(redeemValues.out)
+        let newCompValue = redeemValues.out.CompBalance
         writeTransaction({
             "model": "RedeemComp",
             "compBalance" : newCompValue,
+            "accountNumber" : accountNumber,
+            "redeemedAmount": redeemValues.redeemedTotal
+        })
+    })
+
+    app.post('/RedeemPoints', (req, res) => {
+        if(!appReady){
+            res.send({error: "data not loaded"})
+            return
+        }
+
+        let accountNumber = req.body.AccountNumber
+        let redeemPointsList = req.body.RedeemPointsList
+
+        let redeemValues = RedeemPoints(accountNumber, redeemPointsList)
+        res.send(redeemValues.out)
+
+        writeTransaction({
+            "model": "RedeemPoints",
+            "pointBalance" : redeemValues.out.PointsBalance,
             "accountNumber" : accountNumber,
             "redeemedAmount": redeemValues.redeemedTotal
         })
