@@ -41,6 +41,8 @@ input[type=text]::-webkit-input-placeholder {
     margin: 0px;   
     color: #ADADAD;  
     font-family: sans-serif;  
+    position: sticky;
+    top: 0;
    }
    
    #title {  
