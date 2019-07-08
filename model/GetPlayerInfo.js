@@ -4,7 +4,7 @@ const path = require('path')
 module.exports = {
     getPlayerInfo : function getPlayerInfo(accountNumber){
         var foundAccount = undefined;
-        var playerData = JSON.parse(fs.readFileSync(path.join(__dirname+'/../bestDatabase/data.json')),'utf8')
+        var playerData = JSON.parse(fs.readFileSync(path.join(__dirname+'/../data/data.json')),'utf8')
         for(let i = 0; i < playerData.length; i++)
             if(playerData[i].accountNumber === String(accountNumber)){
               foundAccount = playerData[i]

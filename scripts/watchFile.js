@@ -1,9 +1,9 @@
 //checks to see if foundAccount.json has updated, meaning that there was a query and result was found
-fs.watchFile(path.join('./bestDatabase/transaction.json'), (curr, prev) => {
+fs.watchFile(path.join('./data/transaction.json'), (curr, prev) => {
     console.log('file changed')
-    file = fs.readFileSync('./bestDatabase/data.json')
+    file = fs.readFileSync('./data/data.json')
 
-    let transaction = JSON.parse(fs.readFileSync(path.join('./bestDatabase/transaction.json')), 'utf8')
+    let transaction = JSON.parse(fs.readFileSync(path.join('./data/transaction.json')), 'utf8')
     //display results onto electron window
     foundAccount = transaction.account
     transaction = transaction.transaction
@@ -13,7 +13,7 @@ fs.watchFile(path.join('./bestDatabase/transaction.json'), (curr, prev) => {
     let accountInfo = ""
     if(transaction.model === "RedeemComp"){
         //find account - idk why i have to do this but it works no touch >;(
-        var playerData = JSON.parse(fs.readFileSync(path.join('./bestDatabase/data.json')),'utf8')
+        var playerData = JSON.parse(fs.readFileSync(path.join('./data/data.json')),'utf8')
         accountInfo += "<h1>Redeemed " + transaction.redeemedAmount + " dollars<h1>"
         for(let i = 0; i < playerData.length; i++)
             if(playerData[i].accountNumber === String(transaction.accountNumber))
@@ -22,7 +22,7 @@ fs.watchFile(path.join('./bestDatabase/transaction.json'), (curr, prev) => {
     //-------------------------------REDEEMPOINTS -> BLAH BLAH SAME AS ABOVE-------------------------------------------------------------------------------------------//
     } else if(transaction.model === "RedeemPoints"){
         //find account - idk why i have to do this but it works no touch >;(
-        var playerData = JSON.parse(fs.readFileSync(path.join('./bestDatabase/data.json')),'utf8')
+        var playerData = JSON.parse(fs.readFileSync(path.join('./data/data.json')),'utf8')
         accountInfo += "<h1>Redeemed " + transaction.redeemedAmount + " dollars<h1>"
         for(let i = 0; i < playerData.length; i++)
             if(playerData[i].accountNumber === String(transaction.accountNumber))
@@ -71,7 +71,7 @@ fs.watchFile(path.join('./bestDatabase/transaction.json'), (curr, prev) => {
     console.log(offerHTML)
     document.getElementById('offer-data').innerHTML = offerHTML
     
-    fs.truncate(path.join('./bestDatabase/transaction.json'), 0, (err) => {
+    fs.truncate(path.join('./data/transaction.json'), 0, (err) => {
         if(err) throw err;
       })
 })

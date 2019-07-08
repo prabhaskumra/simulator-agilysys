@@ -3,7 +3,7 @@ const path = require('path')
 
 module.exports = {
     RedeemPoints : function RedeemPoints(accountNumber, redeemPointsList){
-        let playerData = JSON.parse(fs.readFileSync(path.join(__dirname+'/../bestDatabase/data.json')),'utf8')
+        let playerData = JSON.parse(fs.readFileSync(path.join(__dirname+'/../data/data.json')),'utf8')
         let foundAccount = undefined
         let i = 0;
 
@@ -35,7 +35,7 @@ module.exports = {
         foundAccount.pointBalance = currentPoints
         playerData[i] = foundAccount
 
-        fs.writeFile(path.join('./bestDatabase/data.json'), JSON.stringify(playerData), 'utf8', function(err){
+        fs.writeFile(path.join('./data/data.json'), JSON.stringify(playerData), 'utf8', function(err){
             if(err) console.log(err); 
         })
         
