@@ -7,6 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="/views/css/main.css">
+    <link rel="stylesheet" href="/views/css/sidebar.css">
+    <link rel="stylesheet" href="/views/css/table.css">
+    <link rel="stylesheet" href="/views/css/titlebar.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src='../scripts/dataread.js'></script>
     <script src='../scripts/watchFile.js'></script>
@@ -17,6 +20,7 @@
 <body onload="checkUploaded(); isAppReady()">
     <div id="title-bar">
             <div id="title-bar-btns">
+                    <button class="button button2" onclick="openNav()" style='width: 100px'>Settings</button>
                     <button id="min-btn">-</button>
                     <button id="max-btn">□</button>
                     <button id="close-btn">𝗑</button>
@@ -45,19 +49,18 @@
                 
     </div>
 
-    <div id="main">
-        <button class="button button2" onclick="openNav()">⚙️ Settings</button>
-        
+    <div id="main">        
         <div id="data" style="text-align: center">
 
             <h1 id="app-not-ready">App is not ready. Please upload Player Data and Offer Data in settings.</h1>
-
+            
             <div id ="player-data">
-
             </div>
 
             <div id="offer-data">
-
+                </br>
+                </br>
+                <h1>Awaiting request.</h1>
             </div>
         </div>
     </div>

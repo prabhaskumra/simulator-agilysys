@@ -39,7 +39,7 @@ input[type=text]::-webkit-input-placeholder {
     height: 32px;   
     padding: 0px;   
     margin: 0px;   
-    color: #ADADAD;  
+    color: black;  
     font-family: sans-serif;  
     position: sticky;
     top: 0;
@@ -82,7 +82,7 @@ table {
     border: 1px solid #ccc;
     border-collapse: collapse;
     padding: 0;
-    width: 60%;
+    width: 500px;
     table-layout: fixed;
     margin-left: auto;
     margin-right: auto;
@@ -272,4 +272,28 @@ background-color: #444;
 @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}
     .sidebar a {font-size: 18px;}
+}
+
+
+
+/*custom scroll wheel*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
