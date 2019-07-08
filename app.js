@@ -28,8 +28,7 @@ app.on('ready', () => {
   createWindow()
   win.on('close', () =>{
     console.log('closing app')
-    fs.truncate(path.join(__dirname+'/transaction.json'), 0, (err) => {
-      if(err) throw err;
+    fs.truncate(path.join(__dirname+'/bestDatabase/transaction.json'), 0, (err) => {
       console.log("deleted transaction.json")
     })
   })

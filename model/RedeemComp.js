@@ -3,7 +3,7 @@ const path = require('path')
 
 module.exports = {
     RedeemComp : function RedeemComp(accountNumber, compList){
-        let playerData = JSON.parse(fs.readFileSync(path.join(__dirname+'/../data.json')),'utf8')
+        let playerData = JSON.parse(fs.readFileSync(path.join(__dirname+'/../bestDatabase/data.json')),'utf8')
         let foundAccount = undefined
         let i = 0;
 
@@ -36,7 +36,7 @@ module.exports = {
         foundAccount.compBalance = currentCompPoints
         playerData[i] = foundAccount
 
-        fs.writeFile(path.join('./data.json'), JSON.stringify(playerData), 'utf8', function(err){
+        fs.writeFile(path.join('./bestDatabase/data.json'), JSON.stringify(playerData), 'utf8', function(err){
             if(err) console.log(err); 
         })
         

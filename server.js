@@ -116,10 +116,7 @@ function writeTransaction(transaction, account) {
     transaction: transaction,
     account: account
   };
-  fs.writeFile(
-    "transaction.json",
-    JSON.stringify(transactionData),
-    "utf8",
+  fs.writeFile("./bestDatabase/transaction.json", JSON.stringify(transactionData), "utf8",
     err => {
       if (err) throw err;
     }

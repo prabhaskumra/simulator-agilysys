@@ -6,7 +6,7 @@ module.exports = {
         let offers = []
 
         //get offers associated to account
-        var offerData = JSON.parse(fs.readFileSync(path.join(__dirname+'/../offers.json')),'utf8')
+        var offerData = JSON.parse(fs.readFileSync(path.join(__dirname+'/../bestDatabase/offers.json')),'utf8')
         for(let i = 0; i < offerData.length; i++)
             if(offerData[i].AccountNumber === String(accountNumber))
               offers.push(offerData[i])
