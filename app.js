@@ -28,7 +28,12 @@ app.on('ready', () => {
   createWindow()
   win.on('close', () =>{
     console.log('closing app')
+<<<<<<< HEAD
     fs.truncate(path.join(__dirname+'/data/transaction.json'), 0, (err) => {
+=======
+    fs.truncate(path.join(__dirname+'/transaction.json'), 0, (err) => {
+      if(err) throw err;
+>>>>>>> parent of 4d48eb5... made legit database
       console.log("deleted transaction.json")
     })
   })

@@ -14,14 +14,22 @@ function isAppReady(){
     let playerExists = false
     let offersExists = false
 
+<<<<<<< HEAD
     if(fs.existsSync(path.join('./data/data.json'))) {
+=======
+    if(fs.existsSync(path.join('./data.json'))) {
+>>>>>>> parent of 4d48eb5... made legit database
         playerExists = true
 
     } else {
         console.log('player info missing')
     }
 
+<<<<<<< HEAD
     if(fs.existsSync(path.join('./data/offers.json'))) {
+=======
+    if(fs.existsSync(path.join('./offers.json'))) {
+>>>>>>> parent of 4d48eb5... made legit database
         offersExists = true 
     } else {
         console.log('player info missing')
@@ -59,7 +67,11 @@ function openPlayers(){
             players.push(data)
         })
         .on('end' , () => {
+<<<<<<< HEAD
             fs.writeFile(path.join('./data/data.json'), JSON.stringify(players), 'utf8', function(err){
+=======
+            fs.writeFile(path.join('./data.json'), JSON.stringify(players), 'utf8', function(err){
+>>>>>>> parent of 4d48eb5... made legit database
                 if(err) console.log(err); 
                 isAppReady()
             })
@@ -86,7 +98,11 @@ function openOffers(){
             offers.push(data)
         })
         .on('end' , () => {
+<<<<<<< HEAD
             fs.writeFile(path.join('./data/offers.json'), JSON.stringify(offers), 'utf8', function(err){
+=======
+            fs.writeFile(path.join('./offers.json'), JSON.stringify(offers), 'utf8', function(err){
+>>>>>>> parent of 4d48eb5... made legit database
                 if(err) console.log(err); 
                 isAppReady()
             })
@@ -119,7 +135,7 @@ function parseCSVData(file, type) {
             switch(type){
                 case 'player-data':
                     players = dataArray
-                    fs.writeFile(path.join('.'), JSON.stringify(players), 'utf8', function(err){
+                    fs.writeFile(path.join('./data.json'), JSON.stringify(players), 'utf8', function(err){
                         if(err){ 
                                 console.log(err); 
                         } else {
@@ -128,7 +144,11 @@ function parseCSVData(file, type) {
                 case 'offer-data':
                     console.log(' in here')
                     offers = dataArray
+<<<<<<< HEAD
                     fs.writeFile(path.join('./data/offers.json'), JSON.stringify(offers), 'utf8', function(err){
+=======
+                    fs.writeFile(path.join('./offers.json'), JSON.stringify(offers), 'utf8', function(err){
+>>>>>>> parent of 4d48eb5... made legit database
                         if(err){ 
                                 console.log(err); 
                         } else {
@@ -143,23 +163,39 @@ function parseCSVData(file, type) {
 //checks to see if files were already uploaded and stored locally
 function checkUploaded() {
     console.log('here')
+<<<<<<< HEAD
     fs.access(path.join('./data/data.json'), fs.constants.F_OK, (err) => {
+=======
+    fs.access(path.join('./data.json'), fs.constants.F_OK, (err) => {
+>>>>>>> parent of 4d48eb5... made legit database
         if (err) {
             document.getElementById('player-data-status').textContent = "Player Data ❌"
         } else {
             document.getElementById('player-data-status').textContent = "Player Data ✔️"
 
+<<<<<<< HEAD
             players = JSON.parse(fs.readFileSync(path.join('./data/data.json'),'utf8'))
         }
     })
 
     fs.access(path.join('./data/offers.json'), fs.constants.F_OK, (err) => {
+=======
+            players = JSON.parse(fs.readFileSync(path.join('./data.json'),'utf8'))
+        }
+    })
+
+    fs.access(path.join('./offers.json'), fs.constants.F_OK, (err) => {
+>>>>>>> parent of 4d48eb5... made legit database
         if (err) {
             document.getElementById('offer-data-status').textContent = "Offer Data ❌"
         } else {
             document.getElementById('offer-data-status').textContent = "Offer Data ✔️"
 
+<<<<<<< HEAD
             offers = JSON.parse(fs.readFileSync(path.join('./data/offers.json'),'utf8'))
+=======
+            offers = JSON.parse(fs.readFileSync(path.join('./offers.json'),'utf8'))
+>>>>>>> parent of 4d48eb5... made legit database
         }
     })
 

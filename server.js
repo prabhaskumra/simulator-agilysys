@@ -116,7 +116,14 @@ function writeTransaction(transaction, account) {
     transaction: transaction,
     account: account
   };
+<<<<<<< HEAD
   fs.writeFile("./data/transaction.json", JSON.stringify(transactionData), "utf8",
+=======
+  fs.writeFile(
+    "transaction.json",
+    JSON.stringify(transactionData),
+    "utf8",
+>>>>>>> parent of 4d48eb5... made legit database
     err => {
       if (err) throw err;
     }
