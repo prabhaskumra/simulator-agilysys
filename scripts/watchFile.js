@@ -87,11 +87,7 @@ fs.watchFile(path.join('./transaction.json'), (curr, prev) => {
     console.log(offerHTML)
     document.getElementById('offer-data').innerHTML = offerHTML
     
-<<<<<<< HEAD
-    fs.truncate(path.join('./data/transaction.json'), 0, (err) => {
-=======
     fs.truncate(path.join('./transaction.json'), 0, (err) => {
->>>>>>> parent of 4d48eb5... made legit database
         if(err) throw err;
       })
 })

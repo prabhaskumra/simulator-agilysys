@@ -6,11 +6,7 @@ module.exports = {
         let offers = []
 
         //get offers associated to account
-<<<<<<< HEAD
-        var offerData = JSON.parse(fs.readFileSync(path.join(__dirname+'/../data/offers.json')),'utf8')
-=======
         var offerData = JSON.parse(fs.readFileSync(path.join(__dirname+'/../offers.json')),'utf8')
->>>>>>> parent of 4d48eb5... made legit database
         for(let i = 0; i < offerData.length; i++)
             if(offerData[i].AccountNumber === String(accountNumber))
               offers.push(offerData[i])

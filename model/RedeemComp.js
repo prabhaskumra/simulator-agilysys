@@ -40,11 +40,7 @@ module.exports = {
         foundAccount.compBalance = currentCompPoints
         playerData[i] = foundAccount
 
-<<<<<<< HEAD
-        fs.writeFile(path.join('./data/data.json'), JSON.stringify(playerData), 'utf8', function(err){
-=======
         fs.writeFile(path.join('./data.json'), JSON.stringify(playerData), 'utf8', function(err){
->>>>>>> parent of 4d48eb5... made legit database
             if(err) console.log(err); 
         })
         

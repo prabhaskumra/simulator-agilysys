@@ -3,11 +3,7 @@ const path = require('path')
 
 module.exports = {
     RedeemPoints : function RedeemPoints(accountNumber, redeemPointsList){
-<<<<<<< HEAD
-        let playerData = JSON.parse(fs.readFileSync(path.join(__dirname+'/../data/data.json')),'utf8')
-=======
         let playerData = JSON.parse(fs.readFileSync(path.join(__dirname+'/../data.json')),'utf8')
->>>>>>> parent of 4d48eb5... made legit database
         let foundAccount = undefined
         let i = 0;
 
@@ -39,11 +35,7 @@ module.exports = {
         foundAccount.pointBalance = currentPoints
         playerData[i] = foundAccount
 
-<<<<<<< HEAD
-        fs.writeFile(path.join('./data/data.json'), JSON.stringify(playerData), 'utf8', function(err){
-=======
         fs.writeFile(path.join('./data.json'), JSON.stringify(playerData), 'utf8', function(err){
->>>>>>> parent of 4d48eb5... made legit database
             if(err) console.log(err); 
         })
         

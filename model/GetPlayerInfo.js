@@ -4,11 +4,7 @@ const path = require('path')
 module.exports = {
     getPlayerInfo : function getPlayerInfo(accountNumber){
         var foundAccount = undefined;
-<<<<<<< HEAD
-        var playerData = JSON.parse(fs.readFileSync(path.join(__dirname+'/../data/data.json')),'utf8')
-=======
         var playerData = JSON.parse(fs.readFileSync(path.join(__dirname+'/../data.json')),'utf8')
->>>>>>> parent of 4d48eb5... made legit database
         for(let i = 0; i < playerData.length; i++)
             if(playerData[i].accountNumber === String(accountNumber)){
               foundAccount = playerData[i]
