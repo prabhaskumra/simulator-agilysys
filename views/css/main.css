@@ -34,6 +34,7 @@ input[type=text]::-webkit-input-placeholder {
     font-weight: normal
 }
 
+
 #title-bar {
     -webkit-app-region: drag; 
     height: 32px;   
@@ -92,6 +93,7 @@ table caption {
   }
   
   tr:nth-child(even) {background-color: #383636;}
+  tr:nth-child(even) {background-color: #444242;}
 
   table tr {
     background-color: #050505d5;
@@ -211,6 +213,19 @@ table caption {
 .button2:hover{
     background-color: gray;
     color: white;
+}
+
+.button3 {
+  border-radius: 16px;
+  width: 100;
+  background-color: black;
+  text-decoration-color: white;
+  color: white;
+}
+
+.button3:hover{
+  background-color: gray;
+  color: white;
 }
 
 .sidebar {
