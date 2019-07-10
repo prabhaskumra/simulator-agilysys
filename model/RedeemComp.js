@@ -3,11 +3,7 @@ const path = require('path')
 
 module.exports = {
     RedeemComp : function RedeemComp(accountNumber, compList){
-<<<<<<< HEAD
-        let playerData = JSON.parse(fs.readFileSync(path.join(__dirname+'/../data/data.json')),'utf8')
-=======
         let playerData = JSON.parse(fs.readFileSync(path.join(__dirname+'/../data.json')),'utf8')
->>>>>>> parent of 4d48eb5... made legit database
         let foundAccount = undefined
         let i = 0;
 

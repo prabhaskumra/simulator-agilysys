@@ -1,7 +1,7 @@
 //other shit
 const express = require("express");
 const app = express();
-const port = 1234;
+const port = 8080;
 const path = require("path");
 const bodyParser = require("body-parser");
 const fs = require("fs");
@@ -107,6 +107,19 @@ app.post("/RedeemPoints", (req, res) => {
     redeemedAmount: redeemValues.redeemedTotal
   });
 });
+
+app.post("/ValidateAccount", (req,res)=> {
+  res.send({
+    ye: "yes"
+  })
+}
+)
+app.post("/GetAccount", (req,res)=> {
+  res.send({
+    ye: "yes"
+  })
+}
+)
 
 app.listen(port, () => console.log(`server running on port ${port}`));
 

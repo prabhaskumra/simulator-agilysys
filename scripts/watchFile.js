@@ -1,17 +1,9 @@
 //checks to see if foundAccount.json has updated, meaning that there was a query and result was found
-<<<<<<< HEAD
-fs.watchFile(path.join('./data/transaction.json'), (curr, prev) => {
-    console.log('file changed')
-    file = fs.readFileSync('./data/data.json')
-
-    let transaction = JSON.parse(fs.readFileSync(path.join('./data/transaction.json')), 'utf8')
-=======
 fs.watchFile(path.join('./transaction.json'), (curr, prev) => {
     console.log('file changed')
     file = fs.readFileSync('./data.json')
 
     let transaction = JSON.parse(fs.readFileSync(path.join('./transaction.json')), 'utf8')
->>>>>>> parent of 4d48eb5... made legit database
     //display results onto electron window
     foundAccount = transaction.account
     transaction = transaction.transaction
@@ -21,11 +13,7 @@ fs.watchFile(path.join('./transaction.json'), (curr, prev) => {
     let accountInfo = ""
     if(transaction.model === "RedeemComp"){
         //find account - idk why i have to do this but it works no touch >;(
-<<<<<<< HEAD
-        var playerData = JSON.parse(fs.readFileSync(path.join('./data/data.json')),'utf8')
-=======
         var playerData = JSON.parse(fs.readFileSync(path.join('./data.json')),'utf8')
->>>>>>> parent of 4d48eb5... made legit database
         accountInfo += "<h1>Redeemed " + transaction.redeemedAmount + " dollars<h1>"
         for(let i = 0; i < playerData.length; i++)
             if(playerData[i].accountNumber === String(transaction.accountNumber))
@@ -34,11 +22,7 @@ fs.watchFile(path.join('./transaction.json'), (curr, prev) => {
     //-------------------------------REDEEMPOINTS -> BLAH BLAH SAME AS ABOVE-------------------------------------------------------------------------------------------//
     } else if(transaction.model === "RedeemPoints"){
         //find account - idk why i have to do this but it works no touch >;(
-<<<<<<< HEAD
-        var playerData = JSON.parse(fs.readFileSync(path.join('./data/data.json')),'utf8')
-=======
         var playerData = JSON.parse(fs.readFileSync(path.join('./data.json')),'utf8')
->>>>>>> parent of 4d48eb5... made legit database
         accountInfo += "<h1>Redeemed " + transaction.redeemedAmount + " dollars<h1>"
         for(let i = 0; i < playerData.length; i++)
             if(playerData[i].accountNumber === String(transaction.accountNumber))
