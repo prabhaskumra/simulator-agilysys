@@ -3,28 +3,36 @@ const fs = require('fs')
 const csv = require('csv-parser')
 const path = require('path')
 
+//database shit
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+const adapter = new FileSync('db.json')
+const db = low(adapter)
+
 var players = []
 var offers = []
 
 var appReady = false
-
 
 //checks to see if data is loaded, if not, show message
 function isAppReady(){
     let playerExists = false
     let offersExists = false
 
-    if(fs.existsSync(path.join('./data.json'))) {
+    if(db.get('players').size().value() != 0) {
         playerExists = true
 
     } else {
         console.log('player info missing')
+        console.log(db.get('players').size().value())
     }
 
-    if(fs.existsSync(path.join('./offers.json'))) {
+    if(db.get('offers').size().value() != 0) {
         offersExists = true 
     } else {
         console.log('player info missing')
+        console.log(db.get('offers').size().value())
+
     }
 
     if(offersExists === true && playerExists === true){
@@ -56,15 +64,16 @@ function openPlayers(){
         fs.createReadStream(fileName[0])
         .pipe(csv())
         .on('data', (data) => {
-            players.push(data)
+            db.get('players')
+            .push(data)
+            .write()
         })
         .on('end' , () => {
-            fs.writeFile(path.join('./data.json'), JSON.stringify(players), 'utf8', function(err){
-                if(err) console.log(err); 
-                isAppReady()
-            })
+            players = db.get('players').value()
+            isAppReady()
         })
         document.getElementById("player-data-status").innerText = "Player Data ✔️"
+        db.write()
     })
 }
 
@@ -83,85 +92,35 @@ function openOffers(){
         fs.createReadStream(fileName[0])
         .pipe(csv())
         .on('data', (data) => {
-            offers.push(data)
+            db.get('offers')
+            .push(data)
+            .write()
         })
         .on('end' , () => {
-            fs.writeFile(path.join('./offers.json'), JSON.stringify(offers), 'utf8', function(err){
-                if(err) console.log(err); 
-                isAppReady()
-            })
+            offers = db.get('offers').value()
+            isAppReady()
         })
         document.getElementById("offer-data-status").innerText = "Offer Data ✔️"
+        db.write()
     })
 
 }
-
-
-//read in mock data and seperate into objects and then into an array and then write it to data.json
-function parseCSVData(file, type) {
-    switch(type){
-        case 'player-data':
-            csv(['firstName', 'lastName', 'accountNumber', 'tierLevel', 'pointBalance', 'compBalance', 'promo2Balance', 'isBanned', 'isInActive', 'isPinLocked'])
-            break
-        case 'offer-data':
-            csv(['AccountNumber', 'OfferCode', 'OfferName', 'OfferValue', 'OfferStartDate', 'OfferEndDate'])
-            break
-    }
-
-    let dataArray
-
-     fs.createReadStream(file)
-        .pipe(csv())
-        .on('data', (data) => {
-            dataArray.push(data)
-        })
-        .on('end' , () => {
-            switch(type){
-                case 'player-data':
-                    players = dataArray
-                    fs.writeFile(path.join('./data.json'), JSON.stringify(players), 'utf8', function(err){
-                        if(err){ 
-                                console.log(err); 
-                        } else {
-                        }})
-                    break
-                case 'offer-data':
-                    console.log(' in here')
-                    offers = dataArray
-                    fs.writeFile(path.join('./offers.json'), JSON.stringify(offers), 'utf8', function(err){
-                        if(err){ 
-                                console.log(err); 
-                        } else {
-                        }})
-                    break
-            }
-        })
-}
-
 
 
 //checks to see if files were already uploaded and stored locally
 function checkUploaded() {
-    console.log('here')
-    fs.access(path.join('./data.json'), fs.constants.F_OK, (err) => {
-        if (err) {
-            document.getElementById('player-data-status').textContent = "Player Data ❌"
-        } else {
-            document.getElementById('player-data-status').textContent = "Player Data ✔️"
+    if (db.get('players').size().value() == 0) {
+        document.getElementById('player-data-status').textContent = "Player Data ❌"
+    } else {
+        document.getElementById('player-data-status').textContent = "Player Data ✔️"
+        players = db.get('players').value()
+    }
 
-            players = JSON.parse(fs.readFileSync(path.join('./data.json'),'utf8'))
-        }
-    })
-
-    fs.access(path.join('./offers.json'), fs.constants.F_OK, (err) => {
-        if (err) {
-            document.getElementById('offer-data-status').textContent = "Offer Data ❌"
-        } else {
-            document.getElementById('offer-data-status').textContent = "Offer Data ✔️"
-
-            offers = JSON.parse(fs.readFileSync(path.join('./offers.json'),'utf8'))
-        }
-    })
-
+    if (db.get('offers').size().value() == 0) {
+        document.getElementById('offer-data-status').textContent = "Offer Data ❌"
+    } else {
+        document.getElementById('offer-data-status').textContent = "Offer Data ✔️"
+        offers = db.get('offers').value()
+    }
     isAppReady()
 }

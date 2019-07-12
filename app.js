@@ -3,7 +3,6 @@ const server = require('./server')
 const fs = require('fs')
 const path = require('path')
 
-
 var win
 
 function createWindow () {
@@ -20,7 +19,7 @@ function createWindow () {
     }
   })
   // and load the index.html of the app.
-    win.loadURL('http://localhost:1234')
+    win.loadURL('http://localhost:8080')
 }
 
 
