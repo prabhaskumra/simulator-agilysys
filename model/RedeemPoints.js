@@ -1,15 +1,16 @@
-const fs = require('fs')
-const path = require('path')
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+const adapter = new FileSync('db.json')
+const db = low(adapter)
 
 module.exports = {
     RedeemPoints : function RedeemPoints(accountNumber, redeemPointsList){
-        let playerData = JSON.parse(fs.readFileSync(path.join(__dirname+'/../data.json')),'utf8')
         let foundAccount = undefined
         let i = 0;
 
-        for(i = 0; i < playerData.length; i++)
-            if(playerData[i].accountNumber === String(accountNumber))
-                foundAccount = playerData[i]
+        foundAccount = db.get('players')
+            .find({accountNumber: accountNumber})
+            .value()
         
         let currentPoints = parseInt(foundAccount.pointBalance)
         let outPointList = []
@@ -17,32 +18,52 @@ module.exports = {
 
 
         redeemPointsList.forEach(pointOffer => {
-            currentPoints += parseInt(pointOffer.RedeemDollars)
-            redeemedTotal += pointOffer.RedeemDollars
-            outPointList.push({
+            currentPoints -= parseInt(pointOffer.RedeemDollars)
+            let isUnder0
+            if(currentPoints >= 0) {
+                redeemedTotal += pointOffer.RedeemDollars
+                isUnder0 = false
+            } else {
+                isUnder0 = true
+            }
+            currentPoints = foundAccount.pointBalance - redeemedTotal
+
+            let transactionIdCount = db.get('transactionId').value()
+            transactionIdCount++
+            db.set('transactionId', transactionIdCount).write() //write back to db 
+
+            let data = {
                 "SequenceID": pointOffer.SequenceID,
                 "ReferenceID": pointOffer.ReferenceID,
                 "RedeemDollars": pointOffer.RedeemDollars,
-                "TransactionId": "who care lol",
+                "TransactionId": transactionIdCount,
                 "ResponseStatus": {
-                    "IsSuccess": true,
-                    "ErrorMessage": "",
+                    "IsSuccess": !isUnder0,
+                    "ErrorMessage": !isUnder0 ? "" : "negative balance",
                     "ErrorCode": ""
                   }
-            })               
+            }
+
+            db.get('transactions')
+                .push({
+                    type: "RedeemPoints",
+                    transactionId: transactionIdCount,
+                    data
+                })
+                .write()
+
+            outPointList.push(data)               
         });
 
-        foundAccount.pointBalance = currentPoints
-        playerData[i] = foundAccount
-
-        fs.writeFile(path.join('./data.json'), JSON.stringify(playerData), 'utf8', function(err){
-            if(err) console.log(err); 
-        })
+        db.get('players')
+        .find({accountNumber: String(accountNumber)})
+        .assign({pointBalance: foundAccount.pointBalance - redeemedTotal})
+        .write()
         
 
         let out = {
             "AccountNumber": accountNumber,
-            "PointsBalance": currentPoints,
+            "PointsBalance": foundAccount.pointBalance,
             "PointsBalanceInDollars": currentPoints,
             "RedeemPointsList": outPointList,
             "ResponseStatus": {
@@ -52,8 +73,6 @@ module.exports = {
               },
               "CustomFields": {}
         }
-
-
 
         return { out, redeemedTotal }
     }

@@ -3,7 +3,6 @@ const server = require('./server')
 const fs = require('fs')
 const path = require('path')
 
-
 var win
 
 function createWindow () {

@@ -1,8 +1,5 @@
 //checks to see if foundAccount.json has updated, meaning that there was a query and result was found
 fs.watchFile(path.join('./transaction.json'), (curr, prev) => {
-    console.log('file changed')
-    file = fs.readFileSync('./data.json')
-
     let transaction = JSON.parse(fs.readFileSync(path.join('./transaction.json')), 'utf8')
     //display results onto electron window
     foundAccount = transaction.account
@@ -13,20 +10,18 @@ fs.watchFile(path.join('./transaction.json'), (curr, prev) => {
     let accountInfo = ""
     if(transaction.model === "RedeemComp"){
         //find account - idk why i have to do this but it works no touch >;(
-        var playerData = JSON.parse(fs.readFileSync(path.join('./data.json')),'utf8')
         accountInfo += "<h1>Redeemed " + transaction.redeemedAmount + " dollars<h1>"
-        for(let i = 0; i < playerData.length; i++)
-            if(playerData[i].accountNumber === String(transaction.accountNumber))
-              foundAccount = playerData[i]
+        for(let i = 0; i < players.length; i++)
+            if(players[i].accountNumber === String(transaction.accountNumber))
+              foundAccount = players[i]
         accountInfo += "<h3>" + foundAccount.firstName + " " + foundAccount.lastName + " has a new comp balance of: " + transaction.compBalance + "</h3></br></br> "
     //-------------------------------REDEEMPOINTS -> BLAH BLAH SAME AS ABOVE-------------------------------------------------------------------------------------------//
     } else if(transaction.model === "RedeemPoints"){
         //find account - idk why i have to do this but it works no touch >;(
-        var playerData = JSON.parse(fs.readFileSync(path.join('./data.json')),'utf8')
         accountInfo += "<h1>Redeemed " + transaction.redeemedAmount + " dollars<h1>"
-        for(let i = 0; i < playerData.length; i++)
-            if(playerData[i].accountNumber === String(transaction.accountNumber))
-                foundAccount = playerData[i]
+        for(let i = 0; i < players.length; i++)
+            if(players[i].accountNumber === String(transaction.accountNumber))
+                foundAccount = players[i]
         accountInfo += "<h3>" + foundAccount.firstName + " " + foundAccount.lastName + " has a new points balance of: " + transaction.pointBalance + "</h3></br></br> "
 
     }

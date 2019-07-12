@@ -1,49 +1,67 @@
-const fs = require('fs')
-const path = require('path')
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+const adapter = new FileSync('db.json')
+const db = low(adapter)
 
 module.exports = {
     RedeemComp : function RedeemComp(accountNumber, compList){
-        let playerData = JSON.parse(fs.readFileSync(path.join(__dirname+'/../data.json')),'utf8')
         let foundAccount = undefined
         let i = 0;
 
-        for(i = 0; i < playerData.length; i++)
-            if(playerData[i].accountNumber === String(accountNumber))
-                foundAccount = playerData[i]
+        foundAccount = db.get('players')
+            .find({accountNumber: accountNumber})
+            .value()
         
         let currentCompPoints = parseInt(foundAccount.compBalance)
         let outCompList = []
         let redeemedTotal = 0
 
-
-
         compList.forEach(comp => {
-            currentCompPoints += parseInt(comp.RedeemDollars)
-            redeemedTotal += comp.RedeemDollars
-            outCompList.push({
+            currentCompPoints -= parseInt(comp.RedeemDollars)
+            let isUnder0
+            if(currentCompPoints >= 0) {
+                redeemedTotal += comp.RedeemDollars
+                isUnder0 = false
+            } else {
+                isUnder0 = true
+            }
+            currentCompPoints = foundAccount.compBalance - redeemedTotal
+
+            let transactionIdCount = db.get('transactionId').value()
+            transactionId++
+            db.set('transactionId', transactionIdCount).write() //write back to db               
+
+            let data = {     
                 "SequenceID": comp.SequenceID,
                 "ReferenceID": comp.ReferenceID,
                 "RedeemDollars": comp.RedeemDollars,
-                "TransactionId": "who care lol",
+                "TransactionId": transactionIdCount,
                 "ResponseStatus": {
-                    "IsSuccess": true,
-                    "ErrorMessage": "",
+                    "IsSuccess": !isUnder0,
+                    "ErrorMessage": !isUnder0 ? "" : "negative balance",
                     "ErrorCode": ""
-                  }
-            })               
+                    }
+            }
+
+            db.get('transactions')
+                .push({
+                    type: "RedeemComp",
+                    transactionId: transactionIdCount,
+                    data
+                })
+                .write()
+            outCompList.push(data)
         });
 
-        foundAccount.compBalance = currentCompPoints
-        playerData[i] = foundAccount
 
-        fs.writeFile(path.join('./data.json'), JSON.stringify(playerData), 'utf8', function(err){
-            if(err) console.log(err); 
-        })
-        
+        db.get('players')
+            .find({accountNumber: String(accountNumber)})
+            .assign({compBalance: foundAccount.compBalance - redeemedTotal})
+            .write()
 
         let out = {
             "AccountNumber": accountNumber,
-            "CompBalance": currentCompPoints,
+            "CompBalance": foundAccount.compBalance,
             "RedeemCompList": outCompList,
             "ResponseStatus": {
                 "IsSuccess": true,

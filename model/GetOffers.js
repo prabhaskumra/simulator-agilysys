@@ -1,12 +1,14 @@
-const fs = require('fs')
-const path = require('path')
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+const adapter = new FileSync('db.json')
+const db = low(adapter)
 
 module.exports = {
     GetOffers : function GetOffers(accountNumber){
         let offers = []
 
         //get offers associated to account
-        var offerData = JSON.parse(fs.readFileSync(path.join(__dirname+'/../offers.json')),'utf8')
+        var offerData = db.get('offers').value()
         for(let i = 0; i < offerData.length; i++)
             if(offerData[i].AccountNumber === String(accountNumber))
               offers.push(offerData[i])

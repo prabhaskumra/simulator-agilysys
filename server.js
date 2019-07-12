@@ -21,6 +21,23 @@ app.use(bodyParser.urlencoded({ extended: false })); // support encoded bodies
 app.use(bodyParser.json()); // support json encoded bodies
 //---------------------------------------------------------------------------------------//
 
+//-----------------------------------database setup--------------------------------------//
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+const adapter = new FileSync('db.json')
+const db = low(adapter)
+
+db.defaults({               //default for db if non exist
+  players: [], //holds players
+  offers: [], //holds offers
+  coupons: [], //holds coupons (gift card????)
+  transactions: [], //holds all transactions
+  transactionId: 0 //increment transaction id per transaction
+}).write()
+
+
+//----------------------------------------------------------------------------------------//
+
 //this below code recieves the appReady state as in, is data loaded and ready?
 //api calls will return errors if data is not loaded. dab
 var appReady = false;
@@ -35,7 +52,7 @@ app.get("/", (req, res) =>
 
 //validate user api Post
 //IG will send post request and get account back - also will display account information
-app.post("/GetPlayerInfo", (req, res) => {
+app.post("/Players/GetPlayerInfo", (req, res) => {
   //get account number and search by acct number
   if (!appReady) {
     res.send({ error: "data not loaded" });
@@ -54,7 +71,7 @@ app.post("/GetPlayerInfo", (req, res) => {
 });
 
 //returns all offers from offers.json that match the account number
-app.post("/GetOffers", (req, res) => {
+app.post("/Players/GetOffers", (req, res) => {
   if (!appReady) {
     res.send({ error: "data not loaded" });
     return;
@@ -71,7 +88,7 @@ app.post("/GetOffers", (req, res) => {
 });
 
 //redeem each comp in list, i am assuming that there could be more than one
-app.post("/RedeemComp", (req, res) => {
+app.post("/Players/RedeemComp", (req, res) => {
   if (!appReady) {
     res.send({ error: "data not loaded" });
     return;
@@ -89,7 +106,7 @@ app.post("/RedeemComp", (req, res) => {
   });
 });
 
-app.post("/RedeemPoints", (req, res) => {
+app.post("/Players/RedeemPoints", (req, res) => {
   if (!appReady) {
     res.send({ error: "data not loaded" });
     return;
@@ -108,13 +125,13 @@ app.post("/RedeemPoints", (req, res) => {
   });
 });
 
-app.post("/ValidateAccount", (req,res)=> {
+app.post("/Players/ValidateAccount", (req,res)=> {
   res.send({
     ye: "yes"
   })
 }
 )
-app.post("/GetAccount", (req,res)=> {
+app.post("/Players/GetAccount", (req,res)=> {
   res.send({
     ye: "yes"
   })

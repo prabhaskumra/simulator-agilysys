@@ -1,10 +1,13 @@
-const fs = require('fs')
-const path = require('path')
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+const adapter = new FileSync('db.json')
+const db = low(adapter)
 
 module.exports = {
     getPlayerInfo : function getPlayerInfo(accountNumber){
         var foundAccount = undefined;
-        var playerData = JSON.parse(fs.readFileSync(path.join(__dirname+'/../data.json')),'utf8')
+        var playerData = db.get('players').value()
+        console.log(playerData)
         for(let i = 0; i < playerData.length; i++)
             if(playerData[i].accountNumber === String(accountNumber)){
               foundAccount = playerData[i]
