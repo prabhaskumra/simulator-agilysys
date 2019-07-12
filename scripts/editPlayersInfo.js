@@ -8,16 +8,17 @@ document.addEventListener('DOMContentLoaded', function() {
   let accountInfo=""
   accountInfo += (
     "<table id='myTable' border='1' width='700'>" + 
-    "<tr><th>Name</th><th>Account Number</th><th>Point Balance</th><th>Tier Level</th><th>D.O.B.</th></tr>"
+    "<tr><th>First Name</th><th>Last Name</th><th>Account Number</th><th>Point Balance</th><th>Tier Level</th><th>D.O.B.</th></tr>"
   )
   for(let i = 0; i < playerData.length; i++){
 
     accountInfo += (
-      "<tr><td contenteditable='true'>" +playerData[i].firstName +" " +playerData[i].lastName + "</td>" +
-      "<td> <input type='text' value='"+playerData[i].accountNumber+"' onchange='swapValue(this.value,"+i+")'"+"</td>" +
-      "<td> <input type='text' value='"+playerData[i].pointBalance+"'onchange='swapValue(this.value,"+i+")'"+"</td>" +
-      "<td> <input type='text' value='"+playerData[i].tierLevel+"'onchange='swapValue(this.value,"+i+")'"+"</td>" +
-      "<td> <input type='text' value='"+playerData[i].dateOfBirth +"'onchange='swapValue(this.value,"+i+")'"+"</td>"
+      "<tr><td> <input type='text' name='firstName' class='input input1' value='" +playerData[i].firstName+"'onchange='swapValue(this,"+i+")'"+"</td>" +
+      "<td> <input type='text' name='lastName' class='input input1' value='"+playerData[i].lastName+"' onchange='swapValue(this,"+i+")'"+"</td>" +
+      "<td> <input type='text' name='accountNumber' class='input input1' value='"+playerData[i].accountNumber+"' onchange='swapValue(this,"+i+")'"+"</td>" +
+      "<td> <input type='text' name='pointBalance' class='input input1' value='"+playerData[i].pointBalance+"'onchange='swapValue(this,"+i+")'"+"</td>" +
+      "<td> <input type='text' name='tierLevel' class='input input1' value='"+playerData[i].tierLevel+"'onchange='swapValue(this,"+i+")'"+"</td>" +
+      "<td> <input type='text' name='dateOfBirth' class='input input1' value='"+playerData[i].dateOfBirth +"'onchange='swapValue(this,"+i+")'"+"</td></tr>"
     )
   
   } 
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('editData').innerHTML = accountInfo
 }, false);
 
+// does not works, need to edit
 function myFunction() {
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("myInput");
@@ -45,11 +47,38 @@ function myFunction() {
 }
 
 
-function swapValue(newVal,i) {
-  //console.log(oldVal)
-  console.log(playerData[i].accountNumber)
-  console.log(newVal)
+// this function swaps the old data with the new data
+function swapValue(tableElement, i) {
+  switch(tableElement.name){
+    case 'firstName': {
+      playerData[i].firstName = tableElement.value
+      break
+    }
+    case 'lastName': {
+      playerData[i].lastName = tableElement.value
+      break
+    }
+    case 'accountNumber': {
+      playerData[i].accountNumber = tableElement.value
+      break
+    }
+    case 'pointBalance': {
+      playerData[i].pointBalance = tableElement.value
+      break
+    }
+    case 'tierLevel': {
+      playerData[i].tierLevel = tableElement.value
+      break
+    }
+    case 'dateOfBirth': {
+      playerData[i].dateOfBirth = tableElement.value
+      break
+    }
+  }
+}
 
-  playerData[i].accountNumber = newVal
-  alert("The input value has changed. The new value is: " + playerData[i].accountNumber)
+function writeToFile(){
+  fs.writeFile(path.join('./data.json'), JSON.stringify(playerData), 'utf8', function(err){
+    if(err) console.log(err);
+  })
 }
