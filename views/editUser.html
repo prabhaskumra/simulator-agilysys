@@ -16,7 +16,7 @@
 
       <h1>Edit the Data Below</h1>
       <br>
-      <input type="text" id="myInput"  onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+      <input type="text" id="myInput" onkeyup="searchData()" placeholder="Search for names.." title="Type in a name">
 
       <!--<button onclick="populateTable()">Press Me</button>   -->
 
@@ -26,6 +26,8 @@
 
       <button class="button button2" onclick="writeToFile()">Save</button>
       <button class="button button2" id="close-btn" onclick="window.top.close()">close</button>
+
+      <div id="dataSaved"></div>
 
 
 </body>

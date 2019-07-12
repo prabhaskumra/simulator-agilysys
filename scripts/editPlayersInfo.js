@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     accountInfo += (
       "<tr><td> <input type='text' name='firstName' class='input input1' value='" +playerData[i].firstName+"'onchange='swapValue(this,"+i+")'"+"</td>" +
-      "<td> <input type='text' name='lastName' class='input input1' value='"+playerData[i].lastName+"' onchange='swapValue(this,"+i+")'"+"</td>" +
+      "<tr><td name='firstName'> <input type='text' name='firstName' class='input input1' value='" +playerData[i].firstName+"'onchange='swapValue(this,"+i+")'"+"</td>" +
+      "<td> <input type='text' name='lastName' class='input input1' value='"+playerData[i].lastName+"' onchange='swapValue(this,"+i+")'" +"</td>" +
       "<td> <input type='text' name='accountNumber' class='input input1' value='"+playerData[i].accountNumber+"' onchange='swapValue(this,"+i+")'"+"</td>" +
       "<td> <input type='text' name='pointBalance' class='input input1' value='"+playerData[i].pointBalance+"'onchange='swapValue(this,"+i+")'"+"</td>" +
       "<td> <input type='text' name='tierLevel' class='input input1' value='"+playerData[i].tierLevel+"'onchange='swapValue(this,"+i+")'"+"</td>" +
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }, false);
 
 // does not works, need to edit
-function myFunction() {
+function searchData() {
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("myInput");
   filter = input.value.toUpperCase();
@@ -77,8 +78,10 @@ function swapValue(tableElement, i) {
   }
 }
 
+// this function saves the data when the save button is clicked 
 function writeToFile(){
   fs.writeFile(path.join('./data.json'), JSON.stringify(playerData), 'utf8', function(err){
     if(err) console.log(err);
   })
+  document.getElementById('dataSaved').textContent = "Data Saved Successfully!"
 }
