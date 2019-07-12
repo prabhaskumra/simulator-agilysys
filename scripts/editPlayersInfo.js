@@ -13,11 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
   for(let i = 0; i < playerData.length; i++){
 
     accountInfo += (
-      "<tr><td contenteditable='true'>" + playerData[i].firstName +" " +playerData[i].lastName + "</td>" +
-      "<td contenteditable='true'>" + playerData[i].accountNumber + " " +"</td>" +
-      "<td contenteditable='true'>" + playerData[i].pointBalance + " " +"</td>" +
-      "<td contenteditable='true'>" + playerData[i].tierLevel + " " +"</td>" +
-      "<td contenteditable='true'>" + playerData[i].dateOfBirth + " " +"</td>"
+      "<tr><td contenteditable='true'>" +playerData[i].firstName +" " +playerData[i].lastName + "</td>" +
+      "<td> <input type='text' value='"+playerData[i].accountNumber+"' onchange='swapValue(this.value,"+i+")'"+"</td>" +
+      "<td> <input type='text' value='"+playerData[i].pointBalance+"'onchange='swapValue(this.value,"+i+")'"+"</td>" +
+      "<td> <input type='text' value='"+playerData[i].tierLevel+"'onchange='swapValue(this.value,"+i+")'"+"</td>" +
+      "<td> <input type='text' value='"+playerData[i].dateOfBirth +"'onchange='swapValue(this.value,"+i+")'"+"</td>"
     )
   
   } 
@@ -42,4 +42,14 @@ function myFunction() {
       }
     }       
   }
+}
+
+
+function swapValue(newVal,i) {
+  //console.log(oldVal)
+  console.log(playerData[i].accountNumber)
+  console.log(newVal)
+
+  playerData[i].accountNumber = newVal
+  alert("The input value has changed. The new value is: " + playerData[i].accountNumber)
 }
