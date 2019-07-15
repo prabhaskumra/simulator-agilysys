@@ -38,6 +38,17 @@ input[type=text]::-webkit-input-placeholder {
     font-weight: normal
 }
 
+.input1[type=text] {
+  background-color: transparent;
+  text-align: center;
+  width: 80%;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border: none;
+  color: white;
+  white-space: nowrap; 
+}
+
 
 #player-data{
     text-align: left
