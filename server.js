@@ -50,6 +50,10 @@ app.get("/", (req, res) =>
   res.sendFile(path.join(__dirname + "/views/index.html"))
 );
 
+app.get('/editUser', (req, res) => {
+  res.sendFile(path.join(__dirname + '/views/editUser.html'))
+})
+
 //validate user api Post
 //IG will send post request and get account back - also will display account information
 app.post("/Players/GetPlayerInfo", (req, res) => {

@@ -47,5 +47,5 @@ ipcMain.on("editUser", (event) => {
     }
   })
   // and load the index.html of the app.
-    win.loadURL('http://localhost:1234/editUser')
+    win.loadURL('http://localhost:8080/editUser')
 })

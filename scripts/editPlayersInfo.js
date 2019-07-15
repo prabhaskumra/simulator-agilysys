@@ -1,8 +1,11 @@
-const fs = require('fs')
-const path = require('path')
+//db
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+const adapter = new FileSync('db.json')
+const db = low(adapter)
 
 //this function will let the admin edit the player's information
-var playerData = JSON.parse(fs.readFileSync(path.join('./data.json')),'utf8')
+var playerData = db.get('players').value()
 
 document.addEventListener('DOMContentLoaded', function() {
   let accountInfo=""
@@ -79,8 +82,8 @@ function swapValue(tableElement, i) {
 
 // this function saves the data when the save button is clicked 
 function writeToFile(){
-  fs.writeFile(path.join('./data.json'), JSON.stringify(playerData), 'utf8', function(err){
-    if(err) console.log(err);
-  })
+  console.log(playerData)
+  db.set('players', playerData).write()
+  console.log(db.get('players').value())
   document.getElementById('dataSaved').textContent = "Data Saved Successfully!"
 }
