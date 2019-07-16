@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/views/css/table.css">
     <link rel="stylesheet" href="/views/css/titlebar.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"><!--bootstrap-->
     <script src='../scripts/dataread.js'></script>
     <script src='../scripts/watchFile.js'></script>
     <script src='../scripts/titlebar.js'></script>
@@ -45,6 +46,8 @@
                 </div>
             <br>
             <br>
+
+            <p id='cmp-credit'>CMP Simulator</p>
         </div>
                 
     </div>
@@ -52,7 +55,15 @@
     <div id="main">        
         <div id="data" style="text-align: center">
 
-            <h1 id="app-not-ready">App is not ready. Please upload Player Data and Offer Data in settings.</h1>
+            <p id="app-not-ready">
+                App is not ready. </br>
+                To run the simulator, please load in the following data sets:</br>
+                    1.) Players</br>
+                    2.) Offers</br>
+                    3.) (optional) Coupons</br>
+                The data should be imported by .csv files.</br> 
+                To load in data, click settings in the top right and the settings tab will open on the left.</br>
+            </h1>
             
             <div id ="player-data">
             </div>

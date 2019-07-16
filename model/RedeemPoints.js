@@ -5,6 +5,7 @@ const db = low(adapter)
 
 module.exports = {
     RedeemPoints : function RedeemPoints(accountNumber, redeemPointsList){
+        db.read()
         let foundAccount = undefined
         let i = 0;
 
@@ -60,11 +61,11 @@ module.exports = {
         .assign({pointBalance: foundAccount.pointBalance - redeemedTotal})
         .write()
         
-
+        let pointsToDollars = db.get('pointsToDollars').value()/foundAccount.pointBalance
         let out = {
             "AccountNumber": accountNumber,
             "PointsBalance": foundAccount.pointBalance,
-            "PointsBalanceInDollars": currentPoints,
+            "PointsBalanceInDollars": pointsToDollars.toFixed(2),
             "RedeemPointsList": outPointList,
             "ResponseStatus": {
                 "IsSuccess": true,
