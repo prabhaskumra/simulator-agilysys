@@ -16,7 +16,6 @@
     <script src='../scripts/watchFile.js'></script>
     <script src='../scripts/titlebar.js'></script>
     <script src='../scripts/convertPointsToDollars.js'></script>
-
 </head>
 <body onload="checkUploaded(); isAppReady()">
     <div id="title-bar">
@@ -48,6 +47,11 @@
             <br>
 
             <p id='cmp-credit'>CMP Simulator</p>
+        </div>
+
+        <div id ="editPlayerInfo">
+            <p> <button class ="button button1" onclick="ipcRenderer.send('editUser')" id="edit-info" value="Edit Info">Edit Players' Info</button></p>
+
         </div>
                 
     </div>
