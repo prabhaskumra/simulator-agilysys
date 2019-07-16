@@ -32,7 +32,8 @@ db.defaults({               //default for db if non exist
   offers: [], //holds offers
   coupons: [], //holds coupons (gift card????)
   transactions: [], //holds all transactions
-  transactionId: 0 //increment transaction id per transaction
+  transactionId: 0, //increment transaction id per transaction
+  pointsToDollars: 1
 }).write()
 
 

@@ -16,10 +16,16 @@
     white-space: nowrap;
 }
 
+.button:disabled {
+    cursor: not-allowed;
+    background-color:#58585a;
+    pointer-events: none;
+}
+
 .button1 {border-radius: 16px;}
 
 .button1:hover{
-    background-color: rgb(121, 117, 117);
+    background-color:#005d99;
     color: white;
 }
 
@@ -33,7 +39,7 @@
     top: 0px; left: 0px;
 }
 .button2:hover{
-    background-color: gray;
+    background-color: #005d99;
     color: white;
 }
 
@@ -44,7 +50,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #181818;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -86,7 +92,7 @@ background-color: #444;
 
 #main {
     transition: margin-left .5s;
-    padding: 16px;
+    padding: 0px, 16px, 16px;
     text-align: left
 }
 
@@ -95,5 +101,4 @@ background-color: #444;
     .sidebar {padding-top: 15px;}
     .sidebar a {font-size: 18px;}
 }
-
 

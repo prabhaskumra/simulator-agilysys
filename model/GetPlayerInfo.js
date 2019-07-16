@@ -5,6 +5,7 @@ const db = low(adapter)
 
 module.exports = {
     getPlayerInfo : function getPlayerInfo(accountNumber){
+        db.read()
         var foundAccount = undefined;
         var playerData = db.get('players').value()
         console.log(playerData)

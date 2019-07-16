@@ -26,19 +26,24 @@ fs.watchFile(path.join('./transaction.json'), (curr, prev) => {
 
     }
 
-
-
-
-
-
+    let pointsToDollars = (foundAccount.pointBalance/db.get('pointsToDollars').value()).toFixed(2)
 
     //everything below this will generage the basic output for player data.
-    accountInfo += (
-        "<b> Account Number: </b>" + foundAccount.accountNumber + "</br>" +
-        "<b> Name: </b>" + foundAccount.firstName + " " + foundAccount.lastName + "</br>" +
-        "<b> Point Balance: </b>" + foundAccount.pointBalance + "</br>" +
-        "<b> Tier Level: </b>" + foundAccount.tierLevel + "</br>"
-    )
+    accountInfo = (
+        "<div class='row'>" + //shoulda used react huh r ip
+            "<div class='col-lg-3 col-sm-6 col-6'><b>Name: </b>" + foundAccount.firstName + " " + foundAccount.lastName + "</div>" +
+            "<div class='col-lg-3 col-sm-6 col-6'><b>Account Number: </b>" + foundAccount.accountNumber + "</div>" +
+            "<div class='col-lg-3 col-sm-6 col-6'><b>Point Balance: </b>" + foundAccount.pointBalance + "</div>" +
+            "<div class='col-lg-3 col-sm-6 col-6'><b>Points in Dollars: </b>$" + pointsToDollars + "</div>" +
+            "<div class='col-lg-3 col-sm-6 col-6'><b>Comp Balance: </b>" + foundAccount.compBalance + "</div>" +
+            "<div class='col-lg-3 col-sm-6 col-6'><b>Tier Level: </b>" + foundAccount.tierLevel + "</div>" +
+            "<div class='col-lg-3 col-sm-6 col-6'><b>Date of Birth: </b>" + foundAccount.dateOfBirth + "</div>" +
+            "<div class='col-lg-3 col-sm-6 col-6'><b>promo2balance: </b>" + foundAccount.promo2Balance + "</div>" +
+            "<div class='col-lg-3 col-sm-6 col-6'><b>Banned: </b>" + foundAccount.isBanned + "</div>" +
+            "<div class='col-lg-3 col-sm-6 col-6'><b>InActive: </b>" + foundAccount.isInActive + "</div>" +
+            "<div class='col-lg-3 col-sm-6 col-6'><b>Pin Locked: </b>" + foundAccount.isPinLocked + "</div>" +
+        "</div>"
+    ) + accountInfo
 
     document.getElementById('player-data').innerHTML = accountInfo
     

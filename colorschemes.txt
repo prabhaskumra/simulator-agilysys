@@ -1,0 +1,9 @@
+Color schemes for front end 
+based on scientific games
+
+red : ec1c2d
+blue : 005d99
+gray : 58585a
+light gray : 818285
+white : ffffff
+black : 000000

@@ -123,4 +123,12 @@ function checkUploaded() {
         offers = db.get('offers').value()
     }
     isAppReady()
+    //update points to dollars
+    checkPointsToDollars()
+}
+
+function checkPointsToDollars(){
+    let pointsToDollars = db.get('pointsToDollars').value()
+    document.getElementById('pointsToDollars').textContent = pointsToDollars + " : 1"
+    db.write()
 }

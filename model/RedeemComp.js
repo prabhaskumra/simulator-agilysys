@@ -5,6 +5,7 @@ const db = low(adapter)
 
 module.exports = {
     RedeemComp : function RedeemComp(accountNumber, compList){
+        db.read()
         let foundAccount = undefined
         let i = 0;
 

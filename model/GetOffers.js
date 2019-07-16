@@ -5,6 +5,7 @@ const db = low(adapter)
 
 module.exports = {
     GetOffers : function GetOffers(accountNumber){
+        db.read()
         let offers = []
 
         //get offers associated to account
