@@ -32,11 +32,11 @@ function isAppReady(){
     } else {
         console.log('player info missing')
         console.log(db.get('offers').size().value())
-
     }
 
     if(offersExists === true && playerExists === true){
         appReady = true
+        updateTable()
         ipcRenderer.send("isAppReady", true );//send this serverside
         document.getElementById('app-not-ready').style.display = "none"
     } else {

@@ -1,5 +1,6 @@
 //checks to see if foundAccount.json has updated, meaning that there was a query and result was found
 fs.watchFile(path.join('./transaction.json'), (curr, prev) => {
+    db.read()
     let transaction = JSON.parse(fs.readFileSync(path.join('./transaction.json')), 'utf8')
     //display results onto electron window
     foundAccount = transaction.account
@@ -26,7 +27,7 @@ fs.watchFile(path.join('./transaction.json'), (curr, prev) => {
 
     }
 
-    let pointsToDollars = (foundAccount.pointBalance/db.get('pointsToDollars').value()).toFixed(2)
+    let pointsToDollars = (db.get('pointsToDollars').value()/foundAccount.pointBalance).toFixed(2)
 
     //everything below this will generage the basic output for player data.
     accountInfo = (
