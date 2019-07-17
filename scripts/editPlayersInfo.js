@@ -52,8 +52,13 @@ function searchData() {
 
 // this function swaps the old data with the new data
 function swapValue(tableElement, i) {
+
+
   switch(tableElement.name){
     case 'firstName': {
+      
+      //isAlpha(tableElement.value)
+
       playerData[i].firstName = tableElement.value
       break
     }
@@ -62,6 +67,9 @@ function swapValue(tableElement, i) {
       break
     }
     case 'accountNumber': {
+
+      isDigit(tableElement.value)
+
       playerData[i].accountNumber = tableElement.value
       break
     }
@@ -86,4 +94,19 @@ function writeToFile(){
   db.set('players', playerData).write()
   console.log(db.get('players').value())
   document.getElementById('dataSaved').textContent = "Data Saved Successfully!"
+}
+
+// function isAlpha(statement){
+
+// }
+
+function isDigit(x){
+
+  if(isNaN(x)){
+    document.getElementById("save-btn").disabled = true
+  } else{
+      document.getElementById("save-btn").disabled = false
+  }
+      
+
 }
