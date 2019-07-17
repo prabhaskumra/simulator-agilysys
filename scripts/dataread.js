@@ -42,6 +42,12 @@ function isAppReady(){
     } else {
         document.getElementById('app-not-ready').style.display = "block"
     }
+
+    if(!appReady){
+        document.getElementById("edit-info").disabled = true
+      } else {
+        document.getElementById("edit-info").disabled = false
+      }
 }
 
 //there needs to be more logical shit here but we don't know the conditions so just leave this for now.
