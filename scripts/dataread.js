@@ -11,6 +11,7 @@ const db = low(adapter)
 
 var players = []
 var offers = []
+var coupons = []
 
 var appReady = false
 
@@ -109,7 +110,36 @@ function openOffers(){
         document.getElementById("offer-data-status").innerText = "Offer Data ✔️"
         db.write()
     })
+}
 
+function openCoupons(){
+    csv(["CouponNumber", "Balance"])
+    let dialog = remote.dialog
+    dialog.showOpenDialog({
+        title: 'Open Coupon Data',
+        filters: [
+            {name: 'csv', extensions: ['csv']}
+        ]
+    }, (fileName) => {
+        if(fileName === undefined){
+            return;
+        } 
+        fs.createReadStream(fileName[0])
+        .pipe(csv())
+        .on('data', (data) => {
+            console.log(data)
+            db.get('coupons')
+            .push(data)
+            .write()
+        })
+        .on('end' , () => {
+            coupons = db.get('coupons').value()
+            isAppReady()
+        })
+        console.log(coupons)
+        document.getElementById("coupon-data-status").innerText = "Coupon Data ✔️"
+        db.write()
+    })
 }
 
 
@@ -127,6 +157,13 @@ function checkUploaded() {
     } else {
         document.getElementById('offer-data-status').textContent = "Offer Data ✔️"
         offers = db.get('offers').value()
+    }
+
+    if (db.get('coupons').size().value() == 0) {
+        document.getElementById('coupon-data-status').textContent = "Coupons Data 🐈"
+    } else {
+        document.getElementById('coupon-data-status').textContent = "Coupons Data ✔️"
+        coupons = db.get('coupons').value()
     }
     isAppReady()
     //update points to dollars
