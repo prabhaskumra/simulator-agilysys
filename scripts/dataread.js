@@ -65,18 +65,15 @@ function openPlayers(){
         if(fileName === undefined){
             return;
         } 
-        console.log(fileName)
- 
+        players = []
         csv(['firstName', 'lastName', 'accountNumber', 'tierLevel', 'dateOfBirth', 'pointBalance', 'compBalance', 'promo2Balance', 'isBanned', 'isInActive', 'isPinLocked'])
         fs.createReadStream(fileName[0])
         .pipe(csv())
         .on('data', (data) => {
-            db.get('players')
-            .push(data)
-            .write()
+            players.push(data)
         })
         .on('end' , () => {
-            players = db.get('players').value()
+            db.set('players', players).write()
             isAppReady()
         })
         document.getElementById("player-data-status").innerText = "Player Data ✔️"
@@ -96,15 +93,14 @@ function openOffers(){
         if(fileName === undefined){
             return;
         } 
+        offers = []
         fs.createReadStream(fileName[0])
         .pipe(csv())
         .on('data', (data) => {
-            db.get('offers')
-            .push(data)
-            .write()
+            offers.push(data)
         })
         .on('end' , () => {
-            offers = db.get('offers').value()
+            db.set('offers', offers).write()
             isAppReady()
         })
         document.getElementById("offer-data-status").innerText = "Offer Data ✔️"
@@ -113,6 +109,7 @@ function openOffers(){
 }
 
 function openCoupons(){
+    db.read()
     csv(["CouponNumber", "Balance"])
     let dialog = remote.dialog
     dialog.showOpenDialog({
@@ -124,16 +121,14 @@ function openCoupons(){
         if(fileName === undefined){
             return;
         } 
+        coupons = []
         fs.createReadStream(fileName[0])
         .pipe(csv())
         .on('data', (data) => {
-            console.log(data)
-            db.get('coupons')
-            .push(data)
-            .write()
+            coupons.push(data)
         })
         .on('end' , () => {
-            coupons = db.get('coupons').value()
+            db.set('coupons', coupons).write()
             isAppReady()
         })
         console.log(coupons)
