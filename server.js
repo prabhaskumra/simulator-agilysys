@@ -12,6 +12,7 @@ const getPlayerInfo = require("./model/GetPlayerInfo").getPlayerInfo;
 const GetOffers = require("./model/GetOffers").GetOffers;
 const RedeemComp = require("./model/RedeemComp").RedeemComp;
 const RedeemPoints = require("./model/RedeemPoints").RedeemPoints;
+const ValidateAccount = require("./model/ValidateAccount").ValidateAccount;
 //---------------------------------------------------------------------------------------//
 
 //------------------------------------express setup--------------------------------------//
@@ -131,9 +132,12 @@ app.post("/Players/RedeemPoints", (req, res) => {
 });
 
 app.post("/Players/ValidateAccount", (req,res)=> {
-  res.send({
-    ye: "yes"
-  })
+  if (!appReady) {
+    res.send({ error: "data not loaded" });
+    return;
+  }
+  let validatedAccounts = ValidateAccount(req.body.cardType, req.body.cardNumber)
+  res.send(validatedAccounts)
 })
 app.post("/Players/GetAccount", (req,res)=> {
   res.send({
