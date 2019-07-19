@@ -21,7 +21,8 @@ function submitPointsToDollars(){
     "</br>" +
     "<button class='button button1' onclick='convertPointsToDollars()'>edit</button>"
     
-    document.getElementById('pointsToDollarsContainer').innerHTML = outHTML    
+    document.getElementById('pointsToDollarsContainer').innerHTML = outHTML
+    writeToTerminal(`Saved points to dollar ration : ${points} : ${dollars}`)    
 }
 
 function validatePointsToDollars(){

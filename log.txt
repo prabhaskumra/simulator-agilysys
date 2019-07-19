@@ -1,0 +1,198 @@
+6/5/2019 14:27:45:946 - RedeemComp request recieved
+6/5/2019 14:28:1:808 - GetPlayerInfo request recieved
+6/5/2019 14:28:1:816 - GetPlayerInfo response sent
+6/5/2019 14:29:25:555 - GetOffers request recieved for account 1
+6/5/2019 14:29:25:564 - GetOffers response sent.
+6/5/2019 14:31:54:812 - GetOffers request recieved for account 1
+6/5/2019 14:31:54:829 - GetOffers response sent.
+6/5/2019 14:32:1:283 - GetOffers request recieved for account 1
+6/5/2019 14:32:1:290 - GetOffers response sent.
+6/5/2019 14:32:2:433 - GetOffers request recieved for account 1
+6/5/2019 14:32:2:440 - GetOffers response sent.
+6/5/2019 14:32:3:232 - GetOffers request recieved for account 1
+6/5/2019 14:32:3:238 - GetOffers response sent.
+6/5/2019 14:37:58:495 - GetPlayerInfo request recieved for account 1
+6/5/2019 14:37:58:504 - GetPlayerInfo response sent for account 1
+6/5/2019 14:37:58:505 - {"firstName":"Prabhas","lastName":"Kumra","accountNumber":"1","tierLevel":"3","dateOfBirth":"5/6/1997","pointBalance":4980,"compBalance":"40","promo2Balance":"88","isBanned":"FALSE","isInActive":"TRUE","isPinLocked":"FALSE"}
+6/5/2019 14:44:39:214 - GetPlayerInfo request recieved for account 1
+6/5/2019 14:44:39:223 - GetPlayerInfo response sent for account 1
+6/5/2019 14:44:39:223 - {"firstName":"Prabhas","lastName":"Kumra","accountNumber":"1","tierLevel":"3","dateOfBirth":"5/6/1997","pointBalance":4980,"compBalance":"40","promo2Balance":"88","isBanned":"FALSE","isInActive":"TRUE","isPinLocked":"FALSE"}
+6/5/2019 14:45:23:33 - GetPlayerInfo request recieved for account 1
+6/5/2019 14:45:23:45 - GetPlayerInfo response sent for account 1
+6/5/2019 14:45:23:45 - {"firstName":"Prabhas","lastName":"Kumra","accountNumber":"1","tierLevel":"3","dateOfBirth":"5/6/1997","pointBalance":4980,"compBalance":"40","promo2Balance":"88","isBanned":"FALSE","isInActive":"TRUE","isPinLocked":"FALSE"}
+6/5/2019 14:45:27:47 - GetPlayerInfo request recieved for account 1
+6/5/2019 14:45:27:53 - GetPlayerInfo response sent for account 1
+6/5/2019 14:45:27:53 - {"firstName":"Prabhas","lastName":"Kumra","accountNumber":"1","tierLevel":"3","dateOfBirth":"5/6/1997","pointBalance":4980,"compBalance":"40","promo2Balance":"88","isBanned":"FALSE","isInActive":"TRUE","isPinLocked":"FALSE"}
+6/5/2019 14:53:16:697 - GetOffers request recieved for account 1
+6/5/2019 14:53:16:708 - GetOffers response sent.
+6/5/2019 14:54:4:853 - GetPlayerInfo request recieved for account 1
+6/5/2019 14:54:4:864 - GetPlayerInfo response sent for account 1
+6/5/2019 14:56:34:544 - GetPlayerInfo request recieved for account 1
+6/5/2019 14:56:34:556 - GetPlayerInfo response sent for account 1
+6/5/2019 15:0:40:585 - GetPlayerInfo request recieved for account 1
+6/5/2019 15:0:40:596 - GetPlayerInfo response sent for account 1
+6/5/2019 15:3:14:975 - GetPlayerInfo request recieved for account 1
+6/5/2019 15:3:14:990 - GetPlayerInfo response sent for account 1
+6/5/2019 15:4:8:230 - GetPlayerInfo request recieved for account 1
+6/5/2019 15:4:8:240 - GetPlayerInfo response sent for account 1
+6/5/2019 15:5:25:313 - GetPlayerInfo response sent for account 1
+6/5/2019 15:5:25:300 - GetPlayerInfo request recieved for account 1
+6/5/2019 15:5:45:768 - GetPlayerInfo request recieved for account 1
+6/5/2019 15:5:45:773 - GetPlayerInfo response sent for account 1
+6/5/2019 15:5:52:565 - GetPlayerInfo request recieved for account 1
+6/5/2019 15:5:52:570 - GetPlayerInfo response sent for account 1
+6/5/2019 15:5:53:375 - GetPlayerInfo request recieved for account 1
+6/5/2019 15:5:53:381 - GetPlayerInfo response sent for account 1
+6/5/2019 15:6:57:565 - GetPlayerInfo request recieved for account 1
+6/5/2019 15:6:57:574 - GetPlayerInfo response sent for account 1
+6/5/2019 15:8:47:403 - GetPlayerInfo response sent for account 1
+6/5/2019 15:8:47:393 - GetPlayerInfo request recieved for account 1
+6/5/2019 15:8:52:765 - GetPlayerInfo request recieved for account 1
+6/5/2019 15:8:52:771 - GetPlayerInfo response sent for account 1
+6/5/2019 15:10:3:664 - GetPlayerInfo request recieved for account 1
+6/5/2019 15:10:3:675 - GetPlayerInfo response sent for account 1
+6/5/2019 15:10:34:533 - GetPlayerInfo request recieved for account 1
+6/5/2019 15:10:34:543 - GetPlayerInfo response sent for account 1
+6/5/2019 15:11:13:317 - GetPlayerInfo request recieved for account 1
+6/5/2019 15:11:13:327 - GetPlayerInfo response sent for account 1
+6/5/2019 15:11:51:677 - GetPlayerInfo request recieved for account 1
+6/5/2019 15:11:51:687 - GetPlayerInfo response sent for account 1
+6/5/2019 15:13:13:261 - GetPlayerInfo request recieved for account 1
+6/5/2019 15:13:13:270 - GetPlayerInfo response sent for account 1
+6/5/2019 15:13:44:728 - GetPlayerInfo response sent for account 1
+6/5/2019 15:13:44:718 - GetPlayerInfo request recieved for account 1
+6/5/2019 15:14:24:64 - GetPlayerInfo request recieved for account 1
+6/5/2019 15:14:24:90 - GetPlayerInfo response sent for account 1
+6/5/2019 15:22:8:958 - App is listening on port 8080
+6/5/2019 15:22:14:589 - RedeemComp request recieved for account 1
+6/5/2019 15:22:14:634 - RedeemPoints response sent for account 1
+6/5/2019 15:22:23:140 - GetOffers request recieved for account 1
+6/5/2019 15:22:23:167 - GetOffers response sent for account 1
+6/5/2019 15:22:25:923 - GetPlayerInfo request recieved for account 1
+6/5/2019 15:22:25:942 - GetPlayerInfo response sent for account 1
+6/5/2019 15:31:38:667 - App is listening on port 8080
+6/5/2019 15:31:44:875 - GetPlayerInfo request recieved for account 1
+6/5/2019 15:31:44:909 - GetPlayerInfo response sent for account 1
+6/5/2019 15:31:51:972 - RedeemComp request recieved for account 1
+6/5/2019 15:33:31:657 - App is listening on port 8080
+6/5/2019 15:33:36:495 - ValidateAccount request recieved for account undefined
+6/5/2019 15:35:46:773 - App is listening on port 8080
+6/5/2019 15:35:51:292 - ValidateAccount request recieved for account undefined
+6/5/2019 15:36:51:376 - App is listening on port 8080
+6/5/2019 15:37:2:190 - ValidateAccount request recieved for account undefined
+6/5/2019 15:38:18:230 - App is listening on port 8080
+6/5/2019 15:38:29:686 - ValidateAccount request recieved for account undefined
+6/5/2019 15:45:46:510 - App is listening on port 8080
+6/5/2019 15:46:18:524 - ValidateAccount: cardType = AccountNumber
+6/5/2019 15:46:18:537 - ValidateAccount: cardType = PhoneNumber
+6/5/2019 15:46:18:560 - ValidateAccount: cardType = CardNumber
+6/5/2019 15:46:18:575 - ValidateAccount: No accounts found
+6/5/2019 15:47:40:996 - App is listening on port 8080
+6/5/2019 15:47:45:900 - ValidateAccount request recieved for account undefined
+6/5/2019 15:47:45:917 - ValidateAccount: cardType = AccountNumber
+6/5/2019 15:47:45:944 - ValidateAccount: cardType = PhoneNumber
+6/5/2019 15:47:45:963 - ValidateAccount: cardType = CardNumber
+6/5/2019 15:47:45:997 - ValidateAccount: No accounts found
+6/5/2019 15:47:46:32 - ValidateAccount response sent for account undefined
+6/5/2019 15:48:51:294 - App is listening on port 8080
+6/5/2019 15:48:54:553 - ValidateAccount request recieved for account undefined
+6/5/2019 15:48:54:571 - ValidateAccount: cardType = AccountNumber
+6/5/2019 15:48:54:600 - ValidateAccount response sent for account undefined
+6/5/2019 15:49:6:105 - ValidateAccount request recieved for account undefined
+6/5/2019 15:49:6:121 - ValidateAccount: cardType = AccountNumber
+6/5/2019 15:49:6:135 - ValidateAccount response sent for account undefined
+6/5/2019 15:50:59:121 - App is listening on port 8080
+6/5/2019 15:51:11:840 - ValidateAccount request recieved for account undefined
+6/5/2019 15:51:11:859 - ValidateAccount: cardType = AccountNumber
+6/5/2019 15:51:11:892 - ValidateAccount response sent for account 5
+6/5/2019 15:56:1:11 - ValidateAccount request recieved for account undefined
+6/5/2019 15:56:1:30 - ValidateAccount: cardType = AccountNumber
+6/5/2019 15:56:1:58 - ValidateAccount response sent for account 5
+6/5/2019 15:56:33:727 - App is listening on port 8080
+6/5/2019 15:56:43:439 - ValidateAccount request recieved for account 5
+6/5/2019 15:56:43:457 - ValidateAccount: cardType = AccountNumber
+6/5/2019 15:56:43:487 - ValidateAccount response sent for account 5
+6/5/2019 15:59:11:623 - App is listening on port 8080
+6/5/2019 15:59:17:553 - ValidateAccount request recieved for account 5
+6/5/2019 15:59:17:576 - ValidateAccount: cardType = AccountNumber
+6/5/2019 15:59:17:629 - ValidateAccount response sent for account 5
+6/5/2019 15:59:55:613 - ValidateAccount request recieved for account 5
+6/5/2019 15:59:55:634 - ValidateAccount: cardType = AccountNumber
+6/5/2019 15:59:55:660 - ValidateAccount response sent for account 5
+6/5/2019 16:0:0:322 - ValidateAccount request recieved for account 1
+6/5/2019 16:0:0:341 - ValidateAccount: cardType = AccountNumber
+6/5/2019 16:0:0:372 - ValidateAccount response sent for account 1
+6/5/2019 16:2:26:800 - App is listening on port 8080
+6/5/2019 16:2:36:758 - ValidateAccount request recieved for account 1
+6/5/2019 16:2:36:773 - ValidateAccount: cardType = AccountNumber
+6/5/2019 16:2:36:791 - ValidateAccount: One of the collection failed, review the collection result
+6/5/2019 16:2:36:823 - ValidateAccount response sent for account 1
+6/5/2019 16:20:8:892 - App is listening on port 8080
+6/5/2019 16:20:13:429 - ValidateAccount request recieved for account 1
+6/5/2019 16:20:13:445 - ValidateAccount: cardType = AccountNumber
+6/5/2019 16:20:13:484 - ValidateAccount: One of the collection failed, review the collection result
+6/5/2019 16:20:13:523 - ValidateAccount response sent for account 1
+6/5/2019 16:20:18:109 - RedeemComp request recieved for account 1
+6/5/2019 16:20:18:147 - RedeemPoints: Redemed 20/0.10204081632653061 in dollars
+6/5/2019 16:20:18:166 - RedeemPoints response sent for account 1
+6/5/2019 16:21:7:654 - App is listening on port 8080
+6/5/2019 16:21:12:284 - RedeemComp request recieved for account 1
+6/5/2019 16:21:12:347 - RedeemPoints: Redemed 20 points/0.10 in dollars
+6/5/2019 16:21:12:372 - RedeemPoints response sent for account 1
+6/5/2019 16:21:42:401 - ValidateAccount request recieved for account 1
+6/5/2019 16:21:42:415 - ValidateAccount: cardType = AccountNumber
+6/5/2019 16:21:42:438 - ValidateAccount: One of the collection failed, review the collection result
+6/5/2019 16:21:42:473 - ValidateAccount response sent for account 1
+6/5/2019 16:21:49:826 - GetPlayerInfo request recieved for account 1
+6/5/2019 16:21:49:849 - GetPlayerInfo response sent for account 1
+6/5/2019 16:21:55:302 - GetOffers request recieved for account 1
+6/5/2019 16:21:55:325 - GetOffers response sent for account 1
+6/5/2019 16:29:47:142 - App is listening on port 8080
+6/5/2019 16:31:14:982 - App is listening on port 8080
+6/5/2019 16:31:20:546 - GetOffers request recieved for account 1
+6/5/2019 16:31:20:584 - GetOffers response sent for account 1
+6/5/2019 16:32:3:288 - App is listening on port 8080
+6/5/2019 16:32:8:136 - GetOffers request recieved for account 1
+6/5/2019 16:32:8:165 - GetOffers response sent for account 1
+6/5/2019 16:33:22:210 - App is listening on port 8080
+6/5/2019 16:33:28:777 - GetOffers request recieved for account 1
+6/5/2019 16:33:28:802 - GetOffers response sent for account 1
+6/5/2019 16:34:33:213 - App is listening on port 8080
+6/5/2019 16:34:37:817 - GetOffers request recieved for account 1
+6/5/2019 16:34:37:846 - GetOffers response sent for account 1
+6/5/2019 16:35:11:728 - App is listening on port 8080
+6/5/2019 16:35:25:680 - GetOffers request recieved for account 1
+6/5/2019 16:35:25:705 - GetOffers response sent for account 1
+6/5/2019 16:35:46:583 - App is listening on port 8080
+6/5/2019 16:35:51:122 - GetOffers request recieved for account 1
+6/5/2019 16:35:51:169 - GetOffers response sent for account 1
+6/5/2019 16:37:36:576 - App is listening on port 8080
+6/5/2019 16:37:41:348 - GetOffers request recieved for account 1
+6/5/2019 16:37:41:374 - GetOffers response sent for account 1
+6/5/2019 16:38:1:391 - App is listening on port 8080
+6/5/2019 16:38:6:915 - GetOffers request recieved for account 1
+6/5/2019 16:38:7:4 - GetOffers response sent for account 1
+6/5/2019 16:40:56:989 - App is listening on port 8080
+6/5/2019 16:41:2:363 - GetOffers request recieved for account 1
+6/5/2019 16:41:2:401 - GetOffers response sent for account 1
+6/5/2019 16:46:17:266 - App is listening on port 8080
+6/5/2019 16:46:22:709 - GetOffers request recieved for account 1
+6/5/2019 16:46:22:736 - GetOffers response sent for account 1
+6/5/2019 16:47:7:24 - App is listening on port 8080
+6/5/2019 16:47:12:736 - GetOffers request recieved for account 1
+6/5/2019 16:47:12:763 - GetOffers response sent for account 1
+6/5/2019 16:48:3:510 - App is listening on port 8080
+6/5/2019 16:48:8:616 - GetOffers request recieved for account 1
+6/5/2019 16:48:8:642 - GetOffers response sent for account 1
+6/5/2019 16:49:48:160 - App is listening on port 8080
+6/5/2019 16:49:54:492 - GetOffers request recieved for account 1
+6/5/2019 16:49:54:522 - GetOffers response sent for account 1
+6/5/2019 16:50:28:235 - App is listening on port 8080
+6/5/2019 16:50:32:467 - GetOffers request recieved for account 1
+6/5/2019 16:50:32:498 - GetOffers response sent for account 1
+6/5/2019 16:50:47:278 - App is listening on port 8080
+6/5/2019 16:50:52:433 - GetOffers request recieved for account 1
+6/5/2019 16:50:52:470 - GetOffers response sent for account 1
+6/5/2019 16:52:1:872 - App is listening on port 8080
+6/5/2019 16:52:9:405 - GetOffers request recieved for account 1
+6/5/2019 16:52:9:590 - GetOffers response sent for account 1

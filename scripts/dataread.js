@@ -40,15 +40,17 @@ function isAppReady(){
         updateTable()
         ipcRenderer.send("isAppReady", true );//send this serverside
         document.getElementById('app-not-ready').style.display = "none"
-        document.getElementById('awaiting-request').style.display = "block"
+        document.getElementById('terminal-container').style.display = "block"
     } else {
         document.getElementById('app-not-ready').style.display = "block"
     }
 
     if(!appReady){
         document.getElementById("edit-info").disabled = true
+        writeToTerminal("App is not ready")
       } else {
         document.getElementById("edit-info").disabled = false
+        writeToTerminal("App is ready")
       }
 }
 
@@ -79,6 +81,7 @@ function openPlayers(){
         })
         document.getElementById("player-data-status").innerText = "Player Data ✔️"
         db.write()
+        writeToTerminal("Added player data")
     })
 }
 
@@ -106,6 +109,7 @@ function openOffers(){
         })
         document.getElementById("offer-data-status").innerText = "Offer Data ✔️"
         db.write()
+        writeToTerminal("Added offer data")
     })
 }
 
@@ -135,6 +139,7 @@ function openCoupons(){
         console.log(coupons)
         document.getElementById("coupon-data-status").innerText = "Coupon Data ✔️"
         db.write()
+        writeToTerminal("Added coupon data")
     })
 }
 

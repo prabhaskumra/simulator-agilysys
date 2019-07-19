@@ -3,6 +3,8 @@ const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('db.json')
 const db = low(adapter)
 
+const writeToTerminal = require("./writeToTerminal")
+
 module.exports = {
     ValidateAccount : function ValidateAccount(cardType, cardNumber){
         db.read()
@@ -11,83 +13,91 @@ module.exports = {
 
         switch(cardType){
             case "AccountNumber": {
+                writeToTerminal("ValidateAccount: cardType = AccountNumber")
                 allPlayers.forEach(player => {
                     if(player.accountNumber === cardNumber){
                         validatedAccounts.push(player)
                     }
                 });
-            }
+                break
+                }
             case "PhoneNumber": {
+                writeToTerminal("ValidateAccount: cardType = PhoneNumber")
                 allPlayers.forEach(player => {
                     if(player.phoneNumber === cardNumber){
                         validatedAccounts.push(player)
                     }
                 });
-            }
+                break
+                }
             case "CardNumber": {
+                writeToTerminal("ValidateAccount: cardType = CardNumber")
                 allPlayers.forEach(player => {
                     if(player.cardNumber === cardNumber){
                         validatedAccounts.push(player)
                     }
                 });
-            }
-            
-            let PatronResponse = []
-            let oneAccountBlocked = false
-            validatedAccounts.forEach(account => {
-                //see if player is blocked
-                let isBlocked = account.isInActive || account.isPinLocked || account.isBanned;
-                if(isBlocked) {
-                    oneAccountBlocked = true
+                break
                 }
+            }
 
-                PatronResponse.push({
-                    ClubStateId: 40,//hardcoded for rn
-                    AccountNumber: account.accountNumber,
-                    FirstName: account.firstName,
-                    LastName: account.lastName, 
-                    ClubState: account.tierLevel,
-                    DateOfBirth: account.dateOfBirth,
-                    PointsBalance: account.pointBalance,
-                    PointsBalanceInDollars: account.pointBalance/db.get('pointsToDollars').value(),
-                    CompBalance: account.compBalance,
-                    Promo2Balance: account.promo2Balance,
-                    IsInActive: account.isInActive,
-                    IsPinLocked: account.isPinLocked,
-                    IsBanned: account.isBanned,
-                    ResponseResult: {
-                        IsSuccess: !(account.isInActive || account.isPinLocked || account.isBanned),
-                        ErrorMessage: generateErrorMessage(account),
-                        ErrorCode: "error"
-                    }
-                })
-            });
+        let PatronResponse = []
+        let oneAccountBlocked = false
+        validatedAccounts.forEach(account => {
+            //see if player is blocked
+            let isBlocked = account.isInActive || account.isPinLocked || account.isBanned;
+            if(isBlocked) {
+                oneAccountBlocked = true
+            }
 
-            let ResponseStatus;
-            if(validatedAccounts.length === 0){
-                ResponseStatus = {
-                    IsSuccess: false,
-                    ErrorMessage: "No accounts found",
+            PatronResponse.push({
+                ClubStateId: 40,//hardcoded for rn
+                AccountNumber: account.accountNumber,
+                FirstName: account.firstName,
+                LastName: account.lastName, 
+                ClubState: account.tierLevel,
+                DateOfBirth: account.dateOfBirth,
+                PointsBalance: account.pointBalance,
+                PointsBalanceInDollars: account.pointBalance/db.get('pointsToDollars').value(),
+                CompBalance: account.compBalance,
+                Promo2Balance: account.promo2Balance,
+                IsInActive: account.isInActive,
+                IsPinLocked: account.isPinLocked,
+                IsBanned: account.isBanned,
+                ResponseResult: {
+                    IsSuccess: !(account.isInActive || account.isPinLocked || account.isBanned),
+                    ErrorMessage: generateErrorMessage(account),
                     ErrorCode: "error"
                 }
-            } else if (oneAccountBlocked){
-                ResponseStatus = {
-                    IsSuccess: false,
-                    ErrorMessage: "One of the collection failed, review the collection result.",
-                    ErrorCode: "error"
-                }
-            } else {
-                ResponseStatus = {
-                    IsSuccess: true,
-                    ErrorMessage: "",
-                    ErrorCode: ""
-                }
-            }
+            })
+        });
 
-            return {
-                PatronResponse,
-                ResponseStatus
+        let ResponseStatus;
+        if(validatedAccounts.length === 0){
+            writeToTerminal("ValidateAccount: No accounts found")
+            ResponseStatus = {
+                IsSuccess: false,
+                ErrorMessage: "No accounts found",
+                ErrorCode: "error"
             }
+        } else if (oneAccountBlocked){
+            writeToTerminal("ValidateAccount: One of the collection failed, review the collection result")
+            ResponseStatus = {
+                IsSuccess: false,
+                ErrorMessage: "One of the collection failed, review the collection result.",
+                ErrorCode: "error"
+            }
+        } else {
+            ResponseStatus = {
+                IsSuccess: true,
+                ErrorMessage: "",
+                ErrorCode: ""
+            }
+        }
+
+        return {
+            PatronResponse,
+            ResponseStatus
         }
     }
 }

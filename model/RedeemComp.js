@@ -3,6 +3,8 @@ const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('db.json')
 const db = low(adapter)
 
+const writeToTerminal = require("./writeToTerminal")
+
 module.exports = {
     RedeemComp : function RedeemComp(accountNumber, compList){
         db.read()

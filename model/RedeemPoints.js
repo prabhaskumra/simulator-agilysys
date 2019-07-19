@@ -3,6 +3,8 @@ const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('db.json')
 const db = low(adapter)
 
+const writeToTerminal = require("./writeToTerminal")
+
 module.exports = {
     RedeemPoints : function RedeemPoints(accountNumber, redeemPointsList){
         db.read()
@@ -26,6 +28,7 @@ module.exports = {
                 isUnder0 = false
             } else {
                 isUnder0 = true
+                writeToTerminal("RedeemPoints: Attempted to redeem more than available points")
             }
             currentPoints = foundAccount.pointBalance - redeemedTotal
 
@@ -60,8 +63,9 @@ module.exports = {
         .find({accountNumber: String(accountNumber)})
         .assign({pointBalance: foundAccount.pointBalance - redeemedTotal})
         .write()
-        
+
         let pointsToDollars = db.get('pointsToDollars').value()/foundAccount.pointBalance
+        writeToTerminal(`RedeemPoints: Redemed ${redeemedTotal} points/${pointsToDollars.toFixed(2)} in dollars`)
         let out = {
             "AccountNumber": accountNumber,
             "PointsBalance": foundAccount.pointBalance,

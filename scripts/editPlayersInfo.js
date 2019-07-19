@@ -1,6 +1,7 @@
 var playerData = db.get('players').value()
 
 function updateTable() {
+  db.read()
   playerData = db.get('players').value()
   let accountInfo=""
   accountInfo += (
@@ -48,6 +49,7 @@ function filterTable(value){
 // does not works, need to edit
 function searchData(input) {
   filterTable(input.value)
+  writeToTerminal("Saved edited player info")
 }
 
 function checkDuplicateAccountNumbers(){

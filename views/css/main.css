@@ -86,6 +86,38 @@ input[type=text]::-webkit-input-placeholder {
   animation-delay: -0.16s;
 }
 
+#terminal-container{
+  position: absolute;
+  bottom: 10%;
+  top: 10%;
+  margin-left: 5%;
+  margin-right: 4%;
+}
+#terminal{
+  font-family: 'Courier New', Courier, monospace;
+  text-align: left !important;
+  color: white;
+  background-color: #161616;
+  border-radius: 2px;
+  max-height: 100%;
+  overflow-y: scroll;
+  margin: 10px 0px;
+}
+
+.ccontent {
+  display: none;
+  overflow: hidden;
+  white-space: pre;
+}
+
+.collapsible {
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+  text-decoration: underline;
+  display: inline-block;
+}
+
 @-webkit-keyframes sk-bouncedelay {
   0%, 80%, 100% { -webkit-transform: scale(0) }
   40% { -webkit-transform: scale(1.0) }
