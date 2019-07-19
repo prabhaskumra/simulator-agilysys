@@ -38,28 +38,36 @@
                     <p> <button class="button button1" onclick="openCoupons()" id="coupon-data-status"></button> </p>
                 </div>
                 </br>
-                <input id='disable-animation' type='checkbox' onclick="disableAnimation(this)"><p>Disable Menu Animation</p></br>
                 <div id="pointsToDollarsContainer" style="white-space: nowrap">
-                        <h4 style='color: #f5f5f5'>Points To Dollars</h4>
-                        <h2 id='pointsToDollars'>1 : 1</h2>
-                        </br>
-                        <button class="button button1" onclick='convertPointsToDollars()'>edit</button>  
-                    </div>
-                <br>
-                <br>
+                    <h4 style='color: #f5f5f5'>Points To Dollars</h4>
+                    <h2 id='pointsToDollars'>1 : 1</h2>
+                    </br>
+                    <button class="button button1" onclick='convertPointsToDollars()'>edit</button>  
+                </div>
+                </br>
+                </br>
             </div>
-
             <div id ="editPlayerInfo">
-                <p> <button class ="button button1" onclick="editPlayers()" id="edit-info" value="Edit Info">Edit Players' Info</button></p>
-
-            </div> 
+                    <p> <button class ="button button1" onclick="editPlayers()" id="edit-info" value="Edit Info">Edit Players' Info</button></p>
+                </div>
+                </br>
+                <div class='nowrap'>
+                    <input id='disable-animation' type='checkbox' onclick="disableAnimation(this)"><p style='white-space: nowrap; display: inline; color: #f5f5f5'> Disable Animations</p></br>
+                </div>
+           
+ 
 
             <p id='cmp-credit'>CMP Simulator</p>
         </div>
         <div id="main">        
             <div id="data" style="text-align: center">
-    
-                <h1 id="app-not-ready">App is not ready. Please upload Player Data and Offer Data in settings.</h1>
+                
+                <h1 id="app-not-ready">
+                </br>
+                </br>
+                    App is not ready and will not recieve requests. To start recieving requests, click on the settings 
+                    button in the upper right hand corner and load in Player and Offer data in the format of .csv's.
+                </h1>
                 
                 <div id ="player-data">
                 </div>
@@ -67,7 +75,14 @@
                 <div id="offer-data">
                     </br>
                     </br>
-                    <h1>Awaiting request.</h1>
+                    <div id='awaiting-request' style='display:none'>
+                        <h1>Awaiting request.</h1>
+                        <div class="spinner">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                          </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -134,8 +134,7 @@ app.post("/Players/ValidateAccount", (req,res)=> {
   res.send({
     ye: "yes"
   })
-}
-)
+})
 app.post("/Players/GetAccount", (req,res)=> {
   res.send({
     ye: "yes"

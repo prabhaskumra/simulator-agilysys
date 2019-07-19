@@ -40,6 +40,7 @@ function isAppReady(){
         updateTable()
         ipcRenderer.send("isAppReady", true );//send this serverside
         document.getElementById('app-not-ready').style.display = "none"
+        document.getElementById('awaiting-request').style.display = "block"
     } else {
         document.getElementById('app-not-ready').style.display = "block"
     }
