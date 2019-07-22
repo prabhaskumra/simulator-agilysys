@@ -1,5 +1,6 @@
-fs.watch(path.join('./loghtml.txt'), (event, filename) => {
-    fs.readFile(path.join('./loghtml.txt'), (err, data) => {
+fs.watch(path.join(__dirname + '/../../app/loghtml.txt'), (event, filename) => {
+    fs.readFile(path.join(__dirname + '/../../app/loghtml.txt'), (err, data) => {
+        console.log(err)
         displayTerminal(data)
     })
 })

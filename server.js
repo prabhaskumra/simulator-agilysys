@@ -111,7 +111,7 @@ app.post("/Players/RedeemComp", (req, res) => {
 });
 
 app.post("/Players/RedeemPoints", (req, res) => {
-  writeToTerminal("RedeemComp request recieved for account " + req.body.AccountNumber, req.body)
+  writeToTerminal("RedeemPoints request recieved for account " + req.body.AccountNumber, req.body)
   if (!appReady) {
     res.send({ error: "data not loaded" });
     writeToTerminal("Error: App not ready (RedeemPoints)")
