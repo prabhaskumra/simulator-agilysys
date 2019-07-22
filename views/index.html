@@ -100,18 +100,21 @@
 
 
     <script>
+        //load terminal on initial load
+        fs.readFile(path.join('./loghtml.txt'), (err, data) => {
+            displayTerminal(data)
+        })
+
         function openNav() {
             var e = document.getElementById("mySidebar"); 
             document.getElementById("main").style.marginLeft = '250px';
             
-
             if(e.style.width == '250px' ){
                 closeNav();
             }
             else{
                 e.style.width = '250px';
             }
-
         }
 
         function closeNav() {

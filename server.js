@@ -132,8 +132,6 @@ app.post("/Players/ValidateAccount", (req,res)=> {
 
 app.listen(port, () => writeToTerminal(`App is listening on port ${port}`));
 
-
-
 module.exports = {
   writeToTerminal: function (data, jsondata) {
     writeToTerminal(data, jsondata)

@@ -1,9 +1,17 @@
 fs.watch(path.join('./loghtml.txt'), (event, filename) => {
     fs.readFile(path.join('./loghtml.txt'), (err, data) => {
-        document.getElementById('terminal').innerHTML = data
-        addCollapsible()
+        displayTerminal(data)
     })
-})        
+})
+
+function displayTerminal(data){
+    document.getElementById('terminal').innerHTML = data
+    addCollapsible()
+    //scroll to bottom of div
+    let div = document.getElementById('terminal')
+    div.scrollTop = div.scrollHeight - div.clientHeight
+}
+
 //for collapsibles
 function addCollapsible(){
     var coll = document.getElementsByClassName("collapsible");
