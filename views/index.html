@@ -17,6 +17,7 @@
     <script src='../scripts/titlebar.js'></script>
     <script src='../scripts/convertPointsToDollars.js'></script>
     <script src='../scripts/editPlayersInfo.js'></script>
+    <script src='../scripts/addNewPlayer.js'></script>
 </head>
 <body onload="checkUploaded(); isAppReady()">
     <div id="title-bar">
@@ -90,16 +91,30 @@
   
         </div>
   
+        <button class="button button2" onclick="newWindow()"" id="new-player">Add a New Player</button>
         <button class="button button2" onclick="writeToFile()">Save</button>
         <button class="button button2" id="close-btn" onclick="loadMain()">Close</button>
+
   
         <div id="dataSaved"></div>
         <div id="error-message"></div>
     </span>
 
 
+    <span id='add-player' style='display: none'>
+        <h1>Add New Player</h1>
+        <div id="add-plyr">
+
+        </div>
+
+        <button class="button button2" ">Save</button>
+        <button class="button button2" id="close-btn" onclick="loadTable()">Close</button>
+
+
+    </span>
 
     <script>
+
         function openNav() {
             var e = document.getElementById("mySidebar"); 
             document.getElementById("main").style.marginLeft = '250px';
