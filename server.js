@@ -13,6 +13,7 @@ const getPlayerInfo = require("./model/GetPlayerInfo").getPlayerInfo;
 const GetOffers = require("./model/GetOffers").GetOffers;
 const RedeemComp = require("./model/RedeemComp").RedeemComp;
 const RedeemPoints = require("./model/RedeemPoints").RedeemPoints;
+const RedeemOffer = require("./model/RedeemOffer").RedeemOffer;
 const ValidateAccount = require("./model/ValidateAccount").ValidateAccount;
 //---------------------------------------------------------------------------------------//
 
@@ -94,6 +95,20 @@ app.post("/Players/GetOffers", (req, res) => {
   res.send(offers);
   writeToTerminal("GetOffers response sent for account " + req.body.AccountNumber, offers)
 });
+
+
+// redeeming an offer that is requested for redemption
+app.post("/Players/RedeemOffer", (req, res) => {
+  // let offer = GetOffers(req.body.AccountNumber);
+  // let account = getPlayerInfo(req.body.AccountNumber);
+  let offersAvailable = req.body.RedeemOfferList;
+  console.log(offersAvailable);
+  let offersRedeemed = RedeemOffer(offersAvailable, req.body.AccountNumber);
+
+  res.send(offersRedeemed);
+})
+
+
 
 //redeem each comp in list, i am assuming that there could be more than one
 app.post("/Players/RedeemComp", (req, res) => {
