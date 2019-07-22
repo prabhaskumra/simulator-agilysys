@@ -18,6 +18,7 @@
     <script src='../scripts/convertPointsToDollars.js'></script>
     <script src='../scripts/editPlayersInfo.js'></script>
     <script src='../scripts/addNewPlayer.js'></script>
+    <script src='../scripts/editPort.js'></script>
 </head>
 <body onload="checkUploaded(); isAppReady()">
     <div id="title-bar">
@@ -51,12 +52,16 @@
             <div id ="editPlayerInfo">
                     <p> <button class ="button button1" onclick="editPlayers()" id="edit-info" value="Edit Info">Edit Players' Info</button></p>
                 </div>
-                </br>
-                <div class='nowrap'>
-                    <input id='disable-animation' type='checkbox' onclick="disableAnimation(this)"><p style='white-space: nowrap; display: inline; color: #f5f5f5'> Disable Animations</p></br>
-                </div>
-           
- 
+            </br>
+            <div class='nowrap'>
+                <input id='disable-animation' type='checkbox' onclick="disableAnimation(this)"><p style='white-space: nowrap; display: inline; color: #f5f5f5'> Disable Animations</p></br>
+            </div>
+
+            <div>
+                <input type='text' id='port' placeholder="port" maxlength="5">
+                <button id='submit-port' onclick="submitPort()">submit</button>
+                <p id='port-alert'></p>
+            </div>
 
             <p id='cmp-credit'>CMP Simulator</p>
         </div>
@@ -114,19 +119,23 @@
     </span>
 
     <script>
+        //load terminal on initial load
+        fs.readFile(path.join('./loghtml.txt'), (err, data) => {
+            displayTerminal(data)
+        })
+
+        document.getElementById('port').placeHolder = '8008'
 
         function openNav() {
             var e = document.getElementById("mySidebar"); 
             document.getElementById("main").style.marginLeft = '250px';
             
-
             if(e.style.width == '250px' ){
                 closeNav();
             }
             else{
                 e.style.width = '250px';
             }
-
         }
 
         function closeNav() {
