@@ -1,11 +1,11 @@
 //other shit
 const express = require("express");
 const app = express();
-const port = 8080;
 const path = require("path");
 const bodyParser = require("body-parser");
 const fs = require("fs");
 const { ipcMain } = require("electron");
+const port = 8080
 
 //-------------------------------------model require-------------------------------------//
 const writeToTerminal = require("./model/writeToTerminal")
@@ -35,18 +35,25 @@ db.defaults({               //default for db if non exist
   coupons: [], //holds coupons (gift card????)
   transactions: [], //holds all transactions
   transactionId: 0, //increment transaction id per transaction
-  pointsToDollars: 1
+  pointsToDollars: 1,
+  port: 8080 //default port value
 }).write()
-
 
 //----------------------------------------------------------------------------------------//
 
 //this below code recieves the appReady state as in, is data loaded and ready?
 //api calls will return errors if data is not loaded. dab
-var appReady = false;
+let appReady = false;
+let server
+
 ipcMain.on("isAppReady", (event, isAppReady) => {
   appReady = isAppReady;
 });
+
+ipcMain.on("editPort", (event, port) => {
+  server.close()
+  server = app.listen(port, () => writeToTerminal(`App is listening on port ${port}`));
+})
 
 //default load page
 app.get("/", (req, res) =>
@@ -130,7 +137,7 @@ app.post("/Players/ValidateAccount", (req,res)=> {
   writeToTerminal("ValidateAccount response sent for account " + req.body.cardNumber, validatedAccounts)
 })
 
-app.listen(port, () => writeToTerminal(`App is listening on port ${port}`));
+server = app.listen(port, () => console.log('yes i loaded'));
 
 module.exports = {
   writeToTerminal: function (data, jsondata) {

@@ -104,6 +104,10 @@ input[type=text]::-webkit-input-placeholder {
   margin: 10px 0px;
 }
 
+#port-alert{
+  color: #FFD12A
+}
+
 .ccontent {
   display: none;
   overflow: hidden;

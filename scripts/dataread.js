@@ -47,10 +47,8 @@ function isAppReady(){
 
     if(!appReady){
         document.getElementById("edit-info").disabled = true
-        writeToTerminal("App is not ready")
       } else {
         document.getElementById("edit-info").disabled = false
-        writeToTerminal("App is ready")
       }
 }
 
@@ -146,6 +144,7 @@ function openCoupons(){
 
 //checks to see if files were already uploaded and stored locally
 function checkUploaded() {
+    db.read()
     if (db.get('players').size().value() == 0) {
         document.getElementById('player-data-status').textContent = "Player Data ❌"
     } else {
@@ -166,13 +165,18 @@ function checkUploaded() {
         document.getElementById('coupon-data-status').textContent = "Coupons Data ✔️"
         coupons = db.get('coupons').value()
     }
-    isAppReady()
-    //update points to dollars
     checkPointsToDollars()
+    checkRunningPort()
+    isAppReady()
 }
 
 function checkPointsToDollars(){
     let pointsToDollars = db.get('pointsToDollars').value()
     document.getElementById('pointsToDollars').textContent = pointsToDollars + " : 1"
-    db.write()
+}
+
+function checkRunningPort(){
+    let port = db.get('port').value()       
+    ipcRenderer.send("editPort", port)
+    document.getElementById('port-alert').textContent = `Port is currently ${port}`
 }

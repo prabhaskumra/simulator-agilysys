@@ -35,10 +35,10 @@ function writeToTerminal(data, jsondata){
     let t = d.getMonth() + "/" + d.getDay() + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + ":" + d.getMilliseconds() + " - "  
     out = "<p>"+ t + data + "</p>"
     
-    fs.appendFileSync(path.join(__dirname + '/loghtml.txt'), out, (err) => {
+    fs.appendFileSync('./loghtml.txt', out, (err) => {
         if (err) throw err;
     })
-    fs.appendFileSync(path.join(__dirname + '/log.txt'), t + data + '\n', (err) => {
+    fs.appendFileSync('./log.txt', t + data + '\n', (err) => {
         if (err) throw err;
     })
   }
