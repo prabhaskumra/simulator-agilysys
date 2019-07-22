@@ -837,4 +837,66 @@
         "ErrorCode": ""
     },
     "CustomFields": {}
-}</div><p>6/1/2019 9:58:39:582 - App is listening on port 8080</p><p>6/1/2019 9:59:31:428 - App is listening on port 8080</p><p>6/1/2019 10:1:6:422 - App is listening on port 8080</p><p>6/1/2019 10:1:27:81 - App is listening on port 8080</p><p>6/1/2019 10:13:1:269 - App is listening on port 8080</p><p>6/1/2019 10:15:21:827 - App is listening on port 8080</p><p>6/1/2019 10:16:0:422 - App is listening on port 8080</p><p>6/1/2019 10:21:7:570 - App is listening on port 8080</p><p>6/1/2019 10:23:46:567 - App is listening on port 8080</p><p>6/1/2019 10:25:13:267 - App is listening on port 8080</p><p>6/1/2019 10:29:39:974 - App is listening on port 8080</p><p>6/1/2019 10:40:47:721 - App is listening on port 8080</p><p>6/1/2019 10:45:17:76 - App is listening on port 8080</p><p>6/1/2019 10:46:25:108 - App is listening on port 8080</p><p>6/1/2019 10:49:42:456 - App is listening on port 8080</p>
+}</div><p>6/1/2019 9:58:39:582 - App is listening on port 8080</p><p>6/1/2019 9:59:31:428 - App is listening on port 8080</p><p>6/1/2019 10:1:6:422 - App is listening on port 8080</p><p>6/1/2019 10:1:27:81 - App is listening on port 8080</p><p>6/1/2019 10:13:1:269 - App is listening on port 8080</p><p>6/1/2019 10:15:21:827 - App is listening on port 8080</p><p>6/1/2019 10:16:0:422 - App is listening on port 8080</p><p>6/1/2019 10:21:7:570 - App is listening on port 8080</p><p>6/1/2019 10:23:46:567 - App is listening on port 8080</p><p>6/1/2019 10:25:13:267 - App is listening on port 8080</p><p>6/1/2019 10:29:39:974 - App is listening on port 8080</p><p>6/1/2019 10:40:47:721 - App is listening on port 8080</p><p>6/1/2019 10:45:17:76 - App is listening on port 8080</p><p>6/1/2019 10:46:25:108 - App is listening on port 8080</p><p>6/1/2019 10:49:42:456 - App is listening on port 8080</p><p>6/1/2019 10:54:13:33 - App is listening on port 8080</p><p>6/1/2019 10:54:41:405 - App is listening on port 2121</p><p>6/1/2019 10:54:49:361 - App is listening on port 8080</p><p class='collapsible'>6/1/2019 10:56:24:495 - GetOffers request recieved for account 2</p><div class='ccontent'>{
+    "AccountNumber": "2",
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>6/1/2019 10:56:24:533 - GetOffers response sent for account 2</p><div class='ccontent'>{
+    "AccountNumber": "2",
+    "Offers": [],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    },
+    "CustomFields": {}
+}</div><p class='collapsible'>6/1/2019 10:56:41:885 - GetOffers request recieved for account 3</p><div class='ccontent'>{
+    "AccountNumber": "3",
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>6/1/2019 10:56:41:917 - GetOffers response sent for account 3</p><div class='ccontent'>{
+    "AccountNumber": "3",
+    "Offers": [],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    },
+    "CustomFields": {}
+}</div><p class='collapsible'>6/1/2019 10:57:11:325 - GetOffers request recieved for account 4</p><div class='ccontent'>{
+    "AccountNumber": "4",
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>6/1/2019 10:57:11:357 - GetOffers response sent for account 4</p><div class='ccontent'>{
+    "AccountNumber": "4",
+    "Offers": [
+        {
+            "OfferCode": "@6666666",
+            "OfferName": "Free Parking congrats",
+            "OfferValue": 3,
+            "OfferStartDate": "01/01/19 14:00:00 PM",
+            "OfferEndDate": "12/31/19 14:00:00 PM"
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    },
+    "CustomFields": {}
+}</div><p>6/1/2019 11:18:2:36 - App is listening on port 8080</p><p>6/1/2019 11:19:6:158 - App is listening on port 8080</p><p>6/1/2019 11:22:22:564 - App is listening on port 8080</p><p>6/1/2019 11:22:45:578 - App is listening on port 8080</p><p>6/1/2019 11:24:31:537 - App is listening on port 8080</p><p>6/1/2019 11:26:3:799 - App is listening on port 8080</p><p>6/1/2019 11:27:57:730 - App is listening on port 8080</p><p>6/1/2019 11:28:46:442 - App is listening on port 8080</p><p>6/1/2019 11:29:29:130 - App is listening on port 8080</p><p>6/1/2019 11:30:37:956 - App is listening on port 8080</p><p>6/1/2019 11:32:46:253 - App is listening on port 8080</p><p>6/1/2019 11:33:54:984 - App is listening on port 8080</p><p>6/1/2019 11:36:57:339 - App is listening on port 8080</p><p>6/1/2019 11:40:50:516 - App is listening on port 8080</p><p>6/1/2019 11:42:16:388 - App is listening on port 8080</p><p>6/1/2019 14:11:49:500 - App is listening on port 8080</p><p>6/1/2019 14:18:49:79 - App is listening on port 8080</p><p>6/1/2019 14:19:25:376 - App is listening on port 8080</p><p>6/1/2019 14:24:9:647 - App is listening on port 8080</p><p>6/1/2019 14:24:56:802 - App is listening on port 8080</p><p>6/1/2019 14:25:19:96 - App is listening on port 8080</p><p>6/1/2019 14:26:7:779 - App is listening on port 8080</p><p>6/1/2019 14:26:39:766 - App is listening on port 8080</p><p>6/1/2019 14:30:19:991 - App is listening on port 8080</p><p>6/1/2019 14:38:24:908 - App is listening on port 8080</p><p>6/1/2019 14:39:30:85 - App is listening on port 8080</p><p>6/1/2019 14:39:43:299 - App is listening on port 8080</p><p>6/1/2019 14:52:35:671 - App is listening on port 8080</p><p>6/1/2019 14:56:40:974 - App is listening on port 8080</p><p>6/1/2019 15:3:25:407 - App is listening on port 8080</p><p>6/1/2019 15:4:47:103 - App is listening on port 8080</p><p>6/1/2019 15:5:33:891 - App is listening on port 8080</p><p>6/1/2019 15:6:15:994 - App is listening on port 8080</p><p>6/1/2019 15:29:11:893 - App is listening on port 8080</p><p>6/1/2019 15:32:53:417 - App is listening on port 8080</p><p>6/1/2019 15:39:58:238 - App is listening on port 8080</p><p>6/1/2019 15:41:12:297 - App is listening on port 8080</p><p>6/1/2019 15:42:5:521 - App is listening on port 8080</p>

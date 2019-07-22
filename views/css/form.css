@@ -1,0 +1,40 @@
+input[type=input1], select {
+  border-radius: 16px;
+  text-align: center;
+  width: 30%;
+  height: ;
+  padding: 12px 20px;
+  margin: 8px 8px;
+  display: inline-block;
+  border: 1px solid rgb(2, 55, 134);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+  
+input[type=input1]:hover, select:hover {
+    background-color: #AFB4B5;
+}
+input[type=input1]:focus{
+  border: 3px solid #555;
+}
+
+label[type=date] {
+  display: block;
+  font: 1rem 'Fira Sans', sans-serif;
+}
+
+input[type=date], label[type=date]{
+  margin: .4rem 0;
+  border-radius: 16px;
+  text-align: center;
+  width: 30%;
+  height: 40px;
+  padding: 12px 20px;
+  margin: 8px 8px;
+  display: inline-block;
+  border: 1px solid rgb(2, 55, 134);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
