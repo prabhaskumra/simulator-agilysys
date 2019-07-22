@@ -113,7 +113,7 @@
         <div id="add-plyr">
             <form>
                 <label for='fname'>First Name</label>
-                <input type='input1' id='fname' name='firstname' placeholder='Your First Name..' onchange="enterData()"> <br>
+                <input type='input1' id='fname' name='firstname' placeholder='Your First Name..' value="" onchange="enterData(this)"> <br>
 
                 <label for='lname'>Last Name</label>"+
                 <input type='input1' id='lname' name='lastname' placeholder='Your Last Name..'> <br>
@@ -155,7 +155,7 @@
 
         </div>
 
-        <button class="button button2" ">Save</button>
+        <button class="button button2" onclick="saveForm()">Save</button>
         <button class="button button2" id="close-btn" onclick="loadTable()">Close</button>
 
 

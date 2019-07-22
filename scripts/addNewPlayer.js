@@ -1,3 +1,6 @@
+var playerData = db.get('players').value()
+var newUser = {}
+
 function addNewUser(){
 
     // newUser +=(
@@ -47,7 +50,7 @@ function addNewUser(){
     // )
 
     // document.getElementById('add-plyr').innerHTML = newUser
-    var newUser = {
+    newUser = {
         "firstName": "",
         "lastName": "",
         "accountNumber": "",
@@ -73,6 +76,11 @@ function loadTable(){
     document.getElementById('edit-players').style.display = 'block'
 }
 
-function enterData(){
-    
+function saveForm(){
+    playerData.push(newUser)
+    db.set('players', playerData).write()
+}
+
+function enterData(inputElement){
+    newUser.firstName = inputElement.value
 }

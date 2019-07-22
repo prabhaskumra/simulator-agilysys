@@ -258,3 +258,14 @@
 6/1/2019 15:39:58:238 - App is listening on port 8080
 6/1/2019 15:41:12:297 - App is listening on port 8080
 6/1/2019 15:42:5:521 - App is listening on port 8080
+6/1/2019 15:55:56:526 - App is listening on port 8080
+6/1/2019 15:58:50:506 - Saved edited player info
+6/1/2019 15:58:50:808 - Saved edited player info
+6/1/2019 15:58:51:80 - Saved edited player info
+6/1/2019 15:58:51:327 - Saved edited player info
+6/1/2019 15:58:53:15 - Saved edited player info
+6/1/2019 15:58:53:183 - Saved edited player info
+6/1/2019 15:58:53:336 - Saved edited player info
+6/1/2019 15:58:53:488 - Saved edited player info
+6/1/2019 15:58:53:712 - Saved edited player info
+6/1/2019 15:58:54:392 - Saved edited player info
