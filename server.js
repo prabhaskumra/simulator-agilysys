@@ -99,15 +99,18 @@ app.post("/Players/GetOffers", (req, res) => {
 
 // redeeming an offer that is requested for redemption
 app.post("/Players/RedeemOffer", (req, res) => {
-  // let offer = GetOffers(req.body.AccountNumber);
-  // let account = getPlayerInfo(req.body.AccountNumber);
-  let offersAvailable = req.body.RedeemOfferList;
+  writeToTerminal("RedeemOffer request recieved for account " + req.body.AccountNumber, req.body)
+  if (!appReady) {
+    res.send({ error: "data not loaded" });
+    writeToTerminal("Error: App not ready (RedeemPoints)")
+    return;
+  }
+  let offersAvailable = req.body.redeemOfferList;
   console.log(offersAvailable);
   let offersRedeemed = RedeemOffer(offersAvailable, req.body.AccountNumber);
-
   res.send(offersRedeemed);
+  writeToTerminal("RedeemOffer response sent for account " + req.body.AccountNumber, offersRedeemed)
 })
-
 
 
 //redeem each comp in list, i am assuming that there could be more than one
@@ -118,7 +121,6 @@ app.post("/Players/RedeemComp", (req, res) => {
     writeToTerminal("Error: App not ready (RedeemComp)")
     return;
   }
-
   let compList = req.body.RedeemCompList;
   let redeemValues = RedeemComp(req.body.AccountNumber, compList);
   res.send(redeemValues.out);
@@ -151,6 +153,39 @@ app.post("/Players/ValidateAccount", (req,res)=> {
   res.send(validatedAccounts)
   writeToTerminal("ValidateAccount response sent for account " + req.body.cardNumber, validatedAccounts)
 })
+
+app.post("/Players/RedeemAll", (req, res) => {
+  writeToTerminal("RedeemAll request recieved for account " + req.body.AccountNumber, req.body)
+  //todo
+  res.send({lol: "Lol"})
+  writeToTerminal("RedeemAll response sent for account " + req.body.AccountNumber, req.body)
+})  
+
+app.post("/Players/VoidAll", (req, res) => {
+  writeToTerminal("VoidAll request recieved for account " + req.body.AccountNumber, req.body)
+  //todo
+  res.send({lol: "Lol"})
+  writeToTerminal("VoidAll response sent for account " + req.body.AccountNumber, req.body)
+})
+
+app.post("/Players/RetailRating", (req, res) => {
+  writeToTerminal("RetailRating request recieved for account " + req.body.AccountNumber, req.body)
+  //todo
+  //HARDCODED FOR NOW CHANGE THIS
+  res.send({
+    "AccountNumber": req.body.AccountNumber,
+    "TransactionId": "820864100",
+    "ReferenceId": "string",
+    "ResponseStatus": {
+      "IsSuccess": true,
+      "ErrorMessage": "Success",
+      "ErrorCode": ""
+    },
+    "CustomFields": {}
+  })
+  writeToTerminal("RetailRating response sent for account " + req.body.AccountNumber, req.body)
+})
+
 
 server = app.listen(port, () => console.log('yes i loaded'));
 

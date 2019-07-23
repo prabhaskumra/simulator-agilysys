@@ -1,5 +1,16 @@
-fs.watch(path.join(__dirname + '/../../app/loghtml.txt'), (event, filename) => {
-    fs.readFile(path.join(__dirname + '/../../app/loghtml.txt'), (err, data) => {
+let isProduction = false
+let loghtmlPath, logPath
+
+if(isProduction){
+    loghtmlPath = __dirname + '/../../app/loghtml.txt'
+    logPath = __dirname + '/../../app/log.txt'
+} else {
+    loghtmlPath = './loghtml.txt'
+    logPath = './log.txt'
+}
+
+fs.watch(path.join(loghtmlPath), (event, filename) => {
+    fs.readFile(path.join(loghtmlPath), (err, data) => {
         console.log(err)
         displayTerminal(data)
     })
@@ -9,8 +20,8 @@ function displayTerminal(data){
     document.getElementById('terminal').innerHTML = data
     addCollapsible()
     //scroll to bottom of div
-    let div = document.getElementById('terminal')
-    div.scrollTop = div.scrollHeight - div.clientHeight
+    let terminal = document.getElementById('terminal')
+    terminal.scrollTop = terminal.scrollHeight - terminal.clientHeight
 }
 
 //for collapsibles
@@ -36,10 +47,10 @@ function writeToTerminal(data, jsondata){
     let t = d.getMonth() + "/" + d.getDay() + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + ":" + d.getMilliseconds() + " - "  
     out = "<p>"+ t + data + "</p>"
     
-    fs.appendFileSync('./loghtml.txt', out, (err) => {
+    fs.appendFileSync(path.join(loghtmlPath), out, (err) => {
         if (err) throw err;
     })
-    fs.appendFileSync('./log.txt', t + data + '\n', (err) => {
+    fs.appendFileSync(path.join(logPath), t + data + '\n', (err) => {
         if (err) throw err;
     })
   }

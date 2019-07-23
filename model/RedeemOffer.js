@@ -9,7 +9,6 @@ let transactionIdCount = db.get('transactionId').value()
 
 module.exports = {
     RedeemOffer: function RedeemOffer(offersAvailable, accountnumber){
-
         db.read()
         let offerData = []
         offerData = db.get('offers').value()
@@ -28,9 +27,9 @@ module.exports = {
                         transactionIdCount++;
                         db.set('transactionId', transactionIdCount).write()
                         redeemOfferResultList[j].TransactionId = transactionIdCount
-
+                        writeToTerminal(`Successful transaction - Offer ${redeemOfferResultList[i].OfferCode}`)
                         let data = {
-                            "IsSucess": true,
+                            "IsSuccess": true,
                             "ErrorMessage": "",
                             "ErrorCode": ""
                         }
@@ -48,12 +47,13 @@ module.exports = {
 
             redeemOfferResultList.push(offersAvailable[j])
 
+            db.get('transactionId').value()
             transactionIdCount++;
             db.set('transactionId', transactionIdCount).write()
             redeemOfferResultList[j].TransactionId = transactionIdCount
 
             let data = {
-                "IsSucess": false,
+                "IsSuccess": false,
                 "ErrorMessage": "Cannot Find the Offer",
                 "ErrorCode": "XXX"
             }
