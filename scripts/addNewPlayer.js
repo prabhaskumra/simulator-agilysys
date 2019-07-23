@@ -33,6 +33,10 @@ function saveForm(){
     playerData.push(newUser)
     db.set('players', playerData).write()
     updateTable()
+    document.getElementById('save-plyr').textContent = "New Player Added Successfully!";
+    setTimeout(function(){
+        document.getElementById('save-plyr').textContent = "";
+    },3000);
 }
 
 function enterData(inputElement){
