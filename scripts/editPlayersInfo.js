@@ -6,7 +6,8 @@ function updateTable() {
   let accountInfo=""
   accountInfo += (
     "<table id='myTable' border='1' width='700'>" + 
-    "<tr><th>First Name</th><th>Last Name</th><th>Account Number</th><th>Point Balance</th><th>Tier Level</th><th>D.O.B.</th></tr>"
+    "<tr><th>First Name</th><th>Last Name</th><th>Account Number</th><th>Point Balance</th><th>Tier Level</th><th>D.O.B.</th>"+
+    "<th>Comp Balance</th><th>Promo2 Balance</th><th>is InActive</th> <th>Is Banned</th> <th>Is PinLocked</th></tr>"
   )
   for(let i = 0; i < playerData.length; i++){
 
@@ -16,7 +17,12 @@ function updateTable() {
       "<td> <input type='text' name='accountNumber' class='input input1' value='"+playerData[i].accountNumber+"' onchange='swapValue(this,"+i+")'"+"</td>" +
       "<td> <input type='text' name='pointBalance' class='input input1' value='"+playerData[i].pointBalance+"'onchange='swapValue(this,"+i+")'"+"</td>" +
       "<td> <input type='text' name='tierLevel' class='input input1' value='"+playerData[i].tierLevel+"'onchange='swapValue(this,"+i+")'"+"</td>" +
-      "<td> <input type='text' name='dateOfBirth' class='input input1' value='"+playerData[i].dateOfBirth +"'onchange='swapValue(this,"+i+")'"+"</td></tr>"
+      "<td> <input type='text' name='dateOfBirth' class='input input1' value='"+playerData[i].dateOfBirth +"'onchange='swapValue(this,"+i+")'"+"</td>"+
+      "<td> <input type='text' name='compBalance' class='input input1' value='"+playerData[i].compBalance +"'onchange='swapValue(this,"+i+")'"+"</td>"+
+      "<td> <input type='text' name='promo2Balance' class='input input1' value='"+playerData[i].promo2Balance +"'onchange='swapValue(this,"+i+")'"+"</td>"+
+      "<td> <label><input type='checkbox' name='isInActive' checked> True</label> </td>"+
+      "<td> <label><input type='checkbox' name='isBanned' checked> True</label> </td>"+
+      "<td> <label><input type='checkbox' name='isPinLocked' checked> True</label> </td></tr>"
     )
   
   } 
@@ -28,7 +34,8 @@ function filterTable(value){
   let accountInfo=""
   accountInfo += (
     "<table id='myTable' border='1' width='700'>" + 
-    "<tr><th>First Name</th><th>Last Name</th><th>Account Number</th><th>Point Balance</th><th>Tier Level</th><th>D.O.B.</th></tr>"
+    "<tr><th>First Name</th><th>Last Name</th><th>Account Number</th><th>Point Balance</th><th>Tier Level</th><th>D.O.B.</th>"+
+    "<th>Comp Balance</th><th>Promo2 Balance</th><th>is InActive</th> <th>Is Banned</th> <th>Is PinLocked</th></tr>"
   )
   for(let i = 0; i < playerData.length; i++){
     if(playerData[i].firstName.toLowerCase().includes(value.toLowerCase()) || playerData[i].lastName.toLowerCase().includes(value.toLowerCase())){
@@ -38,7 +45,12 @@ function filterTable(value){
         "<td> <input type='text' name='accountNumber' class='input input1' value='"+playerData[i].accountNumber+"' onchange='swapValue(this,"+i+")'"+"</td>" +
         "<td> <input type='text' name='pointBalance' class='input input1' value='"+playerData[i].pointBalance+"'onchange='swapValue(this,"+i+")'"+"</td>" +
         "<td> <input type='text' name='tierLevel' class='input input1' value='"+playerData[i].tierLevel+"'onchange='swapValue(this,"+i+")'"+"</td>" +
-        "<td> <input type='text' name='dateOfBirth' class='input input1' value='"+playerData[i].dateOfBirth +"'onchange='swapValue(this,"+i+")'"+"</td></tr>"
+        "<td> <input type='text' name='dateOfBirth' class='input input1' value='"+playerData[i].dateOfBirth +"'onchange='swapValue(this,"+i+")'"+"</td>"+
+        "<td> <input type='text' name='compBalance' class='input input1' value='"+playerData[i].compBalance +"'onchange='swapValue(this,"+i+")'"+"</td>"+
+        "<td> <input type='text' name='promo2Balance' class='input input1' value='"+playerData[i].promo2Balance +"'onchange='swapValue(this,"+i+")'"+"</td>"+
+        "<td> <label><input type='checkbox' name='isInActive' checked> True</label> </td>"+
+        "<td> <label><input type='checkbox' name='isBanned' checked> True</label> </td>"+
+        "<td> <label><input type='checkbox' name='isPinLocked' checked> True</label> </td></tr>"
       )
     }
   } 
@@ -84,6 +96,18 @@ function swapValue(tableElement, i) {
     }
     case 'dateOfBirth': {
       playerData[i].dateOfBirth = tableElement.value
+      break
+    }
+    case 'compBalance': {
+      playerData[i].compBalance = tableElement.value
+      break
+    }
+    case 'promo2Balance': {
+      playerData[i].promo2Balance = tableElement.value
+      break
+    }
+    case 'isInActive': {
+      playerData[i].isInActive = tableElement.value
       break
     }
   }
