@@ -17,6 +17,7 @@
     <script src='../scripts/titlebar.js'></script>
     <script src='../scripts/convertPointsToDollars.js'></script>
     <script src='../scripts/editPlayersInfo.js'></script>
+    <script src='../scripts/editCouponInfo.js'></script>
     <script src='../scripts/editPort.js'></script>
 </head>
 <body onload="checkUploaded(); isAppReady()">
@@ -50,7 +51,10 @@
             </div>
             <div id ="editPlayerInfo">
                     <p> <button class ="button button1" onclick="editPlayers()" id="edit-info" value="Edit Info">Edit Players' Info</button></p>
-                </div>
+            </div>
+            <div id="editCouponData">
+                <p> <button class ="button button1" onclick="editCouponData()" id="edit-couponsInfo" value="Edit Coupon Info">Edit Coupons Info</button></p>
+            </div>
             </br>
             <div class='nowrap'>
                 <input id='disable-animation' type='checkbox' onclick="disableAnimation(this)"><p style='white-space: nowrap; display: inline; color: #f5f5f5'> Disable Animations</p></br>
@@ -64,6 +68,9 @@
 
             <p id='cmp-credit'>CMP Simulator</p>
         </div>
+
+
+
         <div id="main">        
             <div id="data" style="text-align: center">
                 
@@ -100,6 +107,19 @@
   
         <div id="dataSaved"></div>
         <div id="error-message"></div>
+    </span>
+
+    <span id='edit-coupons' style='display: none'>
+        <h1>Edit Coupon Data</h1>
+        <input type="text" id="myInput"  onkeyup="searchCouponTable(this)" placeholder="Search by coupon number" title="Type in a coupon number">
+        <div id="editCoupon"> 
+            
+        </div>
+    
+        <button class="button button2"  onclick="writeCoupons()">Save</button>
+        <button class="button button2" id="couponClose-btn" onclick="loadCouponMain()">Close</button>
+    
+        <div id="couponDataSaved"></div>
     </span>
 
 

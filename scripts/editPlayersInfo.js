@@ -92,7 +92,11 @@ function swapValue(tableElement, i) {
 // this function saves the data when the save button is clicked 
 function writeToFile(){
   db.set('players', playerData).write()
+
   document.getElementById('dataSaved').textContent = "Data Saved Successfully!"
+  setTimeout(function(){
+    document.getElementById('dataSaved').textContent = "";
+  },1000);
 }
 
 function editPlayers(){
