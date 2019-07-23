@@ -60,7 +60,7 @@ function addNewUser(){
         "compBalance": "0",
         "promo2Balance": "0",
         "isBanned": "FALSE",
-        "isInActive": "TRUE",
+        "isInActive": "FALSE",
         "isPinLocked": "FALSE"
       }
 }
@@ -82,5 +82,51 @@ function saveForm(){
 }
 
 function enterData(inputElement){
-    newUser.firstName = inputElement.value
+
+    switch(inputElement.name){
+        case 'firstname': {
+            newUser.firstName = inputElement.value
+            break
+        }
+        case 'lastname': {
+            newUser.lastName = inputElement.value
+            break
+        }
+        case 'account-number': {
+            newUser.accountNumber = inputElement.value
+            break
+        }
+        case 'point-balance': {
+            newUser.pointBalance = inputElement.value
+            break
+        }
+        case 'tier-level': {
+            newUser.tierLevel = inputElement.value
+            break
+        }
+        case 'dob': {
+            newUser.dateOfBirth = inputElement.value
+            break
+        }
+        case 'comp-balance':{
+            newUser.compBalance = inputElement.value
+            break
+        }
+        case 'isInActive':{
+            newUser.isInActive = inputElement.value
+            break
+        }
+        case 'isbanned':{
+            newUser.isBanned = inputElement.value
+            break
+        }
+        case 'isPinLocked':{
+            newUser.isPinLocked = inputElement.value
+            break
+        }
+        case 'promo-balance':{
+            newUser.promo2Balance = inputElement.value
+        }
+    }
 }
+

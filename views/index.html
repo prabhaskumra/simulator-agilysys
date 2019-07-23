@@ -112,51 +112,81 @@
 
         <div id="add-plyr">
             <form>
-                <label for='fname'>First Name</label>
-                <input type='input1' id='fname' name='firstname' placeholder='Your First Name..' value="" onchange="enterData(this)"> <br>
+                <div class = "row">
+                        <label for='fname'>First Name</label>
+                        <input type='input1' id='fname' name='firstname' placeholder='First Name..' value="" onchange="enterData(this)">
+                </div>
+                
+                <div class = "row">
+                            <label for='lname'>Last Name</label>
+                            <input type='input1' id='lname' name='lastname' placeholder='Last Name..' onchange="enterData(this)">
+                </div>
+               
+                <div class = "row">
+                            <label for='account-number'>Account Name</label>
+                            <input type='input1' id='account-number' name='account-number' placeholder='Account Number..' onchange="enterData(this)">
+                </div>
 
-                <label for='lname'>Last Name</label>"+
-                <input type='input1' id='lname' name='lastname' placeholder='Your Last Name..'> <br>
+               
+                <div class = "row">
+                            <label for='tier-level'>Tier Level</label> 
+                            <input type='input1' id='tier-level' name='tier-level' placeholder='Tier Number..' onchange="enterData(this)"> <br>
+                </div>
 
-                <label for='account-number'>Account Name</label>
-                <input type='input1' id='account-number' name='account-number' placeholder='Your Account Number..''> <br>
 
-                <label for='point-balance'>Point Balance</label>
-                <input type='input1' id='point-balance' name='point-balance' placeholder='Point Balance..''> <br>
+                <div class = "row">
+                            <label for='point-balance'>Point Balance</label>
+                            <input type='input1' id='point-balance' name='point-balance' placeholder='Point Balance..' onchange="enterData(this)">
+                </div>
+                
+                <div class = "row">
+                            <label for='comp-balance'>Comp Balance</label>
+                            <input type='input1' id='comp-balance' name='comp-balance' placeholder='Comp Balance..' onchange="enterData(this)"> 
+                </div>
+                
 
-                <label for='comp-balance'>Comp Balance</label>
-                <input type='input1' id='comp-balance' name='comp-balance' placeholder='Comp Balance..''> <br>
+                <div class = "row">
+                            <label for='promo-balance'>Promo2 Balance</label>
+                            <input type='input1' id='promo-balance' name='promo-balance' placeholder='Promo2 Balance..' onchange="enterData(this)">
+                </div>
+               
+                <div class = "row">
+                            <label for='dob'>Date of Birth</label>
+                            <input type='date' id='dob' name='dob' value='07/22/2019' min='01/01/1920' max='01/01/2020' onchange="enterData(this)">
+                </div>
+                
+                <div class = "row">
+                            <label for='isInActive'>Is Active</label>
+                            <select id='isInActive' name='isInActive' onchange="enterData(this)">
+                                <option value='FALSE'>FALSE</option>
+                                <option value='TRUE'>TRUE</option> 
+                            </select> 
+                </div>
 
-                <label for='promo-balance'>Promo2 Balance</label>
-                <input type='input1' id='promo-balance' name='promo-balance' placeholder='Promo Balance..''> <br>
-
-                <label for='start'>Date of Birth</label>
-                <input type='date' id='dob' name='dob' value='2019-07-22' min='1920-01-01' max='2020-01-01'> <br>
-
-                <label for='isactive'>Is Active</label>
-                <select id='isactive' name='isactive'>
-                    <option value='FALSE'>TRUE</option>
-                    <option value='FALSE'>FALSE</option> 
-                </select> <br>     
-
-                <label for='isbanned'>Is Banned</label>
-                <select id='isbanned' name='isbanned'>
-                    <option value='TRUE'>TRUE</option>
-                    <option value='FALSE'>FALSE</option>
-                </select><br> 
-
-                <label for='isPinLocked'>Is Pin Locked</label>
-                <select id='isPinLocked' name='isPinLocked'>
-                    <option value='TRUE'>TRUE</option>
-                    <option value='FALSE'>FALSE</option>
-                </select> <br>
-
+                <div class = "row">
+                            <label for='isbanned'>Is Banned</label onchange="enterData(this)">
+                            <select id='isbanned' name='isbanned'>
+                                <option value='FALSE'>FALSE</option>
+                                <option value='TRUE'>TRUE</option> 
+                            </select><br> 
+                </div>
+                    
+                <div class = "row">
+                            <label for='isPinLocked'>Is Pin Locked</label onchange="enterData(this)">
+                            <select id='isPinLocked' name='isPinLocked'>
+                                <option value='FALSE'>FALSE</option>
+                                <option value='TRUE'>TRUE</option> 
+                            </select>
+                </div>
             </form>
 
         </div>
 
+        
         <button class="button button2" onclick="saveForm()">Save</button>
         <button class="button button2" id="close-btn" onclick="loadTable()">Close</button>
+        
+       
 
 
     </span>
