@@ -1,4 +1,4 @@
-let isProduction = true
+let isProduction = false
 let loghtmlPath, logPath
 
 if(isProduction){
