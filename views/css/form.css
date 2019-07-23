@@ -12,11 +12,12 @@ input[type=input1], select {
   outline: none;
 }
   
-input[type=input1]:hover, select:hover {
-    background-color: #AFB4B5;
-}
+/* input[type=input1]:hover, select:hover {
+  
+} */
+
 input[type=input1]:focus{
-  border: 3px solid #555;
+  border: 3px solid #005d99;
 }
 
 label[type=date] {
@@ -59,7 +60,7 @@ input[type=submit]:hover {
 }
 
 label {
-  width: 120px;
+  width: 125px;
 }
 
 .container {
@@ -67,6 +68,7 @@ label {
   border-radius: 60px;
   background-color: #C0C0C0;
   padding: 20px;
+  outline-color:#005d99;
 }
 
 

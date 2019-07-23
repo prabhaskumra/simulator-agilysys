@@ -92,12 +92,19 @@
 
     <span id='edit-players' style='display: none'>
         <h1>Edit Player Data</h1>
+
         <input type="text" id="myInput" onkeyup="searchData(this)" placeholder="Search by name" title="Type in a name">
-        <div id="editData">
+        <div id = "upper-buttons">
+            <button class="button button2" onclick="newWindow()"" id="new-player">Add a New Player</button>
+            <button class="button button2" onclick="writeToFile()">Save</button>
+            <button class="button button2" id="close-btn" onclick="loadMain()">Close</button>
+        </div>
+
+        <div id="editData" >
   
         </div>
-  
-        <button class="button button2" onclick="newWindow()"" id="new-player">Add a New Player</button>
+
+        <button class="button button2" onclick="newWindow()" id="new-player">Add a New Player</button>
         <button class="button button2" onclick="writeToFile()">Save</button>
         <button class="button button2" id="close-btn" onclick="loadMain()">Close</button>
 
@@ -178,7 +185,7 @@
                         <option value='TRUE'>TRUE</option> 
                     </select>
                 </div>
-                <button class="button button2" type="reset" onclick="saveForm()">Save</button>
+                <button class="button button2" type="reset" id="save-plyr-button" onclick="saveForm()">Save</button>
                 <button class="button button2" type="reset" id="close-btn" onclick="loadTable()">Close</button>
             </form>
         </div>
