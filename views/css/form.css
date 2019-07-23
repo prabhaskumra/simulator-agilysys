@@ -2,7 +2,7 @@ input[type=input1], select {
   border-radius: 16px;
   text-align: center;
   width: 30%;
-  height: ;
+  height: 42px;
   padding: 12px 20px;
   margin: 8px 8px;
   display: inline-block;
@@ -29,27 +29,7 @@ input[type=date], label[type=date]{
   border-radius: 16px;
   text-align: center;
   width: 30%;
-  height: 40px;
-  padding: 12px 20px;
-  margin: 8px 8px;
-  display: inline-block;
-  border: 1px solid #005d99;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  outline: none;
-}
-
-
-
-* {
-  box-sizing: border-box;
-}
-
-input[type=text1], select1, textarea {
-  border-radius: 16px;
-  text-align: center;
-  width: 30%;
-  height: ;
+  height: 42px;
   padding: 12px 20px;
   margin: 8px 8px;
   display: inline-block;
@@ -83,22 +63,12 @@ label {
 }
 
 .container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
+  width: 700px;
+  border-radius: 60px;
+  background-color: #C0C0C0;
   padding: 20px;
 }
 
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-}
-
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
-}
 
 /* Clear floats after the columns */
 .row:after {
