@@ -15,6 +15,7 @@ const RedeemComp = require("./model/RedeemComp").RedeemComp;
 const RedeemPoints = require("./model/RedeemPoints").RedeemPoints;
 const RedeemOffer = require("./model/RedeemOffer").RedeemOffer;
 const ValidateAccount = require("./model/ValidateAccount").ValidateAccount;
+const RedeemCoupon = require("./model/RedeemCoupon").RedeemCoupon
 //---------------------------------------------------------------------------------------//
 
 //------------------------------------express setup--------------------------------------//
@@ -121,7 +122,7 @@ app.post("/Players/RedeemComp", (req, res) => {
     writeToTerminal("Error: App not ready (RedeemComp)")
     return;
   }
-  let compList = req.body.RedeemCompList;
+  let compList = req.body.redeemCompList;
   let redeemValues = RedeemComp(req.body.AccountNumber, compList);
   res.send(redeemValues.out);
   writeToTerminal("RedeemComp response sent for account " + req.body.AccountNumber, redeemValues.out)
@@ -141,6 +142,18 @@ app.post("/Players/RedeemPoints", (req, res) => {
   res.send(redeemValues.out);
   writeToTerminal("RedeemPoints response sent for account " + req.body.AccountNumber, redeemValues.out)
 });
+
+app.post("/Players/RedeemCoupon", (req, res) => {
+  writeToTerminal("RedeemCoupon request recieved for account " + req.body.AccountNumber, req.body)
+  if (!appReady) {
+    res.send({ error: "data not loaded" });
+    writeToTerminal("Error: App not ready (RedeemCoupon)")
+    return;
+  }
+  let redeemedCoupons = RedeemCoupon(req.body.AccountNumber, req.body.redeemCouponList)
+  res.send(redeemedCoupons)
+  writeToTerminal("RedeemCoupon response sent for account " + req.body.AccountNumber, redeemedCoupons)
+})
 
 app.post("/Players/ValidateAccount", (req,res)=> {
   writeToTerminal("ValidateAccount request recieved for account " + req.body.cardNumber, req.body)

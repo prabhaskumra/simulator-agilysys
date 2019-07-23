@@ -7,6 +7,8 @@ const db = low(adapter)
 let redeemOfferResultList = []
 let transactionIdCount = db.get('transactionId').value()
 
+const writeToTerminal = require("./writeToTerminal")
+
 module.exports = {
     RedeemOffer: function RedeemOffer(offersAvailable, accountnumber){
         db.read()
@@ -27,7 +29,7 @@ module.exports = {
                         transactionIdCount++;
                         db.set('transactionId', transactionIdCount).write()
                         redeemOfferResultList[j].TransactionId = transactionIdCount
-                        writeToTerminal(`Successful transaction - Offer ${redeemOfferResultList[i].OfferCode}`)
+                        writeToTerminal(`Successful transaction - Offer ${offerData[i].OfferCode}`)
                         let data = {
                             "IsSuccess": true,
                             "ErrorMessage": "",
@@ -51,7 +53,7 @@ module.exports = {
             transactionIdCount++;
             db.set('transactionId', transactionIdCount).write()
             redeemOfferResultList[j].TransactionId = transactionIdCount
-
+            
             let data = {
                 "IsSuccess": false,
                 "ErrorMessage": "Cannot Find the Offer",
