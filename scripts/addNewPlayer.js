@@ -28,6 +28,7 @@ function addNewUser(){
         "compBalance": false,
         "promo2Balance": false,
     }
+
 }
 
 function newWindow(){
@@ -46,11 +47,16 @@ function saveForm(){
     playerData.push(newUser)
     db.set('players', playerData).write()
     updateTable()
+    addNewUser()
+    checkFlag()
     document.getElementById('save-plyr').textContent = "New Player Added Successfully!";
 
     setTimeout(function(){
         document.getElementById('save-plyr').textContent = "";
     },3000);
+
+    document.getElementById("plyr-form").reset();
+    
 }
 
 function enterData(inputElement){
@@ -127,4 +133,7 @@ function checkFlag(){
     if(flags.pointBalance && flags.firstName && flags.lastName && flags.accountNumber && flags.compBalance && 
         flags.tierLevel && flags.promo2Balance && flags.dateOfBirth)
             document.getElementById("save-plyr-button").disabled = false
+    else
+        document.getElementById("save-plyr-button").disabled = true
+    
 }
