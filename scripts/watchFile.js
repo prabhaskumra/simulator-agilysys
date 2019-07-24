@@ -1,6 +1,9 @@
-let isProduction = false
+//this file watches the loghtml.txt to see if there are any changes made, if so update terminal
+
+let isProduction = false // set this to true when exporting to exe
 let loghtmlPath, logPath
 
+//production and build enviorments direct to different paths. set accordingly
 if(isProduction){
     loghtmlPath = __dirname + '/../../app/loghtml.txt'
     logPath = __dirname + '/../../app/log.txt'
@@ -19,12 +22,12 @@ fs.watch(path.join(loghtmlPath), (event, filename) => {
 function displayTerminal(data){
     document.getElementById('terminal').innerHTML = data
     addCollapsible()
-    //scroll to bottom of div
+    //scrolls to bottom of div
     let terminal = document.getElementById('terminal')
     terminal.scrollTop = terminal.scrollHeight - terminal.clientHeight
 }
 
-//for collapsibles
+//make terminal line collapsible - for req and res
 function addCollapsible(){
     var coll = document.getElementsByClassName("collapsible");
     var i;
@@ -42,6 +45,7 @@ function addCollapsible(){
     }
 }
 
+//copied from writeToTerminal.js
 function writeToTerminal(data, jsondata){
     let d = new Date()
     let t = d.getMonth() + "/" + d.getDay() + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + ":" + d.getMilliseconds() + " - "  

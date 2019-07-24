@@ -46,7 +46,6 @@ function filterTable(value){
   document.getElementById('editData').innerHTML = accountInfo
 }
 
-// does not works, need to edit
 function searchData(input) {
   filterTable(input.value)
   writeToTerminal("Saved edited player info")
@@ -54,7 +53,7 @@ function searchData(input) {
 
 function checkDuplicateAccountNumbers(){
   playerData.forEach(player => {
-    
+    //TO-DO
   });
 }
 

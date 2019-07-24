@@ -22,18 +22,21 @@ function isAppReady(){
 
     if(db.get('players').size().value() != 0) {
         playerExists = true
-
-    } else {
-        console.log('player info missing')
-        console.log(db.get('players').size().value())
-    }
+    } 
+    //debug console
+    // else {
+    //     console.log('player info missing')
+    //     console.log(db.get('players').size().value())
+    // }
 
     if(db.get('offers').size().value() != 0) {
         offersExists = true 
-    } else {
-        console.log('player info missing')
-        console.log(db.get('offers').size().value())
-    }
+    } 
+    //debug console
+    // else {
+    //     console.log('player info missing')
+    //     console.log(db.get('offers').size().value())
+    // }
 
     if(offersExists === true && playerExists === true){
         appReady = true
@@ -47,12 +50,11 @@ function isAppReady(){
 
     if(!appReady){
         document.getElementById("edit-info").disabled = true
+        writeToTerminal("App is not ready")
       } else {
         document.getElementById("edit-info").disabled = false
       }
 }
-
-//there needs to be more logical shit here but we don't know the conditions so just leave this for now.
 
 //opens window to select file to download mock data
 function openPlayers(){
@@ -176,7 +178,6 @@ function checkPointsToDollars(){
 }
 
 function checkRunningPort(){
-    let port = db.get('port').value()       
-    ipcRenderer.send("editPort", port)
+    let port = db.get('port').value()
     document.getElementById('port-alert').textContent = `Port is currently ${port}`
 }

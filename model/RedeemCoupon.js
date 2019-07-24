@@ -19,7 +19,7 @@ module.exports = {
             }
             let responseStatus
             let BalanceAmount 
-            if(foundCoupon === undefined){
+            if(foundCoupon === undefined){ // coupon not found
                 writeToTerminal(`Coupon ${coupon.CouponNumber} not found`)
                 responseStatus = {
                     IsSuccess: false,
@@ -35,7 +35,6 @@ module.exports = {
                     BalanceAmount: 0,
                     ResponseStatus: responseStatus
                 })
-                //work on return stuff
             } else { //3cases
                 if(parseFloat(coupon.RedeemAmount) > parseFloat(foundCoupon.Balance)){ //c1: redeem amount higher than balance
                     writeToTerminal(`Coupon ${coupon.CouponNumber} Error:  redeem amount (${coupon.RedeemAmount}) higher than balance (${foundCoupon.Balance})`)

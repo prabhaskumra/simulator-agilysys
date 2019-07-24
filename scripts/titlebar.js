@@ -1,3 +1,4 @@
+//Just adds functionality to the title bar buttons
 (function() {
   const remote = require("electron").remote;
 

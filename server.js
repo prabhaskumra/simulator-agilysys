@@ -57,16 +57,15 @@ ipcMain.on("editPort", (event, port) => {
   server = app.listen(port, () => writeToTerminal(`App is listening on port ${port}`));
 })
 
+server = app.listen(port, () => console.log('yes i loaded'));
+
+//----------------------------------------------------------------------------------------//
 //default load page
 app.get("/", (req, res) =>
   res.sendFile(path.join(__dirname + "/views/index.html"))
 );
 
-app.get('/editUser', (req, res) => {
-  res.sendFile(path.join(__dirname + '/views/editUser.html'))
-  writeToTerminal("Opened edit user page.")
-})
-
+//----------------------------------------------------------------------------------------//
 //validate user api Post
 //IG will send post request and get account back - also will display account information
 app.post("/Players/GetPlayerInfo", (req, res) => {
@@ -79,10 +78,11 @@ app.post("/Players/GetPlayerInfo", (req, res) => {
   }
   let account = getPlayerInfo(req.body.acct);
   //send back account info
-  res.send(account ? account : { "error:": "no results" });
+  res.send(account ? account : { "error:": "no results" }); //TO-DO: FIX THIS ? LOL
   writeToTerminal("GetPlayerInfo response sent for account " + req.body.acct, account)
 });
 
+//----------------------------------------------------------------------------------------//
 //returns all offers from offers.json that match the account number
 app.post("/Players/GetOffers", (req, res) => {
   writeToTerminal("GetOffers request recieved for account " + req.body.AccountNumber, req.body)
@@ -92,12 +92,11 @@ app.post("/Players/GetOffers", (req, res) => {
     return;
   }
   let offers = GetOffers(req.body.AccountNumber);
-  let account = getPlayerInfo(req.body.AccountNumber);
   res.send(offers);
   writeToTerminal("GetOffers response sent for account " + req.body.AccountNumber, offers)
 });
 
-
+//----------------------------------------------------------------------------------------//
 // redeeming an offer that is requested for redemption
 app.post("/Players/RedeemOffer", (req, res) => {
   writeToTerminal("RedeemOffer request recieved for account " + req.body.AccountNumber, req.body)
@@ -113,7 +112,7 @@ app.post("/Players/RedeemOffer", (req, res) => {
   writeToTerminal("RedeemOffer response sent for account " + req.body.AccountNumber, offersRedeemed)
 })
 
-
+//----------------------------------------------------------------------------------------//
 //redeem each comp in list, i am assuming that there could be more than one
 app.post("/Players/RedeemComp", (req, res) => {
   writeToTerminal("RedeemComp request recieved for account " + req.body.AccountNumber, req.body)
@@ -128,6 +127,7 @@ app.post("/Players/RedeemComp", (req, res) => {
   writeToTerminal("RedeemComp response sent for account " + req.body.AccountNumber, redeemValues.out)
 });
 
+//----------------------------------------------------------------------------------------//
 app.post("/Players/RedeemPoints", (req, res) => {
   writeToTerminal("RedeemPoints request recieved for account " + req.body.AccountNumber, req.body)
   if (!appReady) {
@@ -143,6 +143,7 @@ app.post("/Players/RedeemPoints", (req, res) => {
   writeToTerminal("RedeemPoints response sent for account " + req.body.AccountNumber, redeemValues.out)
 });
 
+//----------------------------------------------------------------------------------------//
 app.post("/Players/RedeemCoupon", (req, res) => {
   writeToTerminal("RedeemCoupon request recieved for account " + req.body.AccountNumber, req.body)
   if (!appReady) {
@@ -155,6 +156,7 @@ app.post("/Players/RedeemCoupon", (req, res) => {
   writeToTerminal("RedeemCoupon response sent for account " + req.body.AccountNumber, redeemedCoupons)
 })
 
+//----------------------------------------------------------------------------------------//
 app.post("/Players/ValidateAccount", (req,res)=> {
   writeToTerminal("ValidateAccount request recieved for account " + req.body.cardNumber, req.body)
   if (!appReady) {
@@ -167,6 +169,7 @@ app.post("/Players/ValidateAccount", (req,res)=> {
   writeToTerminal("ValidateAccount response sent for account " + req.body.cardNumber, validatedAccounts)
 })
 
+//----------------------------------------------------------------------------------------//
 app.post("/Players/RedeemAll", (req, res) => {
   writeToTerminal("RedeemAll request recieved for account " + req.body.AccountNumber, req.body)
   //todo
@@ -174,6 +177,7 @@ app.post("/Players/RedeemAll", (req, res) => {
   writeToTerminal("RedeemAll response sent for account " + req.body.AccountNumber, req.body)
 })  
 
+//----------------------------------------------------------------------------------------//
 app.post("/Players/VoidAll", (req, res) => {
   writeToTerminal("VoidAll request recieved for account " + req.body.AccountNumber, req.body)
   //todo
@@ -181,6 +185,7 @@ app.post("/Players/VoidAll", (req, res) => {
   writeToTerminal("VoidAll response sent for account " + req.body.AccountNumber, req.body)
 })
 
+//----------------------------------------------------------------------------------------//
 app.post("/Players/RetailRating", (req, res) => {
   writeToTerminal("RetailRating request recieved for account " + req.body.AccountNumber, req.body)
   //todo
@@ -198,12 +203,5 @@ app.post("/Players/RetailRating", (req, res) => {
   })
   writeToTerminal("RetailRating response sent for account " + req.body.AccountNumber, req.body)
 })
+//----------------------------------------------------------------------------------------//
 
-
-server = app.listen(port, () => console.log('yes i loaded'));
-
-module.exports = {
-  writeToTerminal: function (data, jsondata) {
-    writeToTerminal(data, jsondata)
-  }
-}
