@@ -432,3 +432,187 @@
 6/2/2019 16:33:3:137 - App is listening on port 8080
 6/2/2019 16:33:24:980 - App is listening on port 8080
 6/2/2019 16:38:26:442 - App is listening on port 8080
+6/2/2019 16:40:22:637 - Saved edited player info
+6/2/2019 16:40:22:817 - Saved edited player info
+6/2/2019 16:40:23:17 - Saved edited player info
+6/2/2019 16:40:23:161 - Saved edited player info
+6/2/2019 16:40:23:241 - Saved edited player info
+6/2/2019 16:40:42:33 - Saved edited player info
+6/2/2019 16:40:42:177 - Saved edited player info
+6/2/2019 16:40:42:296 - Saved edited player info
+6/2/2019 16:40:42:352 - Saved edited player info
+6/2/2019 16:40:43:576 - Saved edited player info
+6/2/2019 16:40:43:737 - Saved edited player info
+6/2/2019 16:40:43:889 - Saved edited player info
+6/2/2019 16:40:44:34 - Saved edited player info
+6/2/2019 16:40:44:148 - Saved edited player info
+6/2/2019 16:41:21:947 - Saved edited player info
+6/2/2019 16:41:22:466 - Saved edited player info
+6/2/2019 16:41:22:505 - Saved edited player info
+6/2/2019 16:41:22:737 - Saved edited player info
+6/2/2019 16:41:22:856 - Saved edited player info
+6/2/2019 16:41:25:88 - Saved edited player info
+6/2/2019 16:41:25:385 - Saved edited player info
+6/2/2019 16:41:25:521 - Saved edited player info
+6/2/2019 16:41:25:674 - Saved edited player info
+6/2/2019 16:41:25:819 - Saved edited player info
+6/2/2019 16:41:25:972 - Saved edited player info
+6/2/2019 16:41:26:242 - Saved edited player info
+6/2/2019 16:41:26:401 - Saved edited player info
+6/2/2019 16:41:26:544 - Saved edited player info
+6/2/2019 16:41:26:584 - Saved edited player info
+6/2/2019 16:41:27:488 - Saved edited player info
+6/2/2019 16:41:27:609 - Saved edited player info
+6/2/2019 16:41:27:746 - Saved edited player info
+6/2/2019 16:41:27:883 - Saved edited player info
+6/2/2019 16:41:28:684 - Saved edited player info
+6/2/2019 16:41:28:929 - Saved edited player info
+6/2/2019 16:41:29:73 - Saved edited player info
+6/2/2019 16:41:29:217 - Saved edited player info
+6/2/2019 16:41:29:417 - Saved edited player info
+6/2/2019 16:41:29:600 - Saved edited player info
+6/2/2019 16:41:29:856 - Saved edited player info
+6/2/2019 16:41:30:16 - Saved edited player info
+6/2/2019 16:41:30:120 - Saved edited player info
+6/2/2019 16:41:30:160 - Saved edited player info
+6/2/2019 16:41:33:416 - Saved edited player info
+6/2/2019 16:41:33:560 - Saved edited player info
+6/2/2019 16:41:33:712 - Saved edited player info
+6/2/2019 16:41:33:920 - Saved edited player info
+6/2/2019 16:41:34:296 - Saved edited player info
+6/2/2019 16:41:34:888 - Saved edited player info
+6/2/2019 16:41:35:40 - Saved edited player info
+6/2/2019 16:41:35:192 - Saved edited player info
+6/2/2019 16:41:35:312 - Saved edited player info
+6/2/2019 16:41:35:752 - Saved edited player info
+6/2/2019 16:41:35:912 - Saved edited player info
+6/2/2019 16:41:36:128 - Saved edited player info
+6/2/2019 16:41:36:424 - Saved edited player info
+6/2/2019 16:41:39:121 - Saved edited player info
+6/2/2019 16:41:39:256 - Saved edited player info
+6/2/2019 16:41:39:544 - Saved edited player info
+6/2/2019 16:41:39:608 - Saved edited player info
+6/2/2019 16:41:40:752 - Saved edited player info
+6/2/2019 16:41:40:920 - Saved edited player info
+6/2/2019 16:41:41:64 - Saved edited player info
+6/2/2019 16:41:41:240 - Saved edited player info
+6/2/2019 16:41:42:0 - Saved edited player info
+6/2/2019 16:41:42:169 - Saved edited player info
+6/2/2019 16:41:42:745 - Saved edited player info
+6/2/2019 16:41:43:896 - Saved edited player info
+6/2/2019 16:41:44:720 - Saved edited player info
+6/2/2019 16:41:44:824 - Saved edited player info
+6/2/2019 16:41:45:728 - Saved edited player info
+6/2/2019 16:41:46:48 - Saved edited player info
+6/2/2019 16:41:46:201 - Saved edited player info
+6/2/2019 16:41:46:330 - Saved edited player info
+6/2/2019 16:41:46:493 - Saved edited player info
+6/2/2019 16:41:47:499 - Saved edited player info
+6/2/2019 16:41:47:617 - Saved edited player info
+6/2/2019 16:41:47:696 - Saved edited player info
+6/2/2019 16:41:47:800 - Saved edited player info
+6/2/2019 16:41:47:905 - Saved edited player info
+6/2/2019 16:41:48:128 - Saved edited player info
+6/2/2019 16:41:48:210 - Saved edited player info
+6/2/2019 16:41:48:601 - Saved edited player info
+6/2/2019 16:41:48:753 - Saved edited player info
+6/2/2019 16:41:48:881 - Saved edited player info
+6/2/2019 16:41:49:41 - Saved edited player info
+6/2/2019 16:41:49:161 - Saved edited player info
+6/2/2019 16:41:49:321 - Saved edited player info
+6/2/2019 16:41:49:459 - Saved edited player info
+6/2/2019 16:41:50:19 - Saved edited player info
+6/2/2019 16:41:50:428 - Saved edited player info
+6/2/2019 16:41:50:917 - Saved edited player info
+6/2/2019 16:41:50:952 - Saved edited player info
+6/2/2019 16:41:51:57 - Saved edited player info
+6/2/2019 16:41:51:321 - Saved edited player info
+6/2/2019 16:41:51:737 - Saved edited player info
+6/2/2019 16:41:51:960 - Saved edited player info
+6/2/2019 16:41:52:25 - Saved edited player info
+6/2/2019 16:41:52:424 - Saved edited player info
+6/2/2019 16:41:52:504 - Saved edited player info
+6/2/2019 16:41:52:520 - Saved edited player info
+6/2/2019 16:41:52:736 - Saved edited player info
+6/2/2019 16:41:52:840 - Saved edited player info
+6/2/2019 16:41:52:880 - Saved edited player info
+6/2/2019 16:41:53:288 - Saved edited player info
+6/2/2019 16:41:53:440 - Saved edited player info
+6/2/2019 16:41:53:592 - Saved edited player info
+6/2/2019 16:41:53:752 - Saved edited player info
+6/2/2019 16:41:53:896 - Saved edited player info
+6/2/2019 16:41:54:89 - Saved edited player info
+6/2/2019 16:41:55:840 - Saved edited player info
+6/2/2019 16:41:56:17 - Saved edited player info
+6/2/2019 16:41:56:153 - Saved edited player info
+6/2/2019 16:41:56:321 - Saved edited player info
+6/2/2019 16:41:56:617 - Saved edited player info
+6/2/2019 16:41:56:777 - Saved edited player info
+6/2/2019 16:41:56:966 - Saved edited player info
+6/2/2019 16:41:57:490 - Saved edited player info
+6/2/2019 16:41:57:705 - Saved edited player info
+6/2/2019 16:41:58:26 - Saved edited player info
+6/2/2019 16:42:0:433 - Saved edited player info
+6/2/2019 16:42:0:976 - Saved edited player info
+6/2/2019 16:42:1:33 - Saved edited player info
+6/2/2019 16:42:1:72 - Saved edited player info
+6/2/2019 16:42:1:617 - Saved edited player info
+6/2/2019 16:42:1:801 - Saved edited player info
+6/2/2019 16:42:1:953 - Saved edited player info
+6/2/2019 16:42:2:113 - Saved edited player info
+6/2/2019 16:42:2:283 - Saved edited player info
+6/2/2019 16:42:2:970 - Saved edited player info
+6/2/2019 16:42:3:16 - Saved edited player info
+6/2/2019 16:42:3:96 - Saved edited player info
+6/2/2019 16:42:3:384 - Saved edited player info
+6/2/2019 16:42:3:752 - Saved edited player info
+6/2/2019 16:42:3:792 - Saved edited player info
+6/2/2019 16:42:3:936 - Saved edited player info
+6/2/2019 16:42:4:88 - Saved edited player info
+6/2/2019 16:42:4:280 - Saved edited player info
+6/2/2019 16:42:4:449 - Saved edited player info
+6/2/2019 16:42:4:529 - Saved edited player info
+6/2/2019 16:42:4:749 - Saved edited player info
+6/2/2019 16:42:4:888 - Saved edited player info
+6/2/2019 16:42:4:912 - Saved edited player info
+6/2/2019 16:42:5:128 - Saved edited player info
+6/2/2019 16:42:5:224 - Saved edited player info
+6/2/2019 16:42:5:251 - Saved edited player info
+6/2/2019 16:42:6:316 - Saved edited player info
+6/2/2019 16:42:6:576 - Saved edited player info
+6/2/2019 16:42:6:765 - Saved edited player info
+6/2/2019 16:42:6:934 - Saved edited player info
+6/2/2019 16:42:8:379 - Saved edited player info
+6/2/2019 16:42:8:417 - Saved edited player info
+6/2/2019 16:42:8:496 - Saved edited player info
+6/2/2019 16:42:8:809 - Saved edited player info
+6/2/2019 16:42:9:72 - Saved edited player info
+6/2/2019 16:42:9:337 - Saved edited player info
+6/2/2019 16:42:9:416 - Saved edited player info
+6/2/2019 16:42:9:760 - Saved edited player info
+6/2/2019 16:42:10:232 - Saved edited player info
+6/2/2019 16:42:10:400 - Saved edited player info
+6/2/2019 16:42:11:696 - Saved edited player info
+6/2/2019 16:56:20:413 - App is listening on port 8080
+6/3/2019 9:12:33:209 - App is listening on port 8080
+6/3/2019 9:14:32:762 - App is listening on port 8080
+6/3/2019 9:39:16:634 - App is listening on port 8080
+6/3/2019 9:41:37:946 - App is listening on port 8080
+6/3/2019 9:42:24:794 - App is listening on port 8080
+6/3/2019 9:44:18:243 - App is listening on port 8080
+6/3/2019 9:53:8:476 - App is listening on port 8080
+6/3/2019 10:1:42:29 - App is listening on port 8080
+6/3/2019 10:13:9:191 - App is listening on port 8080
+6/3/2019 10:13:23:892 - App is listening on port 8080
+6/3/2019 10:22:49:788 - App is listening on port 8080
+6/3/2019 10:41:52:964 - App is listening on port 8080
+6/3/2019 10:43:51:742 - App is listening on port 8080
+6/3/2019 10:47:13:253 - App is listening on port 8080
+6/3/2019 10:56:15:447 - App is listening on port 8080
+6/3/2019 10:56:51:193 - App is listening on port 8080
+6/3/2019 10:57:40:694 - App is listening on port 8080
+6/3/2019 10:58:4:153 - App is listening on port 8080
+6/3/2019 11:9:49:457 - App is listening on port 8080
+6/3/2019 11:14:14:880 - App is listening on port 8080
+6/3/2019 11:20:47:469 - App is listening on port 8080
+6/3/2019 11:27:11:44 - App is listening on port 8080

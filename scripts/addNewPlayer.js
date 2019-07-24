@@ -99,6 +99,12 @@ function enterData(inputElement){
             checkFlag()
             break
         }
+        case 'promo-balance':{
+            newUser.promo2Balance = inputElement.value
+            flags.promo2Balance = true
+            checkFlag()
+            break
+        }
         case 'isInActive':{
             newUser.isInActive = inputElement.value
             checkFlag()
@@ -113,11 +119,6 @@ function enterData(inputElement){
             newUser.isPinLocked = inputElement.value
             checkFlag()
             break
-        }
-        case 'promo-balance':{
-            newUser.promo2Balance = inputElement.value
-            flags.promo2Balance = true
-            checkFlag()
         }
     }
 }

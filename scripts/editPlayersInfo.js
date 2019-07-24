@@ -20,14 +20,16 @@ function updateTable() {
       "<td> <input type='text' name='dateOfBirth' class='input input1' value='"+playerData[i].dateOfBirth +"'onchange='swapValue(this,"+i+")'"+"</td>"+
       "<td> <input type='text' name='compBalance' class='input input1' value='"+playerData[i].compBalance +"'onchange='swapValue(this,"+i+")'"+"</td>"+
       "<td> <input type='text' name='promo2Balance' class='input input1' value='"+playerData[i].promo2Balance +"'onchange='swapValue(this,"+i+")'"+"</td>"+
-      "<td> <label><input type='checkbox' name='isInActive' checked> True</label> </td>"+
-      "<td> <label><input type='checkbox' name='isBanned' checked> True</label> </td>"+
-      "<td> <label><input type='checkbox' name='isPinLocked' checked> True</label> </td></tr>"
+      "<td> <label><input class='player-bools' type='checkbox' value='"+playerData[i].isInActive +"' name='isInActive' onload='updateCheckbox(this)' unchecked>TRUE</label> </td>"+
+      "<td> <label><input class='player-bools' type='checkbox' value='"+playerData[i].isBanned +"' name='isBanned' checked> True</label> </td>"+
+      "<td> <label><input class='player-bools' type='checkbox' value='"+playerData[i].isPinLocked +"' name='isPinLocked' checked> True</label> </td></tr>"
     )
   
   } 
   accountInfo += "</table>"
+  
   document.getElementById('editData').innerHTML = accountInfo
+  updateCheckboxes()
 }
 
 function filterTable(value){
@@ -48,14 +50,16 @@ function filterTable(value){
         "<td> <input type='text' name='dateOfBirth' class='input input1' value='"+playerData[i].dateOfBirth +"'onchange='swapValue(this,"+i+")'"+"</td>"+
         "<td> <input type='text' name='compBalance' class='input input1' value='"+playerData[i].compBalance +"'onchange='swapValue(this,"+i+")'"+"</td>"+
         "<td> <input type='text' name='promo2Balance' class='input input1' value='"+playerData[i].promo2Balance +"'onchange='swapValue(this,"+i+")'"+"</td>"+
-        "<td> <label><input type='checkbox' name='isInActive' checked> True</label> </td>"+
+        "<td> <label><input type='checkbox'  name='isInActive' checked> True</label> </td>"+
         "<td> <label><input type='checkbox' name='isBanned' checked> True</label> </td>"+
         "<td> <label><input type='checkbox' name='isPinLocked' checked> True</label> </td></tr>"
       )
     }
   } 
   accountInfo += "</table>"
+
   document.getElementById('editData').innerHTML = accountInfo
+  updateCheckboxes()
 }
 
 // does not works, need to edit
@@ -106,12 +110,28 @@ function swapValue(tableElement, i) {
       playerData[i].promo2Balance = tableElement.value
       break
     }
-    case 'isInActive': {
-      playerData[i].isInActive = tableElement.value
-      break
-    }
+    // case 'isInActive': {
+    //   playerData[i].isInActive = tableElement.value
+    //   break
+    // }
   }
 }
+
+function updateCheckboxes(){
+
+  let checkboxes = document.getElementsByClassName("player-bools")
+  
+
+  for(let i = 0; i < checkboxes.length; i++){
+      if(checkboxes[i].value === "TRUE"){
+          checkboxes[i].checked = true;  
+      } else {
+      checkboxes[i].checked = false;    
+      }
+  }
+
+}
+
 
 // this function saves the data when the save button is clicked 
 function writeToFile(){
