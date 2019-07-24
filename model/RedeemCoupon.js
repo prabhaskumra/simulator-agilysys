@@ -43,6 +43,7 @@ module.exports = {
                 .push({
                     type: "RedeemCoupon",
                     transactionId: transactionIdCount,
+                    isVoided: false,
                     transactionData: {
                         CouponNumber: coupon.CouponNumber,
                         RedeemedAmount: 0,
@@ -77,6 +78,7 @@ module.exports = {
                     .push({
                         type: "RedeemCoupon",
                         transactionId: transactionIdCount,
+                        isVoided: false,
                         transactionData: {
                             CouponNumber: coupon.CouponNumber,
                             RedeemedAmount: 0,
@@ -110,6 +112,7 @@ module.exports = {
                     .push({
                         type: "RedeemCoupon",
                         transactionId: transactionIdCount,
+                        isVoided: false,
                         transactionData: {
                             CouponNumber: coupon.CouponNumber,
                             RedeemedAmount: parseFloat(foundCoupon.Balance),
@@ -156,6 +159,7 @@ module.exports = {
                     .push({
                         type: "RedeemCoupon",
                         transactionId: transactionIdCount,
+                        isVoided: false,
                         transactionData: {
                             CouponNumber: coupon.CouponNumber,
                             RedeemedAmount: coupon.RedeemAmount,

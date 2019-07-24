@@ -93,6 +93,7 @@ function writeTransactions(data, j, accountnumber, transId){
         .push({
             type: "RedeemOffer",
             transactionId: transId,
+            isVoided: false,
             transactionData
         })
         .write()

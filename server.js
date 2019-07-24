@@ -16,6 +16,7 @@ const RedeemPoints = require("./model/RedeemPoints").RedeemPoints;
 const RedeemOffer = require("./model/RedeemOffer").RedeemOffer;
 const ValidateAccount = require("./model/ValidateAccount").ValidateAccount;
 const RedeemCoupon = require("./model/RedeemCoupon").RedeemCoupon
+const VoidAll = require("./model/VoidAll").VoidAll
 //---------------------------------------------------------------------------------------//
 
 //------------------------------------express setup--------------------------------------//
@@ -174,15 +175,6 @@ app.post("/Players/RedeemAll", (req, res) => {
   res.send({lol: "Lol"})
   writeToTerminal("RedeemAll response sent for account " + req.body.AccountNumber, req.body)
 })  
-
-//----------------------------------------------------------------------------------------//
-app.post("/Players/VoidAll", (req, res) => {
-  writeToTerminal("VoidAll request recieved for account " + req.body.AccountNumber, req.body)
-  //todo
-  res.send({lol: "Lol"})
-  writeToTerminal("VoidAll response sent for account " + req.body.AccountNumber, req.body)
-})
-
 //----------------------------------------------------------------------------------------//
 app.post("/Players/RetailRating", (req, res) => {
   writeToTerminal("RetailRating request recieved for account " + req.body.AccountNumber, req.body)
@@ -202,5 +194,16 @@ app.post("/Players/RetailRating", (req, res) => {
   writeToTerminal("RetailRating response sent for account " + req.body.AccountNumber, req.body)
 })
 //----------------------------------------------------------------------------------------//
+app.post("/Players/VoidAll", (req, res) => {
+  writeToTerminal("VoidAll request recieved for account " + req.body.AccountNumber, req.body)
+  if (!appReady) {
+    res.send({ error: "data not loaded" });
+    writeToTerminal("Error: App not ready (VoidAll)")
+    return;
+  }
+  let out = VoidAll(req.body.AccountNumber, req.body.VoidAllList)
+  res.send(out)
+  writeToTerminal("VoidAll response sent for account " + req.body.AccountNumber, out)
+})
 server = app.listen(port, () => writeToTerminal("Started terminal."));
 

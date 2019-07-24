@@ -53,6 +53,7 @@ module.exports = {
                 .push({
                     type: "RedeemPoints",
                     transactionId: transactionIdCount,
+                    isVoided: false,
                     transactionData: data
                 })
                 .write()
