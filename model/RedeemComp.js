@@ -14,6 +14,18 @@ module.exports = {
         foundAccount = db.get('players')
             .find({accountNumber: accountNumber})
             .value()
+
+        if(foundAccount === undefined){
+            return {
+                AccountNumber: accountNumber,
+                CompBalance: 0,
+                ResponseStatus: {
+                    IsSuccess: false,
+                    ErrorMessage: "",
+                    ErrorCode: ""
+                }
+            }
+        }
         
         let currentCompPoints = parseInt(foundAccount.compBalance)
         let outCompList = []
@@ -31,10 +43,11 @@ module.exports = {
             currentCompPoints = foundAccount.compBalance - redeemedTotal
 
             let transactionIdCount = db.get('transactionId').value()
-            transactionId++
+            transactionIdCount++
             db.set('transactionId', transactionIdCount).write() //write back to db               
 
             let data = {     
+                AccountNumber: accountNumber,
                 "SequenceID": comp.SequenceID,
                 "ReferenceID": comp.ReferenceID,
                 "RedeemDollars": comp.RedeemDollars,

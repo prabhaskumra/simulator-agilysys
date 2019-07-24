@@ -7,3 +7,4 @@ package.json
 *.json
 log.txt
 loghtml.txt
+*.txt

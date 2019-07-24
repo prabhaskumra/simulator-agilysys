@@ -63,7 +63,6 @@ function filterTable(value){
   updateCheckboxes()
 }
 
-// does not works, need to edit
 function searchData(input) {
   filterTable(input.value)
   writeToTerminal("Saved edited player info")
@@ -71,7 +70,7 @@ function searchData(input) {
 
 function checkDuplicateAccountNumbers(){
   playerData.forEach(player => {
-    
+    //TO-DO
   });
 }
 
@@ -173,7 +172,11 @@ function saveCheckbox(element, i){
 // this function saves the data when the save button is clicked 
 function writeToFile(){
   db.set('players', playerData).write()
+
   document.getElementById('dataSaved').textContent = "Data Saved Successfully!"
+  setTimeout(function(){
+    document.getElementById('dataSaved').textContent = "";
+  },1000);
 }
 
 function editPlayers(){

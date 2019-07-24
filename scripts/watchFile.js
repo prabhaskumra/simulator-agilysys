@@ -1,5 +1,20 @@
-fs.watch(path.join('./loghtml.txt'), (event, filename) => {
-    fs.readFile(path.join('./loghtml.txt'), (err, data) => {
+//this file watches the loghtml.txt to see if there are any changes made, if so update terminal
+
+let isProduction = false // set this to true when exporting to exe
+let loghtmlPath, logPath
+
+//production and build enviorments direct to different paths. set accordingly
+if(isProduction){
+    loghtmlPath = __dirname + '/../../app/loghtml.txt'
+    logPath = __dirname + '/../../app/log.txt'
+} else {
+    loghtmlPath = './loghtml.txt'
+    logPath = './log.txt'
+}
+
+fs.watch(path.join(loghtmlPath), (event, filename) => {
+    fs.readFile(path.join(loghtmlPath), (err, data) => {
+        console.log(err)
         displayTerminal(data)
     })
 })
@@ -7,12 +22,12 @@ fs.watch(path.join('./loghtml.txt'), (event, filename) => {
 function displayTerminal(data){
     document.getElementById('terminal').innerHTML = data
     addCollapsible()
-    //scroll to bottom of div
-    let div = document.getElementById('terminal')
-    div.scrollTop = div.scrollHeight - div.clientHeight
+    //scrolls to bottom of div
+    let terminal = document.getElementById('terminal')
+    terminal.scrollTop = terminal.scrollHeight - terminal.clientHeight
 }
 
-//for collapsibles
+//make terminal line collapsible - for req and res
 function addCollapsible(){
     var coll = document.getElementsByClassName("collapsible");
     var i;
@@ -30,15 +45,16 @@ function addCollapsible(){
     }
 }
 
+//copied from writeToTerminal.js
 function writeToTerminal(data, jsondata){
     let d = new Date()
     let t = d.getMonth() + "/" + d.getDay() + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + ":" + d.getMilliseconds() + " - "  
     out = "<p>"+ t + data + "</p>"
     
-    fs.appendFileSync('./loghtml.txt', out, (err) => {
+    fs.appendFileSync(path.join(loghtmlPath), out, (err) => {
         if (err) throw err;
     })
-    fs.appendFileSync('./log.txt', t + data + '\n', (err) => {
+    fs.appendFileSync(path.join(logPath), t + data + '\n', (err) => {
         if (err) throw err;
     })
   }

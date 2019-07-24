@@ -19,6 +19,7 @@
     <script src='../scripts/convertPointsToDollars.js'></script>
     <script src='../scripts/editPlayersInfo.js'></script>
     <script src='../scripts/addNewPlayer.js'></script>
+    <script src='../scripts/editCouponInfo.js'></script>
     <script src='../scripts/editPort.js'></script>
 </head>
 <body onload="checkUploaded(); isAppReady()">
@@ -40,38 +41,41 @@
                     <p> <button class="button button1" onclick="openOffers()" id="offer-data-status"></button> </p>
                     <p> <button class="button button1" onclick="openCoupons()" id="coupon-data-status"></button> </p>
                 </div>
-                </br>
+                <br>
                 <div id="pointsToDollarsContainer" style="white-space: nowrap">
                     <h4 style='color: #f5f5f5'>Points To Dollars</h4>
                     <h2 id='pointsToDollars'>1 : 1</h2>
-                    </br>
+                    <br>
                     <button class="button button1" onclick='convertPointsToDollars()'>edit</button>  
                 </div>
-                </br>
-                </br>
+                <br>
+                <br>
             </div>
             <div id ="editPlayerInfo">
                     <p> <button class ="button button1" onclick="editPlayers()" id="edit-info" value="Edit Info">Edit Players' Info</button></p>
-                </div>
-            </br>
-            <div class='nowrap'>
-                <input id='disable-animation' type='checkbox' onclick="disableAnimation(this)"><p style='white-space: nowrap; display: inline; color: #f5f5f5'> Disable Animations</p></br>
             </div>
-
-            <div>
+            <div id="editCouponData">
+                <p> <button class ="button button1" onclick="editCouponData()" id="edit-couponsInfo" value="Edit Coupon Info">Edit Coupons Info</button></p>
+            </div>
+        <br>
+            <div class='nowrap'>
                 <input type='text' id='port' placeholder="port" maxlength="5">
-                <button id='submit-port' onclick="submitPort()">submit</button>
+                <button id='submit-port' class="button button1" style="width: 80px" onclick="submitPort()">submit</button>
                 <p id='port-alert'></p>
             </div>
-
-            <p id='cmp-credit'>CMP Simulator</p>
+            <div class='nowrap'>
+                <input id='disable-animation' type='checkbox' onclick="disableAnimation(this)"><p style='white-space: nowrap; display: inline; color: #f5f5f5'> Disable Animations</p><br>
+            </div>
         </div>
+
+
+
         <div id="main">        
             <div id="data" style="text-align: center">
                 
                 <h1 id="app-not-ready">
-                </br>
-                </br>
+                <br>
+                <br>
                     App is not ready and will not recieve requests. To start recieving requests, click on the settings 
                     button in the upper right hand corner and load in Player and Offer data in the format of .csv's.
                 </h1>
@@ -80,9 +84,8 @@
                 </div>
     
                 <div id="offer-data">
-                    </br>
-                    </br>
                     <div id='terminal-container' style='display:none'>
+                        <h3 style="margin-top: 0px;font-weight: bolder;font-size: 40px;">CMP Log</h3>  
                         <div id='terminal'></div>
                     </div>
                 </div>
@@ -111,6 +114,19 @@
   
         <div id="dataSaved"></div>
         <div id="error-message"></div>
+    </span>
+
+    <span id='edit-coupons' style='display: none'>
+        <h1>Edit Coupon Data</h1>
+        <input type="text" id="myInput"  onkeyup="searchCouponTable(this)" placeholder="Search by coupon number" title="Type in a coupon number">
+        <div id="editCoupon"> 
+            
+        </div>
+    
+        <button class="button button2"  onclick="writeCoupons()">Save</button>
+        <button class="button button2" id="couponClose-btn" onclick="loadCouponMain()">Close</button>
+    
+        <div id="couponDataSaved"></div>
     </span>
 
 
@@ -205,18 +221,20 @@
         function openNav() {
             var e = document.getElementById("mySidebar"); 
             document.getElementById("main").style.marginLeft = '250px';
-            
+            document.getElementById("title-bar").style.marginLeft = "250px";
             if(e.style.width == '250px' ){
                 closeNav();
             }
             else{
                 e.style.width = '250px';
             }
+
         }
 
         function closeNav() {
             document.getElementById("mySidebar").style.width = "0";
             document.getElementById("main").style.marginLeft= "0";
+            document.getElementById("title-bar").style.marginLeft = "0";
         }
 
         function disableAnimation(checkbox){

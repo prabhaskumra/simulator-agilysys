@@ -37,6 +37,7 @@ module.exports = {
             db.set('transactionId', transactionIdCount).write() //write back to db 
 
             let data = {
+                "AccountNumber": accountNumber,
                 "SequenceID": pointOffer.SequenceID,
                 "ReferenceID": pointOffer.ReferenceID,
                 "RedeemDollars": pointOffer.RedeemDollars,
@@ -52,7 +53,7 @@ module.exports = {
                 .push({
                     type: "RedeemPoints",
                     transactionId: transactionIdCount,
-                    data
+                    transactionData: data
                 })
                 .write()
 
@@ -64,8 +65,9 @@ module.exports = {
         .assign({pointBalance: foundAccount.pointBalance - redeemedTotal})
         .write()
 
-        let pointsToDollars = db.get('pointsToDollars').value()/foundAccount.pointBalance
-        writeToTerminal(`RedeemPoints: Redemed ${redeemedTotal} points/${pointsToDollars.toFixed(2)} in dollars`)
+        let pointsToDollars = foundAccount.pointBalance/db.get('pointsToDollars').value()
+        let redeemedPointsToDollars = (redeemedTotal/db.get('pointsToDollars').value()).toFixed(2)
+        writeToTerminal(`RedeemPoints: Redemed ${redeemedTotal} points/${redeemedPointsToDollars} in dollars`)
         let out = {
             "AccountNumber": accountNumber,
             "PointsBalance": foundAccount.pointBalance,
