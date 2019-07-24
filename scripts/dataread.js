@@ -180,4 +180,5 @@ function checkPointsToDollars(){
 function checkRunningPort(){
     let port = db.get('port').value()
     document.getElementById('port-alert').textContent = `Port is currently ${port}`
+    ipcRenderer.send("editPort", port)
 }

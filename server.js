@@ -57,8 +57,6 @@ ipcMain.on("editPort", (event, port) => {
   server = app.listen(port, () => writeToTerminal(`App is listening on port ${port}`));
 })
 
-server = app.listen(port, () => console.log('yes i loaded'));
-
 //----------------------------------------------------------------------------------------//
 //default load page
 app.get("/", (req, res) =>
@@ -204,4 +202,5 @@ app.post("/Players/RetailRating", (req, res) => {
   writeToTerminal("RetailRating response sent for account " + req.body.AccountNumber, req.body)
 })
 //----------------------------------------------------------------------------------------//
+server = app.listen(port, () => writeToTerminal("Started terminal."));
 

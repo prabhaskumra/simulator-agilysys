@@ -88,8 +88,8 @@ input[type="text"]::-webkit-input-placeholder {
 
 #terminal-container {
   position: absolute;
-  bottom: 10%;
-  top: 10%;
+  bottom: 12%;
+  top: 5%;
   margin-left: 5%;
   margin-right: 4%;
 }
