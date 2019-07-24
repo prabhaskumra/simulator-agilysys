@@ -119,6 +119,8 @@ module.exports = {
                     })
                     .write()
                     let newCoupons = coupons.filter(deleteCoupon => deleteCoupon.CouponNumber != coupon.CouponNumber)
+                    console.log(newCoupons)
+                    db.set('coupons', []).write()
                     db.set('coupons', newCoupons).write()
                     writeToTerminal(`Coupon ${coupon.CouponNumber} new balance : 0`)
                     writeToTerminal(`Removed coupon ${coupon.CouponNumber} from database`)

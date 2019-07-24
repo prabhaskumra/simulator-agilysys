@@ -65,8 +65,9 @@ module.exports = {
         .assign({pointBalance: foundAccount.pointBalance - redeemedTotal})
         .write()
 
-        let pointsToDollars = db.get('pointsToDollars').value()/foundAccount.pointBalance
-        writeToTerminal(`RedeemPoints: Redemed ${redeemedTotal} points/${pointsToDollars.toFixed(2)} in dollars`)
+        let pointsToDollars = foundAccount.pointBalance/db.get('pointsToDollars').value()
+        let redeemedPointsToDollars = (redeemedTotal/db.get('pointsToDollars').value()).toFixed(2)
+        writeToTerminal(`RedeemPoints: Redemed ${redeemedTotal} points/${redeemedPointsToDollars} in dollars`)
         let out = {
             "AccountNumber": accountNumber,
             "PointsBalance": foundAccount.pointBalance,

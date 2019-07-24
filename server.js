@@ -134,7 +134,7 @@ app.post("/Players/RedeemPoints", (req, res) => {
     return;
   }
 
-  let redeemPointsList = req.body.RedeemPointsList;
+  let redeemPointsList = req.body.redeemPointsList;
 
   let redeemValues = RedeemPoints(req.body.AccountNumber, redeemPointsList);
   res.send(redeemValues.out);
