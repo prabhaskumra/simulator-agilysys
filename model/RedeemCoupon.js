@@ -26,15 +26,32 @@ module.exports = {
                     ErrorMessage: "",
                     ErrorCode: ""
                 }
+
+                let transactionIdCount = db.get('transactionId').value()
+                transactionIdCount++;
+                db.set('transactionId', transactionIdCount).write()
                 couponsOut.push({
                     CouponNumber: coupon.CouponNumber,
                     ReferenceId: 0,
-                    TransactionId: 0,
+                    TransactionId: transactionIdCount,
                     SequenceId: 0,
                     RedeemedAmount: 0,
                     BalanceAmount: 0,
                     ResponseStatus: responseStatus
                 })
+                db.get('transactions')
+                .push({
+                    type: "RedeemCoupon",
+                    transactionId: transactionIdCount,
+                    transactionData: {
+                        CouponNumber: coupon.CouponNumber,
+                        RedeemedAmount: 0,
+                        BalanceAmount: 0,
+                        ResponseStatus: responseStatus
+                    }
+                })
+                .write()
+
             } else { //3cases
                 if(parseFloat(coupon.RedeemAmount) > parseFloat(foundCoupon.Balance)){ //c1: redeem amount higher than balance
                     writeToTerminal(`Coupon ${coupon.CouponNumber} Error:  redeem amount (${coupon.RedeemAmount}) higher than balance (${foundCoupon.Balance})`)
@@ -43,15 +60,31 @@ module.exports = {
                         ErrorMessage: "Redeem amount higher than balance",
                         ErrorCode: ""
                     }
+
+                    let transactionIdCount = db.get('transactionId').value()
+                    transactionIdCount++;
+                    db.set('transactionId', transactionIdCount).write()
                     couponsOut.push({
                         CouponNumber: coupon.CouponNumber,
                         ReferenceId: 0,
-                        TransactionId: 0,
+                        TransactionId: transactionIdCount,
                         SequenceId: 0,
                         RedeemedAmount: 0,
                         BalanceAmount: foundCoupon.Balance,
                         ResponseStatus: responseStatus
                     })
+                    db.get('transactions')
+                    .push({
+                        type: "RedeemCoupon",
+                        transactionId: transactionIdCount,
+                        transactionData: {
+                            CouponNumber: coupon.CouponNumber,
+                            RedeemedAmount: 0,
+                            BalanceAmount: foundCoupon.Balance,
+                            ResponseStatus: responseStatus
+                        }
+                    })
+                    .write()
                     BalanceAmount = foundCoupon.Balance
                 } else if(parseFloat(coupon.RedeemAmount) === parseFloat(foundCoupon.Balance)) { //c2: equals value. In that case, delete coupon always
                     writeToTerminal(`Redeeming coupon ${coupon.CouponNumber} for ${coupon.RedeemAmount}`)
@@ -60,19 +93,35 @@ module.exports = {
                         ErrorMessage: "",
                         ErrorCode: ""
                     }
+
+                    let transactionIdCount = db.get('transactionId').value()
+                    transactionIdCount++;
+                    db.set('transactionId', transactionIdCount).write()
+                    couponsOut.push({
+                        CouponNumber: coupon.CouponNumber,
+                        ReferenceId: 0,
+                        TransactionId: transactionIdCount,
+                        SequenceId: 0,
+                        RedeemedAmount: parseFloat(foundCoupon.Balance),
+                        BalanceAmount: 0,
+                        ResponseStatus: responseStatus
+                    })
+                    db.get('transactions')
+                    .push({
+                        type: "RedeemCoupon",
+                        transactionId: transactionIdCount,
+                        transactionData: {
+                            CouponNumber: coupon.CouponNumber,
+                            RedeemedAmount: parseFloat(foundCoupon.Balance),
+                            BalanceAmount: 0,
+                            ResponseStatus: responseStatus
+                        }
+                    })
+                    .write()
                     let newCoupons = coupons.filter(deleteCoupon => deleteCoupon.CouponNumber != coupon.CouponNumber)
                     db.set('coupons', newCoupons).write()
                     writeToTerminal(`Coupon ${coupon.CouponNumber} new balance : 0`)
                     writeToTerminal(`Removed coupon ${coupon.CouponNumber} from database`)
-                    couponsOut.push({
-                        CouponNumber: coupon.CouponNumber,
-                        ReferenceId: 0,
-                        TransactionId: 0,
-                        SequenceId: 0,
-                        RedeemedAmount: foundCoupon.Balance,
-                        BalanceAmount: foundCoupon.Balance,
-                        ResponseStatus: responseStatus
-                    })
                     BalanceAmount = 0
                 } else { //redeeming amount less than balance, either keep coupon or add balance to comps bucket
                     writeToTerminal(`Redeeming coupon ${coupon.CouponNumber} for ${coupon.RedeemAmount}`)
@@ -88,16 +137,31 @@ module.exports = {
                     .assign({Balance: String(BalanceAmount)})
                     .write()
                     writeToTerminal(`Coupon ${coupon.CouponNumber} new balance : ${BalanceAmount}`)
-
+                    
+                    let transactionIdCount = db.get('transactionId').value()
+                    transactionIdCount++;
+                    db.set('transactionId', transactionIdCount).write()
                     couponsOut.push({
                         CouponNumber: coupon.CouponNumber,
                         ReferenceId: 0,
-                        TransactionId: 0,
+                        TransactionId: transactionIdCount,
                         SequenceId: 0,
                         RedeemedAmount: coupon.RedeemAmount,
                         BalanceAmount: BalanceAmount,
                         ResponseStatus: responseStatus
                     })
+                    db.get('transactions')
+                    .push({
+                        type: "RedeemCoupon",
+                        transactionId: transactionIdCount,
+                        transactionData: {
+                            CouponNumber: coupon.CouponNumber,
+                            RedeemedAmount: coupon.RedeemAmount,
+                            BalanceAmount: BalanceAmount,
+                            ResponseStatus: responseStatus
+                        }
+                    })
+                    .write()
                 }
             }
         });

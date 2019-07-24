@@ -5,7 +5,6 @@ const db = low(adapter)
 
 
 let redeemOfferResultList = []
-let transactionIdCount = db.get('transactionId').value()
 
 const writeToTerminal = require("./writeToTerminal")
 
@@ -25,9 +24,11 @@ module.exports = {
                         redeemOfferResultList.push(offersAvailable[j])
                         offerData.splice(i,1)
                         db.set('offers', offerData).write()
-
+                        
+                        let transactionIdCount = db.get('transactionId').value()
                         transactionIdCount++;
                         db.set('transactionId', transactionIdCount).write()
+                       
                         redeemOfferResultList[j].TransactionId = transactionIdCount
                         writeToTerminal(`Successful transaction - Offer ${offerData[i].OfferCode}`)
                         let data = {
@@ -36,7 +37,7 @@ module.exports = {
                             "ErrorCode": ""
                         }
                         redeemOfferResultList[j].ResponseStatus = data
-                        writeTransactions(data, j, accountnumber)
+                        writeTransactions(data, j, accountnumber, transactionIdCount)
                         j++
                         i = 0
                     }
@@ -49,7 +50,7 @@ module.exports = {
 
             redeemOfferResultList.push(offersAvailable[j])
 
-            db.get('transactionId').value()
+            let transactionIdCount = db.get('transactionId').value()
             transactionIdCount++;
             db.set('transactionId', transactionIdCount).write()
             redeemOfferResultList[j].TransactionId = transactionIdCount
@@ -60,7 +61,7 @@ module.exports = {
                 "ErrorCode": "XXX"
             }
             redeemOfferResultList[j].ResponseStatus = data
-            writeTransactions(data, j, accountnumber)
+            writeTransactions(data, j, accountnumber, transactionIdCount)
             j++
         }
 
@@ -80,20 +81,18 @@ module.exports = {
     }
 }
 
-function writeTransactions(data, j, accountnumber){
+function writeTransactions(data, j, accountnumber, transId){
     let transactionData = {
-        "SequenceID": redeemOfferResultList[j].SequenceID,
-        "ReferenceID": redeemOfferResultList[j].ReferenceID,
+        "AccountNumber": accountnumber,
         "OfferCode": redeemOfferResultList[j].OfferCode,
-        "TransactionId": transactionIdCount,
-        "ResponseStatus":data
+        "OfferRedeemDollar": redeemOfferResultList[j].OfferRedeemDollar,
+        "ResponseStatus": data
     }
 
     db.get('transactions')
         .push({
             type: "RedeemOffer",
-            "AccountNumber": accountnumber,
-            transactionId: transactionIdCount,
+            transactionId: transId,
             transactionData
         })
         .write()

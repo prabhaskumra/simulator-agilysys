@@ -37,6 +37,7 @@ module.exports = {
             db.set('transactionId', transactionIdCount).write() //write back to db 
 
             let data = {
+                "AccountNumber": accountNumber,
                 "SequenceID": pointOffer.SequenceID,
                 "ReferenceID": pointOffer.ReferenceID,
                 "RedeemDollars": pointOffer.RedeemDollars,
@@ -52,7 +53,7 @@ module.exports = {
                 .push({
                     type: "RedeemPoints",
                     transactionId: transactionIdCount,
-                    data
+                    transactionData: data
                 })
                 .write()
 
