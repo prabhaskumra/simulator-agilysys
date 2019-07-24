@@ -1,166 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"><!--bootstrap-->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="/views/css/main.css">
-    <link rel="stylesheet" href="/views/css/sidebar.css">
-    <link rel="stylesheet" href="/views/css/table.css">
-    <link rel="stylesheet" href="/views/css/titlebar.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <script src='../scripts/dataread.js'></script>
-    <script src='../scripts/watchFile.js'></script>
-    <script src='../scripts/titlebar.js'></script>
-    <script src='../scripts/convertPointsToDollars.js'></script>
-    <script src='../scripts/editPlayersInfo.js'></script>
-    <script src='../scripts/editCouponInfo.js'></script>
-    <script src='../scripts/editPort.js'></script>
-</head>
-<body onload="checkUploaded(); isAppReady()">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="/views/css/main.css" />
+    <link rel="stylesheet" href="/views/css/sidebar.css" />
+    <link rel="stylesheet" href="/views/css/table.css" />
+    <link rel="stylesheet" href="/views/css/titlebar.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script src="../scripts/dataread.js"></script>
+    <script src="../scripts/watchFile.js"></script>
+    <script src="../scripts/titlebar.js"></script>
+    <script src="../scripts/convertPointsToDollars.js"></script>
+    <script src="../scripts/editPlayersInfo.js"></script>
+    <script src="../scripts/editCouponInfo.js"></script>
+    <script src="../scripts/editPort.js"></script>
+  </head>
+  <body onload="checkUploaded(); isAppReady()">
     <div id="title-bar">
-            <div id="title-bar-btns">
-                    <button class="button button2" id='settings-button' onclick="openNav()" style='width: 100px'>Settings</button>
-                    <button id="min-btn">-</button>
-                    <button id="max-btn">□</button>
-                    <button id="close-btn">𝗑</button>
-            </div>
+      <div id="title-bar-btns">
+        <button
+          class="button button2"
+          id="settings-button"
+          onclick="openNav()"
+          style="width: 100px"
+        >
+          Settings
+        </button>
+        <button id="min-btn">-</button>
+        <button id="max-btn">□</button>
+        <button id="close-btn">𝗑</button>
+      </div>
+    </div>
+    <span id="main-page">
+      <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+
+        <div id="insert-mock-data">
+          <div>
+            <p>
+              <button
+                class="button button1"
+                onclick="openPlayers()"
+                id="player-data-status"
+              ></button>
+            </p>
+            <p>
+              <button
+                class="button button1"
+                onclick="openOffers()"
+                id="offer-data-status"
+              ></button>
+            </p>
+            <p>
+              <button
+                class="button button1"
+                onclick="openCoupons()"
+                id="coupon-data-status"
+              ></button>
+            </p>
+          </div>
+          <br />
+          <div id="pointsToDollarsContainer" style="white-space: nowrap">
+            <h4 style="color: #f5f5f5">Points To Dollars</h4>
+            <h2 id="pointsToDollars">1 : 1</h2>
+            <br />
+            <button class="button button1" onclick="convertPointsToDollars()">
+              edit
+            </button>
+          </div>
+          <br />
+          <br />
         </div>
-    <span id = 'main-page'>
-        <div id="mySidebar" class="sidebar">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-
-            <div id="insert-mock-data">
-                <div>
-                    <p> <button class="button button1" onclick="openPlayers()" id="player-data-status"></button> </p>
-                    <p> <button class="button button1" onclick="openOffers()" id="offer-data-status"></button> </p>
-                    <p> <button class="button button1" onclick="openCoupons()" id="coupon-data-status"></button> </p>
-                </div>
-                </br>
-                <div id="pointsToDollarsContainer" style="white-space: nowrap">
-                    <h4 style='color: #f5f5f5'>Points To Dollars</h4>
-                    <h2 id='pointsToDollars'>1 : 1</h2>
-                    </br>
-                    <button class="button button1" onclick='convertPointsToDollars()'>edit</button>  
-                </div>
-                </br>
-                </br>
-            </div>
-            <div id ="editPlayerInfo">
-                    <p> <button class ="button button1" onclick="editPlayers()" id="edit-info" value="Edit Info">Edit Players' Info</button></p>
-            </div>
-            <div id="editCouponData">
-                <p> <button class ="button button1" onclick="editCouponData()" id="edit-couponsInfo" value="Edit Coupon Info">Edit Coupons Info</button></p>
-            </div>
-            </br>
-            <div class='nowrap'>
-                <input id='disable-animation' type='checkbox' onclick="disableAnimation(this)"><p style='white-space: nowrap; display: inline; color: #f5f5f5'> Disable Animations</p></br>
-            </div>
-
-            <div>
-                <input type='text' id='port' placeholder="port" maxlength="5">
-                <button id='submit-port' onclick="submitPort()">submit</button>
-                <p id='port-alert'></p>
-            </div>
-
-            <p id='cmp-credit'>CMP Simulator</p>
+        <div id="editPlayerInfo">
+          <p>
+            <button
+              class="button button1"
+              onclick="editPlayers()"
+              id="edit-info"
+              value="Edit Info"
+            >
+              Edit Players' Info
+            </button>
+          </p>
         </div>
-
-
-
-        <div id="main">        
-            <div id="data" style="text-align: center">
-                
-                <h1 id="app-not-ready">
-                </br>
-                </br>
-                    App is not ready and will not recieve requests. To start recieving requests, click on the settings 
-                    button in the upper right hand corner and load in Player and Offer data in the format of .csv's.
-                </h1>
-                
-                <div id ="player-data">
-                </div>
-    
-                <div id="offer-data">
-                    </br>
-                    </br>
-                    <div id='terminal-container' style='display:none'>
-                        <div id='terminal'></div>
-                    </div>
-                </div>
-            </div>
+        <div id="editCouponData">
+          <p>
+            <button
+              class="button button1"
+              onclick="editCouponData()"
+              id="edit-couponsInfo"
+              value="Edit Coupon Info"
+            >
+              Edit Coupons Info
+            </button>
+          </p>
         </div>
+        <br />
+        <div class="nowrap">
+          <input type="text" id="port" placeholder="port" maxlength="5" />
+          <button
+            id="submit-port"
+            class="button button1"
+            style="width: 80px"
+            onclick="submitPort()"
+          >
+            submit
+          </button>
+          <p id="port-alert"></p>
+        </div>
+        <div class="nowrap">
+          <input
+            id="disable-animation"
+            type="checkbox"
+            onclick="disableAnimation(this)"
+          />
+          <p style="white-space: nowrap; display: inline; color: #f5f5f5">
+            Disable Animations
+          </p>
+          <br />
+        </div>
+      </div>
+
+      <div id="main">
+        <div id="data" style="text-align: center">
+          <h1 id="app-not-ready">
+            <br />
+            <br />
+            App is not ready and will not recieve requests. To start recieving
+            requests, click on the settings button in the upper right hand
+            corner and load in Player and Offer data in the format of .csv's.
+          </h1>
+
+          <div id="player-data"></div>
+
+          <div id="offer-data">
+            <h3 style="margin-top: 0px">CMP Log</h3>
+            <div id="terminal-container" style="display:none">
+              <div id="terminal"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </span>
 
-    <span id='edit-players' style='display: none'>
-        <h1>Edit Player Data</h1>
-        <input type="text" id="myInput" onkeyup="searchData(this)" placeholder="Search by name" title="Type in a name">
-        <div id="editData">
-  
-        </div>
-  
-        <button class="button button2" onclick="writeToFile()">Save</button>
-        <button class="button button2" id="close-btn" onclick="loadMain()">Close</button>
-  
-        <div id="dataSaved"></div>
-        <div id="error-message"></div>
+    <span id="edit-players" style="display: none">
+      <h1>Edit Player Data</h1>
+      <input
+        type="text"
+        id="myInput"
+        onkeyup="searchData(this)"
+        placeholder="Search by name"
+        title="Type in a name"
+      />
+      <div id="editData"></div>
+
+      <button class="button button2" onclick="writeToFile()">Save</button>
+      <button class="button button2" id="close-btn" onclick="loadMain()">
+        Close
+      </button>
+
+      <div id="dataSaved"></div>
+      <div id="error-message"></div>
     </span>
 
-    <span id='edit-coupons' style='display: none'>
-        <h1>Edit Coupon Data</h1>
-        <input type="text" id="myInput"  onkeyup="searchCouponTable(this)" placeholder="Search by coupon number" title="Type in a coupon number">
-        <div id="editCoupon"> 
-            
-        </div>
-    
-        <button class="button button2"  onclick="writeCoupons()">Save</button>
-        <button class="button button2" id="couponClose-btn" onclick="loadCouponMain()">Close</button>
-    
-        <div id="couponDataSaved"></div>
+    <span id="edit-coupons" style="display: none">
+      <h1>Edit Coupon Data</h1>
+      <input
+        type="text"
+        id="myInput"
+        onkeyup="searchCouponTable(this)"
+        placeholder="Search by coupon number"
+        title="Type in a coupon number"
+      />
+      <div id="editCoupon"></div>
+
+      <button class="button button2" onclick="writeCoupons()">Save</button>
+      <button
+        class="button button2"
+        id="couponClose-btn"
+        onclick="loadCouponMain()"
+      >
+        Close
+      </button>
+
+      <div id="couponDataSaved"></div>
     </span>
-
-
 
     <script>
-        //load terminal on initial load
-        fs.readFile(path.join('./loghtml.txt'), (err, data) => {
-            displayTerminal(data)
-        })
+      //load terminal on initial load
+      fs.readFile(path.join("./loghtml.txt"), (err, data) => {
+        displayTerminal(data);
+      });
 
-        document.getElementById('port').placeHolder = '8008'
+      document.getElementById("port").placeHolder = "8008";
 
-        function openNav() {
-            var e = document.getElementById("mySidebar"); 
-            document.getElementById("main").style.marginLeft = '250px';
-            
-            if(e.style.width == '250px' ){
-                closeNav();
-            }
-            else{
-                e.style.width = '250px';
-            }
+      function openNav() {
+        var e = document.getElementById("mySidebar");
+        document.getElementById("main").style.marginLeft = "250px";
+        document.getElementById("title-bar").style.marginLeft = "250px";
+        if (e.style.width == "250px") {
+          closeNav();
+        } else {
+          e.style.width = "250px";
         }
+      }
 
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0";
-            document.getElementById("main").style.marginLeft= "0";
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+        document.getElementById("title-bar").style.marginLeft = "0";
+      }
+
+      function disableAnimation(checkbox) {
+        if (checkbox.checked === true) {
+          document.getElementById("mySidebar").style.transition = "0s";
+          document.getElementById("main").style.transition = "0s";
+        } else {
+          document.getElementById("mySidebar").style.transition = "0.5s";
+          document.getElementById("main").style.transition = "0.5s";
         }
-
-        function disableAnimation(checkbox){
-            if(checkbox.checked === true) {
-                document.getElementById('mySidebar').style.transition = '0s'
-                document.getElementById('main').style.transition = '0s'
-            } else {
-                document.getElementById('mySidebar').style.transition = '0.5s'
-                document.getElementById('main').style.transition = '0.5s'
-            }
-        }
-
+      }
     </script>
-
-    
-</body>
-</html> 
+  </body>
+</html>

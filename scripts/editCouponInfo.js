@@ -6,7 +6,7 @@ function updateCouponTable(){
     console.log(couponData)
     let accountInfo = ""
     accountInfo +=(
-        "<table id='couponTable' border='1' width='700'>" + 
+        "<table id='couponTable' border='1' style='width: 500px'>" + 
         "<tr><th>Coupon Number</th><th>Redeem Amount</th></tr>"
     )
 
@@ -36,7 +36,7 @@ function swapCouponValues(tableElement, i){
 function filterCouponTable(value){
     let accountInfo = ""
     accountInfo +=(
-        "<table id='couponTable' border='1' width='700'>" + 
+        "<table id='couponTable' border='1' style='width: 500px'>" + 
         "<tr><th>Coupon Number</th><th>Redeem Amount</th></tr>"
     )
 

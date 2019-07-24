@@ -1,60 +1,61 @@
-
 #title-bar {
-    -webkit-app-region: drag; 
-    height: 40px;   
-    padding: 0px;   
-    margin: 0px;   
-    color: black;  
-    font-family: sans-serif;  
-    position: sticky;
-    top: 0;
-    background-color: #fff;
-   }
-   
-   #title {  
-    position: fixed;
-    top: 0px; 
-    left: 12px; 
-    line-height: 32px;
-    font-size: 14px;
-    user-select: none;
-   }
-   
-   #title-bar-btns {
-    -webkit-app-region: no-drag;
-    position: fixed;   
-    top: 1px;  
-    right: 1px;   
-    user-select: none;
-   }
-   
-   #title-bar-btns button { 
-    height: 32px;
-    width: 32px;
-    background-color: transparent; 
-    border: none;  
-    color: black; 
-    font-size: 16px; 
-    user-select: none;
-   }
-   
-   #title-bar-btns button:hover { 
-    background-color: #005d99;
-    color: #f5f5f5;
-   }
+  -webkit-app-region: drag;
+  height: 40px;
+  padding: 0px;
+  margin: 0px;
+  color: black;
+  font-family: sans-serif;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+}
 
-   #close-btn:hover {
-    background-color: #ec1c2d !important;
-   }
+#title {
+  position: fixed;
+  top: 0px;
+  left: 12px;
+  line-height: 32px;
+  font-size: 14px;
+  user-select: none;
+}
 
-   #max-btn:hover {
-    background-color: #005d99 !important;
-   }
+#title-bar-btns {
+  -webkit-app-region: no-drag;
+  position: fixed;
+  top: 1px;
+  right: 1px;
+  user-select: none;
+}
 
-   #min-btn:hover {
-    background-color: #FFD12A !important;
-   }
-   #settings-button:hover {
-    background-color: #000000 !important;
-   }
-   
+#title-bar-btns button {
+  height: 32px;
+  width: 32px;
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 16px;
+  user-select: none;
+}
+
+#title-bar-btns button:hover {
+  background-color: #005d99;
+  color: #f5f5f5;
+}
+
+#close-btn:hover {
+  background-color: #ec1c2d !important;
+}
+
+#max-btn:hover {
+  background-color: #005d99 !important;
+}
+
+#min-btn:hover {
+  background-color: #ffd12a !important;
+}
+#settings-button {
+  margin-top: 0px;
+}
+#settings-button:hover {
+  background-color: #000000 !important;
+}
