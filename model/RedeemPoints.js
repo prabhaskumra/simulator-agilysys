@@ -15,16 +15,24 @@ module.exports = {
             .find({accountNumber: accountNumber})
             .value()
         
+        if(foundAccount === undefined){
+            writeToTerminal(`Error: Player ${accountNumber} not found`)
+            return {
+                //return proper error here
+                error: "error"
+            }
+        }
         let currentPoints = parseInt(foundAccount.pointBalance)
         let outPointList = []
         let redeemedTotal = 0
 
 
         redeemPointsList.forEach(pointOffer => {
-            currentPoints -= parseInt(pointOffer.RedeemDollars)
+            let pointsFromRedeemDollars = parseInt(parseFloat(pointOffer.RedeemDollars) * db.get('pointsToDollars').value())
+            currentPoints -= pointsFromRedeemDollars
             let isUnder0
             if(currentPoints >= 0) {
-                redeemedTotal += pointOffer.RedeemDollars
+                redeemedTotal += pointsFromRedeemDollars
                 isUnder0 = false
             } else {
                 isUnder0 = true
@@ -69,6 +77,8 @@ module.exports = {
         let pointsToDollars = foundAccount.pointBalance/db.get('pointsToDollars').value()
         let redeemedPointsToDollars = (redeemedTotal/db.get('pointsToDollars').value()).toFixed(2)
         writeToTerminal(`RedeemPoints: Redemed ${redeemedTotal} points/${redeemedPointsToDollars} in dollars`)
+        writeToTerminal(`RedeemPoints: Old balance (${parseInt(foundAccount.pointBalance + redeemedTotal)}) is now ${parseInt(foundAccount.pointBalance)}`)
+
         let out = {
             "AccountNumber": accountNumber,
             "PointsBalance": parseInt(foundAccount.pointBalance),

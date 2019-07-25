@@ -24,16 +24,14 @@ module.exports = {
                     .value()
 
                     if(transaction.type != "RedeemPoints"){
-                        writeToTerminal("shit don't match")
+                        writeToTerminal("Error: Transaction type doesn't match")
                         isSuccess = false
-                    }
-
-                    if(transaction.isVoided){ // error sandwich lol me hungry
+                    } else if(transaction.isVoided){ // error sandwich lol me hungry
                         writeToTerminal("Error: Already voided")
                         isSuccess = false
                     } else if(transaction.transactionData.ResponseStatus.IsSuccess){
-                        foundAccount.pointBalance += transaction.transactionData.RedeemDollars
-                        writeToTerminal(`Voided back ${transaction.transactionData.RedeemDollars}. New Balance is ${foundAccount.pointBalance}`)
+                        foundAccount.pointBalance += parseInt(transaction.transactionData.RedeemDollars * db.get('pointsToDollars').value())
+                        writeToTerminal(`Voided back ${transaction.transactionData.RedeemDollars} points. New Balance is ${foundAccount.pointBalance}`)
                     } else {
                         writeToTerminal("Tried to void unsuccessful transaction", toVoid)
                         isSuccess = false
@@ -52,11 +50,9 @@ module.exports = {
                 }
                 case "OfferRedemption": {         
                     if(transaction.type != "RedeemOffer"){
-                        writeToTerminal("shit don't match")
+                        writeToTerminal("Error: Transaction type doesn't match")
                         isSuccess = false
-                    }
-
-                    if(transaction.isVoided){ // error sandwich lol me hungry
+                    } else if(transaction.isVoided){ // error sandwich lol me hungry
                         writeToTerminal("Error: Already voided")
                         isSuccess = false
                     } else if(transaction.transactionData.ResponseStatus.IsSuccess){
@@ -87,6 +83,42 @@ module.exports = {
                     break;
                 }
                 case "CouponRedemption": {
+                    if(transaction.type != "RedeemCoupon"){
+                        writeToTerminal("Error: Transaction type doesn't match")
+                        isSuccess = false
+                    } else if(transaction.isVoided){ // error sandwich lol me hungry
+                        writeToTerminal("Error: Already voided")
+                        isSuccess = false
+                    } else if(transaction.transactionData.ResponseStatus.IsSuccess){
+                        let foundCoupon = db.get('coupons')
+                        .find({CouponNumber: String(transaction.transactionData.CouponNumber)})
+                        .value()
+
+                        if(foundCoupon === undefined){ //did not find coupon
+                            db.get('coupons').push({
+                                CouponNumber: String(transaction.transactionData.CouponNumber),
+                                Balance: String(transaction.transactionData.RedeemedAmount)
+                            })
+                            .write()
+
+                            writeToTerminal(`Voided back coupon ${transaction.transactionData.CouponNumber}. Added coupon back to database.`)
+                        } else {
+                            db.get('coupons')
+                            .find({CouponNumber: String(transaction.transactionData.CouponNumber)})
+                            .assign({Balance: String(parseInt(foundCoupon.Balance) + transaction.transactionData.RedeemedAmount)})     
+                            .write()
+
+                            writeToTerminal(`Voided back ${transaction.transactionData.RedeemedAmount} points for coupon ${transaction.transactionData.CouponNumber}. New balance is ${foundCoupon.Balance}`)
+                        }
+                    } else {
+                        writeToTerminal("Tried to void unsuccessful transaction", toVoid)
+                        isSuccess = false
+                    }
+
+                    if(isSuccess)
+                    setToVoid(transactionId)  
+
+                    VoidAllResultList.push(addToResults(isSuccess, transactionId))
                     break;
                 }
                 default: {

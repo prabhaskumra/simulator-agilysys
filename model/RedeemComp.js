@@ -41,6 +41,8 @@ module.exports = {
                 isUnder0 = true
             }
             currentCompPoints = foundAccount.compBalance - redeemedTotal
+            writeToTerminal(`RedeemComp: Redeemed ${redeemedTotal} points`)
+            writeToTerminal(`RedeemComp: Old balance (${foundAccount.compBalance}) is now ${parseInt(currentCompPoints)}`)
 
             let transactionIdCount = db.get('transactionId').value()
             transactionIdCount++
@@ -73,7 +75,7 @@ module.exports = {
 
         db.get('players')
             .find({accountNumber: String(accountNumber)})
-            .assign({compBalance: foundAccount.compBalance - redeemedTotal})
+            .assign({compBalance: parseInt(foundAccount.compBalance - redeemedTotal)})
             .write()
 
         let out = {

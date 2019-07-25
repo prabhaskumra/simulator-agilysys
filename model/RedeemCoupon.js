@@ -20,7 +20,7 @@ module.exports = {
             let responseStatus
             let BalanceAmount 
             if(foundCoupon === undefined){ // coupon not found
-                writeToTerminal(`Coupon ${coupon.CouponNumber} not found`)
+                writeToTerminal(`RedeemCoupon: Coupon ${coupon.CouponNumber} not found`)
                 responseStatus = {
                     IsSuccess: false,
                     ErrorMessage: "",
@@ -55,7 +55,7 @@ module.exports = {
 
             } else { //3cases
                 if(parseFloat(coupon.RedeemAmount) > parseFloat(foundCoupon.Balance)){ //c1: redeem amount higher than balance
-                    writeToTerminal(`Coupon ${coupon.CouponNumber} Error:  redeem amount (${coupon.RedeemAmount}) higher than balance (${foundCoupon.Balance})`)
+                    writeToTerminal(`RedeemCoupon: Coupon ${coupon.CouponNumber} Error:  redeem amount (${coupon.RedeemAmount}) higher than balance (${foundCoupon.Balance})`)
                     responseStatus = {
                         IsSuccess: false,
                         ErrorMessage: "Redeem amount higher than balance",
@@ -89,7 +89,7 @@ module.exports = {
                     .write()
                     BalanceAmount = foundCoupon.Balance
                 } else if(parseFloat(coupon.RedeemAmount) === parseFloat(foundCoupon.Balance)) { //c2: equals value. In that case, delete coupon always
-                    writeToTerminal(`Redeeming coupon ${coupon.CouponNumber} for ${coupon.RedeemAmount}`)
+                    writeToTerminal(`RedeemCoupon: Redeeming coupon ${coupon.CouponNumber} for ${coupon.RedeemAmount}`)
                     responseStatus = {
                         IsSuccess: true,
                         ErrorMessage: "",
@@ -125,11 +125,11 @@ module.exports = {
                     console.log(newCoupons)
                     db.set('coupons', []).write()
                     db.set('coupons', newCoupons).write()
-                    writeToTerminal(`Coupon ${coupon.CouponNumber} new balance : 0`)
-                    writeToTerminal(`Removed coupon ${coupon.CouponNumber} from database`)
+                    writeToTerminal(`RedeemCoupon: Coupon ${coupon.CouponNumber} new balance : 0`)
+                    writeToTerminal(`RedeemCoupon: Removed coupon ${coupon.CouponNumber} from database`)
                     BalanceAmount = 0
                 } else { //redeeming amount less than balance, either keep coupon or add balance to comps bucket
-                    writeToTerminal(`Redeeming coupon ${coupon.CouponNumber} for ${coupon.RedeemAmount}`)
+                    writeToTerminal(`RedeemCoupon: Redeeming coupon ${coupon.CouponNumber} for ${coupon.RedeemAmount}`)
                     responseStatus = {
                         IsSuccess: true,
                         ErrorMessage: "",
@@ -141,7 +141,7 @@ module.exports = {
                     .find({CouponNumber: String(coupon.CouponNumber)})
                     .assign({Balance: String(BalanceAmount)})
                     .write()
-                    writeToTerminal(`Coupon ${coupon.CouponNumber} new balance : ${BalanceAmount}`)
+                    writeToTerminal(`RedeemCoupon: Coupon ${coupon.CouponNumber} new balance : ${BalanceAmount}`)
                     
                     let transactionIdCount = db.get('transactionId').value()
                     transactionIdCount++;
