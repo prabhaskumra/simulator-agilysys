@@ -11,12 +11,14 @@
     <link rel="stylesheet" href="/views/css/sidebar.css">
     <link rel="stylesheet" href="/views/css/table.css">
     <link rel="stylesheet" href="/views/css/titlebar.css">
+    <link rel="stylesheet" href="/views/css/form.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src='../scripts/dataread.js'></script>
     <script src='../scripts/watchFile.js'></script>
     <script src='../scripts/titlebar.js'></script>
     <script src='../scripts/convertPointsToDollars.js'></script>
     <script src='../scripts/editPlayersInfo.js'></script>
+    <script src='../scripts/addNewPlayer.js'></script>
     <script src='../scripts/editCouponInfo.js'></script>
     <script src='../scripts/editPort.js'></script>
 </head>
@@ -93,13 +95,22 @@
 
     <span id='edit-players' style='display: none'>
         <h1>Edit Player Data</h1>
+
         <input type="text" id="myInput" onkeyup="searchData(this)" placeholder="Search by name" title="Type in a name">
-        <div id="editData">
+        <!-- <div id = "upper-buttons">
+            <button class="button button2" onclick="newWindow()"" id="new-player">Add a New Player</button>
+            <button class="button button2" onclick="writeToFile()">Save</button>
+            <button class="button button2" id="close-btn" onclick="loadMain()">Close</button>
+        </div> -->
+
+        <div id="editData" >
   
         </div>
-  
+
+        <button class="button button2" onclick="newWindow()" id="new-player">Add a New Player</button>
         <button class="button button2" onclick="writeToFile()">Save</button>
         <button class="button button2" id="close-btn" onclick="loadMain()">Close</button>
+
   
         <div id="dataSaved"></div>
         <div id="error-message"></div>
@@ -119,6 +130,85 @@
     </span>
 
 
+    <span id='add-player' style='display: none'>
+        <h1>Add New Player</h1>
+
+        <div id="add-plyr" class="container">
+            <form id="plyr-form">
+                <div class = "row">
+                    <label for='fname'>First Name</label>
+                    <input type='input1' id='fname' name='firstname' placeholder='First Name..' value="" onchange="enterData(this)">
+                </div>
+                
+                <div class = "row">
+                    <label for='lname'>Last Name</label>
+                    <input type='input1' id='lname' name='lastname' placeholder='Last Name..' onchange="enterData(this)">
+                </div>
+               
+                <div class = "row">
+                    <label for='account-number'>Account Number</label>
+                    <input type='input1' id='account-number' name='account-number' placeholder='Account Number..' onchange="enterData(this)">
+                </div>
+
+               
+                <div class = "row">
+                    <label for='tier-level'>Tier Level</label> 
+                    <input type='input1' id='tier-level' name='tier-level' placeholder='Tier Level..' onchange="enterData(this)"> <br>
+                </div>
+
+
+                <div class = "row">
+                    <label for='point-balance'>Point Balance</label>
+                    <input type='input1' id='point-balance' name='point-balance' placeholder='Point Balance..' onchange="enterData(this)">
+                </div>
+                
+                <div class = "row">
+                    <label for='comp-balance'>Comp Balance</label>
+                    <input type='input1' id='comp-balance' name='comp-balance' placeholder='Comp Balance..' onchange="enterData(this)"> 
+                </div>
+                
+
+                <div class = "row">
+                    <label for='promo-balance'>Promo2 Balance</label>
+                    <input type='input1' id='promo-balance' name='promo-balance' placeholder='Promo2 Balance..' onchange="enterData(this)">
+                </div>
+               
+                <div class = "row">
+                    <label for='dob'>Date of Birth</label>
+                    <input type='date' id='dob' name='dob' value='07/22/2019' min='01/01/1920' max='01/01/2020' onchange="enterData(this)">
+                </div>
+                
+                <div class = "row">
+                    <label for='isInActive'>Is InActive</label>
+                    <select id='isInActive' name='isInActive' onchange="enterData(this)" >
+                        <option value='FALSE'>FALSE</option>
+                        <option value='TRUE'>TRUE</option> 
+                    </select> 
+                </div>
+
+                <div class = "row">
+                    <label for='isbanned'>Is Banned</label>
+                    <select id='isbanned' name='isbanned' onchange="enterData(this)">
+                        <option value='FALSE'>FALSE</option>
+                        <option value='TRUE'>TRUE</option> 
+                    </select><br> 
+                </div>
+                    
+                <div class = "row">
+                    <label for='isPinLocked'>Is Pin Locked</label>
+                    <select id='isPinLocked' name='isPinLocked' onchange="enterData(this)" >
+                        <option value='FALSE'>FALSE</option>
+                        <option value='TRUE'>TRUE</option> 
+                    </select>
+                </div>
+                <button class="button button2" type="reset" id="save-plyr-button" onclick="saveForm()">Save</button>
+                <button class="button button2" type="reset" id="close-btn" onclick="loadTable()">Close</button>
+            </form>
+        </div>
+
+        <div id="save-plyr"></div>
+        
+    </span>
 
     <script>
         //load terminal on initial load

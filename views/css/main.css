@@ -172,8 +172,8 @@ input[type="text"]::-webkit-input-placeholder {
   white-space: nowrap;
 }
 
-.row {
-  background-color: #ffd12a;
+.row1{
+  background-color: #FFD12A;
 }
 
 /*custom scroll wheel*/
