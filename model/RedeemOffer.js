@@ -22,8 +22,6 @@ module.exports = {
                 if(offerData[i].AccountNumber === String(accountnumber)){
                     if(offerData[i].OfferCode === offersAvailable[j].OfferCode){
                         redeemOfferResultList.push(offersAvailable[j])
-                        offerData.splice(i,1)
-                        db.set('offers', offerData).write()
                         
                         let transactionIdCount = db.get('transactionId').value()
                         transactionIdCount++;
@@ -37,7 +35,10 @@ module.exports = {
                             "ErrorCode": ""
                         }
                         redeemOfferResultList[j].ResponseStatus = data
-                        writeTransactions(data, j, accountnumber, transactionIdCount)
+                        writeTransactions(data, offerData[i], accountnumber, transactionIdCount)
+                        writeToTerminal(`Removed offer ${offerData[i].OfferCode}`)
+                        offerData.splice(i,1)
+                        db.set('offers', offerData).write()
                         j++
                         i = 0
                     }
@@ -60,8 +61,9 @@ module.exports = {
                 "ErrorMessage": "Cannot Find the Offer",
                 "ErrorCode": "XXX"
             }
+            writeToTerminal(`Failed to find offer ${offersAvailable[j].OfferCode}`)
             redeemOfferResultList[j].ResponseStatus = data
-            writeTransactions(data, j, accountnumber, transactionIdCount)
+            writeTransactions(data, offersAvailable[j], accountnumber, transactionIdCount)
             j++
         }
 
@@ -81,20 +83,14 @@ module.exports = {
     }
 }
 
-function writeTransactions(data, j, accountnumber, transId){
-    let transactionData = {
-        "AccountNumber": accountnumber,
-        "OfferCode": redeemOfferResultList[j].OfferCode,
-        "OfferRedeemDollar": redeemOfferResultList[j].OfferRedeemDollar,
-        "ResponseStatus": data
-    }
+function writeTransactions(data, transactionData, accountnumber, transId){
 
     db.get('transactions')
         .push({
             type: "RedeemOffer",
             transactionId: transId,
             isVoided: false,
-            transactionData
+            transactionData: {...transactionData, ResponseStatus: data}
         })
         .write()
 }

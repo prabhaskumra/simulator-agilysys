@@ -12,13 +12,13 @@ module.exports = {
         let VoidAllResultList = []
         let noErrors = true
 
-        voidAllList.forEach(toVoid => {            
+        voidAllList.forEach(toVoid => {   
+            let transactionId = toVoid.TransactionId 
+            let transaction = transactions[parseInt(transactionId) - 1]
+            let isSuccess = true
+
             switch(toVoid.RedemptionType){
                 case "PointRedemption": {
-                    let transactionId = toVoid.TransactionId 
-                    let transaction = transactions[parseInt(transactionId) - 1]
-                    let isSuccess = true
-
                     let foundAccount = db.get('players')
                     .find({accountNumber: accountNumber})
                     .value()
@@ -50,10 +50,40 @@ module.exports = {
                     VoidAllResultList.push(addToResults(isSuccess, transactionId))
                     break;
                 }
-                case "OfferRedemption": {
+                case "OfferRedemption": {         
+                    if(transaction.type != "RedeemOffer"){
+                        writeToTerminal("shit don't match")
+                        isSuccess = false
+                    }
+
+                    if(transaction.isVoided){ // error sandwich lol me hungry
+                        writeToTerminal("Error: Already voided")
+                        isSuccess = false
+                    } else if(transaction.transactionData.ResponseStatus.IsSuccess){
+                        db.get('offers')
+                        .push({
+                            AccountNumber: transaction.transactionData.AccountNumber,
+                            OfferCode: transaction.transactionData.OfferCode,
+                            OfferName: transaction.transactionData.OfferName,
+                            OfferValue: transaction.transactionData.OfferValue,
+                            OfferStartDate: transaction.transactionData.OfferStartDate,
+                            OfferEndDate: transaction.transactionData.OfferEndDate
+                        })
+                        .write()
+
+                        writeToTerminal(`Voided back offer ${transaction.transactionData.OfferCode}. Added offer back to account.`)
+                    } else {
+                        writeToTerminal("Tried to void unsuccessful transaction", toVoid)
+                        isSuccess = false
+                    }
+
+                    if(isSuccess)
+                      setToVoid(transactionId)  
+
+                    VoidAllResultList.push(addToResults(isSuccess, transactionId))
                     break;
                 }
-                case "RetailRaiting": {
+                case "RetailRating": {
                     break;
                 }
                 case "CouponRedemption": {

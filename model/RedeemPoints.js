@@ -71,7 +71,7 @@ module.exports = {
         writeToTerminal(`RedeemPoints: Redemed ${redeemedTotal} points/${redeemedPointsToDollars} in dollars`)
         let out = {
             "AccountNumber": accountNumber,
-            "PointsBalance": foundAccount.pointBalance,
+            "PointsBalance": parseInt(foundAccount.pointBalance),
             "PointsBalanceInDollars": pointsToDollars.toFixed(2),
             "RedeemPointsList": outPointList,
             "ResponseStatus": {

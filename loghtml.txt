@@ -1,153 +1,58 @@
-<p>6/5/2019 15:50:59:121 - App is listening on port 8080</p><p class='collapsible'>6/5/2019 15:51:11:840 - ValidateAccount request recieved for account undefined</p><div class='ccontent'>{
-    "cardNumber": "5",
-    "cardType": "AccountNumber",
-    "pin": "",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p>6/5/2019 15:51:11:859 - ValidateAccount: cardType = AccountNumber</p><p>6/5/2019 15:51:11:892 - ValidateAccount response sent for account 5</p><p class='collapsible'>6/5/2019 15:56:1:11 - ValidateAccount request recieved for account undefined</p><div class='ccontent'>{
-    "cardNumber": "5",
-    "cardType": "AccountNumber",
-    "pin": "",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p>6/5/2019 15:56:1:30 - ValidateAccount: cardType = AccountNumber</p><p>6/5/2019 15:56:1:58 - ValidateAccount response sent for account 5</p><p>6/5/2019 15:56:33:727 - App is listening on port 8080</p><p class='collapsible'>6/5/2019 15:56:43:439 - ValidateAccount request recieved for account 5</p><div class='ccontent'>{
-    "cardNumber": "5",
-    "cardType": "AccountNumber",
-    "pin": "",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p>6/5/2019 15:56:43:457 - ValidateAccount: cardType = AccountNumber</p><p>6/5/2019 15:56:43:487 - ValidateAccount response sent for account 5</p><p>6/5/2019 15:59:11:623 - App is listening on port 8080</p><p class='collapsible'>6/5/2019 15:59:17:553 - ValidateAccount request recieved for account 5</p><div class='ccontent'>{
-    "cardNumber": "5",
-    "cardType": "AccountNumber",
-    "pin": "",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p>6/5/2019 15:59:17:576 - ValidateAccount: cardType = AccountNumber</p><p>6/5/2019 15:59:17:629 - ValidateAccount response sent for account 5</p><p class='collapsible'>6/5/2019 15:59:55:613 - ValidateAccount request recieved for account 5</p><div class='ccontent'>{
-    "cardNumber": "5",
-    "cardType": "AccountNumber",
-    "pin": "",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p>6/5/2019 15:59:55:634 - ValidateAccount: cardType = AccountNumber</p><p>6/5/2019 15:59:55:660 - ValidateAccount response sent for account 5</p><p class='collapsible'>6/5/2019 16:0:0:322 - ValidateAccount request recieved for account 1</p><div class='ccontent'>{
-    "cardNumber": "1",
-    "cardType": "AccountNumber",
-    "pin": "",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p>6/5/2019 16:0:0:341 - ValidateAccount: cardType = AccountNumber</p><p>6/5/2019 16:0:0:372 - ValidateAccount response sent for account 1</p><p>6/5/2019 16:2:26:800 - App is listening on port 8080</p><p class='collapsible'>6/5/2019 16:2:36:758 - ValidateAccount request recieved for account 1</p><div class='ccontent'>{
-    "cardNumber": "1",
-    "cardType": "AccountNumber",
-    "pin": "",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p>6/5/2019 16:2:36:773 - ValidateAccount: cardType = AccountNumber</p><p>6/5/2019 16:2:36:791 - ValidateAccount: One of the collection failed, review the collection result</p><p class='collapsible'>6/5/2019 16:2:36:823 - ValidateAccount response sent for account 1</p><div class='ccontent'>{
-    "PatronResponse": [
+<p>This black box will contain all requests and responses made through the simulator and other debugging logs. To see the requests and responses made, click on the the text with underlines to expand them. </p><p>6/4/2019 8:53:32:695 - Started terminal.</p><p>6/4/2019 8:53:34:594 - App is listening on port 8080</p><p class='collapsible'>6/4/2019 8:53:46:90 - RedeemOffer request recieved for account 3</p><div class='ccontent'>{
+    "cardNumber": null,
+    "AccountNumber": "3",
+    "cardType": null,
+    "pin": null,
+    "outletId": "1",
+    "outletName": "Default Profit Cente",
+    "employeeId": "1",
+    "requestingSystem": "agilysys",
+    "licensingKey": "agilysys",
+    "transactionDateTime": "7/23/2019 9:51:14 PM",
+    "customFields": null,
+    "redeemPointsList": null,
+    "redeemCompList": null,
+    "redeemOfferList": [
         {
-            "ClubStateId": 40,
-            "AccountNumber": "1",
-            "FirstName": "Prabhas",
-            "LastName": "Kumra",
-            "ClubState": "3",
-            "DateOfBirth": "5/6/1997",
-            "PointsBalance": 4920,
-            "PointsBalanceInDollars": 9.84,
-            "CompBalance": "40",
-            "Promo2Balance": "88",
-            "IsInActive": "TRUE",
-            "IsPinLocked": "FALSE",
-            "IsBanned": "FALSE",
-            "ResponseResult": {
-                "IsSuccess": false,
-                "ErrorMessage": "Player with Account # 1 is inactive",
-                "ErrorCode": "error"
+            "OfferCode": "@R2D2R2",
+            "OfferRedeemDollar": 12,
+            "ReferenceId": "10038",
+            "SequenceId": 0
+        }
+    ],
+    "redeemCouponList": null,
+    "voidAllList": null,
+    "referenceId": null,
+    "Amount": 0
+}</div><p>6/4/2019 8:53:46:133 - Successful transaction - Offer @R2D2R2</p><p>6/4/2019 8:53:46:168 - Removed offer @R2D2R2</p><p class='collapsible'>6/4/2019 8:53:46:194 - RedeemOffer response sent for account 3</p><div class='ccontent'>{
+    "AccountNumber": "3",
+    "RedeemOfferResultList": [
+        {
+            "OfferCode": "@R2D2R2",
+            "OfferRedeemDollar": 12,
+            "ReferenceId": "10038",
+            "SequenceId": 0,
+            "TransactionId": 21,
+            "ResponseStatus": {
+                "IsSuccess": true,
+                "ErrorMessage": "",
+                "ErrorCode": ""
             }
         }
     ],
     "ResponseStatus": {
-        "IsSuccess": false,
-        "ErrorMessage": "One of the collection failed, review the collection result.",
-        "ErrorCode": "error"
-    }
-}</div><p>6/5/2019 16:20:8:892 - App is listening on port 8080</p><p class='collapsible'>6/5/2019 16:20:13:429 - ValidateAccount request recieved for account 1</p><div class='ccontent'>{
-    "cardNumber": "1",
-    "cardType": "AccountNumber",
-    "pin": "",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p>6/5/2019 16:20:13:445 - ValidateAccount: cardType = AccountNumber</p><p>6/5/2019 16:20:13:484 - ValidateAccount: One of the collection failed, review the collection result</p><p class='collapsible'>6/5/2019 16:20:13:523 - ValidateAccount response sent for account 1</p><div class='ccontent'>{
-    "PatronResponse": [
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    },
+    "CustomFields": {}
+}</div><p class='collapsible'>6/4/2019 8:54:0:927 - VoidAll request recieved for account 0</p><div class='ccontent'>{
+    "AccountNumber": "0",
+    "VoidAllList": [
         {
-            "ClubStateId": 40,
-            "AccountNumber": "1",
-            "FirstName": "Prabhas",
-            "LastName": "Kumra",
-            "ClubState": "3",
-            "DateOfBirth": "5/6/1997",
-            "PointsBalance": 4920,
-            "PointsBalanceInDollars": 9.84,
-            "CompBalance": "40",
-            "Promo2Balance": "88",
-            "IsInActive": "TRUE",
-            "IsPinLocked": "FALSE",
-            "IsBanned": "FALSE",
-            "ResponseResult": {
-                "IsSuccess": false,
-                "ErrorMessage": "Player with Account # 1 is inactive",
-                "ErrorCode": "error"
-            }
-        }
-    ],
-    "ResponseStatus": {
-        "IsSuccess": false,
-        "ErrorMessage": "One of the collection failed, review the collection result.",
-        "ErrorCode": "error"
-    }
-}</div><p class='collapsible'>6/5/2019 16:20:18:109 - RedeemComp request recieved for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "RedeemPointsList": [
-        {
-            "RedeemDollars": 20,
-            "ReferenceId": "32323232",
+            "RedemptionType": "OfferRedemption",
+            "TransactionId": "21",
+            "ReferenceId": "string",
             "SequenceId": 1
         }
     ],
@@ -157,19 +62,346 @@
     "RequestingSystem": "string",
     "LicensingKey": "string",
     "CustomFields": {},
-    "TransactionDateTime": "01/23/2019 12:00 AM"
-}</div><p>6/5/2019 16:20:18:147 - RedeemPoints: Redemed 20/0.10204081632653061 in dollars</p><p class='collapsible'>6/5/2019 16:20:18:166 - RedeemPoints response sent for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "PointsBalance": 4900,
-    "PointsBalanceInDollars": "0.10",
-    "RedeemPointsList": [
+    "TransactionDateTime": "string"
+}</div><p>6/4/2019 8:54:24:401 - Started terminal.</p><p>6/4/2019 8:54:26:181 - App is listening on port 8080</p><p>6/4/2019 8:54:26:165 - App is not ready</p><p>6/4/2019 8:54:26:226 - App is not ready</p><p>6/4/2019 8:54:30:411 - Added player data</p><p>6/4/2019 8:54:30:486 - App is not ready</p><p>6/4/2019 8:54:31:995 - Added offer data</p><p>6/4/2019 8:54:35:847 - Added coupon data</p><p class='collapsible'>6/4/2019 8:54:46:528 - RedeemOffer request recieved for account 3</p><div class='ccontent'>{
+    "cardNumber": null,
+    "AccountNumber": "3",
+    "cardType": null,
+    "pin": null,
+    "outletId": "1",
+    "outletName": "Default Profit Cente",
+    "employeeId": "1",
+    "requestingSystem": "agilysys",
+    "licensingKey": "agilysys",
+    "transactionDateTime": "7/23/2019 9:51:14 PM",
+    "customFields": null,
+    "redeemPointsList": null,
+    "redeemCompList": null,
+    "redeemOfferList": [
         {
-            "RedeemDollars": 20,
+            "OfferCode": "@R2D2R2",
+            "OfferRedeemDollar": 12,
+            "ReferenceId": "10038",
+            "SequenceId": 0
+        }
+    ],
+    "redeemCouponList": null,
+    "voidAllList": null,
+    "referenceId": null,
+    "Amount": 0
+}</div><p>6/4/2019 8:54:46:571 - Successful transaction - Offer @R2D2R2</p><p>6/4/2019 8:54:46:610 - Removed offer @R2D2R2</p><p class='collapsible'>6/4/2019 8:54:46:657 - RedeemOffer response sent for account 3</p><div class='ccontent'>{
+    "AccountNumber": "3",
+    "RedeemOfferResultList": [
+        {
+            "OfferCode": "@R2D2R2",
+            "OfferRedeemDollar": 12,
+            "ReferenceId": "10038",
+            "SequenceId": 0,
+            "TransactionId": 1,
+            "ResponseStatus": {
+                "IsSuccess": true,
+                "ErrorMessage": "",
+                "ErrorCode": ""
+            }
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    },
+    "CustomFields": {}
+}</div><p class='collapsible'>6/4/2019 8:55:8:958 - VoidAll request recieved for account 0</p><div class='ccontent'>{
+    "AccountNumber": "0",
+    "VoidAllList": [
+        {
+            "RedemptionType": "OfferRedemption",
+            "TransactionId": "1",
+            "ReferenceId": "string",
+            "SequenceId": 1
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p>6/4/2019 8:55:8:975 - shit don't match</p><p>6/4/2019 8:55:9:5 - Voided back offer @R2D2R2. Added offer back to account.</p><p class='collapsible'>6/4/2019 8:55:9:21 - VoidAll response sent for account 0</p><div class='ccontent'>{
+    "AccountNumber": "0",
+    "VoidAllResultList": [
+        {
+            "ReferenceId": "string",
+            "SequenceId": 1,
+            "TransactionId": "1",
+            "ResponseStatus": {
+                "IsSuccess": false,
+                "ErrorMessage": "",
+                "ErrorCode": ""
+            }
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    }
+}</div><p>6/4/2019 8:56:21:103 - Started terminal.</p><p>6/4/2019 8:56:22:765 - App is listening on port 8080</p><p class='collapsible'>6/4/2019 8:56:27:28 - VoidAll request recieved for account 0</p><div class='ccontent'>{
+    "AccountNumber": "0",
+    "VoidAllList": [
+        {
+            "RedemptionType": "OfferRedemption",
+            "TransactionId": "1",
+            "ReferenceId": "string",
+            "SequenceId": 1
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p>6/4/2019 8:56:27:52 - Voided back offer @R2D2R2. Added offer back to account.</p><p>6/4/2019 8:56:27:79 - Voided transaction 1</p><p class='collapsible'>6/4/2019 8:56:27:103 - VoidAll response sent for account 0</p><div class='ccontent'>{
+    "AccountNumber": "0",
+    "VoidAllResultList": [
+        {
+            "ReferenceId": "string",
+            "SequenceId": 1,
+            "TransactionId": "1",
+            "ResponseStatus": {
+                "IsSuccess": true,
+                "ErrorMessage": "",
+                "ErrorCode": ""
+            }
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    }
+}</div><p class='collapsible'>6/4/2019 8:56:45:650 - VoidAll request recieved for account 0</p><div class='ccontent'>{
+    "AccountNumber": "0",
+    "VoidAllList": [
+        {
+            "RedemptionType": "OfferRedemption",
+            "TransactionId": "1",
+            "ReferenceId": "string",
+            "SequenceId": 1
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p>6/4/2019 8:56:45:667 - Error: Already voided</p><p class='collapsible'>6/4/2019 8:56:45:690 - VoidAll response sent for account 0</p><div class='ccontent'>{
+    "AccountNumber": "0",
+    "VoidAllResultList": [
+        {
+            "ReferenceId": "string",
+            "SequenceId": 1,
+            "TransactionId": "1",
+            "ResponseStatus": {
+                "IsSuccess": false,
+                "ErrorMessage": "",
+                "ErrorCode": ""
+            }
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    }
+}</div><p>6/4/2019 9:24:20:140 - Started terminal.</p><p>6/4/2019 9:24:23:311 - App is listening on port 8080</p><p>6/4/2019 9:24:52:718 - Started terminal.</p><p>6/4/2019 9:24:54:416 - App is listening on port 8080</p><p class='collapsible'>6/4/2019 9:25:2:317 - RedeemOffer request recieved for account 3</p><div class='ccontent'>{
+    "cardNumber": null,
+    "AccountNumber": "3",
+    "cardType": null,
+    "pin": null,
+    "outletId": "1",
+    "outletName": "Default Profit Cente",
+    "employeeId": "1",
+    "requestingSystem": "agilysys",
+    "licensingKey": "agilysys",
+    "transactionDateTime": "7/23/2019 9:51:14 PM",
+    "customFields": null,
+    "redeemPointsList": null,
+    "redeemCompList": null,
+    "redeemOfferList": [
+        {
+            "OfferCode": "@R2D2R2",
+            "OfferRedeemDollar": 12,
+            "ReferenceId": "10038",
+            "SequenceId": 0
+        }
+    ],
+    "redeemCouponList": null,
+    "voidAllList": null,
+    "referenceId": null,
+    "Amount": 0
+}</div><p>6/4/2019 9:25:2:340 - Successful transaction - Offer @R2D2R2</p><p>6/4/2019 9:25:2:363 - Removed offer @R2D2R2</p><p class='collapsible'>6/4/2019 9:25:2:398 - RedeemOffer response sent for account 3</p><div class='ccontent'>{
+    "AccountNumber": "3",
+    "RedeemOfferResultList": [
+        {
+            "OfferCode": "@R2D2R2",
+            "OfferRedeemDollar": 12,
+            "ReferenceId": "10038",
+            "SequenceId": 0,
+            "TransactionId": 2,
+            "ResponseStatus": {
+                "IsSuccess": true,
+                "ErrorMessage": "",
+                "ErrorCode": ""
+            }
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    },
+    "CustomFields": {}
+}</div><p class='collapsible'>6/4/2019 9:25:9:192 - RedeemOffer request recieved for account 3</p><div class='ccontent'>{
+    "cardNumber": null,
+    "AccountNumber": "3",
+    "cardType": null,
+    "pin": null,
+    "outletId": "1",
+    "outletName": "Default Profit Cente",
+    "employeeId": "1",
+    "requestingSystem": "agilysys",
+    "licensingKey": "agilysys",
+    "transactionDateTime": "7/23/2019 9:51:14 PM",
+    "customFields": null,
+    "redeemPointsList": null,
+    "redeemCompList": null,
+    "redeemOfferList": [
+        {
+            "OfferCode": "@R2D2R2",
+            "OfferRedeemDollar": 12,
+            "ReferenceId": "10038",
+            "SequenceId": 0
+        }
+    ],
+    "redeemCouponList": null,
+    "voidAllList": null,
+    "referenceId": null,
+    "Amount": 0
+}</div><p>6/4/2019 9:25:9:213 - Successful transaction - Offer @R2D2R2</p><p>6/4/2019 9:25:9:234 - Removed offer @R2D2R2</p><p class='collapsible'>6/4/2019 9:25:9:259 - RedeemOffer response sent for account 3</p><div class='ccontent'>{
+    "AccountNumber": "3",
+    "RedeemOfferResultList": [
+        {
+            "OfferCode": "@R2D2R2",
+            "OfferRedeemDollar": 12,
+            "ReferenceId": "10038",
+            "SequenceId": 0,
+            "TransactionId": 3,
+            "ResponseStatus": {
+                "IsSuccess": true,
+                "ErrorMessage": "",
+                "ErrorCode": ""
+            }
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    },
+    "CustomFields": {}
+}</div><p class='collapsible'>6/4/2019 9:25:10:308 - RedeemOffer request recieved for account 3</p><div class='ccontent'>{
+    "cardNumber": null,
+    "AccountNumber": "3",
+    "cardType": null,
+    "pin": null,
+    "outletId": "1",
+    "outletName": "Default Profit Cente",
+    "employeeId": "1",
+    "requestingSystem": "agilysys",
+    "licensingKey": "agilysys",
+    "transactionDateTime": "7/23/2019 9:51:14 PM",
+    "customFields": null,
+    "redeemPointsList": null,
+    "redeemCompList": null,
+    "redeemOfferList": [
+        {
+            "OfferCode": "@R2D2R2",
+            "OfferRedeemDollar": 12,
+            "ReferenceId": "10038",
+            "SequenceId": 0
+        }
+    ],
+    "redeemCouponList": null,
+    "voidAllList": null,
+    "referenceId": null,
+    "Amount": 0
+}</div><p>6/4/2019 9:25:10:332 - Successful transaction - Offer @R2D2R2</p><p>6/4/2019 9:25:10:352 - Removed offer @R2D2R2</p><p class='collapsible'>6/4/2019 9:25:10:377 - RedeemOffer response sent for account 3</p><div class='ccontent'>{
+    "AccountNumber": "3",
+    "RedeemOfferResultList": [
+        {
+            "OfferCode": "@R2D2R2",
+            "OfferRedeemDollar": 12,
+            "ReferenceId": "10038",
+            "SequenceId": 0,
+            "TransactionId": 4,
+            "ResponseStatus": {
+                "IsSuccess": true,
+                "ErrorMessage": "",
+                "ErrorCode": ""
+            }
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    },
+    "CustomFields": {}
+}</div><p class='collapsible'>6/4/2019 9:25:11:285 - RedeemOffer request recieved for account 3</p><div class='ccontent'>{
+    "cardNumber": null,
+    "AccountNumber": "3",
+    "cardType": null,
+    "pin": null,
+    "outletId": "1",
+    "outletName": "Default Profit Cente",
+    "employeeId": "1",
+    "requestingSystem": "agilysys",
+    "licensingKey": "agilysys",
+    "transactionDateTime": "7/23/2019 9:51:14 PM",
+    "customFields": null,
+    "redeemPointsList": null,
+    "redeemCompList": null,
+    "redeemOfferList": [
+        {
+            "OfferCode": "@R2D2R2",
+            "OfferRedeemDollar": 12,
+            "ReferenceId": "10038",
+            "SequenceId": 0
+        }
+    ],
+    "redeemCouponList": null,
+    "voidAllList": null,
+    "referenceId": null,
+    "Amount": 0
+}</div><p class='collapsible'>6/4/2019 9:25:11:317 - RedeemOffer response sent for account 3</p><div class='ccontent'>{
+    "AccountNumber": "3",
+    "RedeemOfferResultList": [
+        {
+            "OfferCode": "@R2D2R2",
+            "OfferRedeemDollar": 12,
+            "ReferenceId": "10038",
+            "SequenceId": 0,
             "TransactionId": 5,
             "ResponseStatus": {
-                "IsSuccess": true,
-                "ErrorMessage": "",
-                "ErrorCode": ""
+                "IsSuccess": false,
+                "ErrorMessage": "Cannot Find the Offer",
+                "ErrorCode": "XXX"
             }
         }
     ],
@@ -179,30 +411,89 @@
         "ErrorCode": ""
     },
     "CustomFields": {}
-}</div><p>6/5/2019 16:21:7:654 - App is listening on port 8080</p><p class='collapsible'>6/5/2019 16:21:12:284 - RedeemComp request recieved for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "RedeemPointsList": [
+}</div><p class='collapsible'>6/4/2019 9:25:13:128 - RedeemOffer request recieved for account 3</p><div class='ccontent'>{
+    "cardNumber": null,
+    "AccountNumber": "3",
+    "cardType": null,
+    "pin": null,
+    "outletId": "1",
+    "outletName": "Default Profit Cente",
+    "employeeId": "1",
+    "requestingSystem": "agilysys",
+    "licensingKey": "agilysys",
+    "transactionDateTime": "7/23/2019 9:51:14 PM",
+    "customFields": null,
+    "redeemPointsList": null,
+    "redeemCompList": null,
+    "redeemOfferList": [
         {
-            "RedeemDollars": 20,
-            "ReferenceId": "32323232",
-            "SequenceId": 1
+            "OfferCode": "@R2D2R2",
+            "OfferRedeemDollar": 12,
+            "ReferenceId": "10038",
+            "SequenceId": 0
         }
     ],
-    "OutletId": "001",
-    "OutletName": "string",
-    "EmployeeId": "string",
-    "RequestingSystem": "string",
-    "LicensingKey": "string",
-    "CustomFields": {},
-    "TransactionDateTime": "01/23/2019 12:00 AM"
-}</div><p>6/5/2019 16:21:12:347 - RedeemPoints: Redemed 20 points/0.10 in dollars</p><p class='collapsible'>6/5/2019 16:21:12:372 - RedeemPoints response sent for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "PointsBalance": 4880,
-    "PointsBalanceInDollars": "0.10",
-    "RedeemPointsList": [
+    "redeemCouponList": null,
+    "voidAllList": null,
+    "referenceId": null,
+    "Amount": 0
+}</div><p class='collapsible'>6/4/2019 9:25:13:165 - RedeemOffer response sent for account 3</p><div class='ccontent'>{
+    "AccountNumber": "3",
+    "RedeemOfferResultList": [
         {
-            "RedeemDollars": 20,
+            "OfferCode": "@R2D2R2",
+            "OfferRedeemDollar": 12,
+            "ReferenceId": "10038",
+            "SequenceId": 0,
             "TransactionId": 6,
+            "ResponseStatus": {
+                "IsSuccess": false,
+                "ErrorMessage": "Cannot Find the Offer",
+                "ErrorCode": "XXX"
+            }
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    },
+    "CustomFields": {}
+}</div><p>6/4/2019 9:26:21:132 - Started terminal.</p><p>6/4/2019 9:26:22:832 - App is listening on port 8080</p><p>6/4/2019 9:26:30:969 - Added offer data</p><p class='collapsible'>6/4/2019 9:26:38:840 - RedeemOffer request recieved for account 3</p><div class='ccontent'>{
+    "cardNumber": null,
+    "AccountNumber": "3",
+    "cardType": null,
+    "pin": null,
+    "outletId": "1",
+    "outletName": "Default Profit Cente",
+    "employeeId": "1",
+    "requestingSystem": "agilysys",
+    "licensingKey": "agilysys",
+    "transactionDateTime": "7/23/2019 9:51:14 PM",
+    "customFields": null,
+    "redeemPointsList": null,
+    "redeemCompList": null,
+    "redeemOfferList": [
+        {
+            "OfferCode": "@R2D2R2",
+            "OfferRedeemDollar": 12,
+            "ReferenceId": "10038",
+            "SequenceId": 0
+        }
+    ],
+    "redeemCouponList": null,
+    "voidAllList": null,
+    "referenceId": null,
+    "Amount": 0
+}</div><p>6/4/2019 9:26:38:875 - Successful transaction - Offer @R2D2R2</p><p>6/4/2019 9:26:38:912 - Removed offer @R2D2R2</p><p class='collapsible'>6/4/2019 9:26:38:966 - RedeemOffer response sent for account 3</p><div class='ccontent'>{
+    "AccountNumber": "3",
+    "RedeemOfferResultList": [
+        {
+            "OfferCode": "@R2D2R2",
+            "OfferRedeemDollar": 12,
+            "ReferenceId": "10038",
+            "SequenceId": 0,
+            "TransactionId": 7,
             "ResponseStatus": {
                 "IsSuccess": true,
                 "ErrorMessage": "",
@@ -216,625 +507,52 @@
         "ErrorCode": ""
     },
     "CustomFields": {}
-}</div><p class='collapsible'>6/5/2019 16:21:42:401 - ValidateAccount request recieved for account 1</p><div class='ccontent'>{
-    "cardNumber": "1",
-    "cardType": "AccountNumber",
-    "pin": "",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p>6/5/2019 16:21:42:415 - ValidateAccount: cardType = AccountNumber</p><p>6/5/2019 16:21:42:438 - ValidateAccount: One of the collection failed, review the collection result</p><p class='collapsible'>6/5/2019 16:21:42:473 - ValidateAccount response sent for account 1</p><div class='ccontent'>{
-    "PatronResponse": [
+}</div><p class='collapsible'>6/4/2019 9:26:41:387 - RedeemOffer request recieved for account 3</p><div class='ccontent'>{
+    "cardNumber": null,
+    "AccountNumber": "3",
+    "cardType": null,
+    "pin": null,
+    "outletId": "1",
+    "outletName": "Default Profit Cente",
+    "employeeId": "1",
+    "requestingSystem": "agilysys",
+    "licensingKey": "agilysys",
+    "transactionDateTime": "7/23/2019 9:51:14 PM",
+    "customFields": null,
+    "redeemPointsList": null,
+    "redeemCompList": null,
+    "redeemOfferList": [
         {
-            "ClubStateId": 40,
-            "AccountNumber": "1",
-            "FirstName": "Prabhas",
-            "LastName": "Kumra",
-            "ClubState": "3",
-            "DateOfBirth": "5/6/1997",
-            "PointsBalance": 4880,
-            "PointsBalanceInDollars": 9.76,
-            "CompBalance": "40",
-            "Promo2Balance": "88",
-            "IsInActive": "TRUE",
-            "IsPinLocked": "FALSE",
-            "IsBanned": "FALSE",
-            "ResponseResult": {
+            "OfferCode": "@R2D2R2",
+            "OfferRedeemDollar": 12,
+            "ReferenceId": "10038",
+            "SequenceId": 0
+        }
+    ],
+    "redeemCouponList": null,
+    "voidAllList": null,
+    "referenceId": null,
+    "Amount": 0
+}</div><p class='collapsible'>6/4/2019 9:26:41:421 - RedeemOffer response sent for account 3</p><div class='ccontent'>{
+    "AccountNumber": "3",
+    "RedeemOfferResultList": [
+        {
+            "OfferCode": "@R2D2R2",
+            "OfferRedeemDollar": 12,
+            "ReferenceId": "10038",
+            "SequenceId": 0,
+            "TransactionId": 8,
+            "ResponseStatus": {
                 "IsSuccess": false,
-                "ErrorMessage": "Player with Account # 1 is inactive",
-                "ErrorCode": "error"
+                "ErrorMessage": "Cannot Find the Offer",
+                "ErrorCode": "XXX"
             }
         }
     ],
     "ResponseStatus": {
-        "IsSuccess": false,
-        "ErrorMessage": "One of the collection failed, review the collection result.",
-        "ErrorCode": "error"
-    }
-}</div><p class='collapsible'>6/5/2019 16:21:49:826 - GetPlayerInfo request recieved for account 1</p><div class='ccontent'>{
-    "acct": "1",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p class='collapsible'>6/5/2019 16:21:49:849 - GetPlayerInfo response sent for account 1</p><div class='ccontent'>{
-    "firstName": "Prabhas",
-    "lastName": "Kumra",
-    "accountNumber": "1",
-    "tierLevel": "3",
-    "dateOfBirth": "5/6/1997",
-    "pointBalance": 4880,
-    "compBalance": "40",
-    "promo2Balance": "88",
-    "isBanned": "FALSE",
-    "isInActive": "TRUE",
-    "isPinLocked": "FALSE"
-}</div><p class='collapsible'>6/5/2019 16:21:55:302 - GetOffers request recieved for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p class='collapsible'>6/5/2019 16:21:55:325 - GetOffers response sent for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "Offers": [
-        {
-            "OfferCode": "@12RT70U",
-            "OfferName": "Free Movie",
-            "OfferValue": 12,
-            "OfferStartDate": "12/31/19 14:00:00 PM",
-            "OfferEndDate": "12/31/19 13:59:59 PM"
-        },
-        {
-            "OfferCode": "@19RR69R",
-            "OfferName": "$80 Buffet",
-            "OfferValue": 80,
-            "OfferStartDate": "01/31/19 14:00:00 PM",
-            "OfferEndDate": "0/31/19 15:59:59 PM"
-        }
-    ],
-    "ResponseStatus": {
         "IsSuccess": true,
         "ErrorMessage": "",
         "ErrorCode": ""
     },
     "CustomFields": {}
-}</div><p>6/5/2019 16:29:47:142 - App is listening on port 8080</p><p>6/5/2019 16:31:14:982 - App is listening on port 8080</p><p class='collapsible'>6/5/2019 16:31:20:546 - GetOffers request recieved for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p class='collapsible'>6/5/2019 16:31:20:584 - GetOffers response sent for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "Offers": [
-        {
-            "OfferCode": "@12RT70U",
-            "OfferName": "Free Movie",
-            "OfferValue": 12,
-            "OfferStartDate": "12/31/19 14:00:00 PM",
-            "OfferEndDate": "12/31/19 13:59:59 PM"
-        },
-        {
-            "OfferCode": "@19RR69R",
-            "OfferName": "$80 Buffet",
-            "OfferValue": 80,
-            "OfferStartDate": "01/31/19 14:00:00 PM",
-            "OfferEndDate": "0/31/19 15:59:59 PM"
-        }
-    ],
-    "ResponseStatus": {
-        "IsSuccess": true,
-        "ErrorMessage": "",
-        "ErrorCode": ""
-    },
-    "CustomFields": {}
-}</div><p>6/5/2019 16:32:3:288 - App is listening on port 8080</p><p class='collapsible'>6/5/2019 16:32:8:136 - GetOffers request recieved for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p class='collapsible'>6/5/2019 16:32:8:165 - GetOffers response sent for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "Offers": [
-        {
-            "OfferCode": "@12RT70U",
-            "OfferName": "Free Movie",
-            "OfferValue": 12,
-            "OfferStartDate": "12/31/19 14:00:00 PM",
-            "OfferEndDate": "12/31/19 13:59:59 PM"
-        },
-        {
-            "OfferCode": "@19RR69R",
-            "OfferName": "$80 Buffet",
-            "OfferValue": 80,
-            "OfferStartDate": "01/31/19 14:00:00 PM",
-            "OfferEndDate": "0/31/19 15:59:59 PM"
-        }
-    ],
-    "ResponseStatus": {
-        "IsSuccess": true,
-        "ErrorMessage": "",
-        "ErrorCode": ""
-    },
-    "CustomFields": {}
-}</div><p>6/5/2019 16:33:22:210 - App is listening on port 8080</p><p class='collapsible'>6/5/2019 16:33:28:777 - GetOffers request recieved for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p class='collapsible'>6/5/2019 16:33:28:802 - GetOffers response sent for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "Offers": [
-        {
-            "OfferCode": "@12RT70U",
-            "OfferName": "Free Movie",
-            "OfferValue": 12,
-            "OfferStartDate": "12/31/19 14:00:00 PM",
-            "OfferEndDate": "12/31/19 13:59:59 PM"
-        },
-        {
-            "OfferCode": "@19RR69R",
-            "OfferName": "$80 Buffet",
-            "OfferValue": 80,
-            "OfferStartDate": "01/31/19 14:00:00 PM",
-            "OfferEndDate": "0/31/19 15:59:59 PM"
-        }
-    ],
-    "ResponseStatus": {
-        "IsSuccess": true,
-        "ErrorMessage": "",
-        "ErrorCode": ""
-    },
-    "CustomFields": {}
-}</div><p>6/5/2019 16:34:33:213 - App is listening on port 8080</p><p class='collapsible'>6/5/2019 16:34:37:817 - GetOffers request recieved for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p class='collapsible'>6/5/2019 16:34:37:846 - GetOffers response sent for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "Offers": [
-        {
-            "OfferCode": "@12RT70U",
-            "OfferName": "Free Movie",
-            "OfferValue": 12,
-            "OfferStartDate": "12/31/19 14:00:00 PM",
-            "OfferEndDate": "12/31/19 13:59:59 PM"
-        },
-        {
-            "OfferCode": "@19RR69R",
-            "OfferName": "$80 Buffet",
-            "OfferValue": 80,
-            "OfferStartDate": "01/31/19 14:00:00 PM",
-            "OfferEndDate": "0/31/19 15:59:59 PM"
-        }
-    ],
-    "ResponseStatus": {
-        "IsSuccess": true,
-        "ErrorMessage": "",
-        "ErrorCode": ""
-    },
-    "CustomFields": {}
-}</div><p>6/5/2019 16:35:11:728 - App is listening on port 8080</p><p class='collapsible'>6/5/2019 16:35:25:680 - GetOffers request recieved for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p class='collapsible'>6/5/2019 16:35:25:705 - GetOffers response sent for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "Offers": [
-        {
-            "OfferCode": "@12RT70U",
-            "OfferName": "Free Movie",
-            "OfferValue": 12,
-            "OfferStartDate": "12/31/19 14:00:00 PM",
-            "OfferEndDate": "12/31/19 13:59:59 PM"
-        },
-        {
-            "OfferCode": "@19RR69R",
-            "OfferName": "$80 Buffet",
-            "OfferValue": 80,
-            "OfferStartDate": "01/31/19 14:00:00 PM",
-            "OfferEndDate": "0/31/19 15:59:59 PM"
-        }
-    ],
-    "ResponseStatus": {
-        "IsSuccess": true,
-        "ErrorMessage": "",
-        "ErrorCode": ""
-    },
-    "CustomFields": {}
-}</div><p>6/5/2019 16:35:46:583 - App is listening on port 8080</p><p class='collapsible'>6/5/2019 16:35:51:122 - GetOffers request recieved for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p class='collapsible'>6/5/2019 16:35:51:169 - GetOffers response sent for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "Offers": [
-        {
-            "OfferCode": "@12RT70U",
-            "OfferName": "Free Movie",
-            "OfferValue": 12,
-            "OfferStartDate": "12/31/19 14:00:00 PM",
-            "OfferEndDate": "12/31/19 13:59:59 PM"
-        },
-        {
-            "OfferCode": "@19RR69R",
-            "OfferName": "$80 Buffet",
-            "OfferValue": 80,
-            "OfferStartDate": "01/31/19 14:00:00 PM",
-            "OfferEndDate": "0/31/19 15:59:59 PM"
-        }
-    ],
-    "ResponseStatus": {
-        "IsSuccess": true,
-        "ErrorMessage": "",
-        "ErrorCode": ""
-    },
-    "CustomFields": {}
-}</div><p>6/5/2019 16:37:36:576 - App is listening on port 8080</p><p class='collapsible'>6/5/2019 16:37:41:348 - GetOffers request recieved for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p class='collapsible'>6/5/2019 16:37:41:374 - GetOffers response sent for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "Offers": [
-        {
-            "OfferCode": "@12RT70U",
-            "OfferName": "Free Movie",
-            "OfferValue": 12,
-            "OfferStartDate": "12/31/19 14:00:00 PM",
-            "OfferEndDate": "12/31/19 13:59:59 PM"
-        },
-        {
-            "OfferCode": "@19RR69R",
-            "OfferName": "$80 Buffet",
-            "OfferValue": 80,
-            "OfferStartDate": "01/31/19 14:00:00 PM",
-            "OfferEndDate": "0/31/19 15:59:59 PM"
-        }
-    ],
-    "ResponseStatus": {
-        "IsSuccess": true,
-        "ErrorMessage": "",
-        "ErrorCode": ""
-    },
-    "CustomFields": {}
-}</div><p>6/5/2019 16:38:1:391 - App is listening on port 8080</p><p class='collapsible'>6/5/2019 16:38:6:915 - GetOffers request recieved for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p class='collapsible'>6/5/2019 16:38:7:4 - GetOffers response sent for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "Offers": [
-        {
-            "OfferCode": "@12RT70U",
-            "OfferName": "Free Movie",
-            "OfferValue": 12,
-            "OfferStartDate": "12/31/19 14:00:00 PM",
-            "OfferEndDate": "12/31/19 13:59:59 PM"
-        },
-        {
-            "OfferCode": "@19RR69R",
-            "OfferName": "$80 Buffet",
-            "OfferValue": 80,
-            "OfferStartDate": "01/31/19 14:00:00 PM",
-            "OfferEndDate": "0/31/19 15:59:59 PM"
-        }
-    ],
-    "ResponseStatus": {
-        "IsSuccess": true,
-        "ErrorMessage": "",
-        "ErrorCode": ""
-    },
-    "CustomFields": {}
-}</div><p>6/5/2019 16:40:56:989 - App is listening on port 8080</p><p class='collapsible'>6/5/2019 16:41:2:363 - GetOffers request recieved for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p class='collapsible'>6/5/2019 16:41:2:401 - GetOffers response sent for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "Offers": [
-        {
-            "OfferCode": "@12RT70U",
-            "OfferName": "Free Movie",
-            "OfferValue": 12,
-            "OfferStartDate": "12/31/19 14:00:00 PM",
-            "OfferEndDate": "12/31/19 13:59:59 PM"
-        },
-        {
-            "OfferCode": "@19RR69R",
-            "OfferName": "$80 Buffet",
-            "OfferValue": 80,
-            "OfferStartDate": "01/31/19 14:00:00 PM",
-            "OfferEndDate": "0/31/19 15:59:59 PM"
-        }
-    ],
-    "ResponseStatus": {
-        "IsSuccess": true,
-        "ErrorMessage": "",
-        "ErrorCode": ""
-    },
-    "CustomFields": {}
-}</div><p>6/5/2019 16:46:17:266 - App is listening on port 8080</p><p class='collapsible'>6/5/2019 16:46:22:709 - GetOffers request recieved for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p class='collapsible'>6/5/2019 16:46:22:736 - GetOffers response sent for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "Offers": [
-        {
-            "OfferCode": "@12RT70U",
-            "OfferName": "Free Movie",
-            "OfferValue": 12,
-            "OfferStartDate": "12/31/19 14:00:00 PM",
-            "OfferEndDate": "12/31/19 13:59:59 PM"
-        },
-        {
-            "OfferCode": "@19RR69R",
-            "OfferName": "$80 Buffet",
-            "OfferValue": 80,
-            "OfferStartDate": "01/31/19 14:00:00 PM",
-            "OfferEndDate": "0/31/19 15:59:59 PM"
-        }
-    ],
-    "ResponseStatus": {
-        "IsSuccess": true,
-        "ErrorMessage": "",
-        "ErrorCode": ""
-    },
-    "CustomFields": {}
-}</div><p>6/5/2019 16:47:7:24 - App is listening on port 8080</p><p class='collapsible'>6/5/2019 16:47:12:736 - GetOffers request recieved for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p class='collapsible'>6/5/2019 16:47:12:763 - GetOffers response sent for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "Offers": [
-        {
-            "OfferCode": "@12RT70U",
-            "OfferName": "Free Movie",
-            "OfferValue": 12,
-            "OfferStartDate": "12/31/19 14:00:00 PM",
-            "OfferEndDate": "12/31/19 13:59:59 PM"
-        },
-        {
-            "OfferCode": "@19RR69R",
-            "OfferName": "$80 Buffet",
-            "OfferValue": 80,
-            "OfferStartDate": "01/31/19 14:00:00 PM",
-            "OfferEndDate": "0/31/19 15:59:59 PM"
-        }
-    ],
-    "ResponseStatus": {
-        "IsSuccess": true,
-        "ErrorMessage": "",
-        "ErrorCode": ""
-    },
-    "CustomFields": {}
-}</div><p>6/5/2019 16:48:3:510 - App is listening on port 8080</p><p class='collapsible'>6/5/2019 16:48:8:616 - GetOffers request recieved for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p class='collapsible'>6/5/2019 16:48:8:642 - GetOffers response sent for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "Offers": [
-        {
-            "OfferCode": "@12RT70U",
-            "OfferName": "Free Movie",
-            "OfferValue": 12,
-            "OfferStartDate": "12/31/19 14:00:00 PM",
-            "OfferEndDate": "12/31/19 13:59:59 PM"
-        },
-        {
-            "OfferCode": "@19RR69R",
-            "OfferName": "$80 Buffet",
-            "OfferValue": 80,
-            "OfferStartDate": "01/31/19 14:00:00 PM",
-            "OfferEndDate": "0/31/19 15:59:59 PM"
-        }
-    ],
-    "ResponseStatus": {
-        "IsSuccess": true,
-        "ErrorMessage": "",
-        "ErrorCode": ""
-    },
-    "CustomFields": {}
-}</div><p>6/5/2019 16:49:48:160 - App is listening on port 8080</p><p class='collapsible'>6/5/2019 16:49:54:492 - GetOffers request recieved for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p class='collapsible'>6/5/2019 16:49:54:522 - GetOffers response sent for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "Offers": [
-        {
-            "OfferCode": "@12RT70U",
-            "OfferName": "Free Movie",
-            "OfferValue": 12,
-            "OfferStartDate": "12/31/19 14:00:00 PM",
-            "OfferEndDate": "12/31/19 13:59:59 PM"
-        },
-        {
-            "OfferCode": "@19RR69R",
-            "OfferName": "$80 Buffet",
-            "OfferValue": 80,
-            "OfferStartDate": "01/31/19 14:00:00 PM",
-            "OfferEndDate": "0/31/19 15:59:59 PM"
-        }
-    ],
-    "ResponseStatus": {
-        "IsSuccess": true,
-        "ErrorMessage": "",
-        "ErrorCode": ""
-    },
-    "CustomFields": {}
-}</div><p>6/5/2019 16:50:28:235 - App is listening on port 8080</p><p class='collapsible'>6/5/2019 16:50:32:467 - GetOffers request recieved for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p class='collapsible'>6/5/2019 16:50:32:498 - GetOffers response sent for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "Offers": [
-        {
-            "OfferCode": "@12RT70U",
-            "OfferName": "Free Movie",
-            "OfferValue": 12,
-            "OfferStartDate": "12/31/19 14:00:00 PM",
-            "OfferEndDate": "12/31/19 13:59:59 PM"
-        },
-        {
-            "OfferCode": "@19RR69R",
-            "OfferName": "$80 Buffet",
-            "OfferValue": 80,
-            "OfferStartDate": "01/31/19 14:00:00 PM",
-            "OfferEndDate": "0/31/19 15:59:59 PM"
-        }
-    ],
-    "ResponseStatus": {
-        "IsSuccess": true,
-        "ErrorMessage": "",
-        "ErrorCode": ""
-    },
-    "CustomFields": {}
-}</div><p>6/5/2019 16:50:47:278 - App is listening on port 8080</p><p class='collapsible'>6/5/2019 16:50:52:433 - GetOffers request recieved for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p class='collapsible'>6/5/2019 16:50:52:470 - GetOffers response sent for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "Offers": [
-        {
-            "OfferCode": "@12RT70U",
-            "OfferName": "Free Movie",
-            "OfferValue": 12,
-            "OfferStartDate": "12/31/19 14:00:00 PM",
-            "OfferEndDate": "12/31/19 13:59:59 PM"
-        },
-        {
-            "OfferCode": "@19RR69R",
-            "OfferName": "$80 Buffet",
-            "OfferValue": 80,
-            "OfferStartDate": "01/31/19 14:00:00 PM",
-            "OfferEndDate": "0/31/19 15:59:59 PM"
-        }
-    ],
-    "ResponseStatus": {
-        "IsSuccess": true,
-        "ErrorMessage": "",
-        "ErrorCode": ""
-    },
-    "CustomFields": {}
-}</div><p>6/5/2019 16:52:1:872 - App is listening on port 8080</p><p class='collapsible'>6/5/2019 16:52:9:405 - GetOffers request recieved for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "outletId": "001",
-    "outletName": "string",
-    "employeeId": "string",
-    "requestingSystem": "string",
-    "licensingKey": "string",
-    "transactionDateTime": "string",
-    "customFields": {}
-}</div><p class='collapsible'>6/5/2019 16:52:9:590 - GetOffers response sent for account 1</p><div class='ccontent'>{
-    "AccountNumber": "1",
-    "Offers": [
-        {
-            "OfferCode": "@12RT70U",
-            "OfferName": "Free Movie",
-            "OfferValue": 12,
-            "OfferStartDate": "12/31/19 14:00:00 PM",
-            "OfferEndDate": "12/31/19 13:59:59 PM"
-        },
-        {
-            "OfferCode": "@19RR69R",
-            "OfferName": "$80 Buffet",
-            "OfferValue": 80,
-            "OfferStartDate": "01/31/19 14:00:00 PM",
-            "OfferEndDate": "0/31/19 15:59:59 PM"
-        }
-    ],
-    "ResponseStatus": {
-        "IsSuccess": true,
-        "ErrorMessage": "",
-        "ErrorCode": ""
-    },
-    "CustomFields": {}
-}</div>
+}</div><p>6/4/2019 9:37:49:133 - Started terminal.</p><p>6/4/2019 9:37:50:825 - App is listening on port 8080</p>

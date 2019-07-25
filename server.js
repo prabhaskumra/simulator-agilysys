@@ -201,7 +201,7 @@ app.post("/Players/VoidAll", (req, res) => {
     writeToTerminal("Error: App not ready (VoidAll)")
     return;
   }
-  let out = VoidAll(req.body.AccountNumber, req.body.VoidAllList)
+  let out = VoidAll(req.body.AccountNumber, req.body.voidAllList)
   res.send(out)
   writeToTerminal("VoidAll response sent for account " + req.body.AccountNumber, out)
 })
