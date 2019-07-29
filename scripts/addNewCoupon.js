@@ -3,22 +3,22 @@ var newCoupon = {}
 var couponFlags = {}
 
 function addNewCoupon(){
-
     newCoupon = {
-            "CouponNumber": "",
-            "Balance": ""
+        "CouponNumber": "",
+        "Balance": ""
     }
 
     couponFlags = {
         "CouponNumber": false,
         "Balance": false,
       }
-
 }
 
 function saveCouponForm(){
-
-    couponData.push(newCoupon)
+    couponData.push({
+        CouponNumber: document.getElementById('couponNumber').value,
+        Balance: document.getElementById('balance').value
+    })
     db.set('players', playerData).write()
     updateCouponTable()
     addNewCoupon()
@@ -33,27 +33,15 @@ function saveCouponForm(){
     document.getElementById("coupon-form").reset();
 }
 
-
-function enterCouponInfo(inputElement){
-    
-    if(inputElement.name === 'couponNumber'){
-        newCoupon.CouponNumber = inputElement.value
-        couponFlags.CouponNumber = true
-        checkCouponFlag()
-    }
-    else if(inputElement.name === 'balance'){
-        newCoupon.Balance = inputElement.value
-        couponFlags.Balance = true
-        checkCouponFlag() 
-    }
-}
-
 function checkCouponFlag(){
-    
-    if(couponFlags.CouponNumber && couponFlags.Balance)
+    console.log('fuck')
+    if(document.getElementById('balance').value != "" && document.getElementById('couponNumber').value != ""){
+        console.log('dick')
         document.getElementById("save-coupon-button").disabled = false
-    else
+    }
+    else{
         document.getElementById("save-coupon-button").disabled = true
+    }
 }
 
 function newCouponWindow(){
