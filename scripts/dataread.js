@@ -15,6 +15,10 @@ var coupons = []
 
 var appReady = false
 
+//******************************************************************************** */
+var isProduction = false // set this to true when exporting to exe
+/********************************************************************************* */
+
 //checks to see if data is loaded, if not, show message
 function isAppReady(){
     let playerExists = false
@@ -142,7 +146,6 @@ function openCoupons(){
         writeToTerminal("Added coupon data")
     })
 }
-
 
 //checks to see if files were already uploaded and stored locally
 function checkUploaded() {

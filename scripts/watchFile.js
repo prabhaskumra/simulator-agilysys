@@ -1,6 +1,4 @@
 //this file watches the loghtml.txt to see if there are any changes made, if so update terminal
-
-let isProduction = false // set this to true when exporting to exe
 let loghtmlPath, logPath
 
 //production and build enviorments direct to different paths. set accordingly

@@ -124,7 +124,7 @@ input[type="text"]::-webkit-input-placeholder {
   outline: none;
   background: transparent;
   text-decoration: underline;
-  display: inline-block;
+  display: block;
 }
 
 @-webkit-keyframes sk-bouncedelay {
