@@ -48,12 +48,12 @@ function isAppReady(){
         document.getElementById('app-not-ready').style.display = "block"
     }
 
-    if(!appReady){
-        document.getElementById("edit-info").disabled = true
-        writeToTerminal("App is not ready")
-      } else {
-        document.getElementById("edit-info").disabled = false
-      }
+    // if(!appReady){
+    //     document.getElementById("edit-info").disabled = true
+    //     writeToTerminal("App is not ready")
+    //   } else {
+    //     document.getElementById("edit-info").disabled = false
+    //   }
 }
 
 //opens window to select file to download mock data
