@@ -1,0 +1,4 @@
+6/1/2019 13:56:14:653 - Started terminal.
+6/1/2019 13:56:16:537 - App is listening on port 8080
+6/1/2019 13:56:16:521 - App is not ready
+6/1/2019 13:56:16:574 - App is not ready

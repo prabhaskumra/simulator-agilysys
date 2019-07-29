@@ -64,11 +64,16 @@ label {
 }
 
 .container {
-  width: 700px;
-  border-radius: 60px;
-  background-color: #C0C0C0;
+  width: 400px;
+  border-radius: 30px;
   padding: 20px;
   outline-color:#005d99;
+  border: solid;
+  margin-bottom: 60px;
+}
+
+.form-input {
+  width: 180px !important;
 }
 
 

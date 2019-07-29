@@ -29,6 +29,15 @@
   color: white;
 }
 
+.yellow-but:hover{
+  background-color: #ffd12a;
+  color: black;
+}
+
+.red-but:hover {
+  background-color: #ec1c2d;
+}
+
 .button2 {
   border-radius: 6px;
   width: 130;
@@ -93,7 +102,6 @@
 }
 
 #pointsToDollars {
-  display: inline-block;
   width: 140px;
 }
 

@@ -37,42 +37,43 @@
         <div id="mySidebar" class="sidebar">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 
-            <div id="insert-mock-data">
+                <h4 style='color: #f5f5f5' class='nowrap'>Batch Import (.csv)</h4>
+                <div id="insert-mock-data">
                 <div>
                     <p> <button class="button button1" onclick="openPlayers()" id="player-data-status"></button> </p>
                     <p> <button class="button button1" onclick="openOffers()" id="offer-data-status"></button> </p>
                     <p> <button class="button button1" onclick="openCoupons()" id="coupon-data-status"></button> </p>
                 </div>
-                <br>
+                <hr>
+                <h4 style='color: #f5f5f5' class='nowrap'>View / Edit</h4>
+                <div id ="editPlayerInfo">
+                    <p> <button class ="button button1 yellow-but" onclick="editPlayers(); closeNav()" id="edit-info" value="Edit Info">Players</button></p>
+                </div>
+
+                <div id="editOfferData">
+                    <p> <button class ="button button1 yellow-but" onclick="editOfferData(); closeNav()" id="edit-offerInfo" value="Edit Offers Info">Offers</button></p>
+                </div>
+
+                <div id="editCouponData">
+                    <p> <button class ="button button1 yellow-but" onclick="editCouponData(); closeNav()" id="edit-couponsInfo" value="Edit Coupon Info">Coupons</button></p>
+                </div>
+                <hr>
                 <div id="pointsToDollarsContainer" style="white-space: nowrap">
                     <h4 style='color: #f5f5f5'>Points To Dollars</h4>
                     <h2 id='pointsToDollars'>1 : 1</h2>
                     <br>
-                    <button class="button button1" onclick='convertPointsToDollars()'>edit</button>  
+                    <button class="button button1 red-but" onclick='convertPointsToDollars()'>edit</button>  
                 </div>
                 <br>
                 <div id="retailContainer" style="white-space: nowrap">
                     <h4 style='color: #f5f5f5'>Retail Rating</h4>
                     <h2 id='retail-rating'>1 : 1</h2>
                     <br>
-                    <button class="button button1" onclick='editRetailRating()'>edit</button>  
+                    <button class="button button1 red-but" onclick='editRetailRating()'>edit</button>  
                 </div>
-                <br>
-                <br>
             </div>
-            <div id ="editPlayerInfo">
-                    <p> <button class ="button button1" onclick="editPlayers()" id="edit-info" value="Edit Info">Edit Players' Info</button></p>
-            </div>
-
-            <div id="editCouponData">
-                <p> <button class ="button button1" onclick="editCouponData()" id="edit-couponsInfo" value="Edit Coupon Info">Edit Coupons Info</button></p>
-            </div>
-
-            <div id="editOfferData">
-                <p> <button class ="button button1" onclick="editOfferData()" id="edit-offerInfo" value="Edit Offers Info">Edit Offers Info</button></p>
-            </div>
-            <br>
-
+            <hr>
+            <h4 style='color: #f5f5f5' class='nowrap'>Network</h4>
             <div class='nowrap'>
                 <input type='text' id='port' placeholder="port" maxlength="5">
                 <button id='submit-port' class="button button1" style="width: 80px" onclick="submitPort()">submit</button>
@@ -108,7 +109,7 @@
         </div>
     </span>
 
-    <span id='edit-players' style='display: none'>
+    <span id='edit-players' style='display: none; margin-bottom: 60px'>
         <h1>Edit Player Data</h1>
 
         <input type="text" id="myInput" onkeyup="searchData(this)" placeholder="Search by name" title="Type in a name">
@@ -116,41 +117,12 @@
 
         <button class="button button2" onclick="newWindow()" id="new-player">Add a New Player</button>
         <button class="button button2" onclick="writeToFile()">Save</button>
-        <button class="button button2" id="close-btn" onclick="loadMain()">Close</button>
+        <button class="button button2" id="close-btn" onclick="loadMain(); openNav()">Close</button>
 
   
         <div id="dataSaved"></div>
         <div id="error-message"></div>
     </span>
-
-    <span id='edit-coupons' style='display: none'>
-        <h1>Edit Coupon Data</h1>
-        <input type="text" id="myInput"  onkeyup="searchCouponTable(this)" placeholder="Search by coupon number" title="Type in a coupon number">
-        <div id="editCoupon"> 
-            
-        </div>
-    
-        <button class="button button2"  onclick="writeCoupons()">Save</button>
-        <button class="button button2" id="couponClose-btn" onclick="loadCouponMain()">Close</button>
-    
-        <div id="couponDataSaved"></div>
-    </span>
-
-    <!-- Adding window for Player data display Edit Offer Data -->
-    <span id="edit-offers" style="display: none">
-        <h1>Edit Offers Data</h1>
-        <input type="text" id="myInput" onkeyup="searchOfferTable(this)" placeholder="Search by Account Number" title="Type in Player's Name">
-        <div id="editOffer">
-            <!--Html is added in via js-->
-        </div>
-
-        <button class="button button2" onclick="saveOffers()">Save</button>
-        <button class="button button2" id="offerClose-btn" onclick="loadOfferMain()">Close</button>
-
-        <div id="offerDataSaved"></div>
-
-    </span>
-
     <span id='add-player' style='display: none'>
         <h1>Add New Player</h1>
 
@@ -158,50 +130,50 @@
             <form id="plyr-form">
                 <div class = "row">
                     <label for='fname'>First Name</label>
-                    <input type='input1' id='fname' name='firstname' placeholder='First Name..' value="" onchange="enterData(this)">
+                    <input type='input1' id='fname' name='firstname' class='form-input' placeholder='First Name..' value="" onchange="enterData(this)">
                 </div>
                 
                 <div class = "row">
                     <label for='lname'>Last Name</label>
-                    <input type='input1' id='lname' name='lastname' placeholder='Last Name..' onchange="enterData(this)">
+                    <input type='input1' id='lname' name='lastname' class='form-input' placeholder='Last Name..' onchange="enterData(this)">
                 </div>
                
                 <div class = "row">
                     <label for='account-number'>Account Number</label>
-                    <input type='input1' id='account-number' name='account-number' placeholder='Account Number..' onchange="enterData(this)">
+                    <input type='input1' id='account-number' name='account-number' class='form-input' placeholder='Account Number..' onchange="enterData(this)">
                 </div>
 
                
                 <div class = "row">
                     <label for='tier-level'>Tier Level</label> 
-                    <input type='input1' id='tier-level' name='tier-level' placeholder='Tier Level..' onchange="enterData(this)"> <br>
+                    <input type='input1' id='tier-level' name='tier-level' class='form-input' placeholder='Tier Level..' onchange="enterData(this)"> <br>
                 </div>
 
 
                 <div class = "row">
                     <label for='point-balance'>Point Balance</label>
-                    <input type='input1' id='point-balance' name='point-balance' placeholder='Point Balance..' onchange="enterData(this)">
+                    <input type='input1' id='point-balance' name='point-balance' class='form-input' placeholder='Point Balance..' onchange="enterData(this)">
                 </div>
                 
                 <div class = "row">
                     <label for='comp-balance'>Comp Balance</label>
-                    <input type='input1' id='comp-balance' name='comp-balance' placeholder='Comp Balance..' onchange="enterData(this)"> 
+                    <input type='input1' id='comp-balance' name='comp-balance' class='form-input' placeholder='Comp Balance..' onchange="enterData(this)"> 
                 </div>
                 
 
                 <div class = "row">
                     <label for='promo-balance'>Promo2 Balance</label>
-                    <input type='input1' id='promo-balance' name='promo-balance' placeholder='Promo2 Balance..' onchange="enterData(this)">
+                    <input type='input1' id='promo-balance' name='promo-balance' class='form-input' placeholder='Promo2 Balance..' onchange="enterData(this)">
                 </div>
                
                 <div class = "row">
                     <label for='dob'>Date of Birth</label>
-                    <input type='date' id='dob' name='dob' value='07/22/2019' min='01/01/1920' max='01/01/2020' onchange="enterData(this)">
+                    <input type='date' id='dob' name='dob' value='07/22/2019' class='form-input' min='01/01/1920' max='01/01/2020' onchange="enterData(this)">
                 </div>
                 
                 <div class = "row">
                     <label for='isInActive'>Is InActive</label>
-                    <select id='isInActive' name='isInActive' onchange="enterData(this)" >
+                    <select id='isInActive' name='isInActive' class='form-input' onchange="enterData(this)" >
                         <option value='FALSE'>FALSE</option>
                         <option value='TRUE'>TRUE</option> 
                     </select> 
@@ -209,7 +181,7 @@
 
                 <div class = "row">
                     <label for='isbanned'>Is Banned</label>
-                    <select id='isbanned' name='isbanned' onchange="enterData(this)">
+                    <select id='isbanned' name='isbanned' class='form-input' onchange="enterData(this)">
                         <option value='FALSE'>FALSE</option>
                         <option value='TRUE'>TRUE</option> 
                     </select><br> 
@@ -217,7 +189,7 @@
                     
                 <div class = "row">
                     <label for='isPinLocked'>Is Pin Locked</label>
-                    <select id='isPinLocked' name='isPinLocked' onchange="enterData(this)" >
+                    <select id='isPinLocked' name='isPinLocked' class='form-input' onchange="enterData(this)" >
                         <option value='FALSE'>FALSE</option>
                         <option value='TRUE'>TRUE</option> 
                     </select>
@@ -230,6 +202,36 @@
         <div id="save-plyr"></div>
         
     </span>
+
+    <span id='edit-coupons' style='display: none; margin-bottom: 60px'>
+        <h1>Edit Coupon Data</h1>
+        <input type="text" id="myInput"  onkeyup="searchCouponTable(this)" placeholder="Search by coupon number" title="Type in a coupon number">
+        <div id="editCoupon"> 
+            
+        </div>
+    
+        <button class="button button2"  onclick="writeCoupons()">Save</button>
+        <button class="button button2" id="couponClose-btn" onclick="loadCouponMain(); openNav()">Close</button>
+    
+        <div id="couponDataSaved"></div>
+    </span>
+
+    <!-- Adding window for Player data display Edit Offer Data -->
+    <span id="edit-offers" style="display: none; margin-bottom: 60px">
+        <h1>Edit Offers Data</h1>
+        <input type="text" id="myInput" onkeyup="searchOfferTable(this)" placeholder="Search by Account Number" title="Type in Player's Name">
+        <div id="editOffer">
+            <!--Html is added in via js-->
+        </div>
+
+        <button class="button button2" onclick="saveOffers()">Save</button>
+        <button class="button button2" id="offerClose-btn" onclick="loadOfferMain(); openNav()">Close</button>
+
+        <div id="offerDataSaved"></div>
+
+    </span>
+
+ 
 
     <script>
         //load terminal on initial load

@@ -168,6 +168,7 @@ function checkUploaded() {
         coupons = db.get('coupons').value()
     }
     checkPointsToDollars()
+    checkRetailRating()
     checkRunningPort()
     isAppReady()
 }
@@ -175,6 +176,11 @@ function checkUploaded() {
 function checkPointsToDollars(){
     let pointsToDollars = db.get('pointsToDollars').value()
     document.getElementById('pointsToDollars').textContent = pointsToDollars + " : 1"
+}
+
+function checkRetailRating(){
+    let retailRating = db.get('retailRating').value()
+    document.getElementById('retail-rating').textContent = retailRating + " : 1"
 }
 
 function checkRunningPort(){
