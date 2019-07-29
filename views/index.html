@@ -22,6 +22,7 @@
     <script src='../scripts/addNewPlayer.js'></script>
     <script src='../scripts/editCouponInfo.js'></script>
     <script src='../scripts/editPort.js'></script>
+    <script src='../scripts/addNewCoupon.js'></script>
     <script src='../scripts/retailRating.js'></script>
     <script src='../scripts/logs.js'></script>
 </head>
@@ -119,6 +120,7 @@
         <div id="dataSaved"></div>
         <div id="error-message"></div>
     </span>
+  
     <span id='add-player' style='display: none'>
         <h1>Add New Player</h1>
 
@@ -199,6 +201,31 @@
         
     </span>
 
+    <!-- Form to add a new offer to the database -->
+    <span id="add-coupon"  style='display: none'>
+        <h1>Add New Coupon</h1>
+
+        <div id="add-coupon" class="container">
+            <form id="coupon-form">
+                <div class = "row">
+                    <label for='couponName'>Coupon Number</label>
+                    <input type='input1' id='couponNumber' name='couponNumber' placeholder='Coupon Number..' value="" onchange="enterCouponInfo(this)">
+                </div>
+                
+                <div class = "row">
+                    <label for='balance'>Balance</label>
+                    <input type='input1' id='balance' name='balance' placeholder='Balance..' value="" onchange="enterCouponInfo(this)">
+                </div>
+
+               
+                </div>
+                <button class="button button2" type="reset" id="save-coupon-button" onclick="saveCouponForm()">Save</button>
+                <button class="button button2" type="reset" id="close-coupon-button" onclick="loadCouponTable()" >Close</button>
+            </form>
+        </div>
+
+        <div id="save-coupon"></div>
+    </span>
     <span id='edit-coupons' style='display: none; margin-bottom: 60px'>
         <h1>Edit Coupon Data</h1>
         <input type="text" id="myInput"  onkeyup="searchCouponTable(this)" placeholder="Search by coupon number" title="Type in a coupon number">
@@ -206,6 +233,7 @@
             
         </div>
     
+        <button class="button button2" onclick="newCouponWindow()" id="new-coupon" onclick="newCouponWindow()">Add New Coupon</button>
         <button class="button button2"  onclick="writeCoupons()">Save</button>
         <button class="button button2" id="couponClose-btn" onclick="loadCouponMain(); openNav()">Close</button>
     
@@ -227,7 +255,6 @@
 
     </span>
 
- 
 
     <script>
         //load terminal on initial load
