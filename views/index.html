@@ -13,17 +13,29 @@
     <link rel="stylesheet" href="/views/css/titlebar.css">
     <link rel="stylesheet" href="/views/css/form.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- <script src="//code.jquery.com/jquery-1.11.3.min.js"></script> -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- <script
+        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+        crossorigin="anonymous"></script>  -->
     <script src='../scripts/dataread.js'></script>
     <script src='../scripts/watchFile.js'></script>
     <script src='../scripts/titlebar.js'></script>
     <script src='../scripts/convertPointsToDollars.js'></script>
     <script src='../scripts/editPlayersInfo.js'></script>
+    <script src='../scripts/editOfferData.js'></script>
     <script src='../scripts/addNewPlayer.js'></script>
     <script src='../scripts/editCouponInfo.js'></script>
     <script src='../scripts/editPort.js'></script>
     <script src='../scripts/retailRating.js'></script>
 </head>
 <body onload="checkUploaded(); isAppReady()">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <div id="title-bar">
             <div id="title-bar-btns">
                     <button class="button button2" id='settings-button' onclick="openNav()" style='width: 100px'>Settings</button>
@@ -62,10 +74,16 @@
             <div id ="editPlayerInfo">
                     <p> <button class ="button button1" onclick="editPlayers()" id="edit-info" value="Edit Info">Edit Players' Info</button></p>
             </div>
+
             <div id="editCouponData">
                 <p> <button class ="button button1" onclick="editCouponData()" id="edit-couponsInfo" value="Edit Coupon Info">Edit Coupons Info</button></p>
             </div>
-        <br>
+
+            <div id="editOfferData">
+                <p> <button class ="button button1" onclick="editOfferData()" id="edit-offerInfo" value="Edit Offers Info">Edit Offers Info</button></p>
+            </div>
+            <br>
+
             <div class='nowrap'>
                 <input type='text' id='port' placeholder="port" maxlength="5">
                 <button id='submit-port' class="button button1" style="width: 80px" onclick="submitPort()">submit</button>
@@ -137,6 +155,20 @@
         <div id="couponDataSaved"></div>
     </span>
 
+    <!-- Adding window for Player data display Edit Offer Data -->
+    <span id="edit-offers" style="display: none">
+        <h1>Edit Offers Data</h1>
+        <input type="text" id="myInput" onkeyup="searchOfferTable(this)" placeholder="Search by Account Number" title="Type in Player's Name">
+        <div id="editOffer">
+            <!--Html is added in via js-->
+        </div>
+
+        <button class="button button2" onclick="saveOffers()">Save</button>
+        <button class="button button2" id="offerClose-btn" onclick="loadOfferMain()">Close</button>
+
+        <div id="offerDataSaved"></div>
+
+    </span>
 
     <span id='add-player' style='display: none'>
         <h1>Add New Player</h1>
