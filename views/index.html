@@ -13,14 +13,6 @@
     <link rel="stylesheet" href="/views/css/titlebar.css">
     <link rel="stylesheet" href="/views/css/form.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- <script src="//code.jquery.com/jquery-1.11.3.min.js"></script> -->
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <!-- <script
-        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
-        crossorigin="anonymous"></script>  -->
     <script src='../scripts/dataread.js'></script>
     <script src='../scripts/watchFile.js'></script>
     <script src='../scripts/titlebar.js'></script>
@@ -33,9 +25,6 @@
     <script src='../scripts/retailRating.js'></script>
 </head>
 <body onload="checkUploaded(); isAppReady()">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <div id="title-bar">
             <div id="title-bar-btns">
                     <button class="button button2" id='settings-button' onclick="openNav()" style='width: 100px'>Settings</button>
@@ -123,15 +112,7 @@
         <h1>Edit Player Data</h1>
 
         <input type="text" id="myInput" onkeyup="searchData(this)" placeholder="Search by name" title="Type in a name">
-        <!-- <div id = "upper-buttons">
-            <button class="button button2" onclick="newWindow()"" id="new-player">Add a New Player</button>
-            <button class="button button2" onclick="writeToFile()">Save</button>
-            <button class="button button2" id="close-btn" onclick="loadMain()">Close</button>
-        </div> -->
-
-        <div id="editData" >
-  
-        </div>
+        <div id="editData"></div>
 
         <button class="button button2" onclick="newWindow()" id="new-player">Add a New Player</button>
         <button class="button button2" onclick="writeToFile()">Save</button>
