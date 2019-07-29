@@ -69,7 +69,7 @@ function openPlayers(){
             return;
         } 
         players = []
-        csv(['firstName', 'lastName', 'accountNumber', 'tierLevel', 'dateOfBirth', 'pointBalance', 'compBalance', 'promo2Balance', 'isBanned', 'isInActive', 'isPinLocked'])
+        csv(['firstName', 'lastName', 'accountNumber', 'phoneNumber', 'cardNumber', 'tierLevel', 'dateOfBirth', 'pointBalance', 'compBalance', 'promo2Balance', 'isBanned', 'isInActive', 'isPinLocked'])
         fs.createReadStream(fileName[0])
         .pipe(csv())
         .on('data', (data) => {

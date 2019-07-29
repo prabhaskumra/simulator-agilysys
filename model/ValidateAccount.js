@@ -45,7 +45,7 @@ module.exports = {
         let oneAccountBlocked = false
         validatedAccounts.forEach(account => {
             //see if player is blocked
-            let isBlocked = account.isInActive || account.isPinLocked || account.isBanned;
+            let isBlocked = account.isInActive === "TRUE" || account.isPinLocked === "TRUE" || account.isBanned === "TRUE";
             if(isBlocked) {
                 oneAccountBlocked = true
             }
@@ -65,9 +65,9 @@ module.exports = {
                 IsPinLocked: account.isPinLocked,
                 IsBanned: account.isBanned,
                 ResponseResult: {
-                    IsSuccess: !(account.isInActive || account.isPinLocked || account.isBanned),
-                    ErrorMessage: generateErrorMessage(account),
-                    ErrorCode: "error"
+                    IsSuccess: !isBlocked,
+                    ErrorMessage: isBlocked ? generateErrorMessage(account) : "",
+                    ErrorCode: isBlocked ? "error" : ""
                 }
             })
         });
@@ -104,11 +104,11 @@ module.exports = {
 
 function generateErrorMessage(account){
     let outString = "Player with Account # " + account.accountNumber
-    if(account.isInActive){
+    if(account.isInActive === "TRUE"){
         outString += " is inactive"
-    } else if(account.isBanned){
+    } else if(account.isBanned === "TRUE"){
         outString += " has been banned"
-    } else if(account.isPinLocked){
+    } else if(account.isPinLocked === "TRUE"){
         outString += " is pin locked"
     }
     return outString

@@ -17,6 +17,7 @@ const RedeemOffer = require("./model/RedeemOffer").RedeemOffer;
 const ValidateAccount = require("./model/ValidateAccount").ValidateAccount;
 const RedeemCoupon = require("./model/RedeemCoupon").RedeemCoupon
 const VoidAll = require("./model/VoidAll").VoidAll
+const RetailRating = require("./model/RetailRating").RetailRating
 //---------------------------------------------------------------------------------------//
 
 //------------------------------------express setup--------------------------------------//
@@ -39,6 +40,7 @@ db.defaults({               //default for db if non exist
   transactions: [], //holds all transactions
   transactionId: 0, //increment transaction id per transaction
   pointsToDollars: 1,
+  retailRating: 1,
   port: 8080 //default port value
 }).write()
 
@@ -157,7 +159,8 @@ app.post("/Players/RedeemCoupon", (req, res) => {
 
 //----------------------------------------------------------------------------------------//
 app.post("/Players/ValidateAccount", (req,res)=> {
-  writeToTerminal("ValidateAccount request recieved for account " + req.body.cardNumber, req.body)
+  writeToTerminal("ValidateAccount request recieved for " + req.body.cardNumber, req.body)
+  console.log(req.body)
   if (!appReady) {
     res.send({ error: "data not loaded" });
     writeToTerminal("Error: App not ready (ValidateAccount)")
@@ -178,20 +181,9 @@ app.post("/Players/RedeemAll", (req, res) => {
 //----------------------------------------------------------------------------------------//
 app.post("/Players/RetailRating", (req, res) => {
   writeToTerminal("RetailRating request recieved for account " + req.body.AccountNumber, req.body)
-  //todo
-  //HARDCODED FOR NOW CHANGE THIS
-  res.send({
-    "AccountNumber": req.body.AccountNumber,
-    "TransactionId": "820864100",
-    "ReferenceId": "string",
-    "ResponseStatus": {
-      "IsSuccess": true,
-      "ErrorMessage": "Success",
-      "ErrorCode": ""
-    },
-    "CustomFields": {}
-  })
-  writeToTerminal("RetailRating response sent for account " + req.body.AccountNumber, req.body)
+  let out = RetailRating(req.body.AccountNumber, req.body.Amount)
+  res.send(out)
+  writeToTerminal("RetailRating response sent for account " + req.body.AccountNumber, out)
 })
 //----------------------------------------------------------------------------------------//
 app.post("/Players/VoidAll", (req, res) => {

@@ -80,6 +80,28 @@ module.exports = {
                     break;
                 }
                 case "RetailRating": {
+                    if(transaction.type != "RetailRating"){
+                        writeToTerminal("Error: Transaction type doesn't match")
+                        isSuccess = false
+                    } else if(transaction.isVoided){ // error sandwich lol me hungry
+                        writeToTerminal("Error: Already voided")
+                        isSuccess = false
+                    } else { //retail rating will always be successful - no need to find isSuccess
+                        let foundPlayer = db.get('players')
+                        .find({accountNumber: String(accountNumber)})
+                        .value()
+
+                        //assign new point balance
+                        db.get('players')
+                        .find({accountNumber: String(accountNumber)})
+                        .assign({pointBalance: parseInt(foundPlayer.pointBalance) - transaction.transactionData.EarnedPoints})
+                        .write()
+                    }
+
+                    if(isSuccess)
+                    setToVoid(transactionId)  
+
+                    VoidAllResultList.push(addToResults(isSuccess, transactionId))
                     break;
                 }
                 case "CouponRedemption": {
