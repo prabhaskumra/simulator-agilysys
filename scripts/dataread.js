@@ -50,6 +50,7 @@ function isAppReady(){
         document.getElementById('terminal-container').style.display = "block"
     } else {
         document.getElementById('app-not-ready').style.display = "block"
+        document.getElementById('terminal-container').style.display = "none"
     }
 
     if(!appReady){
@@ -190,4 +191,16 @@ function checkRunningPort(){
     let port = db.get('port').value()
     document.getElementById('port-alert').textContent = `Port is currently ${port}`
     ipcRenderer.send("editPort", port)
+}
+
+function resetDatabase(){
+    db.set('players', []).write()
+    db.set('offers', []).write()
+    db.set('coupons', []).write()
+    db.set('transactions', []).write()
+    db.set('transactionId', "0").write()
+    db.set('pointsToDollars', "1").write()
+    db.set('retailRating', "1").write()
+
+    checkUploaded()
 }

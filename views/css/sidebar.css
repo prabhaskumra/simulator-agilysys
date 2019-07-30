@@ -34,6 +34,10 @@
   color: black;
 }
 
+.close-btn{
+  background-color: #ec1c2d;
+}
+
 .red-but:hover {
   background-color: #ec1c2d;
 }
