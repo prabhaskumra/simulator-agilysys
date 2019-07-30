@@ -24,6 +24,7 @@
     <script src='../scripts/editPort.js'></script>
     <script src='../scripts/addNewCoupon.js'></script>
     <script src='../scripts/retailRating.js'></script>
+    <script src='../scripts/addNewOffer.js'></script>
     <script src='../scripts/logs.js'></script>
 </head>
 <body onload="checkUploaded(); isAppReady()">
@@ -91,7 +92,8 @@
                 <br>
                 <br>
                     App is not ready and will not recieve requests. To start recieving requests, click on the settings 
-                    button in the upper right hand corner and load in Player and Offer data in the format of .csv's.
+                    button in the upper right hand corner to either load in Player and Offer data in the format of .csv's or add 
+                    a new Player or an Offer by clicking on the 'Players' and 'Offers' Buttons. 
                 </h1>
                 
                 <div id ="player-data">
@@ -121,6 +123,36 @@
         <div id="dataSaved"></div>
         <div id="error-message"></div>
     </span>
+
+    <span id='edit-coupons' style='display: none'>
+        <h1>Edit Coupon Data</h1>
+        <input type="text" id="myInput"  onkeyup="searchCouponTable(this)" placeholder="Search by coupon number" title="Type in a coupon number">
+        <div id="editCoupon"> 
+            
+        </div>
+    
+        <button class="button button2"  onclick="writeCoupons()">Save</button>
+        <button class="button button2" id="couponClose-btn" onclick="loadCouponMain()">Close</button>
+    
+        <div id="couponDataSaved"></div>
+    </span>
+
+    <!-- Adding window for Player data display Edit Offer Data -->
+    <span id="edit-offers" style="display: none">
+        <h1>Edit Offers Data</h1>
+        <input type="text" id="myInput" onkeyup="searchOfferTable(this)" placeholder="Search by Account Number" title="Type in Player's Name">
+        <div id="editOffer">
+            <!--Html is added in via js-->
+        </div>
+
+        <button class="button button2" onclick="loadAddOffer()">Add New Offer</button>
+        <button class="button button2" onclick="saveOffers()">Save</button>
+        <button class="button button2" id="offerClose-btn" onclick="loadOfferMain()">Close</button>
+
+        <div id="offerDataSaved"></div>
+
+    </span>
+
   
     <span id='add-player' style='display: none'>
         <h1>Add New Player</h1>
@@ -129,40 +161,40 @@
             <form id="plyr-form">
                 <div class = "row">
                     <label for='fname'>First Name</label>
-                    <input type='input1' id='fname' name='firstname' class='form-input' placeholder='First Name..' value="" onchange="enterData(this)">
+                    <input type='input1' id='fname' name='firstname' class='form-input' placeholder='First Name..' value="" onkeyup="enterData(this)">
                 </div>
                 
                 <div class = "row">
                     <label for='lname'>Last Name</label>
-                    <input type='input1' id='lname' name='lastname' class='form-input' placeholder='Last Name..' onchange="enterData(this)">
+                    <input type='input1' id='lname' name='lastname' class='form-input' placeholder='Last Name..' onkeyup="enterData(this)">
                 </div>
                
                 <div class = "row">
                     <label for='account-number'>Account Number</label>
-                    <input type='input1' id='account-number' name='account-number' class='form-input' placeholder='Account Number..' onchange="enterData(this)">
+                    <input type='input1' id='account-number' name='account-number' class='form-input' placeholder='Account Number..' onkeyup="enterData(this)">
                 </div>
 
                
                 <div class = "row">
                     <label for='tier-level'>Tier Level</label> 
-                    <input type='input1' id='tier-level' name='tier-level' class='form-input' placeholder='Tier Level..' onchange="enterData(this)"> <br>
+                    <input type='input1' id='tier-level' name='tier-level' class='form-input' placeholder='Tier Level..' onkeyup="enterData(this)"> <br>
                 </div>
 
 
                 <div class = "row">
                     <label for='point-balance'>Point Balance</label>
-                    <input type='input1' id='point-balance' name='point-balance' class='form-input' placeholder='Point Balance..' onchange="enterData(this)">
+                    <input type='input1' id='point-balance' name='point-balance' class='form-input' placeholder='Point Balance..' onkeyup="enterData(this)">
                 </div>
                 
                 <div class = "row">
                     <label for='comp-balance'>Comp Balance</label>
-                    <input type='input1' id='comp-balance' name='comp-balance' class='form-input' placeholder='Comp Balance..' onchange="enterData(this)"> 
+                    <input type='input1' id='comp-balance' name='comp-balance' class='form-input' placeholder='Comp Balance..' onkeyup="enterData(this)"> 
                 </div>
                 
 
                 <div class = "row">
                     <label for='promo-balance'>Promo2 Balance</label>
-                    <input type='input1' id='promo-balance' name='promo-balance' class='form-input' placeholder='Promo2 Balance..' onchange="enterData(this)">
+                    <input type='input1' id='promo-balance' name='promo-balance' class='form-input' placeholder='Promo2 Balance..' onkeyup="enterData(this)">
                 </div>
                
                 <div class = "row">
@@ -172,7 +204,7 @@
                 
                 <div class = "row">
                     <label for='isInActive'>Is InActive</label>
-                    <select id='isInActive' name='isInActive' class='form-input' onchange="enterData(this)" >
+                    <select id='isInActive' name='isInActive' class='form-input' onkeyup="enterData(this)" >
                         <option value='FALSE'>FALSE</option>
                         <option value='TRUE'>TRUE</option> 
                     </select> 
@@ -180,7 +212,7 @@
 
                 <div class = "row">
                     <label for='isbanned'>Is Banned</label>
-                    <select id='isbanned' name='isbanned' class='form-input' onchange="enterData(this)">
+                    <select id='isbanned' name='isbanned' class='form-input' onkeyup="enterData(this)">
                         <option value='FALSE'>FALSE</option>
                         <option value='TRUE'>TRUE</option> 
                     </select><br> 
@@ -188,7 +220,7 @@
                     
                 <div class = "row">
                     <label for='isPinLocked'>Is Pin Locked</label>
-                    <select id='isPinLocked' name='isPinLocked' class='form-input' onchange="enterData(this)" >
+                    <select id='isPinLocked' name='isPinLocked' class='form-input' onkeyup="enterData(this)" >
                         <option value='FALSE'>FALSE</option>
                         <option value='TRUE'>TRUE</option> 
                     </select>
@@ -200,6 +232,63 @@
 
         <div id="save-plyr"></div>
         
+    </span>
+
+    <span id="add-offer" style='display: none'>
+        <h1>Add New Offer</h1>
+
+        <div id="add-offer" class="container">
+            <form id="offer-form">
+                <div class = "row">
+                    <label for='offerAccountNumber'>Account Number</label>
+                    <input type='input1' id='offerAccountNumber' class='form-input' name='offerAccountNumber' placeholder='Account Number..' value="" onkeyup="enterNewOffer(this)">
+                </div>
+                
+                <div class = "row">
+                    <label for='newOfferCode'>Offer Code</label>
+                    <input type='input1' id='newOfferCode' class='form-input' name='newOfferCode' placeholder='Offer Code..' onkeyup="enterNewOffer(this)">
+                </div>
+               
+                <div class = "row">
+                    <label for='newOfferName'>Offer Name</label>
+                    <input type='input1' id='newOfferName' class='form-input' name='newOfferName' placeholder='Offer Name..' onkeyup="enterNewOffer(this)">
+                </div>
+
+               
+                <div class = "row">
+                    <label for='newOfferValue'>Offer Value</label> 
+                    <input type='input1' id='newOfferValue' class='form-input' name='newOfferValue' placeholder='Offer Value..' onkeyup="enterNewOffer(this)">
+                </div>
+
+                <div class = "row">
+                    <label for='offerStartDate'>Offer Start Date</label>
+                    <input type='date' id='offerStartDate' class='form-input' name='offerStartDate' value='07/22/2019' min='01/01/1920' max='01/01/2020' onchange="enterNewOffer(this)">
+                 
+                </div>
+
+                <div class = "row">
+                    <label for='offerStartTime'>Offer Start Time</label>
+                    <input type="time" name='offerStartTime' class='form-input' id="offerStartTime" value="00:00" onchange="enterNewOffer(this)"></input>
+                </div>
+        
+                <div class = "row">
+                    <label for='offerEndDate'>Offer End Date</label>
+                    <input type='date' id='offerEndDate' class='form-input' name='offerEndDate' value='07/22/2019' min='01/01/1920' max='01/01/2020' onchange="enterNewOffer(this)">
+                 
+                </div>
+
+                <div class = "row">
+                    <label for='offerEndTime'>Offer End Time</label>
+                    <input type="time" name='offerEndTime' class='form-input' id="offerEndTime" value="23:59" onchange="enterNewOffer(this)"></input>
+                </div>
+
+                <button class="button button2" type="reset" id="save-offer-button" onclick="saveNewOffer()">Save</button>
+                <button class="button button2" type="reset" id="close-offer-btn" onclick="loadAddOfferMain()">Close</button>
+            </form>
+        </div>
+
+        <div id="save-new-offer"></div>
+
     </span>
 
     <!-- Form to add a new offer to the database -->
