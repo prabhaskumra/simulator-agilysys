@@ -124,19 +124,6 @@
         <div id="error-message"></div>
     </span>
 
-    <span id='edit-coupons' style='display: none'>
-        <h1>Edit Coupon Data</h1>
-        <input type="text" id="myInput"  onkeyup="searchCouponTable(this)" placeholder="Search by coupon number" title="Type in a coupon number">
-        <div id="editCoupon"> 
-            
-        </div>
-    
-        <button class="button button2"  onclick="writeCoupons()">Save</button>
-        <button class="button button2" id="couponClose-btn" onclick="loadCouponMain()">Close</button>
-    
-        <div id="couponDataSaved"></div>
-    </span>
-
     <!-- Adding window for Player data display Edit Offer Data -->
     <span id="edit-offers" style="display: none">
         <h1>Edit Offers Data</h1>
@@ -153,6 +140,19 @@
 
     </span>
 
+    <span id='edit-coupons' style='display: none; margin-bottom: 60px'>
+        <h1>Edit Coupon Data</h1>
+        <input type="text" id="myInput"  onkeyup="searchCouponTable(this)" placeholder="Search by coupon number" title="Type in a coupon number">
+        <div id="editCoupon"> 
+            
+        </div>
+    
+        <button class="button button2" onclick="newCouponWindow()" id="new-coupon" onclick="newCouponWindow()">Add New Coupon</button>
+        <button class="button button2"  onclick="writeCoupons()">Save</button>
+        <button class="button button2" id="couponClose-btn" onclick="loadCouponMain(); openNav()">Close</button>
+    
+        <div id="couponDataSaved"></div>
+    </span>
   
     <span id='add-player' style='display: none'>
         <h1>Add New Player</h1>
@@ -316,35 +316,6 @@
 
         <div id="save-coupon"></div>
     </span>
-    <span id='edit-coupons' style='display: none; margin-bottom: 60px'>
-        <h1>Edit Coupon Data</h1>
-        <input type="text" id="myInput"  onkeyup="searchCouponTable(this)" placeholder="Search by coupon number" title="Type in a coupon number">
-        <div id="editCoupon"> 
-            
-        </div>
-    
-        <button class="button button2" onclick="newCouponWindow()" id="new-coupon" onclick="newCouponWindow()">Add New Coupon</button>
-        <button class="button button2"  onclick="writeCoupons()">Save</button>
-        <button class="button button2" id="couponClose-btn" onclick="loadCouponMain(); openNav()">Close</button>
-    
-        <div id="couponDataSaved"></div>
-    </span>
-
-    <!-- Adding window for Player data display Edit Offer Data -->
-    <span id="edit-offers" style="display: none; margin-bottom: 60px">
-        <h1>Edit Offers Data</h1>
-        <input type="text" id="myInput" onkeyup="searchOfferTable(this)" placeholder="Search by Account Number" title="Type in Player's Name">
-        <div id="editOffer">
-            <!--Html is added in via js-->
-        </div>
-
-        <button class="button button2" onclick="saveOffers()">Save</button>
-        <button class="button button2" id="offerClose-btn" onclick="loadOfferMain(); openNav()">Close</button>
-
-        <div id="offerDataSaved"></div>
-
-    </span>
-
 
     <script>
         //load terminal on initial load
