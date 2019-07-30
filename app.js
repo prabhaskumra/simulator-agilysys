@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron')
+const { app, BrowserWindow } = require('electron')
 const server = require('./server')
 const fs = require('fs')
 const path = require('path')
@@ -25,7 +25,6 @@ function createWindow () {
       win.show()
     })
 }
-
 
 app.on('ready', () => {
   createWindow()

@@ -174,7 +174,9 @@ app.post("/Players/ValidateAccount", (req,res)=> {
 //----------------------------------------------------------------------------------------//
 app.post("/Players/RedeemAll", (req, res) => {
   writeToTerminal("RedeemAll request recieved for account " + req.body.AccountNumber, req.body)
-  //todo
+  //DOES IG EVEN USE THIS??????
+  //if it does ill do this some day
+  //all that needs to be done is set the right lists to the right functions 
   res.send({lol: "Lol"})
   writeToTerminal("RedeemAll response sent for account " + req.body.AccountNumber, req.body)
 })  

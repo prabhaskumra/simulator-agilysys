@@ -1,3 +1,7 @@
+//do i need comments here
+
+//nah
+
 function exportLogs(){
     let logdata, logPath
     if(isProduction){

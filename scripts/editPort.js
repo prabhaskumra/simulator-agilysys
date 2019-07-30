@@ -13,7 +13,7 @@ function submitPort(){
     }
 
     try {
-        ipcRenderer.send("editPort", port)
+        ipcRenderer.send("editPort", port) //send back to server side to make change
     } catch (error) {
         writeToTerminal(error)
     }

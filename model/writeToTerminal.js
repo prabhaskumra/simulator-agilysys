@@ -20,7 +20,6 @@ module.exports = function (data, jsondata){
         if (error) throw error;
       })
     }
-
     
     fs.appendFileSync(path.join(__dirname + '/../loghtml.txt'), out, (err) => {
         if (err) throw err;

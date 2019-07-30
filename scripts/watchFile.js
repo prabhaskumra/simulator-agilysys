@@ -1,6 +1,9 @@
-//this file watches the loghtml.txt to see if there are any changes made, if so update terminal
-let loghtmlPath, logPath
+/* This is pretty much the bulk of the app front end wise. This script will listen for changes
+in log files, when changes are made locally, it will update via these methods to update our 'terminal'
+There are other ways to do this, but because electron and express are not meant for each other, this'll 
+have to do */
 
+let loghtmlPath, logPath
 //production and build enviorments direct to different paths. set accordingly
 if(isProduction){
     loghtmlPath = __dirname + '/../../app/loghtml.txt'
@@ -43,7 +46,8 @@ function addCollapsible(){
     }
 }
 
-//copied from writeToTerminal.js
+//copied from writeToTerminal.js (because electron)
+//pass in jsondata paramater to create collapsible line in terminal to see more data
 function writeToTerminal(data, jsondata){
     let d = new Date()
     let t = d.getMonth() + "/" + d.getDay() + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + ":" + d.getMilliseconds() + " - "  
@@ -54,6 +58,6 @@ function writeToTerminal(data, jsondata){
     })
     fs.appendFileSync(path.join(logPath), t + data + '\n', (err) => {
         if (err) throw err;
-    })
+    })//dab
   }
   
