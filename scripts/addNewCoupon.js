@@ -2,9 +2,7 @@ var couponData = db.get('coupons').value()
 var newCoupon = {}
 var couponFlags = {}
 
-// creates the new coupon object and the check flags
 function addNewCoupon(){
-    couponData = db.get('coupons').value()
     newCoupon = {
         "CouponNumber": "",
         "Balance": ""
@@ -16,7 +14,6 @@ function addNewCoupon(){
       }
 }
 
-// writes the new coupon created in the database
 function saveCouponForm(){
     couponData.push({
         CouponNumber: document.getElementById('couponNumber').value,
@@ -37,7 +34,9 @@ function saveCouponForm(){
 }
 
 function checkCouponFlag(){
+    console.log('fuck')
     if(document.getElementById('balance').value != "" && document.getElementById('couponNumber').value != ""){
+        console.log('dick')
         document.getElementById("save-coupon-button").disabled = false
     }
     else{
