@@ -5,7 +5,7 @@ function convertPointsToDollars(){
     "<input type='text' size='6' placeholder='points' id='points' onkeyup='validatePointsToDollars()'>"+
     "<h2> : </h2>" +
     "<input type='text' size='6' placeholder='dollars' id='dollars' onkeyup='validatePointsToDollars()'></br>" +
-    "<button id='submit-ptd' class='button button1 red-but onclick='submitPointsToDollars()'>save</button>"
+    "<button id='submit-ptd' class='button button1 red-but' onclick='submitPointsToDollars()'>save</button>"
     document.getElementById('pointsToDollarsContainer').innerHTML = outHTML
 
     document.getElementById('points').value = db.get('pointsToDollars').value()
