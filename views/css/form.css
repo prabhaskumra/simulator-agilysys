@@ -105,3 +105,21 @@ input[type=time]{
   transition: 0.5s;
   outline: none;
 }
+
+input[type=tel]{
+  border-radius: 16px;
+  text-align: center;
+  width: 30%;
+  height: 42px;
+  padding: 12px 20px;
+  margin: 8px 8px;
+  display: inline-block;
+  border: 1px solid #005d99;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=tel]:focus{
+  border: 3px solid #005d99;
+}

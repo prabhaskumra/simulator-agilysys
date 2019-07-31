@@ -42,6 +42,7 @@ function checkCouponFlag(){
     }
 }
 
+// creates the new window with add coupon form
 function newCouponWindow(){
     document.getElementById('add-coupon').style.display = 'block'
     document.getElementById('edit-coupons').style.display = 'none'
@@ -49,6 +50,7 @@ function newCouponWindow(){
     document.getElementById("save-coupon-button").disabled = true
 }
 
+// loads the editable coupon table
 function loadCouponTable(){
     document.getElementById('add-coupon').style.display = 'none'
     document.getElementById('edit-coupons').style.display = 'block'

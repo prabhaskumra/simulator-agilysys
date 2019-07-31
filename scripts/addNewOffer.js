@@ -169,7 +169,7 @@ function enterNewOffer(inputElement){
     }
 }
 
-// checks if all the field in the form are not changed
+// check if all the form fields are not just empty string or just spaces
 function checkOfferFlags(){
     if(offerFlags.AccountNumber && offerFlags.OfferCode && offerFlags.OfferName && 
         offerFlags.OfferValue && offerFlags.OfferStartDate  && offerFlags.OfferEndDate &&
