@@ -1,6 +1,5 @@
 var couponData = db.get('coupons').value()
 var newCoupon = {}
-var couponFlags = {}
 
 // creates the new coupon object and the check flags
 function addNewCoupon(){
@@ -9,11 +8,6 @@ function addNewCoupon(){
         "CouponNumber": "",
         "Balance": ""
     }
-
-    couponFlags = {
-        "CouponNumber": false,
-        "Balance": false,
-      }
 }
 
 // writes the new coupon created in the database
@@ -36,8 +30,11 @@ function saveCouponForm(){
     document.getElementById("coupon-form").reset();
 }
 
+
 function checkCouponFlag(){
-    if(document.getElementById('balance').value != "" && document.getElementById('couponNumber').value != ""){
+
+    // checks if the string are not emmpty
+    if( (/\S/.test(document.getElementById('balance').value))  && (/\S/.test(document.getElementById('couponNumber').value))){
         document.getElementById("save-coupon-button").disabled = false
     }
     else{
