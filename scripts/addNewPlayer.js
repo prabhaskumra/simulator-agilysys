@@ -10,6 +10,8 @@ function addNewUser(){
         "firstName": "",
         "lastName": "",
         "accountNumber": "",
+        "phoneNumber": "",
+        "cardNumber": "",
         "tierLevel": "1",
         "dateOfBirth": "",
         "pointBalance": "0",
@@ -162,6 +164,17 @@ function enterData(inputElement){
             checkFlag()
             break
         }
+
+        case 'phone-number':{
+            newUser.phoneNumber = inputElement.value
+            break
+        }
+
+        case 'card-number':{
+            newUser.cardNumber = inputElement.value
+            break
+        }
+
         case 'isInActive':{
             newUser.isInActive = inputElement.value
             checkFlag()
@@ -180,7 +193,7 @@ function enterData(inputElement){
     }
 }
 
-// check if all the form fields have been changed from the default
+// check if all the form fields are not just empty string or just spaces
 function checkFlag(){
     if(flags.pointBalance && flags.firstName && flags.lastName && flags.accountNumber && flags.compBalance && 
         flags.tierLevel && flags.promo2Balance && flags.dateOfBirth)
