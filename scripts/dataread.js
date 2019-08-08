@@ -1,5 +1,5 @@
 //******************************************************************************** */
-var isProduction = false // set this to true when exporting to exe
+var isProduction = true // set this to true when exporting to exe
 //this simply just changes the path to use based on production or dev
 /********************************************************************************* */
 
