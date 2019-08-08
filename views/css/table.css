@@ -8,6 +8,11 @@ table {
   margin-right: auto;
 }
 
+table#myTable{
+  width: 98%;
+}
+
+
 table caption {
   font-size: 1.5em;
   margin: 0.5em 0 0.75em;

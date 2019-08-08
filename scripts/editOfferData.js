@@ -2,8 +2,6 @@ var offersData = db.get('offers').value()
 var playerData = db.get('players').value()
 let offersInfo = ""
 
-// let mergedData = []
-
 function updateOfferTable(){
     db.read()
     offersData = db.get('offers').value()
@@ -81,7 +79,7 @@ function saveOffers(){
     document.getElementById('offerDataSaved').textContent = "Data Saved Successfully!"
     setTimeout(function(){
         document.getElementById('offerDataSaved').textContent = "";
-    },1000);
+    },3000);
 }
 
 function playerOffersTable(){
@@ -96,7 +94,6 @@ function editOfferData(){
     document.getElementById('edit-offers').style.display = 'block'
     document.getElementById('main-page').style.display = 'none'
     document.getElementById('settings-button').style.visibility = 'hidden'
-    // document.getElementById('offerDataSaved').textContent = ""
 }
 
 function loadOfferMain(){
