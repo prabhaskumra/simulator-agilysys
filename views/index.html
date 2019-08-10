@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"><!--bootstrap-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="/views/css/main.css">
     <link rel="stylesheet" href="/views/css/sidebar.css">
@@ -42,9 +41,9 @@
 
                 <h4 style='color: #f5f5f5' class='nowrap'>Import (.csv)</h4>
                 <div id="insert-mock-data">
-                    <button class="button button1" onclick="openPlayers()" id="player-data-status"></button>
-                    <button class="button button1" onclick="openOffers()" id="offer-data-status"></button>
-                    <button class="button button1" onclick="openCoupons()" id="coupon-data-status"></button>
+                    <button class="button button1" onclick="openPlayers()" id="player-data-status">Players</button>
+                    <button class="button button1" onclick="openOffers()" id="offer-data-status">Offers</button>
+                    <button class="button button1" onclick="openCoupons()" id="coupon-data-status">Coupons</button>
                 <hr>
                 <h4 style='color: #f5f5f5' class='nowrap'>View / Edit</h4>
                 <button class ="button button1 yellow-but" onclick="editPlayers(); closeNav()" id="edit-info" value="Edit Info">Players</button>
@@ -86,24 +85,10 @@
 
 
         <div id="main">        
-            <div id="data" style="text-align: center">
-                
-                <h1 id="app-not-ready">
-                <br>
-                <br>
-                    App is not ready and will not recieve requests. To start recieving requests, click on the settings 
-                    button in the upper right hand corner to either load in Player and Offer data in the format of .csv's or add 
-                    a new Player or an Offer by clicking on the 'Players' and 'Offers' Buttons. 
-                </h1>
-                
-                <div id ="player-data">
-                </div>
-    
-                <div id="offer-data">
-                    <div id='terminal-container' style='display:none'>
-                        <h3 style="margin-top: 0px;font-weight: bolder;font-size: 40px;">Gaming Log</h3>  
-                        <div id='terminal'></div>
-                    </div>
+            <div id="data" style="text-align: center">                        
+                <div id='terminal-container'>
+                    <h3 style="margin-top: 0px;font-weight: bolder;font-size: 40px;">Gaming Log</h3>  
+                    <div id='terminal'></div>
                 </div>
             </div>
         </div>

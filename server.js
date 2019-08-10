@@ -45,15 +45,7 @@ db.defaults({               //default for db if non exist
 }).write()
 
 //----------------------------------------------------------------------------------------//
-
-//this below code recieves the appReady state as in, is data loaded and ready?
-//api calls will return errors if data is not loaded. dab
-let appReady = false;
 let server
-
-ipcMain.on("isAppReady", (event, isAppReady) => {
-  appReady = isAppReady;
-});
 
 ipcMain.on("editPort", (event, port) => {
   server.close()
@@ -72,11 +64,6 @@ app.get("/", (req, res) =>
 app.post("/Players/GetPlayerInfo", (req, res) => {
   //get account number and search by acct number
   writeToTerminal("GetPlayerInfo request recieved for account " + req.body.acct, req.body)
-  if (!appReady) {
-    res.send({ error: "data not loaded" });
-    writeToTerminal("Error: App not ready (GetPlayerInfo)")
-    return;
-  }
   let account = getPlayerInfo(req.body.acct);
   //send back account info
   res.send(account ? account : { "error:": "no results" }); //TO-DO: FIX THIS ? LOL
@@ -87,11 +74,6 @@ app.post("/Players/GetPlayerInfo", (req, res) => {
 //returns all offers from offers.json that match the account number
 app.post("/Players/GetOffers", (req, res) => {
   writeToTerminal("GetOffers request recieved for account " + req.body.AccountNumber, req.body)
-  if (!appReady) {
-    res.send({ error: "data not loaded" });
-    writeToTerminal("Error: App not ready (GetOffers)")
-    return;
-  }
   let offers = GetOffers(req.body.AccountNumber);
   res.send(offers);
   writeToTerminal("GetOffers response sent for account " + req.body.AccountNumber, offers)
@@ -101,11 +83,6 @@ app.post("/Players/GetOffers", (req, res) => {
 // redeeming an offer that is requested for redemption
 app.post("/Players/RedeemOffer", (req, res) => {
   writeToTerminal("RedeemOffer request recieved for account " + req.body.AccountNumber, req.body)
-  if (!appReady) {
-    res.send({ error: "data not loaded" });
-    writeToTerminal("Error: App not ready (RedeemPoints)")
-    return;
-  }
   let offersAvailable = req.body.redeemOfferList;
   console.log(offersAvailable);
   let offersRedeemed = RedeemOffer(offersAvailable, req.body.AccountNumber);
@@ -117,11 +94,6 @@ app.post("/Players/RedeemOffer", (req, res) => {
 //redeem each comp in list, i am assuming that there could be more than one
 app.post("/Players/RedeemComp", (req, res) => {
   writeToTerminal("RedeemComp request recieved for account " + req.body.AccountNumber, req.body)
-  if (!appReady) {
-    res.send({ error: "data not loaded" });
-    writeToTerminal("Error: App not ready (RedeemComp)")
-    return;
-  }
   let compList = req.body.redeemCompList;
   let redeemValues = RedeemComp(req.body.AccountNumber, compList);
   res.send(redeemValues.out);
@@ -131,14 +103,7 @@ app.post("/Players/RedeemComp", (req, res) => {
 //----------------------------------------------------------------------------------------//
 app.post("/Players/RedeemPoints", (req, res) => {
   writeToTerminal("RedeemPoints request recieved for account " + req.body.AccountNumber, req.body)
-  if (!appReady) {
-    res.send({ error: "data not loaded" });
-    writeToTerminal("Error: App not ready (RedeemPoints)")
-    return;
-  }
-
   let redeemPointsList = req.body.redeemPointsList;
-
   let redeemValues = RedeemPoints(req.body.AccountNumber, redeemPointsList);
   res.send(redeemValues.out);
   writeToTerminal("RedeemPoints response sent for account " + req.body.AccountNumber, redeemValues.out)
@@ -147,11 +112,6 @@ app.post("/Players/RedeemPoints", (req, res) => {
 //----------------------------------------------------------------------------------------//
 app.post("/Players/RedeemCoupon", (req, res) => {
   writeToTerminal("RedeemCoupon request recieved for account " + req.body.AccountNumber, req.body)
-  if (!appReady) {
-    res.send({ error: "data not loaded" });
-    writeToTerminal("Error: App not ready (RedeemCoupon)")
-    return;
-  }
   let redeemedCoupons = RedeemCoupon(req.body.AccountNumber, req.body.redeemCouponList)
   res.send(redeemedCoupons)
   writeToTerminal("RedeemCoupon response sent for account " + req.body.AccountNumber, redeemedCoupons)
@@ -160,12 +120,6 @@ app.post("/Players/RedeemCoupon", (req, res) => {
 //----------------------------------------------------------------------------------------//
 app.post("/Players/ValidateAccount", (req,res)=> {
   writeToTerminal("ValidateAccount request recieved for " + req.body.cardNumber, req.body)
-  console.log(req.body)
-  if (!appReady) {
-    res.send({ error: "data not loaded" });
-    writeToTerminal("Error: App not ready (ValidateAccount)")
-    return;
-  }
   let validatedAccounts = ValidateAccount(req.body.cardType, req.body.cardNumber)
   res.send(validatedAccounts)
   writeToTerminal("ValidateAccount response sent for account " + req.body.cardNumber, validatedAccounts)
@@ -190,11 +144,6 @@ app.post("/Players/RetailRating", (req, res) => {
 //----------------------------------------------------------------------------------------//
 app.post("/Players/VoidAll", (req, res) => {
   writeToTerminal("VoidAll request recieved for account " + req.body.AccountNumber, req.body)
-  if (!appReady) {
-    res.send({ error: "data not loaded" });
-    writeToTerminal("Error: App not ready (VoidAll)")
-    return;
-  }
   let out = VoidAll(req.body.AccountNumber, req.body.voidAllList)
   res.send(out)
   writeToTerminal("VoidAll response sent for account " + req.body.AccountNumber, out)

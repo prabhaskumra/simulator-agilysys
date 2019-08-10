@@ -18,35 +18,6 @@ var players = []
 var offers = []
 var coupons = []
 
-// checks to see if app is ready. duh lol
-var appReady = false 
-
-
-
-//displays if app is ready or not
-function isAppReady(){
-    let playerExists = false
-    let offersExists = false
-
-    if(db.get('players').size().value() != 0) {
-        playerExists = true
-    } 
-    if(db.get('offers').size().value() != 0) {
-        offersExists = true 
-    } 
-
-    if(offersExists === true && playerExists === true){
-        appReady = true
-        updateTable() //update player table
-        ipcRenderer.send("isAppReady", true );//send this serverside, 'unlocks' api 
-        document.getElementById('app-not-ready').style.display = "none"
-        document.getElementById('terminal-container').style.display = "block"
-    } else {
-        document.getElementById('app-not-ready').style.display = "block"
-        document.getElementById('terminal-container').style.display = "none"
-    }
-}
-
 //opens window to select file to download mock data
 function openPlayers(){
     let dialog = remote.dialog
@@ -68,7 +39,6 @@ function openPlayers(){
         })
         .on('end' , () => {
             db.set('players', players).write()
-            isAppReady()
         })
         document.getElementById("player-data-status").innerText = "Player Data ✔️"
         db.write()
@@ -97,7 +67,6 @@ function openOffers(){
         })
         .on('end' , () => {
             db.set('offers', offers).write()
-            isAppReady()
         })
         document.getElementById("offer-data-status").innerText = "Offer Data ✔️"
         db.write()
@@ -127,7 +96,6 @@ function openCoupons(){
         })
         .on('end' , () => {
             db.set('coupons', coupons).write()
-            isAppReady()
         })
         document.getElementById("coupon-data-status").innerText = "Coupon Data ✔️"
         db.write()
@@ -138,31 +106,11 @@ function openCoupons(){
 
 //checks status of data and then updates app to 'refresh'
 function checkUploaded() {
-    db.read()
-    if (db.get('players').size().value() == 0) {
-        document.getElementById('player-data-status').textContent = "Player Data ❌"
-    } else {
-        document.getElementById('player-data-status').textContent = "Player Data ✔️"
-        players = db.get('players').value()
-    }
-
-    if (db.get('offers').size().value() == 0) {
-        document.getElementById('offer-data-status').textContent = "Offer Data ❌"
-    } else {
-        document.getElementById('offer-data-status').textContent = "Offer Data ✔️"
-        offers = db.get('offers').value()
-    }
-
-    if (db.get('coupons').size().value() == 0) {
-        document.getElementById('coupon-data-status').textContent = "Coupons Data 🐈"
-    } else {
-        document.getElementById('coupon-data-status').textContent = "Coupons Data ✔️"
-        coupons = db.get('coupons').value()
-    }
+    updateCouponTable()
+    updateTable()
     checkPointsToDollars()
     checkRetailRating()
     checkRunningPort()
-    isAppReady()
 }
 
 function checkPointsToDollars(){
