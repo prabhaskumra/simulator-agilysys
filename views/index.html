@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/views/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/views/css/roboto-fontface.css">
     <link rel="stylesheet" href="/views/css/main.css">
     <link rel="stylesheet" href="/views/css/sidebar.css">
     <link rel="stylesheet" href="/views/css/table.css">
     <link rel="stylesheet" href="/views/css/titlebar.css">
     <link rel="stylesheet" href="/views/css/form.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src='/views/css/bootstrap.min.js'></script>
     <script src='../scripts/dataread.js'></script>
     <script src='../scripts/watchFile.js'></script>
     <script src='../scripts/titlebar.js'></script>
@@ -119,7 +120,7 @@
 
         <button class="button button2" onclick="loadAddOffer()">Add New Offer</button>
         <button class="button button2" onclick="saveOffers()">Save</button>
-        <button class="button button2" id="offerClose-btn" onclick="loadOfferMain()">Close</button>
+        <button class="button button2" id="offerClose-btn" onclick="loadOfferMain(); openNav()">Close</button>
 
         <div id="offerDataSaved"></div>
 
