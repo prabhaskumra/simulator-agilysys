@@ -64,7 +64,15 @@ app.get("/", (req, res) =>
 app.post("/Players/GetPlayerInfo", (req, res) => {
   //get account number and search by acct number
   writeToTerminal("GetPlayerInfo request recieved for account " + req.body.acct, req.body)
-  let account = getPlayerInfo(req.body.acct);
+  
+  
+  // Origial code........ DO NOT DELETE
+  // let account = getPlayerInfo(req.body.acct);
+
+  // function pointing to Everi Wallet endpoint
+  let account = BalanceInquiry(req.body.acct);
+
+
   //send back account info
   res.send(account ? account : { "error:": "no results" }); //TO-DO: FIX THIS ? LOL
   writeToTerminal("GetPlayerInfo response sent for account " + req.body.acct, account)

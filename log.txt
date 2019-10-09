@@ -24,3 +24,71 @@
 9/2/2019 10:13:19:893 - App is listening on port 8080
 9/2/2019 10:21:47:803 - Started terminal.
 9/2/2019 10:21:51:290 - App is listening on port 8080
+9/2/2019 12:51:52:207 - Started terminal.
+9/2/2019 12:51:56:22 - App is listening on port 8080
+9/2/2019 13:4:45:680 - Started terminal.
+9/2/2019 13:4:48:117 - App is listening on port 8080
+9/3/2019 14:57:29:508 - Started terminal.
+9/3/2019 14:57:33:635 - App is listening on port 8080
+9/3/2019 15:7:42:678 - GetPlayerInfo request recieved for account undefined
+9/3/2019 15:7:42:699 - GetPlayerInfo response sent for account undefined
+9/3/2019 15:8:7:11 - GetPlayerInfo request recieved for account undefined
+9/3/2019 15:8:7:26 - GetPlayerInfo response sent for account undefined
+9/3/2019 15:34:55:597 - Started terminal.
+9/3/2019 15:34:59:830 - App is listening on port 8080
+9/3/2019 15:41:35:800 - GetPlayerInfo request recieved for account undefined
+9/3/2019 15:41:35:809 - GetPlayerInfo response sent for account undefined
+9/3/2019 15:41:39:946 - GetPlayerInfo request recieved for account undefined
+9/3/2019 15:41:39:954 - GetPlayerInfo response sent for account undefined
+9/3/2019 15:41:51:503 - Started terminal.
+9/3/2019 15:41:53:668 - App is listening on port 8080
+9/3/2019 15:42:26:857 - Started terminal.
+9/3/2019 15:42:28:976 - App is listening on port 8080
+9/3/2019 15:43:15:998 - Started terminal.
+9/3/2019 15:43:17:975 - App is listening on port 8080
+9/3/2019 15:44:5:85 - GetPlayerInfo request recieved for account undefined
+9/3/2019 15:44:5:96 - GetPlayerInfo response sent for account undefined
+9/3/2019 15:44:18:828 - Started terminal.
+9/3/2019 15:44:20:666 - App is listening on port 8080
+9/3/2019 15:45:40:172 - Started terminal.
+9/3/2019 15:45:42:17 - App is listening on port 8080
+9/3/2019 15:46:20:46 - GetPlayerInfo request recieved for account undefined
+9/3/2019 15:46:20:56 - GetPlayerInfo response sent for account undefined
+9/3/2019 15:54:29:663 - GetPlayerInfo request recieved for account undefined
+9/3/2019 15:54:29:671 - GetPlayerInfo response sent for account undefined
+9/3/2019 15:54:55:984 - GetPlayerInfo request recieved for account undefined
+9/3/2019 15:54:55:991 - GetPlayerInfo response sent for account undefined
+9/3/2019 15:55:11:667 - GetPlayerInfo request recieved for account undefined
+9/3/2019 15:55:11:675 - GetPlayerInfo response sent for account undefined
+9/3/2019 15:55:39:379 - GetPlayerInfo request recieved for account undefined
+9/3/2019 15:55:39:388 - GetPlayerInfo response sent for account undefined
+9/3/2019 15:56:19:387 - GetPlayerInfo request recieved for account undefined
+9/3/2019 15:56:19:397 - GetPlayerInfo response sent for account undefined
+9/3/2019 15:57:15:65 - GetPlayerInfo request recieved for account undefined
+9/3/2019 15:57:15:72 - GetPlayerInfo response sent for account undefined
+9/3/2019 15:58:46:86 - GetOffers request recieved for account undefined
+9/3/2019 15:58:46:91 - GetOffers response sent for account undefined
+9/3/2019 15:58:56:967 - GetOffers request recieved for account undefined
+9/3/2019 15:58:56:974 - GetOffers response sent for account undefined
+9/3/2019 15:59:5:407 - GetOffers request recieved for account undefined
+9/3/2019 15:59:5:423 - GetOffers response sent for account undefined
+9/3/2019 15:59:21:381 - GetOffers request recieved for account undefined
+9/3/2019 15:59:21:386 - GetOffers response sent for account undefined
+9/3/2019 15:59:26:896 - GetOffers request recieved for account undefined
+9/3/2019 15:59:26:915 - GetOffers response sent for account undefined
+9/3/2019 15:59:35:775 - GetOffers request recieved for account undefined
+9/3/2019 15:59:35:781 - GetOffers response sent for account undefined
+9/3/2019 15:59:47:957 - GetOffers request recieved for account undefined
+9/3/2019 15:59:47:964 - GetOffers response sent for account undefined
+9/3/2019 15:59:48:771 - GetOffers request recieved for account undefined
+9/3/2019 15:59:48:778 - GetOffers response sent for account undefined
+9/3/2019 16:3:5:831 - GetOffers request recieved for account undefined
+9/3/2019 16:3:5:838 - GetOffers response sent for account undefined
+9/3/2019 16:3:6:412 - GetOffers request recieved for account undefined
+9/3/2019 16:3:6:420 - GetOffers response sent for account undefined
+9/3/2019 16:11:59:223 - Started terminal.
+9/3/2019 16:12:1:199 - App is listening on port 8080
+9/3/2019 16:14:42:899 - Started terminal.
+9/3/2019 16:14:45:63 - App is listening on port 8080
+9/3/2019 16:15:2:365 - GetPlayerInfo request recieved for account undefined
+9/3/2019 16:15:2:384 - GetPlayerInfo response sent for account undefined
