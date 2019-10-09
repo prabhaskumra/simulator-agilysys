@@ -1,0 +1,2 @@
+import * as AuthorizationTypes from './interface/requestData';
+export declare function createRequestData(method: string, path: string, algorithm: string, tenantID: string, payload: string, apikey: string, api: string, version: string, service: string, query: Map<string, string>, signedHeaders: string[], headersMap: Map<string, string>, datetime: string, signature: string): AuthorizationTypes.RequestData;

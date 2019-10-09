@@ -7,7 +7,7 @@ const writeToTerminal = require("./writeToTerminal")
 
 module.exports = {
     BalanceInquiry : function BalanceInquiry(accountNumber){
-        db.read()
+        //db.read()
 
         
 
