@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const bodyParser = require("body-parser");
+var bodyParser = require("body-parser");
 const fs = require("fs");
 const { ipcMain } = require("electron");
 const port = 8080
@@ -18,11 +18,11 @@ const ValidateAccount = require("./model/ValidateAccount").ValidateAccount;
 const RedeemCoupon = require("./model/RedeemCoupon").RedeemCoupon
 const VoidAll = require("./model/VoidAll").VoidAll
 const RetailRating = require("./model/RetailRating").RetailRating
+const BalanceInquiry = require("./model/BalanceInquiry").BalanceInquiry
 //---------------------------------------------------------------------------------------//
 
 //------------------------------------express setup--------------------------------------//
 app.use(express.static(__dirname));
-
 app.use(bodyParser.urlencoded({ extended: false })); // support encoded bodies
 app.use(bodyParser.json()); // support json encoded bodies
 //---------------------------------------------------------------------------------------//
@@ -67,14 +67,18 @@ app.post("/Players/GetPlayerInfo", (req, res) => {
   
   
   // Origial code........ DO NOT DELETE
-  // let account = getPlayerInfo(req.body.acct);
+  //let account = getPlayerInfo(req.body.acct);
 
   // function pointing to Everi Wallet endpoint
-  let account = BalanceInquiry(req.body.acct);
 
+  // let account = BalanceInquiry(req.body.acct);
+  let account = BalanceInquiry('800306090');
+
+  // console.log("LOL");
 
   //send back account info
   res.send(account ? account : { "error:": "no results" }); //TO-DO: FIX THIS ? LOL
+
   writeToTerminal("GetPlayerInfo response sent for account " + req.body.acct, account)
 });
 
