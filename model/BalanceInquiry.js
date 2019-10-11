@@ -137,11 +137,48 @@ module.exports = {
         };
          
 
+        // let PatronResponse = []
+        // PatronResponse.push({
+        //     ClubStateId: 40,//hardcoded for rn
+        //     AccountNumber: accountNumber,
+        //     FirstName: "Alice",
+        //     LastName: "Bob", 
+        //     ClubState: "Gold",
+        //     DateOfBirth: "01/01/40",
+        //     PointsBalance: 2000,
+        //     PointsBalanceInDollars: 230.76,
+        //     CompBalance: 0,
+        //     Promo2Balance: 0,
+        //     IsInActive: false,
+        //     IsPinLocked: false,
+        //     IsBanned: false,
+        //     ResponseResult: {
+        //         IsSuccess: true,
+        //         ErrorMessage: "",
+        //         ErrorCode: ""
+        //     }
+        // })
+
+        // let ResponseStatus = {
+        //         IsSuccess: true,
+        //         ErrorMessage: "",
+        //         ErrorCode: ""
+        //     }
+        
+
         return rp(options)
             .then((httpResponse) => {
                 // POST succeeded...
+                
+                //PatronResponse.PointsBalance = httpResponse.availableBalance;
+                // console.log(httpResponse.availableBalance);
                 console.log(httpResponse);
                 return httpResponse;
+                // console.log("PATTTT");
+                // console.log(PatronResponse.PointsBalance);
+                // console.log("here");
+                
+                //return httpResponse;
                 //foundAccount = await httpResponse;
                 //return foundAccount;
 
@@ -150,9 +187,7 @@ module.exports = {
                 // POST failed...
                 console.log(err);
             });
-    
         console.log("Break");
-        
 
         // this.http
         //     .POST(url,
@@ -175,8 +210,13 @@ module.exports = {
         //     });
     
         
+        // console.log("outside pointsbalance")
+        // console.log(PatronResponse.PointsBalance);
 
-        return foundAccount;
+        // return {
+        //     PatronResponse,
+        //     ResponseStatus
+        // };
     }
 }
 

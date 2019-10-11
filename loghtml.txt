@@ -760,4 +760,904 @@
         "ErrorMessage": "One of the collection failed, review the collection result.",
         "ErrorCode": "error"
     }
+}</div><p>9/4/2019 19:43:17:737 - Started terminal.</p><p>9/4/2019 19:43:21:129 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 19:43:32:951 - ValidateAccount request recieved for 1</p><div class='ccontent'>{
+    "cardNumber": "1",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p>9/4/2019 19:43:33:354 - ValidateAccount response sent for account 1</p><p class='collapsible'>9/4/2019 19:43:53:166 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 19:44:3:637 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "maskedCardNumber": "*****6090",
+    "referenceId": "659848936",
+    "transactionId": "6588252685978316800",
+    "availableBalance": 0,
+    "currencyCode": "USD"
+}</div><p class='collapsible'>9/4/2019 19:44:13:145 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 19:44:14:853 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "maskedCardNumber": "*****6090",
+    "referenceId": "660256818",
+    "transactionId": "6588252733541724160",
+    "availableBalance": 0,
+    "currencyCode": "USD"
+}</div><p>9/4/2019 19:48:5:961 - Started terminal.</p><p>9/4/2019 19:48:9:555 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 19:48:14:244 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p>9/4/2019 19:48:14:264 - ValidateAccount response sent for account 800306090</p><p class='collapsible'>9/4/2019 19:48:38:387 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p>9/4/2019 19:48:38:404 - ValidateAccount response sent for account 800306090</p><p>9/4/2019 19:49:41:806 - Started terminal.</p><p>9/4/2019 19:49:45:392 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 19:49:49:419 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 19:49:49:865 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "maskedCardNumber": "*****6090",
+    "referenceId": "619251083",
+    "transactionId": "6588254138855862272",
+    "availableBalance": 0,
+    "currencyCode": "USD"
+}</div><p>9/4/2019 20:7:10:111 - Started terminal.</p><p>9/4/2019 20:7:13:203 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 20:7:19:242 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 20:7:19:261 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "PatronResponse": [
+        {
+            "ClubStateId": 40,
+            "AccountNumber": "800306090",
+            "FirstName": "Alice",
+            "LastName": "Bob",
+            "ClubState": "Gold",
+            "DateOfBirth": "01/01/40",
+            "PointsBalance": 0,
+            "PointsBalanceInDollars": 230.76,
+            "CompBalance": 0,
+            "Promo2Balance": 0,
+            "IsInActive": false,
+            "IsPinLocked": false,
+            "IsBanned": false,
+            "ResponseResult": {
+                "IsSuccess": true,
+                "ErrorMessage": "",
+                "ErrorCode": ""
+            }
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    }
+}</div><p>9/4/2019 20:8:2:530 - Started terminal.</p><p>9/4/2019 20:8:5:393 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 20:8:12:265 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 20:8:12:286 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "PatronResponse": [
+        {
+            "ClubStateId": 40,
+            "AccountNumber": "800306090",
+            "FirstName": "Alice",
+            "LastName": "Bob",
+            "ClubState": "Gold",
+            "DateOfBirth": "01/01/40",
+            "PointsBalance": 2000,
+            "PointsBalanceInDollars": 230.76,
+            "CompBalance": 0,
+            "Promo2Balance": 0,
+            "IsInActive": false,
+            "IsPinLocked": false,
+            "IsBanned": false,
+            "ResponseResult": {
+                "IsSuccess": true,
+                "ErrorMessage": "",
+                "ErrorCode": ""
+            }
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    }
+}</div><p>9/4/2019 20:8:43:393 - Started terminal.</p><p>9/4/2019 20:8:46:206 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 20:8:50:124 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 20:8:50:742 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "PatronResponse": [
+        {
+            "ClubStateId": 40,
+            "AccountNumber": "800306090",
+            "FirstName": "Alice",
+            "LastName": "Bob",
+            "ClubState": "Gold",
+            "DateOfBirth": "01/01/40",
+            "PointsBalance": 2000,
+            "PointsBalanceInDollars": 230.76,
+            "CompBalance": 0,
+            "Promo2Balance": 0,
+            "IsInActive": false,
+            "IsPinLocked": false,
+            "IsBanned": false,
+            "ResponseResult": {
+                "IsSuccess": true,
+                "ErrorMessage": "",
+                "ErrorCode": ""
+            }
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    }
+}</div><p>9/4/2019 20:9:28:790 - Started terminal.</p><p>9/4/2019 20:9:31:623 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 20:9:38:140 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 20:9:38:876 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "PatronResponse": [
+        {
+            "ClubStateId": 40,
+            "AccountNumber": "800306090",
+            "FirstName": "Alice",
+            "LastName": "Bob",
+            "ClubState": "Gold",
+            "DateOfBirth": "01/01/40",
+            "PointsBalance": 2000,
+            "PointsBalanceInDollars": 230.76,
+            "CompBalance": 0,
+            "Promo2Balance": 0,
+            "IsInActive": false,
+            "IsPinLocked": false,
+            "IsBanned": false,
+            "ResponseResult": {
+                "IsSuccess": true,
+                "ErrorMessage": "",
+                "ErrorCode": ""
+            }
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    }
+}</div><p>9/4/2019 20:11:22:870 - Started terminal.</p><p>9/4/2019 20:11:25:896 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 20:11:28:778 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 20:11:29:96 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "PatronResponse": [
+        {
+            "ClubStateId": 40,
+            "AccountNumber": "800306090",
+            "FirstName": "Alice",
+            "LastName": "Bob",
+            "ClubState": "Gold",
+            "DateOfBirth": "01/01/40",
+            "PointsBalance": 2000,
+            "PointsBalanceInDollars": 230.76,
+            "CompBalance": 0,
+            "Promo2Balance": 0,
+            "IsInActive": false,
+            "IsPinLocked": false,
+            "IsBanned": false,
+            "ResponseResult": {
+                "IsSuccess": true,
+                "ErrorMessage": "",
+                "ErrorCode": ""
+            }
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    }
+}</div><p>9/4/2019 20:12:53:662 - Started terminal.</p><p>9/4/2019 20:12:56:882 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 20:12:59:457 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 20:13:0:51 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "PatronResponse": [
+        {
+            "ClubStateId": 40,
+            "AccountNumber": "800306090",
+            "FirstName": "Alice",
+            "LastName": "Bob",
+            "ClubState": "Gold",
+            "DateOfBirth": "01/01/40",
+            "PointsBalance": 2000,
+            "PointsBalanceInDollars": 230.76,
+            "CompBalance": 0,
+            "Promo2Balance": 0,
+            "IsInActive": false,
+            "IsPinLocked": false,
+            "IsBanned": false,
+            "ResponseResult": {
+                "IsSuccess": true,
+                "ErrorMessage": "",
+                "ErrorCode": ""
+            }
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    }
+}</div><p>9/4/2019 20:15:11:258 - Started terminal.</p><p>9/4/2019 20:15:14:68 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 20:15:18:675 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 20:15:19:373 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "PatronResponse": [
+        {
+            "ClubStateId": 40,
+            "AccountNumber": "800306090",
+            "FirstName": "Alice",
+            "LastName": "Bob",
+            "ClubState": "Gold",
+            "DateOfBirth": "01/01/40",
+            "PointsBalance": 2000,
+            "PointsBalanceInDollars": 230.76,
+            "CompBalance": 0,
+            "Promo2Balance": 0,
+            "IsInActive": false,
+            "IsPinLocked": false,
+            "IsBanned": false,
+            "ResponseResult": {
+                "IsSuccess": true,
+                "ErrorMessage": "",
+                "ErrorCode": ""
+            }
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    }
+}</div><p>9/4/2019 20:16:54:527 - Started terminal.</p><p>9/4/2019 20:16:57:530 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 20:17:1:794 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 20:17:2:307 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "PatronResponse": [
+        {
+            "ClubStateId": 40,
+            "AccountNumber": "800306090",
+            "FirstName": "Alice",
+            "LastName": "Bob",
+            "ClubState": "Gold",
+            "DateOfBirth": "01/01/40",
+            "PointsBalance": 2000,
+            "PointsBalanceInDollars": 230.76,
+            "CompBalance": 0,
+            "Promo2Balance": 0,
+            "IsInActive": false,
+            "IsPinLocked": false,
+            "IsBanned": false,
+            "ResponseResult": {
+                "IsSuccess": true,
+                "ErrorMessage": "",
+                "ErrorCode": ""
+            }
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    }
+}</div><p>9/4/2019 20:54:7:974 - Started terminal.</p><p>9/4/2019 20:54:11:449 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 20:54:18:112 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 20:54:18:133 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "PatronResponse": [
+        {
+            "ClubStateId": 40,
+            "AccountNumber": "800306090",
+            "FirstName": "Alice",
+            "LastName": "Bob",
+            "ClubState": "Gold",
+            "DateOfBirth": "01/01/40",
+            "PointsBalance": 2000,
+            "PointsBalanceInDollars": 230.76,
+            "CompBalance": 0,
+            "Promo2Balance": 0,
+            "IsInActive": false,
+            "IsPinLocked": false,
+            "IsBanned": false,
+            "ResponseResult": {
+                "IsSuccess": true,
+                "ErrorMessage": "",
+                "ErrorCode": ""
+            }
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    }
+}</div><p>9/4/2019 20:55:29:169 - Started terminal.</p><p class='collapsible'>9/4/2019 20:55:31:652 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p>9/4/2019 20:55:32:653 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 20:55:32:973 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "PatronResponse": [
+        {
+            "ClubStateId": 40,
+            "AccountNumber": "800306090",
+            "FirstName": "Alice",
+            "LastName": "Bob",
+            "ClubState": "Gold",
+            "DateOfBirth": "01/01/40",
+            "PointsBalance": 2000,
+            "PointsBalanceInDollars": 230.76,
+            "CompBalance": 0,
+            "Promo2Balance": 0,
+            "IsInActive": false,
+            "IsPinLocked": false,
+            "IsBanned": false,
+            "ResponseResult": {
+                "IsSuccess": true,
+                "ErrorMessage": "",
+                "ErrorCode": ""
+            }
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    }
+}</div><p>9/4/2019 20:56:17:133 - Started terminal.</p><p>9/4/2019 20:56:20:142 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 20:56:26:590 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 20:56:27:676 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "PatronResponse": [
+        {
+            "ClubStateId": 40,
+            "AccountNumber": "800306090",
+            "FirstName": "Alice",
+            "LastName": "Bob",
+            "ClubState": "Gold",
+            "DateOfBirth": "01/01/40",
+            "PointsBalance": 2000,
+            "PointsBalanceInDollars": 230.76,
+            "CompBalance": 0,
+            "Promo2Balance": 0,
+            "IsInActive": false,
+            "IsPinLocked": false,
+            "IsBanned": false,
+            "ResponseResult": {
+                "IsSuccess": true,
+                "ErrorMessage": "",
+                "ErrorCode": ""
+            }
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    }
+}</div><p>9/4/2019 20:59:12:949 - Started terminal.</p><p>9/4/2019 20:59:15:863 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 20:59:24:478 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 20:59:24:753 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "PatronResponse": [
+        {
+            "ClubStateId": 40,
+            "AccountNumber": "800306090",
+            "FirstName": "Alice",
+            "LastName": "Bob",
+            "ClubState": "Gold",
+            "DateOfBirth": "01/01/40",
+            "PointsBalance": 2000,
+            "PointsBalanceInDollars": 230.76,
+            "CompBalance": 0,
+            "Promo2Balance": 0,
+            "IsInActive": false,
+            "IsPinLocked": false,
+            "IsBanned": false,
+            "ResponseResult": {
+                "IsSuccess": true,
+                "ErrorMessage": "",
+                "ErrorCode": ""
+            }
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    }
+}</div><p>9/4/2019 20:59:59:813 - Started terminal.</p><p>9/4/2019 21:0:3:19 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 21:0:7:71 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 21:0:7:368 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "PatronResponse": [
+        {
+            "ClubStateId": 40,
+            "AccountNumber": "800306090",
+            "FirstName": "Alice",
+            "LastName": "Bob",
+            "ClubState": "Gold",
+            "DateOfBirth": "01/01/40",
+            "PointsBalance": 2000,
+            "PointsBalanceInDollars": 230.76,
+            "CompBalance": 0,
+            "Promo2Balance": 0,
+            "IsInActive": false,
+            "IsPinLocked": false,
+            "IsBanned": false,
+            "ResponseResult": {
+                "IsSuccess": true,
+                "ErrorMessage": "",
+                "ErrorCode": ""
+            }
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    }
+}</div><p>9/4/2019 21:1:4:750 - Started terminal.</p><p>9/4/2019 21:1:7:697 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 21:1:9:762 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 21:1:10:39 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "PatronResponse": [
+        {
+            "ClubStateId": 40,
+            "AccountNumber": "800306090",
+            "FirstName": "Alice",
+            "LastName": "Bob",
+            "ClubState": "Gold",
+            "DateOfBirth": "01/01/40",
+            "PointsBalance": 2000,
+            "PointsBalanceInDollars": 230.76,
+            "CompBalance": 0,
+            "Promo2Balance": 0,
+            "IsInActive": false,
+            "IsPinLocked": false,
+            "IsBanned": false,
+            "ResponseResult": {
+                "IsSuccess": true,
+                "ErrorMessage": "",
+                "ErrorCode": ""
+            }
+        }
+    ],
+    "ResponseStatus": {
+        "IsSuccess": true,
+        "ErrorMessage": "",
+        "ErrorCode": ""
+    }
+}</div><p>9/4/2019 21:3:31:193 - Started terminal.</p><p class='collapsible'>9/4/2019 21:3:34:288 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p>9/4/2019 21:3:34:392 - App is listening on port 8080</p><p>9/4/2019 21:3:35:227 - ValidateAccount response sent for account 800306090</p><p class='collapsible'>9/4/2019 21:3:42:491 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p>9/4/2019 21:3:42:846 - ValidateAccount response sent for account 800306090</p><p>9/4/2019 21:5:12:717 - Started terminal.</p><p>9/4/2019 21:5:15:806 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 21:5:18:58 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 21:5:18:656 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "maskedCardNumber": "*****6090",
+    "referenceId": "616306506",
+    "transactionId": "6588273132472119296",
+    "availableBalance": 0,
+    "currencyCode": "USD"
+}</div><p>9/4/2019 21:12:52:652 - Started terminal.</p><p>9/4/2019 21:12:55:756 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 21:13:5:329 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p>9/4/2019 21:14:10:514 - Started terminal.</p><p>9/4/2019 21:14:13:351 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 21:14:19:163 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p>9/4/2019 21:19:34:863 - Started terminal.</p><p>9/4/2019 21:19:37:810 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 21:19:39:659 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p>9/4/2019 21:20:5:148 - Started terminal.</p><p>9/4/2019 21:20:8:234 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 21:20:12:168 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 21:20:12:588 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "maskedCardNumber": "*****6090",
+    "referenceId": "619344941",
+    "transactionId": "6588276881982763008",
+    "availableBalance": 0,
+    "currencyCode": "USD"
+}</div><p>9/4/2019 21:20:40:405 - Started terminal.</p><p>9/4/2019 21:20:43:572 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 21:20:45:633 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 21:20:47:649 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "maskedCardNumber": "*****6090",
+    "referenceId": "687832858",
+    "transactionId": "6588277025780281344",
+    "availableBalance": 0,
+    "currencyCode": "USD"
+}</div><p>9/4/2019 21:21:8:959 - Started terminal.</p><p>9/4/2019 21:21:11:670 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 21:21:23:506 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 21:21:24:46 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "maskedCardNumber": "*****6090",
+    "referenceId": "645900708",
+    "transactionId": "6588277180571070464",
+    "availableBalance": 0,
+    "currencyCode": "USD"
+}</div><p class='collapsible'>9/4/2019 21:21:26:358 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 21:21:26:633 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "maskedCardNumber": "*****6090",
+    "referenceId": "608304759",
+    "transactionId": "6588277192596140032",
+    "availableBalance": 0,
+    "currencyCode": "USD"
+}</div><p>9/4/2019 21:22:51:962 - Started terminal.</p><p>9/4/2019 21:22:55:74 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 21:22:57:62 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 21:22:57:320 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "maskedCardNumber": "*****6090",
+    "referenceId": "698548703",
+    "transactionId": "6588277572805603328",
+    "availableBalance": 0,
+    "currencyCode": "USD"
+}</div><p>9/4/2019 21:23:32:20 - Started terminal.</p><p>9/4/2019 21:23:36:184 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 21:23:40:723 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p>9/4/2019 21:24:52:37 - Started terminal.</p><p>9/4/2019 21:24:55:209 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 21:25:0:217 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 21:25:0:862 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "maskedCardNumber": "*****6090",
+    "referenceId": "658521498",
+    "transactionId": "6588278091020251136",
+    "availableBalance": 0,
+    "currencyCode": "USD"
+}</div><p>9/4/2019 21:26:12:824 - Started terminal.</p><p>9/4/2019 21:26:16:289 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 21:26:26:394 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 21:26:26:726 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "maskedCardNumber": "*****6090",
+    "referenceId": "699452780",
+    "transactionId": "6588278451143192576",
+    "availableBalance": 0,
+    "currencyCode": "USD"
+}</div><p>9/4/2019 21:29:17:208 - Started terminal.</p><p>9/4/2019 21:29:20:277 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 21:29:23:746 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 21:29:24:46 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "maskedCardNumber": "*****6090",
+    "referenceId": "665530384",
+    "transactionId": "6588279194696822784",
+    "availableBalance": 0,
+    "currencyCode": "USD"
+}</div><p>9/4/2019 21:41:49:246 - Started terminal.</p><p>9/4/2019 21:41:53:772 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 21:41:56:838 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 21:41:57:114 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "maskedCardNumber": "*****6090",
+    "referenceId": "684222909",
+    "transactionId": "6588282353381027840",
+    "availableBalance": 0,
+    "currencyCode": "USD"
+}</div><p>9/4/2019 21:44:3:143 - Started terminal.</p><p>9/4/2019 21:44:7:306 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 21:44:10:188 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 21:44:10:519 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "maskedCardNumber": "*****6090",
+    "referenceId": "651003527",
+    "transactionId": "6588282912955707392",
+    "availableBalance": 0,
+    "currencyCode": "USD"
+}</div><p>9/4/2019 21:44:46:923 - Started terminal.</p><p>9/4/2019 21:44:50:728 - App is listening on port 8080</p><p class='collapsible'>9/4/2019 21:45:0:366 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/4/2019 21:45:0:612 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "maskedCardNumber": "*****6090",
+    "referenceId": "620735459",
+    "transactionId": "6588283123060977664",
+    "availableBalance": 100,
+    "currencyCode": "USD"
 }</div>

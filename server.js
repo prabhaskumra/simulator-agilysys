@@ -64,8 +64,6 @@ app.get("/", (req, res) =>
 app.post("/Players/GetPlayerInfo", async(req, res) => {
   //get account number and search by acct number
   writeToTerminal("GetPlayerInfo request recieved for account " + req.body.acct, req.body)
-  
-
 
   // this is  not what IG calls
 
@@ -155,11 +153,61 @@ app.post("/Players/RedeemCoupon", (req, res) => {
 })
 
 //----------------------------------------------------------------------------------------//
-app.post("/Players/ValidateAccount", (req,res)=> {
+app.post("/Players/ValidateAccount", async(req,res)=> {
+
+  // ORIGINAL CODE, DO NOT DELETE OR RESTORE TO THIS
+  /*******************************************
   writeToTerminal("ValidateAccount request recieved for " + req.body.cardNumber, req.body)
   let validatedAccounts = ValidateAccount(req.body.cardType, req.body.cardNumber)
   res.send(validatedAccounts)
   writeToTerminal("ValidateAccount response sent for account " + req.body.cardNumber, validatedAccounts)
+
+  *****************************************/
+
+  writeToTerminal("ValidateAccount request recieved for " + req.body.cardNumber, req.body)
+
+  accountNumber = req.body.cardNumber;
+
+  //let validatedAccounts = ValidateAccount(req.body.cardType, req.body.cardNumber)
+
+  let validatedAccounts = await BalanceInquiry(accountNumber);
+  console.log(validatedAccounts.availableBalance);
+
+  //PatronResponse.PointsBalance = validatedAccounts.availableBalance;
+  let PatronResponse = []
+  PatronResponse.push({
+      ClubStateId: 40,//hardcoded for rn
+      AccountNumber: accountNumber,
+      FirstName: "Alice",
+      LastName: "Bob", 
+      ClubState: "Gold",
+      DateOfBirth: "01/01/40",
+      PointsBalance: validatedAccounts.availableBalance,
+      PointsBalanceInDollars: 230.76,
+      CompBalance: 0,
+      Promo2Balance: 0,
+      IsInActive: false,
+      IsPinLocked: false,
+      IsBanned: false,
+      ResponseResult: {
+          IsSuccess: true,
+          ErrorMessage: "",
+          ErrorCode: ""
+      }
+  })
+
+  let ResponseStatus = 
+  {
+    IsSuccess: true,
+    ErrorMessage: "",
+    ErrorCode: ""
+  }
+
+  console.log(PatronResponse);
+  res.send({PatronResponse, ResponseStatus});
+  writeToTerminal("ValidateAccount response sent for account " + req.body.cardNumber, validatedAccounts)
+
+
 })
 
 //----------------------------------------------------------------------------------------//
