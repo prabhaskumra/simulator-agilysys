@@ -28,12 +28,12 @@ module.exports = {
         }
         
         let currentCompPoints = parseInt(foundAccount.compBalance)
-        let outCompList = []
-        let redeemedTotal = 0
+        let outCompList = [];
+        let redeemedTotal = 0;
 
         compList.forEach(comp => {
-            currentCompPoints -= parseInt(comp.RedeemDollars)
-            let isUnder0
+            currentCompPoints -= parseInt(comp.RedeemDollars);
+            let isUnder0;
             if(currentCompPoints >= 0) {
                 redeemedTotal += comp.RedeemDollars
                 isUnder0 = false

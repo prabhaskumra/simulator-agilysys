@@ -15,10 +15,11 @@ const RedeemComp = require("./model/RedeemComp").RedeemComp;
 const RedeemPoints = require("./model/RedeemPoints").RedeemPoints;
 const RedeemOffer = require("./model/RedeemOffer").RedeemOffer;
 const ValidateAccount = require("./model/ValidateAccount").ValidateAccount;
-const RedeemCoupon = require("./model/RedeemCoupon").RedeemCoupon
-const VoidAll = require("./model/VoidAll").VoidAll
-const RetailRating = require("./model/RetailRating").RetailRating
-const BalanceInquiry = require("./model/BalanceInquiry").BalanceInquiry
+const RedeemCoupon = require("./model/RedeemCoupon").RedeemCoupon;
+const VoidAll = require("./model/VoidAll").VoidAll;
+const RetailRating = require("./model/RetailRating").RetailRating;
+const BalanceInquiry = require("./model/BalanceInquiry").BalanceInquiry;
+const RetailAuthorize = require("./model/RetailAuthorize").RetailAuthorize;
 //---------------------------------------------------------------------------------------//
 
 //------------------------------------express setup--------------------------------------//
@@ -128,11 +129,24 @@ app.post("/Players/RedeemOffer", (req, res) => {
 //----------------------------------------------------------------------------------------//
 //redeem each comp in list, i am assuming that there could be more than one
 app.post("/Players/RedeemComp", (req, res) => {
+
+  // ORIGINAL CODE
+   
   writeToTerminal("RedeemComp request recieved for account " + req.body.AccountNumber, req.body)
   let compList = req.body.redeemCompList;
   let redeemValues = RedeemComp(req.body.AccountNumber, compList);
   res.send(redeemValues.out);
   writeToTerminal("RedeemComp response sent for account " + req.body.AccountNumber, redeemValues.out)
+  
+// TEST FOR WALLET
+
+//  writeToTerminal("RedeemComp request recieved for account " + req.body.AccountNumber, req.body)
+//  let compList = req.body.redeemCompList;
+//  let redeemValues = await RetailAuthorize(req.body.AccountNumber, compList);
+//  res.send(redeemValues.out);
+//  writeToTerminal("RedeemComp response sent for account " + req.body.AccountNumber, redeemValues.out)
+
+
 });
 
 //----------------------------------------------------------------------------------------//
@@ -145,11 +159,54 @@ app.post("/Players/RedeemPoints", (req, res) => {
 });
 
 //----------------------------------------------------------------------------------------//
-app.post("/Players/RedeemCoupon", (req, res) => {
+app.post("/Players/RedeemCoupon",async(req, res) => {
+
+  // ORIGINAL CODE
+  // writeToTerminal("RedeemCoupon request recieved for account " + req.body.AccountNumber, req.body)
+  // let redeemedCoupons = RedeemCoupon(req.body.AccountNumber, req.body.redeemCouponList)
+  // res.send(redeemedCoupons)
+  // writeToTerminal("RedeemCoupon response sent for account " + req.body.AccountNumber, redeemedCoupons)
+
+
   writeToTerminal("RedeemCoupon request recieved for account " + req.body.AccountNumber, req.body)
-  let redeemedCoupons = RedeemCoupon(req.body.AccountNumber, req.body.redeemCouponList)
-  res.send(redeemedCoupons)
+
+  // console.log("SASASAASASASAs")
+  // console.log(req.body.redeemCouponList[0].RedeemAmount);
+
+  let redeemedCoupons = await RetailAuthorize(req.body.AccountNumber, req.body.redeemCouponList)
+
+
+  let transactionInfo = {
+    AccountNumber: req.body.AccountNumber,
+    RedeemCouponResultList: [
+      {
+        CouponNumber: "2323232",
+        ReferenceId: redeemedCoupons.referenceId,
+        TransactionId: redeemedCoupons.transactionId,
+        SequenceId: 1,
+        RedeemedAmount: req.body.redeemCouponList[0].RedeemAmount,
+        BalanceAmount: redeemedCoupons.availableBalance,
+        ResponseStatus: {
+          IsSuccess: true,
+          ErrorMessage: "",
+          ErrorCode: ""
+        }
+      }
+    ],
+    ResponseStatus: {
+      IsSuccess: true,
+      ErrorMessage: "",
+      ErrorCode: ""
+    },
+    CustomFields: {}
+  };
+
+
+  res.send(transactionInfo)
+
   writeToTerminal("RedeemCoupon response sent for account " + req.body.AccountNumber, redeemedCoupons)
+
+
 })
 
 //----------------------------------------------------------------------------------------//
@@ -182,9 +239,9 @@ app.post("/Players/ValidateAccount", async(req,res)=> {
       LastName: "Bob", 
       ClubState: "Gold",
       DateOfBirth: "01/01/40",
-      PointsBalance: validatedAccounts.availableBalance,
+      PointsBalance: 0,
       PointsBalanceInDollars: 230.76,
-      CompBalance: 0,
+      CompBalance: validatedAccounts.availableBalance,
       Promo2Balance: 0,
       IsInActive: false,
       IsPinLocked: false,

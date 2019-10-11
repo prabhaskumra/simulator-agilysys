@@ -558,3 +558,150 @@
 9/4/2019 21:44:50:728 - App is listening on port 8080
 9/4/2019 21:45:0:366 - ValidateAccount request recieved for 800306090
 9/4/2019 21:45:0:612 - ValidateAccount response sent for account 800306090
+9/5/2019 13:23:57:989 - Started terminal.
+9/5/2019 13:24:1:654 - App is listening on port 8080
+9/5/2019 13:24:15:155 - ValidateAccount request recieved for 800306090
+9/5/2019 13:24:15:578 - ValidateAccount response sent for account 800306090
+9/5/2019 13:42:54:490 - Started terminal.
+9/5/2019 13:42:58:93 - App is listening on port 8080
+9/5/2019 13:43:23:775 - RedeemComp request recieved for account 1
+9/5/2019 13:43:57:352 - RedeemComp request recieved for account 1
+9/5/2019 13:44:3:145 - RedeemComp request recieved for account 00000
+9/5/2019 13:44:3:156 - RedeemComp response sent for account 00000
+9/5/2019 13:44:5:958 - RedeemComp request recieved for account 00000
+9/5/2019 13:44:5:965 - RedeemComp response sent for account 00000
+9/5/2019 13:44:10:552 - RedeemComp request recieved for account 0
+9/5/2019 13:44:18:7 - RedeemComp request recieved for account 1111
+9/5/2019 13:44:18:18 - RedeemComp response sent for account 1111
+9/5/2019 13:44:48:973 - Started terminal.
+9/5/2019 13:44:51:953 - App is listening on port 8080
+9/5/2019 13:45:11:518 - RedeemComp request recieved for account 1
+9/5/2019 13:47:16:962 - Started terminal.
+9/5/2019 13:47:20:730 - App is listening on port 8080
+9/5/2019 13:47:26:706 - RedeemComp request recieved for account 1
+9/5/2019 14:50:30:625 - Started terminal.
+9/5/2019 14:50:33:958 - App is listening on port 8080
+9/5/2019 15:6:42:717 - Started terminal.
+9/5/2019 15:6:46:188 - App is listening on port 8080
+9/5/2019 15:7:39:264 - RedeemCoupon request recieved for account 7777
+9/5/2019 15:7:39:281 - RedeemCoupon response sent for account 7777
+9/5/2019 15:9:1:286 - RedeemCoupon request recieved for account 800305519
+9/5/2019 15:9:1:302 - RedeemCoupon response sent for account 800305519
+9/5/2019 15:13:29:281 - RedeemCoupon request recieved for account 800306090
+9/5/2019 15:13:29:292 - RedeemCoupon response sent for account 800306090
+9/5/2019 15:13:40:156 - RedeemCoupon request recieved for account 800306090
+9/5/2019 15:13:40:166 - RedeemCoupon response sent for account 800306090
+9/5/2019 15:13:42:39 - RedeemCoupon request recieved for account 800306090
+9/5/2019 15:13:42:51 - RedeemCoupon response sent for account 800306090
+9/5/2019 15:13:42:716 - RedeemCoupon request recieved for account 800306090
+9/5/2019 15:13:42:727 - RedeemCoupon response sent for account 800306090
+9/5/2019 15:13:43:246 - RedeemCoupon request recieved for account 800306090
+9/5/2019 15:13:43:258 - RedeemCoupon response sent for account 800306090
+9/5/2019 15:18:7:619 - Started terminal.
+9/5/2019 15:18:9:840 - App is listening on port 8080
+9/5/2019 15:18:15:275 - RedeemCoupon request recieved for account 800306090
+9/5/2019 15:18:15:289 - RedeemCoupon response sent for account 800306090
+9/5/2019 15:18:48:881 - Started terminal.
+9/5/2019 15:18:52:138 - App is listening on port 8080
+9/5/2019 15:18:56:726 - RedeemCoupon request recieved for account 800306090
+9/5/2019 15:18:56:739 - RedeemCoupon response sent for account 800306090
+9/5/2019 15:32:7:468 - Started terminal.
+9/5/2019 15:32:11:12 - App is listening on port 8080
+9/5/2019 15:32:41:463 - RedeemCoupon request recieved for account 800306090
+9/5/2019 15:32:42:287 - RedeemCoupon response sent for account 800306090
+9/5/2019 15:33:13:821 - RedeemCoupon request recieved for account 800306090
+9/5/2019 15:33:14:603 - RedeemCoupon response sent for account 800306090
+9/5/2019 15:33:22:428 - RedeemCoupon request recieved for account 800306090
+9/5/2019 15:33:23:257 - RedeemCoupon response sent for account 800306090
+9/5/2019 15:57:4:147 - Started terminal.
+9/5/2019 15:57:6:820 - App is listening on port 8080
+9/5/2019 15:57:26:184 - RedeemCoupon request recieved for account 800306090
+9/5/2019 15:59:4:888 - Started terminal.
+9/5/2019 15:59:8:631 - App is listening on port 8080
+9/5/2019 15:59:12:598 - RedeemCoupon request recieved for account 800306090
+9/5/2019 15:59:12:809 - RedeemCoupon response sent for account 800306090
+9/5/2019 16:0:6:155 - RedeemCoupon request recieved for account 800306090
+9/5/2019 16:0:6:387 - RedeemCoupon response sent for account 800306090
+9/5/2019 16:0:29:67 - RedeemCoupon request recieved for account 800306090
+9/5/2019 16:0:29:352 - RedeemCoupon response sent for account 800306090
+9/5/2019 16:1:56:160 - Started terminal.
+9/5/2019 16:2:0:565 - App is listening on port 8080
+9/5/2019 16:2:9:146 - RedeemCoupon request recieved for account 800306090
+9/5/2019 16:2:9:492 - RedeemCoupon response sent for account 800306090
+9/5/2019 16:3:18:465 - Started terminal.
+9/5/2019 16:3:22:21 - App is listening on port 8080
+9/5/2019 16:3:27:481 - RedeemCoupon request recieved for account 800306090
+9/5/2019 16:3:27:757 - RedeemCoupon response sent for account 800306090
+9/5/2019 16:5:18:251 - Started terminal.
+9/5/2019 16:5:20:440 - App is listening on port 8080
+9/5/2019 16:5:32:724 - RedeemCoupon request recieved for account 800306090
+9/5/2019 16:5:33:455 - RedeemCoupon response sent for account 800306090
+9/5/2019 16:6:20:918 - Started terminal.
+9/5/2019 16:6:23:354 - App is listening on port 8080
+9/5/2019 16:6:26:645 - RedeemCoupon request recieved for account 800306090
+9/5/2019 16:6:27:14 - RedeemCoupon response sent for account 800306090
+9/5/2019 16:8:6:43 - Started terminal.
+9/5/2019 16:8:9:846 - App is listening on port 8080
+9/5/2019 16:8:18:302 - RedeemCoupon request recieved for account 800306090
+9/5/2019 16:8:18:599 - RedeemCoupon response sent for account 800306090
+9/5/2019 16:8:56:428 - Started terminal.
+9/5/2019 16:9:0:158 - App is listening on port 8080
+9/5/2019 16:9:4:163 - RedeemCoupon request recieved for account 800306090
+9/5/2019 16:9:4:445 - RedeemCoupon response sent for account 800306090
+9/5/2019 16:10:30:164 - Started terminal.
+9/5/2019 16:10:33:997 - App is listening on port 8080
+9/5/2019 16:10:39:629 - RedeemCoupon request recieved for account 800306090
+9/5/2019 16:10:41:181 - RedeemCoupon response sent for account 800306090
+9/5/2019 16:11:39:828 - Started terminal.
+9/5/2019 16:11:44:110 - App is listening on port 8080
+9/5/2019 16:11:50:506 - RedeemCoupon request recieved for account 800306090
+9/5/2019 16:11:51:186 - RedeemCoupon response sent for account 800306090
+9/5/2019 16:12:28:337 - Started terminal.
+9/5/2019 16:12:31:969 - App is listening on port 8080
+9/5/2019 16:12:39:522 - RedeemCoupon request recieved for account 800306090
+9/5/2019 16:12:40:536 - RedeemCoupon response sent for account 800306090
+9/5/2019 16:13:31:385 - Started terminal.
+9/5/2019 16:13:34:580 - App is listening on port 8080
+9/5/2019 16:13:36:3 - RedeemCoupon request recieved for account 800306090
+9/5/2019 16:13:36:857 - RedeemCoupon response sent for account 800306090
+9/5/2019 16:16:2:154 - Started terminal.
+9/5/2019 16:16:4:572 - App is listening on port 8080
+9/5/2019 16:16:6:965 - RedeemCoupon request recieved for account 800306090
+9/5/2019 16:16:7:694 - RedeemCoupon response sent for account 800306090
+9/5/2019 16:16:59:557 - Started terminal.
+9/5/2019 16:17:1:932 - App is listening on port 8080
+9/5/2019 16:17:4:290 - RedeemCoupon request recieved for account 800306090
+9/5/2019 16:17:4:885 - RedeemCoupon response sent for account 800306090
+9/5/2019 16:18:4:538 - Started terminal.
+9/5/2019 16:18:7:628 - App is listening on port 8080
+9/5/2019 16:18:20:585 - RedeemCoupon request recieved for account 800306090
+9/5/2019 16:18:21:378 - RedeemCoupon response sent for account 800306090
+9/5/2019 16:18:32:607 - RedeemCoupon request recieved for account 800306090
+9/5/2019 16:18:33:243 - RedeemCoupon response sent for account 800306090
+9/5/2019 16:20:5:306 - RedeemCoupon request recieved for account 123456
+9/5/2019 16:20:5:966 - RedeemCoupon response sent for account 123456
+9/5/2019 16:21:8:182 - RedeemCoupon request recieved for account 1900045642
+9/5/2019 16:21:9:347 - RedeemCoupon response sent for account 1900045642
+9/5/2019 16:21:56:218 - RedeemCoupon request recieved for account 1900045642
+9/5/2019 16:21:59:516 - RedeemCoupon response sent for account 1900045642
+9/5/2019 16:22:8:485 - RedeemCoupon request recieved for account 1900045642
+9/5/2019 16:22:8:745 - RedeemCoupon response sent for account 1900045642
+9/5/2019 16:25:0:417 - RedeemCoupon request recieved for account 123456
+9/5/2019 16:25:0:764 - RedeemCoupon response sent for account 123456
+9/5/2019 16:29:50:900 - Started terminal.
+9/5/2019 16:29:53:728 - App is listening on port 8080
+9/5/2019 16:30:10:301 - RedeemCoupon request recieved for account 123456
+9/5/2019 16:30:10:679 - RedeemCoupon response sent for account 123456
+9/5/2019 16:30:54:90 - ValidateAccount request recieved for 1
+9/5/2019 16:31:9:398 - ValidateAccount request recieved for 800306090
+9/5/2019 16:31:9:725 - ValidateAccount response sent for account 800306090
+9/5/2019 16:31:34:873 - RedeemCoupon request recieved for account 123456
+9/5/2019 16:31:35:570 - RedeemCoupon response sent for account 123456
+9/5/2019 16:33:42:235 - Started terminal.
+9/5/2019 16:33:44:797 - App is listening on port 8080
+9/5/2019 16:33:50:913 - RedeemCoupon request recieved for account 123456
+9/5/2019 16:33:51:520 - RedeemCoupon response sent for account 123456
+9/5/2019 16:35:34:682 - Started terminal.
+9/5/2019 16:35:37:850 - App is listening on port 8080
+9/5/2019 16:35:43:248 - RedeemCoupon request recieved for account 123456
+9/5/2019 16:35:43:643 - RedeemCoupon response sent for account 123456
