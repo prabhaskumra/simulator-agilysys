@@ -61,22 +61,47 @@ app.get("/", (req, res) =>
 //----------------------------------------------------------------------------------------//
 //validate user api Post
 //IG will send post request and get account back - also will display account information
-app.post("/Players/GetPlayerInfo", (req, res) => {
+app.post("/Players/GetPlayerInfo", async(req, res) => {
   //get account number and search by acct number
   writeToTerminal("GetPlayerInfo request recieved for account " + req.body.acct, req.body)
   
+
+
+  // this is  not what IG calls
+
+  // let account = {
+  //   "firstName": "Alice",
+  //   "lastName": "Bob",
+  //   "accountNumber": "0",
+  //   "phoneNumber": "7024980123",
+  //   "cardNumber": "1",
+  //   "tierLevel": "3",
+  //   "dateOfBirth": "9/9/1997",
+  //   "pointBalance": "3000",
+  //   "compBalance": "50",
+  //   "promo2Balance": "99",
+  //   "isBanned": "FALSE",
+  //   "isInActive": "TRUE",
+  //   "isPinLocked": "FALSE"
+  // }
   
+
   // Origial code........ DO NOT DELETE
-  //let account = getPlayerInfo(req.body.acct);
+  let account = getPlayerInfo(req.body.acct);
 
   // function pointing to Everi Wallet endpoint
+  // let accountFound = await BalanceInquiry(acct);
 
-  // let account = BalanceInquiry(req.body.acct);
-  let account = BalanceInquiry('800306090');
-
-  // console.log("LOL");
-
+/**********************************************************
+  //console.log("accoung");
+  //console.log(acct);
+  //console.log(account);
   //send back account info
+  // account.accountNumber = acct;
+  // account.pointBalance = String(accountFound.availableBalance);
+
+************************************************************/
+
   res.send(account ? account : { "error:": "no results" }); //TO-DO: FIX THIS ? LOL
 
   writeToTerminal("GetPlayerInfo response sent for account " + req.body.acct, account)
