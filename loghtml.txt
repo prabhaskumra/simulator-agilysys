@@ -2799,4 +2799,189 @@
     "availableBalance": 0,
     "currencyCode": "USD",
     "accountType": "CASH"
+}</div><p class='collapsible'>9/5/2019 16:47:14:847 - RedeemCoupon request recieved for account 800305519</p><div class='ccontent'>{
+    "AccountNumber": "800305519",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 100
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/5/2019 16:47:15:347 - RedeemCoupon response sent for account 800305519</p><div class='ccontent'>{
+    "maskedCardNumber": "*****5519",
+    "referenceId": "683191218",
+    "transactionId": "6588570577303252992",
+    "transactionType": "AUTHORIZE",
+    "transactionStatus": 0,
+    "amount": 100,
+    "taxAmount": 8.25,
+    "availableBalance": 0,
+    "currencyCode": "USD",
+    "accountType": "CASH"
+}</div><p class='collapsible'>9/5/2019 16:48:41:735 - ValidateAccount request recieved for 800305519</p><div class='ccontent'>{
+    "cardNumber": "800305519",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/5/2019 16:48:42:68 - ValidateAccount response sent for account 800305519</p><div class='ccontent'>{
+    "maskedCardNumber": "*****5519",
+    "referenceId": "667121059",
+    "transactionId": "6588570941603721216",
+    "availableBalance": 100000,
+    "currencyCode": "USD"
+}</div><p class='collapsible'>9/5/2019 16:49:43:717 - RedeemCoupon request recieved for account 800305519</p><div class='ccontent'>{
+    "AccountNumber": "800305519",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 100
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/5/2019 16:49:44:69 - RedeemCoupon response sent for account 800305519</p><div class='ccontent'>{
+    "maskedCardNumber": "*****5519",
+    "referenceId": "648611128",
+    "transactionId": "6588571201352773632",
+    "transactionType": "AUTHORIZE",
+    "transactionStatus": 0,
+    "amount": 100,
+    "taxAmount": 8.25,
+    "availableBalance": 0,
+    "currencyCode": "USD",
+    "accountType": "CASH"
+}</div><p class='collapsible'>9/5/2019 16:50:41:517 - RedeemCoupon request recieved for account 800305519</p><div class='ccontent'>{
+    "AccountNumber": "800305519",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 100
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/5/2019 16:50:41:907 - RedeemCoupon response sent for account 800305519</p><div class='ccontent'>{
+    "maskedCardNumber": "*****5519",
+    "referenceId": "659019616",
+    "transactionId": "6588571443968094208",
+    "transactionType": "AUTHORIZE",
+    "transactionStatus": 0,
+    "amount": 100,
+    "taxAmount": 8.25,
+    "availableBalance": 0,
+    "currencyCode": "USD",
+    "accountType": "CASH"
+}</div><p class='collapsible'>9/5/2019 16:51:36:78 - RedeemCoupon request recieved for account 800305519</p><div class='ccontent'>{
+    "AccountNumber": "800305519",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 100
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/5/2019 16:51:36:800 - RedeemCoupon response sent for account 800305519</p><div class='ccontent'>{
+    "maskedCardNumber": "*****5519",
+    "referenceId": "650344841",
+    "transactionId": "6588571673660764160",
+    "transactionType": "AUTHORIZE",
+    "transactionStatus": 0,
+    "amount": 100,
+    "taxAmount": 8.25,
+    "availableBalance": 0,
+    "currencyCode": "USD",
+    "accountType": "CASH"
+}</div><p class='collapsible'>9/5/2019 16:56:38:929 - RedeemCoupon request recieved for account 800305519</p><div class='ccontent'>{
+    "AccountNumber": "800305519",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 100
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/5/2019 16:56:39:338 - RedeemCoupon response sent for account 800305519</p><div class='ccontent'>{
+    "maskedCardNumber": "*****5519",
+    "referenceId": "629538564",
+    "transactionId": "6588572943264002048",
+    "transactionType": "AUTHORIZE",
+    "transactionStatus": 0,
+    "amount": 100,
+    "taxAmount": 8.25,
+    "availableBalance": 0,
+    "currencyCode": "USD",
+    "accountType": "CASH"
+}</div><p>9/5/2019 17:32:31:644 - Started terminal.</p><p>9/5/2019 17:32:34:97 - App is listening on port 8080</p><p class='collapsible'>9/5/2019 17:32:50:54 - RedeemCoupon request recieved for account 800305519</p><div class='ccontent'>{
+    "AccountNumber": "800305519",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 100
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/5/2019 17:32:50:914 - RedeemCoupon response sent for account 800305519</p><div class='ccontent'>{
+    "maskedCardNumber": "*****5519",
+    "referenceId": "612177040",
+    "transactionId": "6588582050612129792",
+    "transactionType": "AUTHORIZE",
+    "transactionStatus": 0,
+    "amount": 100,
+    "taxAmount": 8.25,
+    "availableBalance": 0,
+    "currencyCode": "USD",
+    "accountType": "CASH"
 }</div>

@@ -75,34 +75,52 @@ function openOffers(){
 }
 
 //opens window to select file to download mock data
-function openCoupons(){
-    db.read()
-    csv(["CouponNumber", "Balance"])
-    let dialog = remote.dialog
-    dialog.showOpenDialog({
-        title: 'Open Coupon Data',
-        filters: [
-            {name: 'csv', extensions: ['csv']}
-        ]
-    }, (fileName) => {
-        if(fileName === undefined){
-            return;
-        } 
-        coupons = []
-        fs.createReadStream(fileName[0])
-        .pipe(csv())
-        .on('data', (data) => {
-            coupons.push(data)
-        })
-        .on('end' , () => {
-            db.set('coupons', coupons).write()
-        })
-        document.getElementById("coupon-data-status").innerText = "Coupon Data ✔️"
-        db.write()
-        writeToTerminal("Added coupon data")
-        updateCouponTable() 
-    })
-}
+// function openCoupons(){
+//     db.read()
+//     csv(["CouponNumber", "Balance"])
+//     let dialog = remote.dialog
+//     dialog.showOpenDialog({
+//         title: 'Open Coupon Data',
+//         filters: [
+//             {name: 'csv', extensions: ['csv']}
+//         ]
+//     }, (fileName) => {
+//         if(fileName === undefined){
+//             return;
+//         } 
+//         coupons = []
+//         fs.createReadStream(fileName[0])
+//         .pipe(csv())
+//         .on('data', (data) => {
+//             coupons.push(data)
+//         })
+//         .on('end' , () => {
+//             db.set('coupons', coupons).write()
+//         })
+//         document.getElementById("coupon-data-status").innerText = "Coupon Data ✔️"
+//         db.write()
+//         writeToTerminal("Added coupon data")
+//         updateCouponTable() 
+//     })
+// }
+
+
+// CODE CHANGED FOR EVERI'S WALLET
+// UPPER CODE IS THE ORIGINAL
+// OPEN COUPON DATA WILL BE UNAVAILABLE AND INSTEAD PARTRON DATA WILL BE IMPORTED
+/***********************************************/
+  
+  
+  
+  
+  
+  
+  
+
+ /*********************************************/
+
+
+
 
 //checks status of data and then updates app to 'refresh'
 function checkUploaded() {
