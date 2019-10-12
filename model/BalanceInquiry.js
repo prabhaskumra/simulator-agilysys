@@ -60,7 +60,7 @@ module.exports = {
         var num = Math.floor(Math.random() * 100000000 + 600000000);
         var referenceId = num.toString(10);
 
-        const url = baseUrl + '1'+ '/balances/' + referenceId;
+        const url = baseUrl + '2'+ '/balances/' + referenceId;
     
         // for signature only
         // const path = '/' + environment.api + '/retail'
@@ -68,7 +68,7 @@ module.exports = {
         //     + '/' + environment.environments[environment.selectedEnvironment].tenantId
         //     + '/balances/'
         //     + this.balanceForm.value.referenceId;
-        const path = '/tpv/retail/v2/1/balances/' + referenceId;
+        const path = '/tpv/retail/v2/2/balances/' + referenceId;
     
         const reqData = sig.client.createRequestData(
             'POST',  // method,
@@ -78,7 +78,7 @@ module.exports = {
             1,
             JSON.stringify(body),  // payload,
             // environment.environments[environment.selectedEnvironment].apiKey,  // apikey,
-            '21c0e607ab389394fa92d74b5c69cda3', //in dev mode
+            'abed1254abcd1234', //in dev mode
             // environment.api,  // api,
             'tpv',
             // environment.ver,  // version,
@@ -104,7 +104,7 @@ module.exports = {
             dep,
             reqData,
             // environment.environments[environment.selectedEnvironment].secretKey
-            '8ecf8cbd03b061fc5edc50fe970f1120'
+            'abed1234abcd1234'
         );
     
         //console.log(authHeader);

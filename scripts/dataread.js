@@ -110,11 +110,34 @@ function openOffers(){
 // OPEN COUPON DATA WILL BE UNAVAILABLE AND INSTEAD PARTRON DATA WILL BE IMPORTED
 /***********************************************/
   
-  
-  
-  
-  
-  
+function openCoupons(){
+    db.read()
+    csv(["CouponNumber", "Balance"])
+    let dialog = remote.dialog
+    dialog.showOpenDialog({
+        title: 'Open Patron Data',
+        filters: [
+            {name: 'csv', extensions: ['csv']}
+        ]
+    }, (fileName) => {
+        if(fileName === undefined){
+            return;
+        } 
+        coupons = []
+        fs.createReadStream(fileName[0])
+        .pipe(csv())
+        .on('data', (data) => {
+            coupons.push(data)
+        })
+        .on('end' , () => {
+            db.set('coupons',coupons).write()
+        })
+        document.getElementById("coupon-data-status").innerText = "Patron Data ✔️"
+        db.write()
+        writeToTerminal("Added Patron data")
+        updateCouponTable() 
+    })
+}
   
 
  /*********************************************/

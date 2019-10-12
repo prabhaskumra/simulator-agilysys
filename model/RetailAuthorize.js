@@ -19,8 +19,8 @@ module.exports = {
     var response = '';
 
     
-    var amountRedeem = compList[0].RedeemAmount;
-    var taxCalculated = (8.25*amountRedeem)/100;
+    var amountRedeem = 100 * compList[0].RedeemAmount;
+    var taxCalculated = (8*amountRedeem)/100;
     // console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXX")
     // console.log(amountRedeem);
 
@@ -56,7 +56,7 @@ module.exports = {
     //     + '/balances/'
     //     + this.balanceForm.value.referenceId;
 
-    const url = baseUrl + '1'+ '/authorizations/' + referenceId;
+    const url = baseUrl + '2'+ '/authorizations/' + referenceId;
 
     // for signature only
     // const path = '/' + environment.api + '/retail'
@@ -64,7 +64,7 @@ module.exports = {
     //     + '/' + environment.environments[environment.selectedEnvironment].tenantId
     //     + '/balances/'
     //     + this.balanceForm.value.referenceId;
-    const path = '/tpv/retail/v2/1/authorizations/' + referenceId;
+    const path = '/tpv/retail/v2/2/authorizations/' + referenceId;
 
     const reqData = sig.client.createRequestData(
         'PUT',  // method,
@@ -74,7 +74,7 @@ module.exports = {
         1,
         JSON.stringify(body),  // payload,
         // environment.environments[environment.selectedEnvironment].apiKey,  // apikey,
-        '21c0e607ab389394fa92d74b5c69cda3', //in dev mode
+        'abed1254abcd1234', //in dev mode
         // environment.api,  // api,
         'tpv',
         // environment.ver,  // version,
@@ -100,7 +100,7 @@ module.exports = {
         dep,
         reqData,
         // environment.environments[environment.selectedEnvironment].secretKey
-        '8ecf8cbd03b061fc5edc50fe970f1120'
+        'abed1234abcd1234'
     );
 
     //console.log(authHeader);

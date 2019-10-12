@@ -2984,4 +2984,819 @@
     "availableBalance": 0,
     "currencyCode": "USD",
     "accountType": "CASH"
+}</div><p>9/5/2019 18:13:41:260 - Started terminal.</p><p>9/5/2019 18:13:46:547 - App is listening on port 8080</p><p>9/5/2019 18:24:37:674 - Started terminal.</p><p>9/5/2019 18:24:42:185 - App is listening on port 8080</p><p>9/5/2019 18:27:24:533 - Started terminal.</p><p>9/5/2019 18:27:28:810 - App is listening on port 8080</p><p>9/5/2019 18:35:41:512 - Started terminal.</p><p>9/5/2019 18:35:45:908 - App is listening on port 8080</p><p>9/5/2019 18:39:55:861 - Started terminal.</p><p>9/5/2019 18:39:57:983 - App is listening on port 8080</p><p class='collapsible'>9/5/2019 18:44:22:468 - RedeemCoupon request recieved for account 800305519</p><div class='ccontent'>{
+    "AccountNumber": "800305519",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 100
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/5/2019 18:44:23:212 - RedeemCoupon response sent for account 800305519</p><div class='ccontent'>{
+    "maskedCardNumber": "*****5519",
+    "referenceId": "628478391",
+    "transactionId": "6588600053437313024",
+    "transactionType": "AUTHORIZE",
+    "transactionStatus": 0,
+    "amount": 100,
+    "taxAmount": 8.25,
+    "availableBalance": 0,
+    "currencyCode": "USD",
+    "accountType": "CASH"
+}</div><p class='collapsible'>9/5/2019 18:44:25:554 - RedeemCoupon request recieved for account 800305519</p><div class='ccontent'>{
+    "AccountNumber": "800305519",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 100
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/5/2019 18:44:25:786 - RedeemCoupon response sent for account 800305519</p><div class='ccontent'>{
+    "maskedCardNumber": "*****5519",
+    "referenceId": "643940430",
+    "transactionId": "6588600065642737664",
+    "transactionType": "AUTHORIZE",
+    "transactionStatus": 0,
+    "amount": 100,
+    "taxAmount": 8.25,
+    "availableBalance": 0,
+    "currencyCode": "USD",
+    "accountType": "CASH"
+}</div><p class='collapsible'>9/5/2019 18:44:26:509 - RedeemCoupon request recieved for account 800305519</p><div class='ccontent'>{
+    "AccountNumber": "800305519",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 100
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/5/2019 18:44:26:754 - RedeemCoupon response sent for account 800305519</p><div class='ccontent'>{
+    "maskedCardNumber": "*****5519",
+    "referenceId": "617738414",
+    "transactionId": "6588600069681852416",
+    "transactionType": "AUTHORIZE",
+    "transactionStatus": 0,
+    "amount": 100,
+    "taxAmount": 8.25,
+    "availableBalance": 0,
+    "currencyCode": "USD",
+    "accountType": "CASH"
+}</div><p class='collapsible'>9/5/2019 18:44:27:287 - RedeemCoupon request recieved for account 800305519</p><div class='ccontent'>{
+    "AccountNumber": "800305519",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 100
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/5/2019 18:44:27:548 - RedeemCoupon response sent for account 800305519</p><div class='ccontent'>{
+    "maskedCardNumber": "*****5519",
+    "referenceId": "651222978",
+    "transactionId": "6588600072936632320",
+    "transactionType": "AUTHORIZE",
+    "transactionStatus": 0,
+    "amount": 100,
+    "taxAmount": 8.25,
+    "availableBalance": 0,
+    "currencyCode": "USD",
+    "accountType": "CASH"
+}</div><p class='collapsible'>9/5/2019 18:44:37:693 - ValidateAccount request recieved for 800305519</p><div class='ccontent'>{
+    "cardNumber": "800305519",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/5/2019 18:44:38:12 - ValidateAccount response sent for account 800305519</p><div class='ccontent'>{
+    "maskedCardNumber": "*****5519",
+    "referenceId": "649853871",
+    "transactionId": "6588600116985212928",
+    "availableBalance": 100000,
+    "currencyCode": "USD"
+}</div><p>9/5/2019 18:47:24:857 - Started terminal.</p><p>9/5/2019 18:47:28:962 - App is listening on port 8080</p><p class='collapsible'>9/5/2019 18:47:49:144 - ValidateAccount request recieved for 800305519</p><div class='ccontent'>{
+    "cardNumber": "800305519",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p>9/5/2019 18:50:11:140 - Started terminal.</p><p>9/5/2019 18:50:14:332 - App is listening on port 8080</p><p class='collapsible'>9/5/2019 18:50:27:130 - ValidateAccount request recieved for 800305519</p><div class='ccontent'>{
+    "cardNumber": "800305519",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/5/2019 18:50:27:562 - ValidateAccount response sent for account 800305519</p><div class='ccontent'>{
+    "maskedCardNumber": "*****5519",
+    "referenceId": "689709780",
+    "transactionId": "6588601583053844480",
+    "availableBalance": 100000,
+    "currencyCode": "USD"
+}</div><p>9/6/2019 14:8:29:989 - Started terminal.</p><p>9/6/2019 14:8:33:452 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 14:9:4:214 - RedeemCoupon request recieved for account 123456</p><div class='ccontent'>{
+    "AccountNumber": "123456",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 100
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/6/2019 14:9:5:801 - RedeemCoupon response sent for account 123456</p><div class='ccontent'>{
+    "maskedCardNumber": "**3456",
+    "referenceId": "698425127",
+    "transactionId": "6588893155905515520",
+    "transactionType": "AUTHORIZE",
+    "transactionStatus": 0,
+    "amount": 100,
+    "taxAmount": 8.25,
+    "availableBalance": 0,
+    "currencyCode": "USD",
+    "accountType": "CASH"
+}</div><p class='collapsible'>9/6/2019 14:17:0:924 - ValidateAccount request recieved for 123456</p><div class='ccontent'>{
+    "cardNumber": "123456",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/6/2019 14:17:1:294 - ValidateAccount response sent for account 123456</p><div class='ccontent'>{
+    "maskedCardNumber": "**3456",
+    "referenceId": "630479786",
+    "transactionId": "6588895155028242432",
+    "availableBalance": 1000,
+    "currencyCode": "USD"
+}</div><p>9/6/2019 14:20:58:560 - Started terminal.</p><p>9/6/2019 14:21:1:498 - App is listening on port 8080</p><p>9/6/2019 14:23:25:655 - Started terminal.</p><p>9/6/2019 14:23:29:804 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 14:28:30:246 - ValidateAccount request recieved for 800306090</p><div class='ccontent'>{
+    "cardNumber": "800306090",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/6/2019 14:28:30:573 - ValidateAccount response sent for account 800306090</p><div class='ccontent'>{
+    "maskedCardNumber": "*****6090",
+    "referenceId": "652950739",
+    "transactionId": "6588898046141018112",
+    "availableBalance": 75000,
+    "currencyCode": "USD"
+}</div><p class='collapsible'>9/6/2019 14:29:24:865 - RedeemCoupon request recieved for account 800306090</p><div class='ccontent'>{
+    "AccountNumber": "800306090",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 1000
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/6/2019 14:29:25:740 - RedeemCoupon response sent for account 800306090</p><div class='ccontent'>{
+    "maskedCardNumber": "*****6090",
+    "referenceId": "617244285",
+    "transactionId": "6588898274994827264",
+    "transactionType": "AUTHORIZE",
+    "transactionStatus": 1,
+    "amount": 1000,
+    "taxAmount": 82.5,
+    "availableBalance": 74000,
+    "currencyCode": "USD",
+    "accountType": "CASH"
+}</div><p class='collapsible'>9/6/2019 14:30:18:716 - RedeemCoupon request recieved for account 123456</p><div class='ccontent'>{
+    "AccountNumber": "123456",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 100
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/6/2019 14:30:19:115 - RedeemCoupon response sent for account 123456</p><div class='ccontent'>{
+    "maskedCardNumber": "**3456",
+    "referenceId": "688308850",
+    "transactionId": "6588898501030064128",
+    "transactionType": "AUTHORIZE",
+    "transactionStatus": 0,
+    "amount": 100,
+    "taxAmount": 8.25,
+    "availableBalance": 0,
+    "currencyCode": "USD",
+    "accountType": "CASH"
+}</div><p class='collapsible'>9/6/2019 14:30:32:883 - ValidateAccount request recieved for 123456</p><div class='ccontent'>{
+    "cardNumber": "123456",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/6/2019 14:30:33:210 - ValidateAccount response sent for account 123456</p><div class='ccontent'>{
+    "maskedCardNumber": "**3456",
+    "referenceId": "603130910",
+    "transactionId": "6588898560547237888",
+    "availableBalance": 1000,
+    "currencyCode": "USD"
+}</div><p class='collapsible'>9/6/2019 14:31:52:492 - ValidateAccount request recieved for 123456</p><div class='ccontent'>{
+    "cardNumber": "123456",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/6/2019 14:31:52:808 - ValidateAccount response sent for account 123456</p><div class='ccontent'>{
+    "maskedCardNumber": "**3456",
+    "referenceId": "688817048",
+    "transactionId": "6588898894363504640",
+    "availableBalance": 1000,
+    "currencyCode": "USD"
+}</div><p class='collapsible'>9/6/2019 14:32:46:190 - RedeemCoupon request recieved for account 123456</p><div class='ccontent'>{
+    "AccountNumber": "123456",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 100
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/6/2019 14:32:46:580 - RedeemCoupon response sent for account 123456</p><div class='ccontent'>{
+    "maskedCardNumber": "**3456",
+    "referenceId": "621903858",
+    "transactionId": "6588899119576657920",
+    "transactionType": "AUTHORIZE",
+    "transactionStatus": 0,
+    "amount": 100,
+    "taxAmount": 8.25,
+    "availableBalance": 0,
+    "currencyCode": "USD",
+    "accountType": "CASH"
+}</div><p>9/6/2019 14:34:55:675 - Started terminal.</p><p>9/6/2019 14:34:58:375 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 14:35:5:593 - RedeemCoupon request recieved for account 123456</p><div class='ccontent'>{
+    "AccountNumber": "123456",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 100
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/6/2019 14:35:5:938 - RedeemCoupon response sent for account 123456</p><div class='ccontent'>{
+    "maskedCardNumber": "**3456",
+    "referenceId": "694286362",
+    "transactionId": "6588899704199720960",
+    "transactionType": "AUTHORIZE",
+    "transactionStatus": 0,
+    "amount": 100,
+    "taxAmount": 8,
+    "availableBalance": 0,
+    "currencyCode": "USD",
+    "accountType": "CASH"
+}</div><p class='collapsible'>9/6/2019 14:38:30:754 - RedeemCoupon request recieved for account 123456</p><div class='ccontent'>{
+    "AccountNumber": "123456",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 100
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/6/2019 14:38:31:306 - RedeemCoupon response sent for account 123456</p><div class='ccontent'>{
+    "maskedCardNumber": "**3456",
+    "referenceId": "678627567",
+    "transactionId": "6588900564761849856",
+    "transactionType": "AUTHORIZE",
+    "transactionStatus": 0,
+    "amount": 100,
+    "taxAmount": 8,
+    "availableBalance": 0,
+    "currencyCode": "USD",
+    "accountType": "CASH"
+}</div><p class='collapsible'>9/6/2019 14:41:19:837 - RedeemCoupon request recieved for account 123456</p><div class='ccontent'>{
+    "AccountNumber": "123456",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 100
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/6/2019 14:41:20:727 - RedeemCoupon response sent for account 123456</p><div class='ccontent'>{
+    "maskedCardNumber": "**3456",
+    "referenceId": "674939352",
+    "transactionId": "6588901274790408192",
+    "transactionType": "AUTHORIZE",
+    "transactionStatus": 0,
+    "amount": 100,
+    "taxAmount": 8,
+    "availableBalance": 0,
+    "currencyCode": "USD",
+    "accountType": "CASH"
+}</div><p class='collapsible'>9/6/2019 14:42:24:984 - RedeemCoupon request recieved for account 800306090</p><div class='ccontent'>{
+    "AccountNumber": "800306090",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 100
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/6/2019 14:42:25:691 - RedeemCoupon response sent for account 800306090</p><div class='ccontent'>{
+    "maskedCardNumber": "*****6090",
+    "referenceId": "650301444",
+    "transactionId": "6588901547113984000",
+    "transactionType": "AUTHORIZE",
+    "transactionStatus": 1,
+    "amount": 100,
+    "taxAmount": 8,
+    "availableBalance": 73900,
+    "currencyCode": "USD",
+    "accountType": "CASH"
+}</div><p class='collapsible'>9/6/2019 14:48:30:814 - RedeemCoupon request recieved for account 123456</p><div class='ccontent'>{
+    "AccountNumber": "123456",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 100
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/6/2019 14:48:31:678 - RedeemCoupon response sent for account 123456</p><div class='ccontent'>{
+    "maskedCardNumber": "**3456",
+    "referenceId": "675404131",
+    "transactionId": "6588903082715787264",
+    "transactionType": "AUTHORIZE",
+    "transactionStatus": 1,
+    "amount": 100,
+    "taxAmount": 8,
+    "availableBalance": 900,
+    "currencyCode": "USD",
+    "accountType": "CASH"
+}</div><p class='collapsible'>9/6/2019 14:52:3:801 - RedeemCoupon request recieved for account 1000115373</p><div class='ccontent'>{
+    "AccountNumber": "1000115373",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 999
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/6/2019 14:55:9:44 - RedeemCoupon request recieved for account 1000115373</p><div class='ccontent'>{
+    "AccountNumber": "1000115373",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 999
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p>9/6/2019 14:56:57:972 - Started terminal.</p><p>9/6/2019 14:57:0:117 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 14:57:4:943 - RedeemCoupon request recieved for account 1000115373</p><div class='ccontent'>{
+    "AccountNumber": "1000115373",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 999
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/6/2019 14:57:5:154 - RedeemCoupon response sent for account 1000115373</p><div class='ccontent'>"Not a Valid API Key"</div><p>9/6/2019 15:1:15:370 - Started terminal.</p><p>9/6/2019 15:1:18:851 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 15:1:30:339 - RedeemCoupon request recieved for account 1000115373</p><div class='ccontent'>{
+    "AccountNumber": "1000115373",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 999
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p>9/6/2019 15:4:25:61 - Started terminal.</p><p>9/6/2019 15:4:27:756 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 15:4:33:760 - RedeemCoupon request recieved for account 1000115373</p><div class='ccontent'>{
+    "AccountNumber": "1000115373",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 999
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p>9/6/2019 15:5:8:200 - Started terminal.</p><p>9/6/2019 15:5:12:389 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 15:5:15:333 - RedeemCoupon request recieved for account 1000115373</p><div class='ccontent'>{
+    "AccountNumber": "1000115373",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 999
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p>9/6/2019 15:6:11:124 - Started terminal.</p><p>9/6/2019 15:6:14:126 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 15:6:17:218 - RedeemCoupon request recieved for account 1000115373</p><div class='ccontent'>{
+    "AccountNumber": "1000115373",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 999
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/6/2019 15:6:17:601 - RedeemCoupon response sent for account 1000115373</p><div class='ccontent'>{
+    "maskedCardNumber": "******5373",
+    "referenceId": "664532297",
+    "transactionId": "6588907554393305088",
+    "transactionType": "AUTHORIZE",
+    "transactionStatus": 1,
+    "amount": 999,
+    "taxAmount": 79.92,
+    "availableBalance": 14098901,
+    "currencyCode": "USD",
+    "accountType": "CASH"
+}</div><p>9/6/2019 15:8:27:854 - Started terminal.</p><p>9/6/2019 15:8:30:778 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 15:8:45:517 - ValidateAccount request recieved for 1000115373</p><div class='ccontent'>{
+    "cardNumber": "1000115373",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/6/2019 15:8:46:76 - ValidateAccount response sent for account 1000115373</p><div class='ccontent'>{
+    "maskedCardNumber": "******5373",
+    "referenceId": "635360130",
+    "transactionId": "6588908176622497792",
+    "availableBalance": 14098901,
+    "currencyCode": "USD"
+}</div><p>9/6/2019 15:15:52:914 - Started terminal.</p><p>9/6/2019 15:15:56:766 - App is listening on port 8080</p><p>9/6/2019 15:18:29:60 - Started terminal.</p><p>9/6/2019 15:18:32:662 - App is listening on port 8080</p><p>9/6/2019 15:19:8:295 - Started terminal.</p><p>9/6/2019 15:19:11:234 - App is listening on port 8080</p><p>9/6/2019 15:22:2:22 - Started terminal.</p><p>9/6/2019 15:22:5:241 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 15:22:11:492 - ValidateAccount request recieved for 1000115373</p><div class='ccontent'>{
+    "cardNumber": "1000115373",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/6/2019 15:22:12:457 - ValidateAccount response sent for account 1000115373</p><div class='ccontent'>{
+    "maskedCardNumber": "******5373",
+    "referenceId": "629352690",
+    "transactionId": "6588911559739715584",
+    "availableBalance": 14098901,
+    "currencyCode": "USD"
+}</div><p>9/6/2019 15:22:59:67 - Started terminal.</p><p>9/6/2019 15:23:2:304 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 15:23:8:758 - ValidateAccount request recieved for 1000115373</p><div class='ccontent'>{
+    "cardNumber": "1000115373",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/6/2019 15:23:9:193 - ValidateAccount response sent for account 1000115373</p><div class='ccontent'>{
+    "maskedCardNumber": "******5373",
+    "referenceId": "689930294",
+    "transactionId": "6588911797451894784",
+    "availableBalance": 14098901,
+    "currencyCode": "USD"
+}</div><p>9/6/2019 15:29:22:592 - Started terminal.</p><p>9/6/2019 15:29:26:547 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 15:29:37:261 - ValidateAccount request recieved for 1000115373</p><div class='ccontent'>{
+    "cardNumber": "1000115373",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p>9/6/2019 15:30:22:757 - Started terminal.</p><p>9/6/2019 15:30:26:637 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 15:30:40:739 - ValidateAccount request recieved for 1000115373</p><div class='ccontent'>{
+    "cardNumber": "1000115373",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/6/2019 15:30:41:114 - ValidateAccount response sent for account 1000115373</p><div class='ccontent'>{
+    "maskedCardNumber": "******5373",
+    "referenceId": "605819831",
+    "transactionId": "6588913693042421760",
+    "availableBalance": 14098901,
+    "currencyCode": "USD"
+}</div><p class='collapsible'>9/6/2019 15:31:17:55 - ValidateAccount request recieved for 1900046352</p><div class='ccontent'>{
+    "cardNumber": "1900046352",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/6/2019 15:31:59:975 - ValidateAccount request recieved for 1900046331</p><div class='ccontent'>{
+    "cardNumber": "1900046331",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p>9/6/2019 15:33:21:432 - Started terminal.</p><p>9/6/2019 15:33:25:519 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 15:33:34:289 - ValidateAccount request recieved for 1900046331</p><div class='ccontent'>{
+    "cardNumber": "1900046331",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p>9/6/2019 15:40:29:4 - Started terminal.</p><p>9/6/2019 15:40:32:463 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 15:40:45:864 - ValidateAccount request recieved for 1000115372</p><div class='ccontent'>{
+    "cardNumber": "1000115372",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/6/2019 15:40:46:278 - ValidateAccount response sent for account 1000115372</p><div class='ccontent'>{
+    "maskedCardNumber": "******5372",
+    "referenceId": "664320878",
+    "transactionId": "6588916231280013312",
+    "availableBalance": 121200,
+    "currencyCode": "USD"
+}</div><p>9/6/2019 16:3:33:890 - Started terminal.</p><p>9/6/2019 16:3:38:694 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 16:3:47:194 - ValidateAccount request recieved for 1000115372</p><div class='ccontent'>{
+    "cardNumber": "1000115372",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/6/2019 16:3:47:582 - ValidateAccount response sent for account 1000115372</p><div class='ccontent'>{
+    "maskedCardNumber": "******5372",
+    "referenceId": "652274915",
+    "transactionId": "6588922025052483584",
+    "availableBalance": 121200,
+    "currencyCode": "USD"
+}</div><p class='collapsible'>9/6/2019 16:4:7:189 - ValidateAccount request recieved for 1000115372</p><div class='ccontent'>{
+    "cardNumber": "1000115372",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/6/2019 16:4:7:500 - ValidateAccount response sent for account 1000115372</p><div class='ccontent'>{
+    "maskedCardNumber": "******5372",
+    "referenceId": "654315677",
+    "transactionId": "6588922108611407872",
+    "availableBalance": 121200,
+    "currencyCode": "USD"
+}</div><p class='collapsible'>9/6/2019 16:4:28:20 - RedeemCoupon request recieved for account 1000115373</p><div class='ccontent'>{
+    "AccountNumber": "1000115373",
+    "redeemCouponList": [
+        {
+            "CouponNumber": "2323232",
+            "ReferenceId": "acdffe3333",
+            "SequenceId": 1,
+            "RedeemAmount": 999
+        }
+    ],
+    "OutletId": "001",
+    "OutletName": "string",
+    "EmployeeId": "string",
+    "RequestingSystem": "string",
+    "LicensingKey": "string",
+    "CustomFields": {},
+    "TransactionDateTime": "string"
+}</div><p class='collapsible'>9/6/2019 16:4:28:304 - RedeemCoupon response sent for account 1000115373</p><div class='ccontent'>{
+    "maskedCardNumber": "******5373",
+    "referenceId": "602494180",
+    "transactionId": "6588922195639021568",
+    "transactionType": "AUTHORIZE",
+    "transactionStatus": 1,
+    "amount": 99900,
+    "taxAmount": 7992,
+    "availableBalance": 13999001,
+    "currencyCode": "USD",
+    "accountType": "CASH"
+}</div><p>9/6/2019 16:6:37:750 - Started terminal.</p><p>9/6/2019 16:6:40:23 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 16:6:50:690 - ValidateAccount request recieved for 1000115372</p><div class='ccontent'>{
+    "cardNumber": "1000115372",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/6/2019 16:6:51:24 - ValidateAccount response sent for account 1000115372</p><div class='ccontent'>{
+    "maskedCardNumber": "******5372",
+    "referenceId": "620154744",
+    "transactionId": "6588922794443026432",
+    "availableBalance": 121200,
+    "currencyCode": "USD"
 }</div>

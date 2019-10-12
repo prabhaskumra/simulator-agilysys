@@ -34,6 +34,7 @@ const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('db.json')
 const db = low(adapter)
 
+
 db.defaults({               //default for db if non exist
   players: [], //holds players
   offers: [], //holds offers
@@ -185,7 +186,7 @@ app.post("/Players/RedeemCoupon",async(req, res) => {
         TransactionId: redeemedCoupons.transactionId,
         SequenceId: 1,
         RedeemedAmount: req.body.redeemCouponList[0].RedeemAmount,
-        BalanceAmount: redeemedCoupons.availableBalance,
+        BalanceAmount: redeemedCoupons.availableBalance/100,
         ResponseStatus: {
           IsSuccess: true,
           ErrorMessage: "",
@@ -228,20 +229,35 @@ app.post("/Players/ValidateAccount", async(req,res)=> {
   //let validatedAccounts = ValidateAccount(req.body.cardType, req.body.cardNumber)
 
   let validatedAccounts = await BalanceInquiry(accountNumber);
-  console.log(validatedAccounts.availableBalance);
+  //console.log(validatedAccounts.availableBalance);
+
+
+  //console.log(coupons[1].accountNumber);
+  db.read();
+  var patronData = db.get('coupons').value()
+
+  var firstName = "Bob", lastName="Lee";
+
+  for( i = 0; i < patronData.length; i++){
+    if(accountNumber === patronData[i].CouponNumber){
+      var res = patronData[i].Balance.split(" ");
+      firstName = res[0];
+      lastName = res[1];
+    }
+  }
 
   //PatronResponse.PointsBalance = validatedAccounts.availableBalance;
   let PatronResponse = []
   PatronResponse.push({
       ClubStateId: 40,//hardcoded for rn
       AccountNumber: accountNumber,
-      FirstName: "Alice",
-      LastName: "Bob", 
+      FirstName: firstName,
+      LastName: lastName, 
       ClubState: "Gold",
       DateOfBirth: "01/01/40",
       PointsBalance: 0,
       PointsBalanceInDollars: 230.76,
-      CompBalance: validatedAccounts.availableBalance,
+      CompBalance: validatedAccounts.availableBalance/100,
       Promo2Balance: 0,
       IsInActive: false,
       IsPinLocked: false,
@@ -261,6 +277,7 @@ app.post("/Players/ValidateAccount", async(req,res)=> {
   }
 
   console.log(PatronResponse);
+
   res.send({PatronResponse, ResponseStatus});
   writeToTerminal("ValidateAccount response sent for account " + req.body.cardNumber, validatedAccounts)
 
