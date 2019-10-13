@@ -7,20 +7,23 @@ const writeToTerminal = require("./writeToTerminal")
 
 module.exports = {
     getPlayerInfo : function getPlayerInfo(accountNumber){
-        db.read()
+        db.read();
         var foundAccount = undefined;
         var playerData = db.get('players').value()
-        console.log(playerData)
-        for(let i = 0; i < playerData.length; i++)
+        console.log(playerData);
+        console.log("Player data completed");
+        //accountNumber = 1;
+        console.log(accountNumber);
+        for(let i = 0; i < playerData.length; i++){
             if(playerData[i].accountNumber === String(accountNumber)){
               foundAccount = playerData[i]
             }
-                
-
+        }
+        console.log(foundAccount);
         if(foundAccount === undefined)
             return
         
-        console.log(foundAccount)
+        
 
         // let out = {
         //     PatronResponse: {

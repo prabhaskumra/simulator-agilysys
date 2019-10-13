@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const bodyParser = require("body-parser");
+var bodyParser = require("body-parser");
 const fs = require("fs");
 const { ipcMain } = require("electron");
 const port = 8080
@@ -15,14 +15,15 @@ const RedeemComp = require("./model/RedeemComp").RedeemComp;
 const RedeemPoints = require("./model/RedeemPoints").RedeemPoints;
 const RedeemOffer = require("./model/RedeemOffer").RedeemOffer;
 const ValidateAccount = require("./model/ValidateAccount").ValidateAccount;
-const RedeemCoupon = require("./model/RedeemCoupon").RedeemCoupon
-const VoidAll = require("./model/VoidAll").VoidAll
-const RetailRating = require("./model/RetailRating").RetailRating
+const RedeemCoupon = require("./model/RedeemCoupon").RedeemCoupon;
+const VoidAll = require("./model/VoidAll").VoidAll;
+const RetailRating = require("./model/RetailRating").RetailRating;
+const BalanceInquiry = require("./model/BalanceInquiry").BalanceInquiry;
+const RetailAuthorize = require("./model/RetailAuthorize").RetailAuthorize;
 //---------------------------------------------------------------------------------------//
 
 //------------------------------------express setup--------------------------------------//
 app.use(express.static(__dirname));
-
 app.use(bodyParser.urlencoded({ extended: false })); // support encoded bodies
 app.use(bodyParser.json()); // support json encoded bodies
 //---------------------------------------------------------------------------------------//
@@ -32,6 +33,7 @@ const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('db.json')
 const db = low(adapter)
+
 
 db.defaults({               //default for db if non exist
   players: [], //holds players
@@ -61,12 +63,47 @@ app.get("/", (req, res) =>
 //----------------------------------------------------------------------------------------//
 //validate user api Post
 //IG will send post request and get account back - also will display account information
-app.post("/Players/GetPlayerInfo", (req, res) => {
+app.post("/Players/GetPlayerInfo", async(req, res) => {
   //get account number and search by acct number
   writeToTerminal("GetPlayerInfo request recieved for account " + req.body.acct, req.body)
+
+  // this is  not what IG calls
+
+  // let account = {
+  //   "firstName": "Alice",
+  //   "lastName": "Bob",
+  //   "accountNumber": "0",
+  //   "phoneNumber": "7024980123",
+  //   "cardNumber": "1",
+  //   "tierLevel": "3",
+  //   "dateOfBirth": "9/9/1997",
+  //   "pointBalance": "3000",
+  //   "compBalance": "50",
+  //   "promo2Balance": "99",
+  //   "isBanned": "FALSE",
+  //   "isInActive": "TRUE",
+  //   "isPinLocked": "FALSE"
+  // }
+  
+
+  // Origial code........ DO NOT DELETE
   let account = getPlayerInfo(req.body.acct);
+
+  // function pointing to Everi Wallet endpoint
+  // let accountFound = await BalanceInquiry(acct);
+
+/**********************************************************
+  //console.log("accoung");
+  //console.log(acct);
+  //console.log(account);
   //send back account info
+  // account.accountNumber = acct;
+  // account.pointBalance = String(accountFound.availableBalance);
+
+************************************************************/
+
   res.send(account ? account : { "error:": "no results" }); //TO-DO: FIX THIS ? LOL
+
   writeToTerminal("GetPlayerInfo response sent for account " + req.body.acct, account)
 });
 
@@ -93,11 +130,24 @@ app.post("/Players/RedeemOffer", (req, res) => {
 //----------------------------------------------------------------------------------------//
 //redeem each comp in list, i am assuming that there could be more than one
 app.post("/Players/RedeemComp", (req, res) => {
+
+  // ORIGINAL CODE
+   
   writeToTerminal("RedeemComp request recieved for account " + req.body.AccountNumber, req.body)
   let compList = req.body.redeemCompList;
   let redeemValues = RedeemComp(req.body.AccountNumber, compList);
   res.send(redeemValues.out);
   writeToTerminal("RedeemComp response sent for account " + req.body.AccountNumber, redeemValues.out)
+  
+// TEST FOR WALLET
+
+//  writeToTerminal("RedeemComp request recieved for account " + req.body.AccountNumber, req.body)
+//  let compList = req.body.redeemCompList;
+//  let redeemValues = await RetailAuthorize(req.body.AccountNumber, compList);
+//  res.send(redeemValues.out);
+//  writeToTerminal("RedeemComp response sent for account " + req.body.AccountNumber, redeemValues.out)
+
+
 });
 
 //----------------------------------------------------------------------------------------//
@@ -110,19 +160,134 @@ app.post("/Players/RedeemPoints", (req, res) => {
 });
 
 //----------------------------------------------------------------------------------------//
-app.post("/Players/RedeemCoupon", (req, res) => {
+app.post("/Players/RedeemCoupon",async(req, res) => {
+
+  // ORIGINAL CODE
+  // writeToTerminal("RedeemCoupon request recieved for account " + req.body.AccountNumber, req.body)
+  // let redeemedCoupons = RedeemCoupon(req.body.AccountNumber, req.body.redeemCouponList)
+  // res.send(redeemedCoupons)
+  // writeToTerminal("RedeemCoupon response sent for account " + req.body.AccountNumber, redeemedCoupons)
+
+
   writeToTerminal("RedeemCoupon request recieved for account " + req.body.AccountNumber, req.body)
-  let redeemedCoupons = RedeemCoupon(req.body.AccountNumber, req.body.redeemCouponList)
-  res.send(redeemedCoupons)
+
+  // console.log("SASASAASASASAs")
+  // console.log(req.body.redeemCouponList[0].RedeemAmount);
+
+  let redeemedCoupons = await RetailAuthorize(req.body.AccountNumber, req.body.redeemCouponList)
+
+
+  let transactionInfo = {
+    AccountNumber: req.body.AccountNumber,
+    RedeemCouponResultList: [
+      {
+        CouponNumber: "2323232",
+        ReferenceId: redeemedCoupons.referenceId,
+        TransactionId: redeemedCoupons.transactionId,
+        SequenceId: 1,
+        RedeemedAmount: req.body.redeemCouponList[0].RedeemAmount,
+        BalanceAmount: redeemedCoupons.availableBalance/100,
+        ResponseStatus: {
+          IsSuccess: true,
+          ErrorMessage: "",
+          ErrorCode: ""
+        }
+      }
+    ],
+    ResponseStatus: {
+      IsSuccess: true,
+      ErrorMessage: "",
+      ErrorCode: ""
+    },
+    CustomFields: {}
+  };
+
+
+  res.send(transactionInfo)
+
   writeToTerminal("RedeemCoupon response sent for account " + req.body.AccountNumber, redeemedCoupons)
+
+
 })
 
 //----------------------------------------------------------------------------------------//
-app.post("/Players/ValidateAccount", (req,res)=> {
+app.post("/Players/ValidateAccount", async(req,res)=> {
+
+  // ORIGINAL CODE, DO NOT DELETE OR RESTORE TO THIS
+  /*******************************************
   writeToTerminal("ValidateAccount request recieved for " + req.body.cardNumber, req.body)
   let validatedAccounts = ValidateAccount(req.body.cardType, req.body.cardNumber)
   res.send(validatedAccounts)
   writeToTerminal("ValidateAccount response sent for account " + req.body.cardNumber, validatedAccounts)
+
+  *****************************************/
+
+  writeToTerminal("ValidateAccount request recieved for " + req.body.cardNumber, req.body)
+
+  accountNumber = req.body.cardNumber;
+
+  //let validatedAccounts = ValidateAccount(req.body.cardType, req.body.cardNumber)
+
+  let validatedAccounts = await BalanceInquiry(accountNumber);
+  //console.log(validatedAccounts.availableBalance);
+
+
+  //console.log(coupons[1].accountNumber);
+  db.read();
+  var patronData = db.get('coupons').value()
+
+  var firstName = "Bob", lastName="Lee";
+
+
+  console.log(patronData.length);
+
+  for( i = 0; i < patronData.length; i++){
+    if(accountNumber === patronData[i].CouponNumber){
+      var splitName = patronData[i].Balance.split(" ");
+      firstName = splitName[0];
+      lastName = splitName[1];
+      break;
+    }
+  }
+  console.log(firstName);
+  console.log(lastName);
+
+  //PatronResponse.PointsBalance = validatedAccounts.availableBalance;
+  let PatronResponse = []
+  PatronResponse.push({
+      ClubStateId: 40,//hardcoded for rn
+      AccountNumber: accountNumber,
+      FirstName: firstName,
+      LastName: lastName, 
+      ClubState: "Gold",
+      DateOfBirth: "01/01/40",
+      PointsBalance: 0,
+      PointsBalanceInDollars: 230.76,
+      CompBalance: validatedAccounts.availableBalance/100,
+      Promo2Balance: 0,
+      IsInActive: false,
+      IsPinLocked: false,
+      IsBanned: false,
+      ResponseResult: {
+          IsSuccess: true,
+          ErrorMessage: "",
+          ErrorCode: ""
+      }
+  })
+
+  let ResponseStatus = 
+  {
+    IsSuccess: true,
+    ErrorMessage: "",
+    ErrorCode: ""
+  }
+
+  console.log(PatronResponse);
+
+  res.send({PatronResponse, ResponseStatus});
+  writeToTerminal("ValidateAccount response sent for account " + req.body.cardNumber, validatedAccounts)
+
+
 })
 
 //----------------------------------------------------------------------------------------//
