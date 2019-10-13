@@ -3799,4 +3799,155 @@
     "transactionId": "6588922794443026432",
     "availableBalance": 121200,
     "currencyCode": "USD"
+}</div><p>9/6/2019 17:16:11:531 - Started terminal.</p><p>9/6/2019 17:16:14:574 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 17:16:41:918 - ValidateAccount request recieved for 1000115373</p><div class='ccontent'>{
+    "cardNumber": "1000115373",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/6/2019 17:16:42:763 - ValidateAccount response sent for account 1000115373</p><div class='ccontent'>{
+    "maskedCardNumber": "******5373",
+    "referenceId": "601593622",
+    "transactionId": "6588940374327177216",
+    "availableBalance": 13996141,
+    "currencyCode": "USD"
+}</div><p class='collapsible'>9/6/2019 17:17:34:821 - ValidateAccount request recieved for 1000115373</p><div class='ccontent'>{
+    "cardNumber": "1000115373",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p>9/6/2019 17:20:25:450 - Started terminal.</p><p>9/6/2019 17:20:28:642 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 17:20:32:235 - ValidateAccount request recieved for 1000115373</p><div class='ccontent'>{
+    "cardNumber": "1000115373",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/6/2019 17:21:52:933 - ValidateAccount request recieved for 123456</p><div class='ccontent'>{
+    "cardNumber": "123456",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p>9/6/2019 17:22:45:890 - Started terminal.</p><p>9/6/2019 17:22:49:282 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 17:22:52:112 - ValidateAccount request recieved for 123456</p><div class='ccontent'>{
+    "cardNumber": "123456",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/6/2019 17:23:53:567 - ValidateAccount request recieved for 1000115373</p><div class='ccontent'>{
+    "cardNumber": "1000115373",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p>9/6/2019 17:24:43:849 - Started terminal.</p><p>9/6/2019 17:24:47:99 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 17:24:57:1 - ValidateAccount request recieved for 1000115373</p><div class='ccontent'>{
+    "cardNumber": "1000115373",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/6/2019 17:24:57:569 - ValidateAccount response sent for account 1000115373</p><div class='ccontent'>{
+    "maskedCardNumber": "******5373",
+    "referenceId": "665562836",
+    "transactionId": "6588942450398605312",
+    "availableBalance": 13996141,
+    "currencyCode": "USD"
+}</div><p>9/6/2019 17:25:42:109 - Started terminal.</p><p>9/6/2019 17:25:45:872 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 17:25:48:183 - ValidateAccount request recieved for 1000115373</p><div class='ccontent'>{
+    "cardNumber": "1000115373",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/6/2019 17:25:48:516 - ValidateAccount response sent for account 1000115373</p><div class='ccontent'>{
+    "maskedCardNumber": "******5373",
+    "referenceId": "634116243",
+    "transactionId": "6588942664966615040",
+    "availableBalance": 13996141,
+    "currencyCode": "USD"
+}</div><p>9/6/2019 17:27:50:197 - Started terminal.</p><p>9/6/2019 17:27:52:908 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 17:27:57:588 - ValidateAccount request recieved for 1000115373</p><div class='ccontent'>{
+    "cardNumber": "1000115373",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p>9/6/2019 17:32:6:69 - Started terminal.</p><p>9/6/2019 17:32:9:437 - App is listening on port 8080</p><p class='collapsible'>9/6/2019 17:32:16:103 - ValidateAccount request recieved for 1000115373</p><div class='ccontent'>{
+    "cardNumber": "1000115373",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/6/2019 17:32:16:535 - ValidateAccount response sent for account 1000115373</p><div class='ccontent'>{
+    "maskedCardNumber": "******5373",
+    "referenceId": "628754303",
+    "transactionId": "6588944292373344256",
+    "availableBalance": 13996141,
+    "currencyCode": "USD"
+}</div><p class='collapsible'>9/6/2019 17:33:7:137 - ValidateAccount request recieved for 1000115372</p><div class='ccontent'>{
+    "cardNumber": "1000115372",
+    "cardType": "AccountNumber",
+    "pin": "",
+    "outletId": "001",
+    "outletName": "string",
+    "employeeId": "string",
+    "requestingSystem": "string",
+    "licensingKey": "string",
+    "transactionDateTime": "string",
+    "customFields": {}
+}</div><p class='collapsible'>9/6/2019 17:33:7:549 - ValidateAccount response sent for account 1000115372</p><div class='ccontent'>{
+    "maskedCardNumber": "******5372",
+    "referenceId": "691613343",
+    "transactionId": "6588944506043772928",
+    "availableBalance": 119440,
+    "currencyCode": "USD"
 }</div>

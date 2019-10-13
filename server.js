@@ -238,13 +238,19 @@ app.post("/Players/ValidateAccount", async(req,res)=> {
 
   var firstName = "Bob", lastName="Lee";
 
+
+  console.log(patronData.length);
+
   for( i = 0; i < patronData.length; i++){
     if(accountNumber === patronData[i].CouponNumber){
-      var res = patronData[i].Balance.split(" ");
-      firstName = res[0];
-      lastName = res[1];
+      var splitName = patronData[i].Balance.split(" ");
+      firstName = splitName[0];
+      lastName = splitName[1];
+      break;
     }
   }
+  console.log(firstName);
+  console.log(lastName);
 
   //PatronResponse.PointsBalance = validatedAccounts.availableBalance;
   let PatronResponse = []
