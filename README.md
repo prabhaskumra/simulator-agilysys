@@ -1,4 +1,4 @@
-# simulator-agilysys
+# simulator-agilysys with Everi Wallet Services
 
 i love agilisys
 
